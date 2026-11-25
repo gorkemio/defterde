@@ -1,6 +1,6 @@
 # Üçüncü taraf bileşenler ve lisans istisnaları
 
-Defterde'nin kaynak kodu, oyun kodu ve özgün çizimleri [MIT lisansı](LICENSE) ile paylaşılır. Aşağıdaki bileşenler **MIT kapsamında değildir**; depoda ve sitede kendi lisanslarıyla, lisans metinleri yanlarında olacak şekilde dağıtılır. Bu bileşenleri kullanırken kendi lisanslarına uyman gerekir.
+Defterde'nin kaynak kodu, oyun kodu, özgün çizimleri ve kâğıt dokusu (`kit/gren.png`) [MIT lisansı](LICENSE) ile paylaşılır. Aşağıdaki bileşenler **MIT kapsamında değildir**; depoda ve sitede kendi lisanslarıyla, lisans metinleri yanlarında olacak şekilde dağıtılır. Bu bileşenleri kullanırken kendi lisanslarına uyman gerekir.
 
 Her oyunun ayrıntılı künyesi `games/<oyun>/assets/DEPENDENCIES.md` dosyasındadır. Aynı künyeler sitede [defterde.com/kaynaklar](https://defterde.com/kaynaklar/) sayfasından ve `/assets/licenses/` altından yayımlanır.
 
