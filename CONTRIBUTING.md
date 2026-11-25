@@ -97,6 +97,6 @@ Firefox ve WebKit de yapılandırılmıştır: `npx playwright install firefox w
 
 - Commit mesajları [Conventional Commits](https://www.conventionalcommits.org/) biçimindedir: `feat:`, `fix:`, `docs:`, `test:`, `style:`, `refactor:`.
 - Bir PR tek bir konuya odaklansın. PR şablonundaki kontrol listesini doldur.
-- CI biçim, tür denetimi, build, platform/DB testleri, oyun testleri ve Chromium tarayıcı testlerini çalıştırır.
+- CI biçim, tür denetimi, build, platform/DB testleri, oyun testleri ve Chromium, Firefox, WebKit tarayıcı testlerini çalıştırır.
 
 Katkıların [MIT lisansı](LICENSE) ile paylaşılır.

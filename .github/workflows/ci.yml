@@ -64,8 +64,12 @@ jobs:
         run: npm run test:games
 
   browser:
-    name: Tarayıcı testleri (Chromium)
+    name: Tarayıcı testleri (${{ matrix.browser }})
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        browser: [chromium, firefox, webkit]
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v7
@@ -74,16 +78,16 @@ jobs:
           cache: npm
       - run: npm ci --ignore-scripts
       - run: npm run build
-      - run: npx playwright install --with-deps chromium
+      - run: npx playwright install --with-deps ${{ matrix.browser }}
       - name: Sunucuyu başlat (veritabanısız)
         run: |
           node build/server/index.js > server.log 2>&1 &
           for i in $(seq 1 30); do curl -fs http://localhost:4321/healthz && break; sleep 1; done
-      - run: npx playwright test --project=chromium
+      - run: npx playwright test --project=${{ matrix.browser }}
       - if: failure()
         uses: actions/upload-artifact@v7
         with:
-          name: tarayici-test-sonuclari
+          name: tarayici-test-sonuclari-${{ matrix.browser }}
           path: |
             test-results/
             server.log
