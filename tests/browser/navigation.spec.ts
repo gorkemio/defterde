@@ -97,8 +97,9 @@ for (const slug of games)
         .toBeGreaterThanOrEqual(0);
       const box = (await link.boundingBox())!;
       expect(box.y).toBeGreaterThanOrEqual(0);
-      expect(box.height).toBeGreaterThanOrEqual(44);
-      expect(box.width).toBeGreaterThanOrEqual(44);
+      // Firefox can report a 44 px box as 43.999999 px.
+      expect(box.height).toBeGreaterThanOrEqual(44 - 0.01);
+      expect(box.width).toBeGreaterThanOrEqual(44 - 0.01);
       // Check this addition's bounds; the original games own their canvas sizing.
       expect(box.x).toBeGreaterThanOrEqual(0);
       expect(box.x + box.width).toBeLessThanOrEqual(width + 1);

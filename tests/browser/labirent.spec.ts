@@ -105,6 +105,13 @@ test('Labirent chapters, shared codes, hints, ghost, UV, endless and print', asy
 }) => {
   const errors: string[] = [];
   page.on('pageerror', (e) => errors.push(e.message));
+  // A real print dialog blocks the click in Firefox; count calls instead.
+  await page.addInitScript(() => {
+    (window as any).__baskilar = 0;
+    window.print = () => {
+      (window as any).__baskilar++;
+    };
+  });
   await ready(page, '');
   expect(await page.evaluate(() => (window as any).LB.oyun.baglam.mod)).toBe(
     'gunun',
@@ -153,6 +160,9 @@ test('Labirent chapters, shared codes, hints, ghost, UV, endless and print', asy
   }
   await page.locator('#k-yazdir').click();
   await expect(page.locator('#yazdir svg')).toHaveCount(1);
+  await expect
+    .poll(() => page.evaluate(() => (window as any).__baskilar))
+    .toBe(1);
   await page.emulateMedia({ media: 'print' });
   await expect(page.locator('#yazdir')).toBeVisible();
   await expect(page.locator('.defterde-donus')).toBeHidden();

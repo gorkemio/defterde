@@ -21,7 +21,7 @@
     // sayfa dibindeki not: kalemle çizilmiş kutu
     const spot = { yenile: dipnotCiz };
     dipnotCiz();
-    if (window.ResizeObserver) { let son = ''; new ResizeObserver(() => { const el = $('spot'), k = el.offsetWidth + 'x' + el.offsetHeight; if (k !== son) { son = k; dipnotCiz(); } }).observe($('spot')); }
+    if (window.ResizeObserver) { let son = ''; new ResizeObserver(() => requestAnimationFrame(() => { const el = $('spot'), k = el.offsetWidth + 'x' + el.offsetHeight; if (k !== son) { son = k; dipnotCiz(); } })).observe($('spot')); }
     // defterin yanık köşeleri: açık defterde dış köşeler (sol sayfanın sol altı, sağ sayfanın sağ üstü), tek sayfada sağ üst
     // ve sağ alt; alttaki yaprak da kavrulur. Sayfa boyu değiştikçe yeniden.
     const yak = () => {
@@ -36,10 +36,11 @@
     yak();
     if (window.ResizeObserver) {
       let son = '';
-      new ResizeObserver(() => {
+      // çizim gözlenen kutuyu büyütebilir; bir sonraki kareye bırakılır (ResizeObserver döngü uyarısı olmasın)
+      new ResizeObserver(() => requestAnimationFrame(() => {
         const k = ['sayfa', 'sayfa-sag'].map(id => $(id).offsetWidth + 'x' + $(id).offsetHeight).join('|') + document.body.dataset.duzen;
         if (k !== son) { son = k; yak(); KB.marj.ceteleYenile(); }
-      }).observe($('defter'));
+      })).observe($('defter'));
     }
     // Yeniden ölçüm: genişlik değiştiyse; açık defterde yükseklik de (telefonda yalnız yükseklik değişimi — adres çubuğu —
     // yok sayılır). Kurulmuş sahne yeni çöp boyunu bir sonraki turda alır; bu turda kutuya sığacak kadar küçülür.
