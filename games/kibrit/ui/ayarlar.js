@@ -101,7 +101,7 @@
     const katman = $('not-katman');
     katman.addEventListener('click', (e) => { const acik = KB.modlar.acikNot(); if (e.target === katman && acik && acik !== 'devir') KB.modlar.notKapat(acik); });
     // not başlıklarının altına kırmızı kalemle çizgi (başlık değişince yeniden)
-    if (window.ResizeObserver) document.querySelectorAll('.not > .not-baslik').forEach(h => new ResizeObserver(() => notAltCiz(h)).observe(h));
+    if (window.ResizeObserver) document.querySelectorAll('.not > .not-baslik').forEach(h => new ResizeObserver(() => requestAnimationFrame(() => notAltCiz(h))).observe(h));
   }
   function notAltCiz(h) {
     const n = h.parentNode;

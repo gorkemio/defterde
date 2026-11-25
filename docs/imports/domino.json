@@ -21,7 +21,7 @@
     "assets/vendor/rough-LICENSE": "dca9a392272606ac748ac0976a2a1133f14eef841c27beaa51a844d53c56a09d",
     "board.js": "e6f4cde08d23b508421a88ae0e01f2572d53647f8c6f7c384dbb756c85f0adec",
     "draw.js": "5d630cc992cee1bb5baf678fbf158e2db9f5dc8342c4df4b0978e25f7c660426",
-    "index.html": "e7e0c748c8d74b1fbe63ae130354fd2a4949cb5ce1423dbb726cb81fb4a41fd1",
+    "index.html": "501a95b3f34f3239d135a4cf0c05e484f78a12cbd58fd964a282587753777ccb",
     "kit/dolmakalem.css": "c3b18398993ef2e8c5a7829d0a111e68ea48576f2979ab815854727594dc5b88",
     "kit/dolmakalem.js": "ed0fd45bd52e288a6c6ca416eae6eaa25c00fa4f085f876d8a171345de7de2b2",
     "kit/gren.png": "454bfa9e1918b3d24f8d86651333f73f17a2e6b1d11e51e0e618bb7e1a3d5bf5",
@@ -33,7 +33,7 @@
     "kit/ses.js": "c92bc678c36280d12080fae0670837a4ebe445ce53a9abfdece105d4b231b4a9",
     "layout.js": "0de89b2a7c3e037e854b7b0d6ac54ffefa0f2bd02927e4795ab3fbc40cc289e9",
     "match.js": "6407bbcc3bb4cea770a3f3e327cc9bd95d5d81bee9b4403990c27ade784a9a26",
-    "style.css": "686e86e21b1e4cc559aebc0d50439174cd5e58c64d80c124620d791e35f1ba01",
+    "style.css": "692f2343823a6f5997fc73ad26264fdcac21c60ee3906e09578091199709bfc5",
     "tests/ai.test.js": "0b1a785d5dd1bd256a0a976ba994057d7e8e3d3807bbff95b9fa798e668e530e",
     "tests/benchmark.js": "9b9492c252689b262a7e856abe8b47b969b011921691f499906ad582b765b159",
     "tests/blocked-hand.html": "c25621c6821e6d3c857e409a35ed061539c5f381f4adcf32209075c9c752b9c3",
@@ -138,8 +138,8 @@
     "status": null
   },
   "runtime": {
-    "index.html": "e7e0c748c8d74b1fbe63ae130354fd2a4949cb5ce1423dbb726cb81fb4a41fd1",
-    "style.css": "686e86e21b1e4cc559aebc0d50439174cd5e58c64d80c124620d791e35f1ba01",
+    "index.html": "501a95b3f34f3239d135a4cf0c05e484f78a12cbd58fd964a282587753777ccb",
+    "style.css": "692f2343823a6f5997fc73ad26264fdcac21c60ee3906e09578091199709bfc5",
     "draw.js": "5d630cc992cee1bb5baf678fbf158e2db9f5dc8342c4df4b0978e25f7c660426",
     "board.js": "e6f4cde08d23b508421a88ae0e01f2572d53647f8c6f7c384dbb756c85f0adec",
     "match.js": "6407bbcc3bb4cea770a3f3e327cc9bd95d5d81bee9b4403990c27ade784a9a26",
@@ -170,5 +170,5 @@
     "tests/offline.test.js: dosya varlığı kontrolü URL sürüm parametresini ayırır.",
     "assets/DEPENDENCIES.md: kaynakta kullanılan Kalam fontunun mevcut OFL lisansı künyeye eklendi."
   ],
-  "recordedAt": "2026-11-25T18:28:43.716Z"
+  "recordedAt": "2026-11-25T19:42:03.095Z"
 }

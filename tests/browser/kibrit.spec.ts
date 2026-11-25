@@ -34,6 +34,15 @@ async function move(page: Page, input: 'keyboard' | 'pointer' = 'keyboard') {
   await page.waitForFunction(() => (window as any).KB.oyun.tur.bitti);
 }
 
+// PT Serif ships upstream's unmodified files (its OFL reserves the name, so an
+// edited copy would need renaming). Their legacy `kern` table has a subtable
+// longer than 64 KB; Firefox's sanitizer drops that table and kerns through
+// GPOS instead. Ignore only that notice for this font.
+const fontSanitizerNotice = (text: string) =>
+  /downloadable font: (kern: Too large subtable|Table discarded) \(font-family: "PT Serif"/.test(
+    text,
+  ) && text.includes('/oyunlar/kibrit/assets/fonts/PTSerif-');
+
 for (const [width, height] of [
   [320, 740],
   [390, 844],
@@ -47,6 +56,7 @@ for (const [width, height] of [
     const errors: string[] = [];
     page.on('pageerror', (e) => errors.push(e.message));
     page.on('console', (m) => {
+      if (fontSanitizerNotice(m.text())) return;
       if (['warning', 'error'].includes(m.type())) errors.push(m.text());
     });
     page.on('response', (r) => {

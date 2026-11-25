@@ -365,7 +365,7 @@
     // kutu boyu değişince (yazı tipi, efsane, pencere) çerçeve yeniden çizilir; aynı tohum, aynı çizgi
     if (typeof ResizeObserver !== 'undefined') {
       if (el._cerceveGozcu) el._cerceveGozcu.disconnect();
-      el._cerceveGozcu = new ResizeObserver(() => cerceve());
+      el._cerceveGozcu = new ResizeObserver(() => requestAnimationFrame(cerceve));
       el._cerceveGozcu.observe(el);
     }
     return {
