@@ -1,0 +1,10 @@
+{
+  "name": "labirent-defter",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "doku": "node scripts/doku.mjs",
+    "sec": "node scripts/sec.mjs"
+  }
+}

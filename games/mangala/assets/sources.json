@@ -1,0 +1,77 @@
+[
+  {
+    "file": "kit/kagit.css",
+    "source": "defterde/games/dokuztas/kit/kagit.css",
+    "sha256": "556272b28114cbf410f5310bdd5cfe19facfd3b0d651af5d9d8b4ba2f1e00c57"
+  },
+  {
+    "file": "kit/gren.png",
+    "source": "defterde/games/dokuztas/kit/gren.png",
+    "sha256": "454bfa9e1918b3d24f8d86651333f73f17a2e6b1d11e51e0e618bb7e1a3d5bf5"
+  },
+  {
+    "file": "kit/kalem.js",
+    "source": "defterde/games/dokuztas/kit/kalem.js",
+    "sha256": "2301a219cebb47bd08ff82ebbd0e9f4ad5fc4a77106489659b8a3c657fa2d7b0"
+  },
+  {
+    "file": "kit/malzeme.js",
+    "source": "defterde/games/dokuztas/kit/malzeme.js",
+    "sha256": "7f1b2fbadc512b4a4b57c38150d417ee9339b9b8c579196f5a2b414c30543a90"
+  },
+  {
+    "file": "kit/kursunkalem.js",
+    "source": "defterde/games/dokuztas/kit/kursunkalem.js",
+    "sha256": "8a368d63ea29ca017d367099e93479942b96fc7e6f476569e954a579a805822c"
+  },
+  {
+    "file": "kit/kursunkalem.css",
+    "source": "defterde/games/dokuztas/kit/kursunkalem.css",
+    "sha256": "4e4510ae7535f4c1aa065822ad900cd0734baa243e5ed60e5fbbb244aa9be996"
+  },
+  {
+    "file": "kit/ses.js",
+    "source": "defterde/games/dokuztas/kit/ses.js",
+    "sha256": "c92bc678c36280d12080fae0670837a4ebe445ce53a9abfdece105d4b231b4a9"
+  },
+  {
+    "file": "assets/vendor/rough-4.6.6.js",
+    "source": "defterde/games/dokuztas/assets/vendor/rough-4.6.6.js",
+    "sha256": "6853af8619532f3939b156cd16824d2e14f31e71d3df306ad5558eeafacab194"
+  },
+  {
+    "file": "assets/vendor/rough-LICENSE",
+    "source": "defterde/games/dokuztas/assets/vendor/rough-LICENSE",
+    "sha256": "dca9a392272606ac748ac0976a2a1133f14eef841c27beaa51a844d53c56a09d"
+  },
+  {
+    "file": "assets/fonts/Kalam-Regular.ttf",
+    "source": "defterde/games/dokuztas/assets/fonts/Kalam-Regular.ttf",
+    "sha256": "57cecb63d4608019371954274ae1d8c397764debd5b19d4a33c1efa4dc923c0b"
+  },
+  {
+    "file": "assets/fonts/Kalam-OFL.txt",
+    "source": "defterde/games/dokuztas/assets/fonts/Kalam-OFL.txt",
+    "sha256": "f62ef357d3a1c3d27edd35a6e1ba350e8a8d13499797964eeadefbf0b3b15d1f"
+  },
+  {
+    "file": "assets/fonts/PatrickHand-v25.ttf",
+    "source": "defterde/games/dokuztas/assets/fonts/PatrickHand-v25.ttf",
+    "sha256": "8a384204c8ab3e9ed82954d46d8110a66fb5d7acf8f6b64c6f3980c1d0c01993"
+  },
+  {
+    "file": "assets/fonts/PatrickHand-OFL.txt",
+    "source": "defterde/games/dokuztas/assets/fonts/PatrickHand-OFL.txt",
+    "sha256": "377f4f9c19e935228552478eb68cc2ed82910988a60ba60e2ac73b09f32d02d1"
+  },
+  {
+    "file": "assets/fonts/MarckScript-Regular.ttf",
+    "source": "defterde/games/xox/assets/fonts/MarckScript-Regular.ttf",
+    "sha256": "504de8cc6f919163bc9afb67b9bc208d258230c5e8d00cb82ec52474f9fafc3b"
+  },
+  {
+    "file": "assets/fonts/MarckScript-OFL.txt",
+    "source": "defterde/games/xox/assets/fonts/MarckScript-OFL.txt",
+    "sha256": "f22a2beea88d631a620b15683fd03e79f13ad3297ad97fa5e42283c0b1a3a038"
+  }
+]

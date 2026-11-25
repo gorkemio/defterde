@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#b6a58a">
+  <title>Amiral Battı</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M4 19h24l-5 8H9z' fill='%23fbf9f2' stroke='%231f3b9b' stroke-width='2' stroke-linejoin='round'/%3E%3Cpath d='M16 19V5l8 10z' fill='none' stroke='%231f3b9b' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=46e5ee2d74e2">
+</head>
+<body>
+  <noscript><p class="uyari">Bu defteri açmak için JavaScript gerekiyor.</p></noscript>
+
+  <p class="gizli" id="duyuru" role="status" aria-live="polite"></p>
+
+  <main class="oyun" id="oyun" data-layout="defter" data-primary="ben" aria-label="Amiral Battı">
+    <a class="defterde-donus" href="/" aria-label="Defterde oyunlarının içindekiler sayfasına dön">← İçindekiler</a>
+  <h1 class="gizli">Amiral Battı</h1>
+  <p class="gizli" id="yerlestirme-yardim">Gemiyi Enter ile seç. Ok tuşlarıyla taşı, R ile döndür. Enter ile yerleştir, Escape ile iptal et.</p>
+  <div class="defter" id="defter">
+
+    <!-- Sol sayfa: benim tahtam -->
+    <section class="sayfa sayfa-ben" id="sayfa-ben" aria-label="Senin tahtan">
+      <div class="icerik">
+        <div class="kompakt-baslik">
+          <span>Senin tahtan</span><span class="kompakt-durum" aria-hidden="true"></span>
+          <span id="yerlestirme-ipucu">Sürükle · dokun: döndür</span>
+        </div>
+        <svg class="ust" id="ust-ben" viewBox="0 0 440 80" aria-hidden="true"></svg>
+        <svg class="tahta" id="tahta-ben" viewBox="0 0 440 440" role="grid" aria-label="Senin tahtan. Ok tuşlarıyla incele, gemide Enter ile düzenle." aria-describedby="yerlestirme-yardim"></svg>
+      </div>
+      <div class="susler" aria-hidden="true">
+        <svg class="susle gunes" data-sus="gunes" viewBox="0 0 100 100"></svg>
+        <svg class="susle kalp" data-sus="kalp" viewBox="0 0 80 80"></svg>
+        <svg class="susle yildiz" data-sus="yildiz" viewBox="0 0 40 40"></svg>
+      </div>
+    </section>
+
+    <!-- Cilt: zımba telleri -->
+    <div class="cilt" id="cilt" aria-hidden="true">
+      <svg class="zimba" viewBox="0 0 60 16"></svg>
+      <svg class="zimba" viewBox="0 0 60 16"></svg>
+      <svg class="zimba" viewBox="0 0 60 16"></svg>
+    </div>
+
+    <!-- Sağ sayfa: rakibin tahtası -->
+    <section class="sayfa sayfa-rakip" id="sayfa-rakip" aria-label="Rakibin tahtası">
+      <div class="icerik">
+        <div class="kompakt-baslik"><span>Rakibin tahtası</span><span class="kompakt-durum" aria-hidden="true"></span></div>
+        <svg class="ust" id="ust-rakip" viewBox="0 0 440 80" aria-hidden="true"></svg>
+        <svg class="tahta" id="tahta-rakip" viewBox="0 0 440 440" tabindex="-1" role="grid" aria-label="Rakibin tahtası. Ok tuşlarıyla hücre seç, Enter ile ateş et."></svg>
+      </div>
+      <div class="susler" aria-hidden="true">
+        <svg class="susle bulut" data-sus="bulut" viewBox="0 0 120 70"></svg>
+        <svg class="susle dalga" data-sus="dalga" viewBox="0 0 100 60"></svg>
+        <svg class="susle yildiz" data-sus="yildiz" viewBox="0 0 40 40"></svg>
+      </div>
+    </section>
+
+  </div>
+  <div class="kontroller" aria-label="Oyun kontrolleri">
+    <div class="asama-kontrolleri">
+      <button class="dugme" id="yeniden-diz" type="button" disabled><span class="yazi">Yeniden diz</span></button>
+      <button class="dugme" id="hazir" type="button" disabled><span class="yazi">Hazırım</span></button>
+      <div id="atis-paneli" hidden>
+        <span id="hedef-bilgi">Hücre seç</span>
+        <button class="dugme" id="ates-et" type="button" disabled><span class="yazi">Ateş et</span></button>
+      </div>
+    </div>
+    <div class="genel-kontroller">
+      <button class="dugme" id="yeni-sayfa" type="button"><span class="yazi">Yeni sayfa</span></button>
+      <button class="dugme ses-dugme" id="ses-dugme" type="button" aria-pressed="false" aria-label="Sesi kapat">
+        <svg class="ikon" viewBox="0 0 40 40" aria-hidden="true"></svg>
+      </button>
+    </div>
+    <div class="sayac">
+      <p class="not" id="sayac-ben"><span class="etiket">Atışların:</span> <span class="sayi">0</span></p>
+      <p class="not" id="sayac-rakip"><span class="etiket">Rakibin atışları:</span> <span class="sayi">0</span></p>
+    </div>
+  </div>
+  </main>
+
+  <dialog id="yon-uyari" aria-labelledby="yon-baslik" aria-describedby="yon-aciklama">
+    <h2 id="yon-baslik">Cihazı yana çevir</h2>
+    <p id="yon-aciklama">Tahtalar bu alana sığmıyor. Oyunun burada bekliyor; devam etmek için cihazı yana çevir veya pencereyi büyüt.</p>
+    <button class="dugme" id="tam-ekran" type="button" hidden>Tam ekran</button>
+    <p id="yon-sonuc" role="status"></p>
+  <a class="defterde-donus defterde-donus-dialog" href="/" aria-label="Defterde oyunlarının içindekiler sayfasına dön">← İçindekiler</a>
+</dialog>
+
+  <!-- Sabit sürüm yerel sunulur; file:// altında da çalışır (klasik betik). -->
+  <script src="vendor/rough-4.6.6.js?v=6853af861953"></script>
+  <script src="config.js?v=9e5160134955"></script>
+  <script src="assets/varliklar.js?v=9e37b0f6ddd6"></script>
+  <script src="game.js?v=9ce50250693a"></script>
+  <script src="ai.js?v=ea8721bae506"></script>
+  <script src="draw.js?v=764024ef77f4"></script>
+  <script src="ses.js?v=fbd444d7a720"></script>
+  <script src="layout.js?v=9c820c523417"></script>
+  <script src="viewport.js?v=7e92b964b44d"></script>
+  <script src="placement.js?v=4bc57e507c55"></script>
+  <script src="main.js?v=2156d9bb0256"></script>
+</body>
+</html>

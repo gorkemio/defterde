@@ -1,0 +1,76 @@
+/* kit/kursunkalem.css — "kurşun kalem" malzemesinin basılı/CSS tarafı. Yalnız html[data-malzeme="kursunkalem"] altında
+   geçerlidir (Kit.malzeme.sec('kursunkalem') bu özniteliği koyar); başka oyunlarda hiçbir kuralı eşleşmez.
+   Kâğıt (kareler, marj, gren) kit/kagit.css'ten aynen gelir. */
+
+@font-face {
+  font-family: 'Kalam';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../assets/fonts/Kalam-Regular.ttf') format('truetype');
+}
+
+html[data-malzeme="kursunkalem"] {
+  --grafit: #4a4a4a;
+  --grafit-acik: #8a8783;
+  --kirmizi-kursun: #b4382e;
+  --mavi: var(--grafit);              /* eski adları kullanan kit kuralları da grafit olur */
+  --kirmizi: var(--kirmizi-kursun);
+  --kursun: var(--grafit);
+  /* Kurşun kalem imleci: ucu (3,29) noktasında; altıgen gövde, açılmış ahşap, grafit uç, arkada silgi */
+  --kalem-imlec: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath d='M9 19 L22 6 L26 10 L13 23 Z' fill='%23ece4d2' stroke='%234a4a4a' stroke-width='1.2' stroke-linejoin='round'/%3E%3Cpath d='M11 21 L24 8' stroke='%234a4a4a' stroke-width='.6' opacity='.5'/%3E%3Cpath d='M9 19 L13 23 L4.6 27.4 Z' fill='%23f3e6c9' stroke='%234a4a4a' stroke-width='1.1' stroke-linejoin='round'/%3E%3Cpath d='M3 29 L5.4 25.2 L6.8 26.6 Z' fill='%234a4a4a'/%3E%3Cpath d='M22 6 L24 4 Q25.2 2.8 26.4 4 L28 5.6 Q29.2 6.8 28 8 L26 10 Z' fill='%23d8b4ab' stroke='%234a4a4a' stroke-width='1.1' stroke-linejoin='round'/%3E%3C/svg%3E") 3 29, crosshair;
+}
+
+html[data-malzeme="kursunkalem"] body {
+  font-family: 'Kalam', 'Segoe Print', 'Bradley Hand', cursive;
+  color: var(--grafit);
+  /* Ahşap masa, sol üstten lamba ışığı, kenarlarda karanlık */
+  background:
+    radial-gradient(ellipse 70% 60% at 32% 18%, rgba(255, 236, 200, .32), transparent 70%),
+    radial-gradient(ellipse 120% 100% at 50% 45%, transparent 55%, rgba(26, 16, 8, .42) 100%),
+    repeating-linear-gradient(92deg, transparent 0 37px, rgba(60, 36, 16, .035) 37px 39px, transparent 39px 83px),
+    repeating-linear-gradient(88.5deg, transparent 0 13px, rgba(255, 228, 186, .025) 13px 14px, transparent 14px 31px, rgba(50, 30, 12, .03) 31px 32px, transparent 32px 57px),
+    url("gren.png"),
+    linear-gradient(180deg, #8f7556 0%, #7c6347 100%);
+  background-attachment: fixed;
+}
+
+/* Eski defter kâğıdı: biraz sıcak, kareler soluk mavi-gri, marj solmuş kırmızı; kenarlara doğru hafif sararma */
+html[data-malzeme="kursunkalem"] {
+  --kagit: #f9f5ea;
+  --izgara: rgba(104, 136, 178, .2);
+  --marj: rgba(196, 82, 72, .42);
+}
+html[data-malzeme="kursunkalem"] .sayfa {
+  box-shadow:
+    inset 0 0 calc(var(--sq) * 2.6) rgba(168, 128, 64, .12),
+    inset 0 1px 2px rgba(255, 255, 255, .8),
+    0 1px 1px rgba(40, 24, 10, .25),
+    14px 26px 44px -10px rgba(30, 18, 6, .55);
+}
+/* Altta duran birkaç yaprak: defter */
+html[data-malzeme="kursunkalem"] .defter { position: relative; }
+html[data-malzeme="kursunkalem"] .defter::before,
+html[data-malzeme="kursunkalem"] .defter::after {
+  content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background: #f1ecdf; box-shadow: 0 1px 2px rgba(40, 24, 10, .3), 6px 12px 22px -8px rgba(30, 18, 6, .4);
+}
+html[data-malzeme="kursunkalem"] .defter::before { transform: translate(5px, 4px) rotate(.7deg); }
+html[data-malzeme="kursunkalem"] .defter::after { transform: translate(-3px, 7px) rotate(-.5deg); background: #ece6d7; }
+@media (prefers-reduced-motion: no-preference) {
+  html[data-malzeme="kursunkalem"] .defter { animation: kk-gelis .5s ease-out both; }
+}
+@keyframes kk-gelis { from { opacity: 0; translate: 0 10px; } to { opacity: 1; translate: 0 0; } }
+html[data-malzeme="kursunkalem"] svg text { font-family: 'Kalam', 'Segoe Print', 'Bradley Hand', cursive; }
+
+/* Komutlar kutu değil: altı kalemle çizili sözcük (Kit.kalem.dugmeAltiCiz). */
+html[data-malzeme="kursunkalem"] .dugme {
+  padding: .15em .3em .45em;
+  color: var(--grafit);
+}
+html[data-malzeme="kursunkalem"] .dugme:active { transform: none; }
+html[data-malzeme="kursunkalem"] .dugme[disabled] { color: var(--grafit-acik); }
+html[data-malzeme="kursunkalem"] .dugme[disabled] .cerceve { opacity: .35; }
+html[data-malzeme="kursunkalem"] .dugme .cerceve { opacity: .8; transition: opacity .15s; }
+html[data-malzeme="kursunkalem"] .dugme:not([disabled]):hover .cerceve { opacity: 1; }
+html[data-malzeme="kursunkalem"] .dugme:not([disabled]):hover { color: #2c2c2c; }

@@ -1,0 +1,10 @@
+games/
+dist/
+build/
+node_modules/
+docs/imports/
+public/assets/
+test-results/
+playwright-report/
+.astro/
+package-lock.json

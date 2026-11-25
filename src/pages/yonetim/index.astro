@@ -1,0 +1,157 @@
+---
+import Sheet from '../../components/Sheet.astro';
+import { registry } from '../../lib/catalog';
+const { admin, authReady } = Astro.locals;
+---
+
+<Sheet title="Defterin yönetimi" noindex>
+  <section class="admin">
+    <p class="eyebrow">Yalnız defterin sahibi için</p>
+    <h1>Defterin yönetimi</h1>
+    {!admin ? (
+      <div class="prose">
+        <p>
+          Oyun oynamak için giriş yapmana gerek yok. Bu sayfa katalog düzenlemek
+          için.
+        </p>
+        {authReady ? (
+          <a class="ink-button primary" href="/auth/github">
+            GitHub ile giriş yap →
+          </a>
+        ) : (
+          <p class="notice">
+            Yönetici girişi henüz yapılandırılmadı. GitHub uygulaması ve izin
+            verilen kullanıcı ID'si sunucuda tanımlanınca açılacak.
+          </p>
+        )}
+        <p>
+          <a href="/">Oyunlara dön</a>
+        </p>
+      </div>
+    ) : (
+      <>
+        <p>
+          Katalogdaki metinleri ve sıralamayı düzenle. Gizlenen oyunlar doğrudan
+          adreslerinden açılmaya devam eder.
+        </p>
+        <div id="admin-app" data-csrf={admin.csrf}>
+          <div class="actions">
+            <button type="button" class="ink-button" id="reload">
+              Güncel taslağı yükle
+            </button>
+            <button type="button" class="ink-button" id="logout">
+              Çıkış yap
+            </button>
+            <span id="revision" class="muted"></span>
+          </div>
+          <output id="status" role="status" aria-live="polite">
+            Katalog yükleniyor…
+          </output>
+          <form id="catalog-form">
+            <div id="editor">
+              {registry.map((g) => (
+                <fieldset data-slug={g.slug}>
+                  <legend>{g.title}</legend>
+                  <label>
+                    Başlık
+                    <input
+                      name={`${g.slug}-title`}
+                      required
+                      maxlength="60"
+                      autocomplete="off"
+                    />
+                  </label>
+                  <label>
+                    Açıklama
+                    <textarea
+                      name={`${g.slug}-description`}
+                      required
+                      maxlength="180"
+                    ></textarea>
+                  </label>
+                  <p class="muted">{g.mode}</p>
+                  <div class="field-row">
+                    <label>
+                      Sıra
+                      <input
+                        class="order"
+                        type="number"
+                        min="1"
+                        max={registry.length}
+                        required
+                        name={`${g.slug}-order`}
+                      />
+                    </label>
+                    <label>
+                      <input type="checkbox" name={`${g.slug}-visible`} />
+                      Katalogda görünsün
+                    </label>
+                  </div>
+                </fieldset>
+              ))}
+            </div>
+            <div class="actions">
+              <button type="submit" class="ink-button" disabled id="save">
+                Taslağı kaydet
+              </button>
+              <a
+                class="ink-button"
+                href="/yonetim/onizleme/"
+                target="_blank"
+                rel="noopener"
+              >
+                Kayıtlı taslağı önizle ↗
+              </a>
+              <button
+                type="button"
+                class="ink-button primary"
+                disabled
+                id="publish"
+              >
+                Kayıtlı taslağı yayımla
+              </button>
+            </div>
+            <p class="muted" id="draft-note">
+              Önizleme ve yayın, sunucuya kaydettiğin taslağı kullanır.
+            </p>
+          </form>
+          <h2>Önceki yayına dön</h2>
+          <p>
+            Seçtiğin sürüm yeni bir yayın olarak kaydedilir; mevcut taslağın
+            yerine de geçer.
+          </p>
+          <form id="restore-form">
+            <label>
+              Önceki katalog revizyonu<select id="history" required></select>
+            </label>
+            <button type="submit" class="ink-button" id="restore" disabled>
+              Seçili revizyonu yayımla
+            </button>
+          </form>
+          <h2>Oyun sayfası açılışı</h2>
+          <p class="muted">
+            İstanbul gün sınırına göre; bugün dahil. Yenilemeler sayılabilir. Bu
+            değer benzersiz oyuncu veya tamamlanan oyun sayısı değildir.
+          </p>
+          <div class="scroll-table">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">Oyun</th>
+                  <th scope="col">Son 7 gün</th>
+                  <th scope="col">Son 30 gün</th>
+                </tr>
+              </thead>
+              <tbody id="metrics"></tbody>
+            </table>
+          </div>
+          <h2>İşlem geçmişi</h2>
+          <ul id="audit" class="muted"></ul>
+        </div>
+      </>
+    )}
+  </section>
+  {admin && <script>
+    import '../../lib/admin';
+  </script>}
+</Sheet>

@@ -1,0 +1,38 @@
+---
+import Sheet from '../../components/Sheet.astro';
+import { registry } from '../../lib/catalog';
+import guides from '../../../content/guides.json';
+const game = registry.find((g) => g.slug === Astro.params.slug);
+const guide = game && guides[game.slug as keyof typeof guides];
+if (!game || !guide)
+  return new Response(null, { status: 404, statusText: 'Not Found' });
+---
+
+<Sheet title={`${game.title} nasıl oynanır?`} description={guide.intro}>
+  <article class="prose">
+    <a class="breadcrumb" href="/nasil-oynanir/">
+      ← Bütün kurallar
+    </a>
+    <h1>{game.title}</h1>
+    <p>{guide.intro}</p>
+    <p class="muted">{game.mode}</p>
+    <h2>Bir sayfada kurallar</h2>
+    <ol>
+      {guide.rules.map((rule) => (
+        <li>{rule}</li>
+      ))}
+    </ol>
+    <h2>Kontroller</h2>
+    <p>{guide.controls}</p>
+    <h2>Gerçek defterde</h2>
+    <p>{guide.paper}</p>
+    <div class="actions">
+      <a class="ink-button primary" href={`/oyunlar/${game.slug}/`}>
+        Oyunu aç →
+      </a>
+    </div>
+    <p class="muted">
+      Oyundan bu sayfaya dönmek için tarayıcının geri düğmesini kullanabilirsin.
+    </p>
+  </article>
+</Sheet>

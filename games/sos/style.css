@@ -1,0 +1,140 @@
+/* Yerleşim koordinatları layout.js'ten gelir. --sq yalnız kağıt ve tahta içindir. */
+:root { --n: 8; --page-w: 528px; --page-h: 792px; --board: 352px; --board-x: 110px; --board-y: 176px; }
+body { display: flex; flex-direction: column; justify-content: safe center; align-items: center; overflow-x: auto; }
+.defter { flex: none; margin: 4px 0; }
+.sayfa {
+  width: var(--page-w); height: var(--page-h);
+  --marj-x: calc(var(--sq) * 4);
+  background-position: 0 0, var(--board-x) var(--board-y), var(--board-x) var(--board-y), 0 0;
+}
+.marj { position: absolute; left: 0; top: var(--sq); width: calc(var(--sq) * 4); height: calc(var(--page-h) - var(--sq) * 2); overflow: visible; pointer-events: none; }
+.ust-bant { position: absolute; left: var(--header-x); top: var(--header-y); width: var(--header-w); height: var(--header-h); }
+.ust { display: block; width: 100%; height: 100%; overflow: visible; }
+.secici { position: absolute; right: 0; top: calc(var(--sq) * 1.5); display: flex; gap: 8px; }
+.harf-dugme { position: relative; width: 60px; height: 70px; padding: 0; border: 0; background: transparent; cursor: pointer; touch-action: manipulation; }
+.harf-dugme svg { display: block; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
+.skor { position: absolute; left: var(--score-x); top: var(--score-y); width: var(--score-w); height: 24px; display: flex; align-items: center; gap: 24px; font-size: 18px; line-height: 24px; }
+.skor strong { margin-left: 6px; font-size: 20px; font-weight: normal; font-variant-numeric: tabular-nums; }
+.mavi { color: var(--mavi); }
+.kirmizi { color: var(--kirmizi); }
+.tahta-kutu { position: absolute; left: var(--board-x); top: var(--board-y); width: var(--board); height: var(--board); }
+.tahta { display: block; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
+.hucreler { position: absolute; inset: 0; display: grid; grid-template-rows: repeat(var(--n), 1fr); touch-action: manipulation; }
+.hucre-satir { display: grid; grid-template-columns: repeat(var(--n), minmax(0, 1fr)); min-height: 0; }
+.hucre-kutu { min-width: 0; min-height: 0; }
+.hucre { display: block; width: 100%; height: 100%; min-width: 0; min-height: 0; padding: 0; margin: 0; border: 0; border-radius: 0; background: transparent; touch-action: manipulation; }
+.tahta-kutu.etkin .hucre { cursor: var(--kalem-imlec); }
+.alt-bant { position: absolute; left: var(--controls-x); top: var(--controls-y); width: var(--controls-w); height: 160px; }
+.dugmeler { display: flex; align-items: center; gap: 8px; height: 44px; }
+.dugme { min-width: 44px; min-height: 44px; padding: 8px; font-size: 18px; line-height: 1; white-space: nowrap; }
+.dugmeler .dugme { flex: 1 1 auto; }
+.dugme > .cerceve { width: 100%; height: 100%; }
+.ayarlar { margin-top: 4px; }
+.satir { display: flex; align-items: center; gap: 4px; height: 44px; margin: 0; color: var(--kursun); font-size: 16px; line-height: 1; white-space: nowrap; }
+.ayar-ad { margin-right: 4px; }
+.ayar { position: relative; display: inline-flex; align-items: center; justify-content: center; flex: none; min-width: 44px; height: 44px; padding: 0 4px; margin: 0; border: 0; background: transparent; color: inherit; font: inherit; cursor: pointer; touch-action: manipulation; }
+.ayar[aria-pressed="true"], .ayar[aria-checked="true"] { color: #343434; }
+.ayar[data-bekliyor="true"] { text-decoration: underline dotted; text-underline-offset: 4px; }
+.kutucuk { flex: none; width: 16px; height: 16px; margin-right: 4px; overflow: visible; }
+.ayar .cerceve { z-index: 0; }
+.yeni-not { margin: 0; height: 20px; line-height: 20px; font-size: 16px; color: var(--kursun); }
+.yeni-not[hidden] { display: block !important; visibility: hidden; }
+.isaret { position: absolute; left: 0; top: 0; overflow: visible; pointer-events: none; }
+.dugme[disabled] .cerceve { opacity: .4; }
+.ses-dugme { position: relative; flex: 0 0 44px; width: 44px; height: 44px; padding: 2px; margin: 0; border: 0; background: transparent; cursor: pointer; touch-action: manipulation; }
+.ses-dugme .ikon { display: block; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
+button:focus { outline: none; }
+button:focus-visible { outline: 2px solid var(--kursun); outline-offset: 2px; }
+.hucre:focus-visible { outline-offset: -4px; }
+@media (forced-colors: active) {
+  button:focus-visible { outline-color: CanvasText; }
+  .hucre { forced-color-adjust: none; }
+}
+.karakter { position: absolute; right: 12px; bottom: 24px; width: calc(var(--sq) * 5); height: calc(var(--sq) * 5.833333); overflow: visible; pointer-events: none; }
+.gunes { right: calc(var(--sq) * .2); top: calc(var(--sq) * .4); width: calc(var(--sq) * 2.8); height: calc(var(--sq) * 2.8); }
+.yildiz { right: calc(var(--sq) * .6); top: calc(var(--sq) * 13); width: calc(var(--sq) * 1.6); height: calc(var(--sq) * 1.6); }
+.kalp { left: calc(var(--sq) * .5); bottom: calc(var(--sq) * 3.8); width: calc(var(--sq) * 2.4); height: calc(var(--sq) * 2.4); }
+/* Geniş defterde eski el yazısı daha rahat okunur; kompakt düzenlerin ölçüleri korunur. */
+body[data-duzen="defter"] .dugmeler .dugme { font-size: 20px; }
+body[data-duzen="defter"] .satir { font-size: 18px; }
+body[data-duzen="defter"] .ayarlar { margin-top: 8px; }
+body[data-duzen="defter"] .yeni-not { height: 16px; line-height: 16px; }
+/* Kompakt defter: skor başlığa taşınır, dekorlar oyun ve kontrol alanlarından çekilir. */
+body[data-duzen="dikey"] .defter, body[data-duzen="yatay"] .defter { transform: none; will-change: auto; }
+body:not([data-duzen="defter"]) .sayfa { --marj-x: 4px; }
+body:not([data-duzen="defter"]) .marj,
+body:not([data-duzen="defter"]) .karakter,
+body:not([data-duzen="defter"]) .susler { display: none; }
+body:not([data-duzen="defter"]) .secici { top: 16px; }
+body:not([data-duzen="defter"]) .harf-dugme { width: 44px; height: 44px; }
+/* Dikeyde karakterin boşluğu yerine kontroller alta yaklaşır; ayar notu da sayfada kalır. */
+body[data-duzen="dikey"] .yeni-not { height: 16px; line-height: 16px; }
+.ekran-notu { flex: none; width: min(100% - 24px, 36em); margin: 8px 12px; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px; color: #303030; font-size: 18px; text-align: center; }
+.ekran-notu .dugme { color: var(--mavi); background: var(--kagit); }
+
+.satir + .satir { margin-top: 4px; }
+.satir:not(.anahtarlar) .ayar { flex: 1 1 0; white-space: normal; }
+body:not([data-duzen="defter"]) .dugmeler .dugme { padding: 4px; font-size: 16px; line-height: 1.1; white-space: normal; }
+
+/* Defter malzemesi Dokuz Taş'la aynı: ahşap masa ve lamba ışığı, eski sıcak kâğıt, kenarlarda sararma, altta iki yaprak.
+   Kalemler aynı kalır (mavi ben, kırmızı rakip). */
+:root { --kagit: #fbf9f2; --izgara: rgba(86, 140, 214, .32); --marj: rgba(214, 64, 64, .6); }
+body {
+  background:
+    radial-gradient(ellipse at 50% 40%, rgba(255, 255, 255, .22), transparent 70%),
+    url("kit/gren.png"),
+    #b6a58a;
+}
+.sayfa {
+  box-shadow:
+    inset 0 1px 2px rgba(255, 255, 255, .8),
+    0 1px 1px rgba(40, 24, 10, .25),
+    14px 26px 44px -10px rgba(30, 18, 6, .55);
+}
+.defter { position: relative; }
+.defter::before, .defter::after {
+  content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background: #f7f4eb; box-shadow: 0 1px 2px rgba(40, 24, 10, .3), 6px 12px 22px -8px rgba(30, 18, 6, .4);
+}
+.defter::before { transform: translate(5px, 4px) rotate(.7deg); }
+.defter::after { transform: translate(-3px, 7px) rotate(-.5deg); background: #efebdf; }
+/* Dar düzenlerde sayfanın çevresinde yalnız 4 px pay var: yapraklar o payın içinde kalsın, kaydırma çıkmasın. */
+body:not([data-duzen="defter"]) .defter::before { transform: translate(2px, 2px) rotate(.2deg); }
+body:not([data-duzen="defter"]) .defter::after { transform: translate(-1px, 3px) rotate(-.15deg); }
+@media (prefers-reduced-motion: no-preference) {
+  .defter { animation: defter-gelis .5s ease-out both; }
+}
+@keyframes defter-gelis { from { opacity: 0; translate: 0 10px; } to { opacity: 1; translate: 0 0; } }
+
+
+/* Defterde platform kopyası: kaynağa dokunmadan ana sayfaya dönüş. */
+body { position: relative; padding-top: calc(48px + env(safe-area-inset-top, 0px)); }
+main { position: relative; }
+.defterde-donus {
+  position: absolute; bottom: 100%; left: 8px;
+  display: inline-flex; align-items: center; min-height: 44px; padding: 0 8px;
+  color: #393732; font-family: inherit; font-size: 18px; line-height: 1.4;
+  background: none; border: 0; text-decoration: none; white-space: nowrap; touch-action: manipulation;
+}
+.defterde-donus:hover, .defterde-donus:active { color: #182e7c; text-decoration: underline; text-underline-offset: 3px; }
+.defterde-donus:focus-visible { outline: 2px dashed #182e7c; outline-offset: -2px; }
+.defterde-donus-dialog { position: static; }
+:root:has(:fullscreen) .defterde-donus, :root:fullscreen .defterde-donus, body.tam-ekran .defterde-donus { display: none; }
+:root:has(:fullscreen) body, :root:fullscreen body, body.tam-ekran { padding-top: env(safe-area-inset-top, 0px); }
+@media print { .defterde-donus { display: none !important; } body { padding-top: 0; } }
+
+/* Platform: dekoratif arka yapraklar baskıya taşınmaz. */
+@media print { main.defter::before, main.defter::after { display: none !important; } }
+
+/* Defterde ortak malzemesi: açık kâğıt, iki ince arka yaprak, yalnız altta dış gölge. */
+html:root main.defter { isolation: isolate; }
+html:root main.defter::before {
+  z-index: -2; background: url("kit/gren.png") #efebdf;
+  box-shadow: 16px 28px 40px -6px rgba(58, 36, 16, .44);
+}
+html:root main.defter::after {
+  z-index: -1; background: url("kit/gren.png") #f7f4eb;
+  box-shadow: none;
+}
+html:root { --sayfa-golgesi: inset 0 1px 2px rgba(255, 255, 255, .85); }
+html:root .sayfa { box-shadow: inset 0 1px 2px rgba(255, 255, 255, .85); }

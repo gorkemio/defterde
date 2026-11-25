@@ -1,0 +1,4 @@
+.DS_Store
+ham/
+node_modules/
+*.tmp

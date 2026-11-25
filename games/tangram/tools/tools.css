@@ -1,0 +1,85 @@
+.tools-sheet h1 { font-size: 43px; }
+.tool-nav, .tool-actions, .review-controls, .review-pages, .load-row, .position-row {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 10px 22px;
+}
+.tool-nav { margin: 24px 0; }
+a.word-button { display: inline-flex; align-items: center; text-decoration: none; box-sizing: border-box; }
+.tool-intro { max-width: 66ch; color: var(--muted); }
+.load-row { margin: 26px 0 12px; align-items: end; }
+.workbench { display: grid; grid-template-columns: minmax(0, 1fr) 260px; gap: 32px; align-items: start; }
+.workbench section { min-width: 0; }
+.metadata-panel { padding-top: 24px; }
+.tools-sheet h2 { font-size: 28px; margin: 0 0 14px; }
+.tools-sheet label:not(.check-label) { display: flex; flex-direction: column; gap: 2px; }
+.metadata-panel label { margin: 11px 0; }
+.tools-sheet input:not([type=checkbox]), .tools-sheet select, .tools-sheet textarea {
+  box-sizing: border-box; width: 100%; min-height: 44px; background: transparent;
+  color: var(--ink); border: 0; border-bottom: 1px solid var(--rule);
+  border-radius: 0; padding: 6px 3px; font: inherit; font-size: 18px;
+}
+.tools-sheet select { max-width: 100%; cursor: pointer; }
+.tools-sheet textarea { resize: vertical; }
+.tools-sheet textarea:focus-visible, .tools-sheet select:focus-visible, .tools-sheet summary:focus-visible {
+  outline: 2px dashed var(--accent); outline-offset: 3px;
+}
+.tools-sheet input[type=checkbox] { accent-color: var(--accent); width: 20px; height: 20px; flex-shrink: 0; }
+.tools-sheet [hidden] { display: none !important; }
+.check-label { display: flex; align-items: center; gap: 8px; min-height: 44px; cursor: pointer; font-size: 18px; }
+.position-row { margin: 18px 0; gap: 8px 14px; }
+.position-row label { max-width: 115px; flex: 1; }
+.position-row button { font-size: 18px; }
+.tool-actions { justify-content: center; gap: 4px 16px; }
+.tool-actions button { font-size: 18px; }
+.selection-status { min-height: 30px; }
+.geometry-status { margin-top: 12px; }
+.issue-list { font-size: 18px; margin: 8px 0 16px; padding-left: 22px; color: var(--accent); }
+.editor-preview { display: block; width: 100%; height: 150px; margin-top: 16px; }
+.metadata-panel form span, .tool-note { font-size: 16px; color: var(--muted); }
+.data-section { margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--rule); }
+.data-section p { max-width: 66ch; font-size: 18px; margin: 8px 0 20px; }
+.data-section textarea { font-family: ui-monospace, monospace; font-size: 13px; line-height: 1.5; }
+.data-section details { margin-top: 24px; }
+.tools-sheet summary { cursor: pointer; min-height: 44px; }
+.review-controls { margin: 22px 0 10px; }
+.review-grid { list-style: none; padding: 0; margin: 26px 0; display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 28px 36px; }
+.review-item { min-width: 0; padding-bottom: 16px; border-bottom: 1px solid var(--rule); }
+.review-item h2 { font-size: 23px; margin: 4px 0 0; text-align: center; }
+.review-item .category-note { font-size: 16px; text-align: center; min-height: 24px; color: var(--muted); }
+.review-item svg { display: block; width: 100%; height: 170px; }
+.review-item label { font-size: 17px; margin-top: 10px; }
+.review-item textarea { font-size: 17px; }
+.review-pages { justify-content: space-between; }
+#review-summary { font-size: 18px; }
+#export-status, #import-status { font-size: 18px; color: var(--accent); }
+.diagnostics { pointer-events: none; }
+.diagnostics .conflict { stroke: var(--accent); stroke-width: 2; fill: none; stroke-dasharray: 5 3; }
+.diagnostics .contact { fill: #494741; }
+.diagnostics .overlap { fill: var(--accent); fill-opacity: .45; }
+@media(max-width: 950px) {
+  .workbench { grid-template-columns: minmax(0,1fr); }
+  .metadata-panel { border-top: 1px solid var(--rule); }
+  .metadata-panel form { display: grid; grid-template-columns: 1fr 1fr; gap: 0 24px; }
+  .metadata-panel #external-source { grid-column: 1 / -1; }
+  .review-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+}
+@media(max-width:580px) {
+  .tools-sheet h1 { font-size: 32px; line-height: 1.25; }
+  .tools-sheet .sheet-header { align-items: flex-start; gap: 14px; }
+  .tools-sheet .wordmark { font-size: 18px; }
+  .tool-nav { gap: 4px 14px; margin: 18px 0; }
+  .tool-nav a, .load-row button { font-size: 17px; }
+  .tool-intro { font-size: 18px; }
+  .load-row label { width: 100%; }
+  .workbench { gap: 20px; }
+  .metadata-panel form { display: block; }
+  .review-grid { grid-template-columns: minmax(0,1fr); gap: 24px; }
+  .review-item svg { height: 195px; }
+  .review-controls { gap: 4px 12px; }
+  .review-pages { gap: 6px; }
+  .review-pages button { font-size: 16px; }
+  .review-pages span { font-size: 16px; }
+}
+.design-save { display:flex;align-items:end;gap:16px 24px;flex-wrap:wrap;margin:24px 0; }
+.design-save label { display:grid;gap:6px;max-width:100%; }
+.design-save input { font:inherit;color:inherit;background:transparent;border:0;border-bottom:1px solid var(--rule);min-height:44px;width:320px;max-width:100%;border-radius:0; }
+@media(max-width:580px){.design-save label{width:100%;}.design-save input{width:100%;} }

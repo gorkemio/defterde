@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="tr" data-kagit="siyah" data-malzeme="jelkalem">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Labirent · malzeme sayfası</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%231c1b1a'/%3E%3Cpath d='M6 6 H26 V26 H12 V12 H20 V20' fill='none' stroke='%23f1eee6' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='16' cy='19' r='2.4' fill='%233fd6c8'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="kit/kagit.css?v=632f2ab1">
+  <link rel="stylesheet" href="kit/siyahsayfa.css?v=632f2ab1">
+  <link rel="stylesheet" href="kit/jelkalem.css?v=632f2ab1">
+  <style>
+    /* Malzeme sayfası: kit'in siyah sayfa + jel kalem parçalarını bir arada gösterir (geliştirme ve onay için). */
+    html[data-kagit="siyah"] body { overflow: auto; padding: 16px; }
+    html[data-kagit="siyah"] .defter { position: relative; inset: auto; width: min(980px, 100%); margin: 8px auto 24px; }
+    html[data-kagit="siyah"] .sayfa { position: relative; inset: auto; padding: 22px 22px 26px 46px; }
+    h1 { margin: 0 0 4px; font-weight: 400; font-size: 34px; }
+    .alt { margin: 0 0 14px; font-size: 16px; opacity: .8; }
+    h2 { margin: 18px 0 6px; font-weight: 400; font-size: 22px; }
+    .not { margin: 0 0 6px; font-size: 15px; opacity: .78; }
+    canvas { display: block; width: 100%; }
+    .kutu { position: relative; }
+    .tr { font-size: 30px; margin: 4px 0; }
+  </style>
+</head>
+<body>
+  <main class="defter">
+    <section class="sayfa">
+      <h1 class="beyaz"><span class="yazi" id="baslik">Malzeme sayfası</span></h1>
+      <p class="alt gumus" id="alt">siyah sayfa · beyaz, gümüş ve simli jel · UV ışığı · silgi</p>
+
+      <h2 class="beyaz" id="h-beyaz">Beyaz jel: kalınlık ve kesişim</h2>
+      <p class="not gumus" id="n-beyaz">1.6 · 2.1 · 2.6 px; köşe, T, artı ve çizgi ucunda küçük birikme. Sağda üç kat büyütülmüş.</p>
+      <canvas id="c-beyaz" height="200"></canvas>
+
+      <h2 class="beyaz" id="h-simli">Simli jel</h2>
+      <p class="not gumus" id="n-simli">çizgiye gömülü, sabit sim; renkler tonda ve açıklıkta ayrışır</p>
+      <canvas id="c-simli" height="250"></canvas>
+
+      <h2 class="beyaz" id="h-gumus">Gümüş jel yazı</h2>
+      <p class="tr gumus" id="t-dom">Giriş, Çıkış, İpucu, ğ ş ı · 0:42 · par 1:05</p>
+      <canvas id="c-gumus" height="56"></canvas>
+
+      <h2 class="beyaz" id="h-uv">UV ışığı ve görünmez mürekkep</h2>
+      <p class="not gumus" id="n-uv">duvarlar yalnız mor ışığın altında; geçilen yerler %15 hafızada</p>
+      <canvas id="c-uv" height="330"></canvas>
+
+      <h2 class="beyaz" id="h-silgi">Silgi</h2>
+      <p class="not gumus" id="n-silgi">pembe kauçuk; arkasında gri lekeli, sürtülmüş sayfa ve kırıntılar</p>
+      <div class="kutu" id="silgi-kutu"><canvas id="c-silgi" height="300"></canvas></div>
+    </section>
+  </main>
+
+  <script src="assets/vendor/rough-4.6.6.js?v=632f2ab1"></script>
+  <script src="kit/kalem.js?v=632f2ab1"></script>
+  <script src="kit/ses.js?v=632f2ab1"></script>
+  <script src="kit/malzeme.js?v=632f2ab1"></script>
+  <script src="kit/jelkalem.js?v=632f2ab1"></script>
+  <script src="kit/uv.js?v=632f2ab1"></script>
+  <script src="kit/silgi.js?v=632f2ab1"></script>
+  <script src="config.js?v=632f2ab1"></script>
+  <script src="engine/rng.js?v=632f2ab1"></script>
+  <script src="engine/topology.js?v=632f2ab1"></script>
+  <script src="engine/generate.js?v=632f2ab1"></script>
+  <script src="engine/ghost.js?v=632f2ab1"></script>
+  <script src="engine/solve.js?v=632f2ab1"></script>
+  <script src="engine/path.js?v=632f2ab1"></script>
+  <script src="render/maze.js?v=632f2ab1"></script>
+  <script>
+  (async function () {
+    'use strict';
+    const J = Kit.jel, $ = (id) => document.getElementById(id), dpr = Math.min(2, devicePixelRatio || 1);
+    Kit.malzeme.sec('jelkalem');
+    await Kit.kalem.fontBekle();
+    ['baslik', 'alt', 'h-beyaz', 'n-beyaz', 'h-simli', 'n-simli', 'h-gumus', 't-dom', 'h-uv', 'n-uv', 'h-silgi', 'n-silgi']
+      .forEach(id => Kit.kalem.harfle($(id).querySelector('.yazi') || $(id), null, { tohum: [id], anlik: true }));
+
+    const tuval = (id) => {
+      const c = $(id), w = c.clientWidth, h = +c.getAttribute('height');
+      c.width = w * dpr; c.height = h * dpr; c.style.height = h + 'px';
+      const ctx = c.getContext('2d'); ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      return { c, ctx, w, h };
+    };
+
+    // 1. beyaz jel: üç kalınlık + kesişim örneği (normal ve 3×)
+    {
+      const { ctx, w } = tuval('c-beyaz');
+      [1.6, 2.1, 2.6].forEach((k, i) => {
+        const y = 30 + i * 26;
+        J.cizgi(ctx, J.roughYol([[10, y], [w * .45, y + 2]], { tohum: ['k', i] }), { kalinlik: k, tohum: ['k', i] });
+        J.birikim(ctx, 10, y, k); J.birikim(ctx, w * .45, y + 2, k);
+      });
+      // kesişim: 3×3 hücrelik parça (köşe, T, artı, uç)
+      const seg = [[0, 0, 3, 0], [0, 0, 0, 3], [0, 3, 3, 3], [3, 0, 3, 3], [1, 0, 1, 2], [0, 2, 2, 2], [2, 1, 2, 3], [1, 1, 3, 1]].map(([a, b, c, d]) => ({ tip: 'd', a: [a, b], b: [c, d] }));
+      const parca = (ox, oy, birim, b) => LB.maze.duvarCiz(ctx, seg, { birim, ox, oy, kalinlik: 2.2, bukum: b }, { tohum: 'ornek-kesisim' });
+      parca(18, 112, 26, J.bukum(['ornek'], 1.2, 100));
+      ctx.save(); ctx.translate(w * .55, 8); ctx.scale(3, 3);
+      parca(0, 0, 20, J.bukum(['ornek'], .8, 70));
+      ctx.restore();
+    }
+
+    // Örnek labirent ve üzerinde motorun çizdiği bir yol parçası (çözümün ilk 40 hücresi)
+    const lab = LB.generate.uret('D-K-W-7KQ9');
+    const yolIzi = (y, adet) => {
+      const d = LB.path.yeni(lab, { pay: .32 }), g = lab.grid;
+      LB.path.basla(d, LB.path.agizOrta(g, lab.giris));
+      for (const h of LB.solve.cozum(lab).slice(0, adet)) LB.path.surukle(d, g.merkez(h));
+      return d.iz.map(p => LB.maze.dunya(y, p));
+    };
+
+    // 2. simli jel: beş renk, dalgalı birer iz
+    {
+      const { ctx, w } = tuval('c-simli');
+      const L = (h) => { const [r, g, b] = J.rgb(h).map(v => { v /= 255; return v <= .04045 ? v / 12.92 : ((v + .055) / 1.055) ** 2.4; }); const Y = .2126 * r + .7152 * g + .0722 * b; return Math.round(Y > .008856 ? 116 * Math.cbrt(Y) - 16 : 903.3 * Y); };
+      Object.entries(J.SIMLI).forEach(([ad, renk], i) => {
+        const y = 28 + i * 46, nok = [];
+        for (let x = 110; x <= w - 20; x += 2) nok.push([x, y + Math.sin(x / 47 + i) * 9 + Math.sin(x / 13) * 1.2]);
+        J.yol(ctx, nok, { renk, kalinlik: 13, tohum: ['ornek', ad] });
+        J.yazi(ctx, J.SIMLI_AD[ad], 10, y + 4, { boy: 18, metal: true, tohum: [ad] });
+        J.yazi(ctx, 'L* ' + L(renk), 10, y + 21, { boy: 12, renk: '#8f8e8a', tohum: [ad, 'l'] });
+      });
+    }
+
+    // 3. gümüş jel: canvas yazısı (DOM yazısı üstte)
+    {
+      const { ctx } = tuval('c-gumus');
+      J.yazi(ctx, 'Giriş, Çıkış, İpucu, ğ ş ı · canvas', 4, 38, { boy: 30, metal: true, tohum: ['tr'] });
+    }
+
+    // 4. UV: görünmez labirent, hafıza izi ve ışık
+    {
+      const { c, ctx, w, h } = tuval('c-uv');
+      const y = LB.maze.yerlesim(lab, Math.min(w, 420), h);
+      const katman = () => { const k = document.createElement('canvas'); k.width = c.width; k.height = c.height; const x = k.getContext('2d'); x.setTransform(dpr, 0, 0, dpr, 0, 0); return [k, x]; };
+      const [kc, kx] = katman(), [mc, mx] = katman();
+      LB.maze.ciz(kx, lab, y, { renk: Kit.uv.CAMGOBEGI, etiket: false });
+      const iz = yolIzi(y, 30), r = y.birim * 3;
+      for (let i = 0; i < iz.length; i += 3) Kit.uv.hafiza(mx, iz[i][0], iz[i][1], r);
+      const uc = iz[iz.length - 1];
+      Kit.uv.maske(mx, uc[0], uc[1], r);
+      Kit.uv.uygula(ctx, kc, mc);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      J.yol(ctx, iz, { renk: J.SIMLI.mor, kalinlik: y.koridor * .45, tohum: ['yol', 'uv'] });
+      Kit.uv.isik(ctx, uc[0], uc[1], r * 1.1);
+    }
+
+    // 5. silgi: labirent parçası, silinen bant, kırıntılar, silgi
+    {
+      const { ctx, w } = tuval('c-silgi');
+      const y = LB.maze.yerlesim(lab, Math.min(w, 420), 520);
+      ctx.save(); ctx.translate(0, -60);
+      LB.maze.ciz(ctx, lab, y, { etiket: false });
+      ctx.restore();
+      const bant = { x: 0, y: 0, w, h: 150 };
+      ctx.save(); ctx.globalCompositeOperation = 'destination-out'; ctx.fillStyle = 'rgba(0,0,0,.93)'; ctx.fillRect(bant.x, bant.y, bant.w, bant.h); ctx.restore();
+      Kit.silgi.leke(ctx, bant, ['ornek']);
+      Kit.silgi.kirinti(ctx, { x: 40, y: 150, w: Math.min(w, 420) - 80, h: 22 }, ['ornek'], 14);
+      const s = Kit.silgi.kur($('silgi-kutu'), { genislik: Math.min(170, w * .4), tohum: ['ornek'] });
+      s.konumla(Math.min(w, 420) * .55, 152, -4);
+    }
+    document.documentElement.dataset.hazir = '1';
+  })();
+  </script>
+</body>
+</html>

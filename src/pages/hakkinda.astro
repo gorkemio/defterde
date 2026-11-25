@@ -1,0 +1,48 @@
+---
+import Sheet from '../components/Sheet.astro';
+const repoUrl =
+  import.meta.env.PUBLIC_REPO_URL || 'https://github.com/gorkemio/defterde';
+---
+
+<Sheet
+  title="Hakkında"
+  description="Defterde: kâğıt ve kalem oyunlarının tarayıcıdaki küçük buluşma yeri."
+>
+  <article class="prose">
+    <p class="eyebrow">Arka sayfadan bir not</p>
+    <h1>Bir defter dolusu oyun.</h1>
+    <p>
+      Teneffüste, yolculukta, bir arkadaşını beklerken… Kareli defterin
+      arkasında başlayan oyunların yeri ayrı. Defterde, o hissi tarayıcıya
+      taşıyan küçük bir oyun koleksiyonu.
+    </p>
+    <p>
+      Burada üyelik, ücret ve reklam yok. Bir oyun seçmen yeterli. Bazı
+      oyunlarda bilgisayara karşı, bazılarında aynı cihazı paylaşarak
+      oynayabilirsin.
+    </p>
+    <h2>Her oyunun kendi sayfası</h2>
+    <p>
+      Gemiler, çizgiler, harfler, kâğıt uçaklar ve yarış pistleri. Oyunlar kendi
+      kontrolleri ve defter düzenleriyle açılır. Kataloğa dönmek için sayfanın
+      üstündeki “← İçindekiler” bağlantısını kullan.
+    </p>
+    <h2>Ekrandan kâğıda</h2>
+    <p>
+      Bir oyunu sevdiysen gerçek defterde de dene.{' '}
+      <a href="/nasil-oynanir/">Kısa rehberler</a> kuralları hatırlatmak için
+      burada.
+    </p>
+    <h2>Açık kaynak</h2>
+    <p>
+      Defterde'nin bütün kodu açık. Oyunları ve platformu
+      <a href={repoUrl}>GitHub'da</a> inceleyebilir, hata bildirebilir ya da
+      katkıda bulunabilirsin. Kod MIT lisansıyla paylaşılır; bazı içerikler
+      kendi lisanslarını korur, ayrıntılar
+      <a href="/kaynaklar/">kaynaklar sayfasında</a>.
+    </p>
+    <a class="ink-button" href="/">
+      İçindekilere dön →
+    </a>
+  </article>
+</Sheet>

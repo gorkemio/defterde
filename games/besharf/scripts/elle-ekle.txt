@@ -1,0 +1,16 @@
+# scripts/elle-ekle.txt — elle eklenen kelimeler. [cevap] bölümü (yalnız 5 harfli madde başı olabilir) cevap listesine,
+# [tahmin] bölümü tahmin listesine ekler. Bu dosya süzgeç kurallarını geçersiz kılar (sıklık, söz türü).
+# Değişince: node scripts/kelimeler.mjs
+
+[cevap]
+
+[tahmin]
+# Konuşma dilinde çok yaygın yazımlar (sıklık listesinin ilk 3 bininde); oyuncu yazarsa kabul edilir, cevap olmaz.
+burda
+şurda
+nerde
+ordan
+sağol
+bişey
+naber
+noldu

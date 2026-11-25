@@ -1,0 +1,9 @@
+{
+  "name": "noktaoyunu-defter",
+  "private": true,
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "sim": "NK_SIM=1 node --test test/ai.test.js",
+    "bench": "node test/bench.js"
+  }
+}

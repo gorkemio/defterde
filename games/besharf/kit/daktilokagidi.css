@@ -1,0 +1,6 @@
+/* kit/daktilokagidi.css — daktilo kâğıdı, zımba, düzeltici sıvı, fiş (Kit.daktilokagidi). Yalnız aşağıdaki sınıflarda eşleşir. */
+
+.daktilo-kagit { position: relative; }
+.daktilo-kagit > .daktilo-kagit-zemin { position: absolute; z-index: 0; overflow: visible; pointer-events: none; }
+.daktilo-kagit > :not(.daktilo-kagit-zemin) { position: relative; z-index: 1; }
+.duzeltici { pointer-events: none; }

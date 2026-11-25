@@ -1,0 +1,21 @@
+---
+import Sheet from '../../components/Sheet.astro';
+import GameList from '../../components/GameList.astro';
+import '../../styles/discovery.css';
+if (!Astro.locals.admin) return Astro.redirect('/yonetim/');
+---
+
+<Sheet title="Katalog taslağı" noindex surface="discovery">
+  <section class="prose">
+    <p class="eyebrow">Yalnız senin görebildiğin taslak</p>
+    <h1>Oyun rehberi önizlemesi</h1>
+    <p>
+      Kaydedilmiş taslak, ana sayfadaki düzenle gösteriliyor. Henüz
+      yayımlanmamış değişiklikler ziyaretçilere görünmez.
+    </p>
+    <a href="/yonetim/">← Yönetim alanı</a>
+  </section>
+  <section class="discovery-results">
+    <GameList items={Astro.locals.draft || []} label="Taslak oyun kataloğu" />
+  </section>
+</Sheet>

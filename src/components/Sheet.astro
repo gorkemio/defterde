@@ -1,0 +1,134 @@
+---
+import '../styles/global.css';
+interface Props {
+  title?: string;
+  description?: string;
+  noindex?: boolean;
+  surface?: 'discovery';
+}
+const {
+  title = 'Bir defter dolusu oyun.',
+  description = 'Bir hamle düşün, bir kelime bul, bir uçak uçur. Günün arasına biraz oyun kat. Ücretsiz, reklamsız, üyeliksiz.',
+  noindex = false,
+  surface,
+} = Astro.props;
+// Varsayılan alan adı astro.config.mjs içindeki site değeridir (PUBLIC_ORIGIN).
+const origin = Astro.locals.origin || Astro.site!.origin;
+const host = new URL(origin).host;
+// Kaynak kodu bağlantısı; çatallar PUBLIC_REPO_URL ile kendi depolarını gösterir.
+const repoUrl =
+  import.meta.env.PUBLIC_REPO_URL || 'https://github.com/gorkemio/defterde';
+const canonical = new URL(Astro.url.pathname, origin).href;
+---
+
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title} · Defterde</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta name="theme-color" content="#fbf9f2" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link
+      rel="preload"
+      href="/assets/PatrickHand.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="tr_TR" />
+    <meta property="og:title" content={`${title} · Defterde`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta
+      property="og:image"
+      content={`${origin}/assets/paylasim.png?v=20261019`}
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    {noindex && <meta name="robots" content="noindex,nofollow" />}
+  </head>
+  <body data-surface={surface}>
+    <a class="skip" href="#icerik">
+      İçeriğe geç
+    </a>
+    <div class="notebook">
+      <div class="paper">
+        <header class="masthead">
+          <a class="brand" href="/" aria-label="Defterde ana sayfa">
+            DEFTERDE
+            <img
+              src="/assets/drawings/underline.svg"
+              width="120"
+              height="18"
+              alt=""
+            />
+          </a>
+          <nav aria-label="Ana menü">
+            <a
+              href={surface === 'discovery' ? '#oyunlar' : '/#oyunlar'}
+              aria-current={
+                Astro.url.pathname === '/' || surface === 'discovery'
+                  ? 'page'
+                  : undefined
+              }
+            >
+              Oyunlar
+            </a>
+            <a
+              href="/nasil-oynanir/"
+              aria-current={
+                Astro.url.pathname.startsWith('/nasil-oynanir')
+                  ? 'page'
+                  : undefined
+              }
+            >
+              Nasıl oynanır?
+            </a>
+            <a
+              href="/hakkinda/"
+              aria-current={
+                Astro.url.pathname === '/hakkinda/' ? 'page' : undefined
+              }
+            >
+              Hakkında
+            </a>
+          </nav>
+          <a
+            class="repo-link"
+            href={repoUrl}
+            aria-label="Kaynak kodu GitHub'da"
+            title="Kaynak kodu GitHub'da"
+          >
+            <svg
+              aria-hidden="true"
+              focusable="false"
+              width="26"
+              height="26"
+              viewBox="0 0 16 16"
+              fill="currentColor"
+            >
+              <path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z" />
+            </svg>
+          </a>
+        </header>
+        <main id="icerik">
+          <slot />
+        </main>
+        <footer>
+          <span>Bir sayfa aç. Biraz oyna.</span>
+          <nav aria-label="Alt bilgi">
+            <a href="/hakkinda/">Hakkında</a>
+            <a href="/gizlilik/">Gizlilik</a>
+            <a href="/kaynaklar/">Kaynaklar</a>
+          </nav>
+          <span class="footer-mark" aria-hidden="true">
+            {host}
+          </span>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>

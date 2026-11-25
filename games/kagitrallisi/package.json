@@ -1,0 +1,8 @@
+{
+  "name": "kagitrallisi-defter",
+  "private": true,
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "par": "node tools/par.js"
+  }
+}

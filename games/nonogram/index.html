@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="tr" data-malzeme="kursunkalem" data-boya="kuruboya">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#b6a58a">
+  <title>Kare Karalamaca · Defterde</title>
+  <meta name="description" content="Satır ve sütun başlarındaki sayılara bakarak kareleri karala; saklı resim ortaya çıksın, kuru boyayla boya.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23fbf9f2'/%3E%3Cpath d='M8 0V32M16 0V32M24 0V32M0 8H32M0 16H32M0 24H32' stroke='%235a8cd6' stroke-opacity='.35'/%3E%3Cpath d='M8 9L15 16M8 13L12 16M11 8L16 13M8 17L16 9' stroke='%234a4a4a' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M17 17L23 23M23 17L17 23' stroke='%234a4a4a' stroke-width='1.2' stroke-linecap='round'/%3E%3Crect x='16' y='8' width='8' height='8' fill='%23a8322d' fill-opacity='.7'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="kit/kagit.css?v=74683cd6e084">
+  <link rel="stylesheet" href="kit/kursunkalem.css?v=0c38673ebda2">
+  <link rel="stylesheet" href="kit/kuruboya.css?v=9305fb99ac37">
+  <link rel="stylesheet" href="style.css?v=3758414da94c">
+</head>
+<body>
+  <noscript><p class="uyari">Bu defteri açmak için JavaScript gerekiyor.</p></noscript>
+  <p class="gizli" id="duyuru" role="status" aria-live="polite"></p>
+  <p class="gizli" id="tahta-yardim">Ok tuşlarıyla kareler arasında gez. Boşluk kareyi karalar, X çarpı koyar, Sil temizler. Shift ile ok tuşu durumu çizgi boyunca uygular. Ctrl+Z geri alır, Ctrl+Y yineler.</p>
+
+  <main class="defter" id="defter">
+    <a class="defterde-donus" href="/">← İçindekiler</a>
+    <section class="sayfa" id="sayfa" aria-label="Kare Karalamaca sayfası">
+
+      <div class="ekran" id="oyun-ekrani">
+        <header class="baslik" id="baslik">
+          <h1 class="oyun-adi">Kare Karalamaca</h1>
+          <p class="bulmaca-adi" id="bulmaca-adi"></p>
+        </header>
+
+        <aside class="marj" id="marj" aria-label="Marj">
+          <p class="bilgi" id="bilgi" aria-live="off"><span id="bilgi-sure">0:00</span><span class="ara">·</span><span id="bilgi-hata">hata 0</span><span class="ara">·</span><span id="bilgi-ipucu">ipucu 0</span></p>
+          <p class="mod-adi" id="mod-adi"></p>
+          <div class="araclar" id="araclar" role="radiogroup" aria-label="Araç">
+            <button class="dugme sozcuk arac" type="button" role="radio" data-arac="kalem" aria-checked="true"><span class="yazi">kalem</span></button>
+            <button class="dugme sozcuk arac" type="button" role="radio" data-arac="carpi" aria-checked="false"><span class="yazi">çarpı</span></button>
+            <button class="dugme sozcuk arac" type="button" role="radio" data-arac="silgi" aria-checked="false"><span class="yazi">silgi</span></button>
+          </div>
+          <svg class="silgiler" id="silgiler" aria-label="Silgi hakları" role="img"></svg>
+          <svg class="kutu" id="kutu" aria-hidden="true"></svg>
+          <p class="marj-not" id="marj-not" aria-live="polite"></p>
+        </aside>
+
+        <div class="alan" id="alan">
+          <canvas id="tahta" tabindex="0" role="application" aria-roledescription="kare karalamaca tahtası" aria-label="Tahta" aria-describedby="tahta-yardim"></canvas>
+        </div>
+
+        <div class="ad" id="ad"><svg id="ad-svg" aria-hidden="true"></svg><span class="gizli" id="ad-yazi"></span></div>
+
+        <nav class="komutlar" id="komutlar" aria-label="Komutlar">
+          <button class="dugme sozcuk" id="k-yeni" type="button"><span class="yazi">Yeni bulmaca</span></button>
+          <button class="dugme sozcuk" id="k-geri" type="button"><span class="yazi">Geri al</span></button>
+          <button class="dugme sozcuk" id="k-yinele" type="button"><span class="yazi">Yinele</span></button>
+          <button class="dugme sozcuk" id="k-ipucu" type="button"><span class="yazi">İpucu</span></button>
+          <button class="dugme sozcuk" id="k-kontrol" type="button"><span class="yazi">Kontrol et</span></button>
+          <button class="dugme sozcuk" id="k-album" type="button"><span class="yazi">Albüm</span></button>
+          <button class="dugme sozcuk" id="k-ayarlar" type="button" aria-expanded="false" aria-controls="ayarlar"><span class="yazi">Ayarlar</span></button>
+          <button class="dugme sozcuk" id="k-ses" type="button" aria-pressed="true"><span class="yazi">Ses</span></button>
+          <button class="dugme sozcuk" id="k-nasil" type="button" aria-expanded="false" aria-controls="nasil"><span class="yazi">Nasıl oynanır?</span></button>
+        </nav>
+
+        <!-- İzle: adım adım çözüm denetimi -->
+        <section class="not izle-not" id="izle-not" hidden aria-label="İzle">
+          <p class="izle-metin" id="izle-metin" aria-live="polite"></p>
+          <p class="not-komut">
+            <button class="dugme sozcuk" id="i-geri" type="button"><span class="yazi">geri</span></button>
+            <button class="dugme sozcuk" id="i-oynat" type="button"><span class="yazi">duraklat</span></button>
+            <button class="dugme sozcuk" id="i-ileri" type="button"><span class="yazi">ileri</span></button>
+            <button class="dugme sozcuk" id="i-hiz" type="button"><span class="yazi">hız ×1</span></button>
+            <button class="dugme sozcuk" id="i-bitir" type="button"><span class="yazi">bitir</span></button>
+          </p>
+        </section>
+      </div>
+
+      <div class="ekran album-ekrani" id="album-ekrani" hidden></div>
+
+      <section class="not" id="nasil" hidden aria-labelledby="nasil-baslik">
+        <h2 id="nasil-baslik">Nasıl oynanır?</h2>
+        <p>Her satırın solundaki ve her sütunun üstündeki sayılar, o çizgide art arda kaç kare karalanacağını sırayla söyler. "2 1" demek: önce 2 kare, en az bir boşluk, sonra 1 kare.</p>
+        <p>Bir kareye dokun: karalanır. Bir daha dokun: çarpı (kesin boş). Bir daha: temizlenir. Basılı tutmak çarpı koyar. Parmağını sürükleyerek bir satır ya da sütun boyunca aynı işareti çekebilirsin.</p>
+        <p>Bütün sayılar sağlanınca saklı resim çıkar ve kuru boyayla boyanır.</p>
+        <p class="not-komut">
+          <button class="dugme sozcuk" id="n-izle" type="button"><span class="yazi">öğretici izle</span></button>
+          <button class="dugme sozcuk" id="n-bunu-izle" type="button"><span class="yazi">bu bulmacayı izle</span></button>
+          <button class="dugme sozcuk kapat" type="button"><span class="yazi">kapat</span></button>
+        </p>
+      </section>
+
+      <section class="not ayarlar" id="ayarlar" hidden aria-labelledby="ayarlar-baslik">
+        <h2 id="ayarlar-baslik">Ayarlar</h2>
+        <div id="ayar-icerik"></div>
+        <p class="yeni-not" id="ayar-not" role="status" aria-live="polite"></p>
+        <p class="not-komut"><button class="dugme sozcuk kapat" type="button"><span class="yazi">kapat</span></button></p>
+      </section>
+
+      <section class="not ipucu-not" id="ipucu-not" hidden aria-live="polite">
+        <p id="ipucu-metin"></p>
+        <p class="not-komut"><button class="dugme sozcuk kapat" type="button"><span class="yazi">tamam</span></button></p>
+      </section>
+
+      <section class="not bitis-karti" id="bitis-karti" hidden aria-labelledby="bitis-baslik">
+        <h2 id="bitis-baslik"></h2>
+        <p class="bitis-satir" id="bitis-bilgi"></p>
+        <p class="bitis-satir" id="bitis-ek"></p>
+        <textarea class="paylasim-metni" id="paylasim-metni" readonly hidden rows="2"></textarea>
+        <p class="not-komut" id="bitis-komut"></p>
+      </section>
+
+      <section class="not" id="genel-not" hidden aria-live="polite">
+        <div id="genel-icerik"></div>
+        <p class="not-komut" id="genel-komut"><button class="dugme sozcuk kapat" type="button"><span class="yazi">kapat</span></button></p>
+      </section>
+    </section>
+  </main>
+
+  <div class="yazdir" id="yazdir" aria-hidden="true"></div>
+
+  <script src="assets/vendor/rough-4.6.6.js?v=6853af861953"></script>
+  <script src="kit/kalem.js?v=ecbde10af5d8"></script>
+  <script src="kit/ses.js?v=c92bc678c362"></script>
+  <script src="kit/malzeme.js?v=7f1b2fbadc51"></script>
+  <script src="kit/kursunkalem.js?v=8a368d63ea29"></script>
+  <script src="kit/kuruboya.js?v=bf4992cf6a24"></script>
+  <script src="kit/rakam.js?v=6546d55936e0"></script>
+  <script src="kit/tuval.js?v=44f202509234"></script>
+  <script src="kit/tarama.js?v=140b2ac98dd0"></script>
+  <script src="kit/boyama.js?v=5dc3ede82684"></script>
+  <script src="kit/rakamtuval.js?v=651e26a87b65"></script>
+  <script src="kit/nesneler.js?v=798411a2cb64"></script>
+  <script src="kit/bulmaca/depo.js?v=e732f72aee32"></script>
+  <script src="kit/bulmaca/izgara.js?v=cae6c4921f76"></script>
+  <script src="kit/bulmaca/gecmis.js?v=7feedeaf0d06"></script>
+  <script src="kit/bulmaca/ipucu.js?v=182e5e3b1915"></script>
+  <script src="kit/bulmaca/uretici.js?v=f77547a4ee31"></script>
+  <script src="kit/bulmaca/gunluk.js?v=3f81bc1ccbfd"></script>
+  <script src="kit/bulmaca/album.js?v=85082f8407e1"></script>
+  <script src="kit/bulmaca/sure.js?v=544fb5bb800c"></script>
+  <script src="config.js?v=4e99fc81ac69"></script>
+  <script src="nonogram/model.js?v=0c272480aaca"></script>
+  <script src="nonogram/linesolver.js?v=a85880da0198"></script>
+  <script src="nonogram/solver.js?v=72f7c3a95fdf"></script>
+  <script src="nonogram/difficulty.js?v=7461d9b0577a"></script>
+  <script src="nonogram/explain.js?v=3be297c57d57"></script>
+  <script src="nonogram/kilim.js?v=e956b4c3ee22"></script>
+  <script src="data/defterler.js?v=17e13090912a"></script>
+  <script src="data/resimler/mutfak.js?v=2387adba7ce7"></script>
+  <script src="data/resimler/hayvanlar.js?v=4854018a03f8"></script>
+  <script src="data/resimler/sehir.js?v=ca50743ea7c5"></script>
+  <script src="data/resimler/doga.js?v=3541e247460b"></script>
+  <script src="data/resimler/okul.js?v=94fbd0829d3a"></script>
+  <script src="data/resimler/defterde.js?v=b7daabf6c5bc"></script>
+  <script src="data/resimler/tasitlar.js?v=5de88279d553"></script>
+  <script src="data/resimler/muzik.js?v=b73e13f6cd9b"></script>
+  <script src="data/hesap.js?v=95f04a1af009"></script>
+  <script src="ui/yerlesim.js?v=2288d063cb66"></script>
+  <script src="ui/resimler.js?v=ede0ccc7a1ca"></script>
+  <script src="ui/tahta.js?v=9fe9be89ad03"></script>
+  <script src="ui/zemin.js?v=a30cfbf76498"></script>
+  <script src="ui/isaretler.js?v=91ec630b2084"></script>
+  <script src="ui/ustkatman.js?v=9c1b34c84ce4"></script>
+  <script src="ui/giris.js?v=096e830970c7"></script>
+  <script src="ui/bitis.js?v=2f1bb8ffa31f"></script>
+  <script src="ui/oyun.js?v=a248211d44e7"></script>
+  <script src="ui/izle.js?v=cf3cc9ec4fa0"></script>
+  <script src="ui/gunluk.js?v=438ad0d9e6b1"></script>
+  <script src="ui/kendi.js?v=4accd5b965d4"></script>
+  <script src="ui/yazdir.js?v=95fcfddd0fae"></script>
+  <script src="ui/defterler.js?v=b90dfe06a1e2"></script>
+  <script src="ui/ayarlar.js?v=ba2ce816a1a2"></script>
+  <script src="ui/sayfa.js?v=c12e0abf9f22"></script>
+  <script src="audio/sesler.js?v=802e5f764e99"></script>
+  <script src="ui/baslat.js?v=95ceef595709"></script>
+</body>
+</html>

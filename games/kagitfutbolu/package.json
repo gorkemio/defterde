@@ -1,0 +1,14 @@
+{
+  "name": "kagit-futbolu",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Kareli defterde iki kişilik ve bilgisayara karşı kağıt futbolu",
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "test:browser": "node --test test/browser.spec.js",
+    "test:all": "npm test && npm run test:browser"
+  },
+  "devDependencies": {
+    "playwright": "1.64.1"
+  }
+}

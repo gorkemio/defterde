@@ -1,0 +1,58 @@
+{
+  "valid": true,
+  "errors": [],
+  "duplicates": [],
+  "similar": [
+    {
+      "ids": [
+        "dikdortgen",
+        "kemerli-kapi"
+      ],
+      "similarity": 0.9007131098186644
+    },
+    {
+      "ids": [
+        "dikdortgen",
+        "altigen"
+      ],
+      "similarity": 0.8823529411764706
+    },
+    {
+      "ids": [
+        "araba",
+        "yamuk"
+      ],
+      "similarity": 0.8823529411764705
+    },
+    {
+      "ids": [
+        "saksi",
+        "topac"
+      ],
+      "similarity": 0.8628152064247583
+    },
+    {
+      "ids": [
+        "ok",
+        "kalp"
+      ],
+      "similarity": 0.8823529411764702
+    }
+  ],
+  "categories": {
+    "kara-hayvanlari": 12,
+    "kuslar": 12,
+    "deniz-canlilari": 8,
+    "insanlar": 12,
+    "tasitlar": 12,
+    "yapilar": 14,
+    "ev-esyalari": 14,
+    "nesneler": 12,
+    "doga": 12,
+    "geometri": 12
+  },
+  "total": 120,
+  "validRecords": 120,
+  "distinct": 120,
+  "accepted": 0
+}

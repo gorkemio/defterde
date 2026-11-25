@@ -1,0 +1,74 @@
+{
+  "slug": "amiralbatti",
+  "source": "../amiralbatti",
+  "commit": "03ac8a0a648d17eac3c7d361ddf5d32c7d97d6a9",
+  "status": "",
+  "importedAt": "2026-10-19T12:01:08.751Z",
+  "files": {
+    ".gitignore": "231ba0bea53609e6898cb5642b3ee18d0d680f30ecbed5f808d9db5c3a70901e",
+    "ai.js": "ea8721bae5061bdfa0e21d26840618e9a9c21d904ad4ee7ebd5c44c2dd31c2a6",
+    "assets/README.md": "4cdbfd0c504505736a9e0429a39aca1ade4eb0cf3f474576657271f3f1e3fda6",
+    "assets/varliklar.js": "9e37b0f6ddd6cb51d8520d40f0ccf959923122dc231881dfac284f70c4ff9503",
+    "config.js": "9e51601349557a0efe615167280109f48ec3c31f02ea58b4c4145396ae0f0ec0",
+    "draw.js": "764024ef77f4e5a40c96ce7b4f62674db20918fa98006577e0259e649a13cd73",
+    "e2e/README.md": "8aa9cde5198c85e0d3155f88f4c44ff5edb32051771096a8822cc21980edc7e7",
+    "e2e/endings.spec.cjs": "d46763c2b2b114f03c6d33d5003493c8b928159873fc748b62db8aff80ab93cd",
+    "e2e/helpers.cjs": "35ef9f177b75bb47396ea9ad4323d475413854e4c26f3a4c56b915d2c3bb33a1",
+    "e2e/interactions.spec.cjs": "48116b284dcf3e066c2dd28827230924c114a921d38e41b2b04c6687084dcec2",
+    "e2e/interruptions.spec.cjs": "dea3c4e55f06d0841483eb9bd2f1d407b8d047626d91e44db06ca7d84d7fbda8",
+    "e2e/loading.spec.cjs": "ca48f50ecb5aae50e09cd57fc82098a9fe0c5a1e727f001009ee25c5c6483765",
+    "e2e/responsive.spec.cjs": "c44db70e21ad364f63453a02945981eb47acabd620a49b4a30595ebee2490933",
+    "e2e/server.cjs": "a100eead038359fb7b4641cc025898c2c91074c07afc73b059b8b52c4304ce7d",
+    "game.js": "9ce50250693a10afe317539268f5a9eae0e3acf5c8d8b2aea1cafc1ac7d3b557",
+    "gren.png": "454bfa9e1918b3d24f8d86651333f73f17a2e6b1d11e51e0e618bb7e1a3d5bf5",
+    "index.html": "315c5fa5cd653aa3f55a00d18ef75e972d1334f0d9b397184638daca6b3ee84f",
+    "layout.js": "9c820c52341738e965ad188fd3556673f5ee378c00736411def09ea7ea14663a",
+    "main.js": "2156d9bb02564d4143856041ab298b247068e2551496851f46a73fa7d4a8f968",
+    "package-lock.json": "34dfa9013f388c5ff44a392a0888f24783fae2f6f9aa56239a020f55916e152b",
+    "package.json": "8ec986a6fb758b124058cf96fa9e6430c425e8e5d08d28eea6cff1f47a187438",
+    "placement.js": "4bc57e507c55e41f8030e1e04aedd01eba973d3dfe1fcd528524669df167099d",
+    "playwright.config.cjs": "945048695a6b7ce16b2de0c8a79b7c78e19085f5198d2777759d4fdb6d076cd1",
+    "ses.js": "fbd444d7a7204a2b079f50207d354f4f44c4a38dd2c8d9105ffcf3bb0ca17fcb",
+    "style.css": "46e5ee2d74e2c64dcdff099ec81df62a7938e7fa5a391d4ebfb7891d2778ba9f",
+    "surum.sh": "65e699a46ff5487ca62f4604861231b8342a860c3a31d68a9f0ce734806e8428",
+    "test/ai.test.js": "a98d47236d1790904f855bfaecfc462022df635a94923b00e16031037365fa27",
+    "test/game.test.js": "6f031f02a2e387b7ce1b043267935db794e160d45bc8917ecb41e32b7dc98105",
+    "test/layout.test.js": "40fe8205a215541b2486087b78f92830e110a49db8af61935dc8b565bcc685f2",
+    "vendor/README.md": "42acfb5dfcafeefa3c1c2646d8a0e453c78d418ba0fe94e1145a40c20447030e",
+    "vendor/rough-4.6.6.js": "6853af8619532f3939b156cd16824d2e14f31e71d3df306ad5558eeafacab194",
+    "vendor/rough-LICENSE.txt": "dca9a392272606ac748ac0976a2a1133f14eef841c27beaa51a844d53c56a09d",
+    "viewport.js": "7e92b964b44d8d18259ddd70b6f757b52b777e8963c6a10021a54daa59a19b1b"
+  },
+  "runtime": {
+    "ai.js": "ea8721bae5061bdfa0e21d26840618e9a9c21d904ad4ee7ebd5c44c2dd31c2a6",
+    "assets/varliklar.js": "9e37b0f6ddd6cb51d8520d40f0ccf959923122dc231881dfac284f70c4ff9503",
+    "config.js": "9e51601349557a0efe615167280109f48ec3c31f02ea58b4c4145396ae0f0ec0",
+    "draw.js": "764024ef77f4e5a40c96ce7b4f62674db20918fa98006577e0259e649a13cd73",
+    "game.js": "9ce50250693a10afe317539268f5a9eae0e3acf5c8d8b2aea1cafc1ac7d3b557",
+    "gren.png": "454bfa9e1918b3d24f8d86651333f73f17a2e6b1d11e51e0e618bb7e1a3d5bf5",
+    "index.html": "315c5fa5cd653aa3f55a00d18ef75e972d1334f0d9b397184638daca6b3ee84f",
+    "layout.js": "9c820c52341738e965ad188fd3556673f5ee378c00736411def09ea7ea14663a",
+    "main.js": "2156d9bb02564d4143856041ab298b247068e2551496851f46a73fa7d4a8f968",
+    "placement.js": "4bc57e507c55e41f8030e1e04aedd01eba973d3dfe1fcd528524669df167099d",
+    "ses.js": "fbd444d7a7204a2b079f50207d354f4f44c4a38dd2c8d9105ffcf3bb0ca17fcb",
+    "style.css": "46e5ee2d74e2c64dcdff099ec81df62a7938e7fa5a391d4ebfb7891d2778ba9f",
+    "vendor/rough-4.6.6.js": "6853af8619532f3939b156cd16824d2e14f31e71d3df306ad5558eeafacab194",
+    "vendor/rough-LICENSE.txt": "dca9a392272606ac748ac0976a2a1133f14eef841c27beaa51a844d53c56a09d",
+    "viewport.js": "7e92b964b44d8d18259ddd70b6f757b52b777e8963c6a10021a54daa59a19b1b"
+  },
+  "localChanges": [
+    {
+      "file": "draw.js",
+      "reason": "Önceki kullanıcı düzeltmesi aynen korundu: batan gemi 3 px aşağı kayar, 6 derece yatar; azaltılmış hareket desteklenir. Son kullanıcı kararı: Amiral Battı ile aynı açık #fbf9f2 kâğıt, okunaklı mavi kareler ve açık masa korunur; sarı kenar karartması kaldırılır. Tek sayfalılarda iki arka yaprak ve tek dış gölge, Amiral Battı’da katmansız çift sayfa. Yalnız görünüm renkleri değişir; kurallar/kayıtlar aynı kalır."
+    },
+    {
+      "file": "index.html",
+      "reason": "Mevcut ← İçindekiler bağlantısı ve varsa yön uyarısındaki dönüş korundu; yerel CSS/script URL’leri içerik hash’iyle sürümlenir. Son kullanıcı kararı: Amiral Battı ile aynı açık #fbf9f2 kâğıt, okunaklı mavi kareler ve açık masa korunur; sarı kenar karartması kaldırılır. Tek sayfalılarda iki arka yaprak ve tek dış gölge, Amiral Battı’da katmansız çift sayfa. Yalnız görünüm renkleri değişir; kurallar/kayıtlar aynı kalır."
+    },
+    {
+      "file": "style.css",
+      "reason": "Mevcut İçindekiler bağlantısı ve 44 px hedef/48 px yerleşim payı korundu. Önceki platform yaprakları tekrar eklenmez; kaynak yaprakları kullanılır, baskıda gizlenir. Çift sayfalı oyundaki statik arka yapraklar kullanıcı isteğiyle tamamen kaldırıldı. Son kullanıcı kararı: Amiral Battı ile aynı açık #fbf9f2 kâğıt, okunaklı mavi kareler ve açık masa korunur; sarı kenar karartması kaldırılır. Tek sayfalılarda iki arka yaprak ve tek dış gölge, Amiral Battı’da katmansız çift sayfa. Yalnız görünüm renkleri değişir; kurallar/kayıtlar aynı kalır."
+    }
+  ],
+  "recordedAt": "2026-11-25T18:28:43.006Z"
+}

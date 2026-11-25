@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Resim atölyesi</title>
+<!-- Yalnız geliştirme: resim çiz, tekillik ve zorluğu çizdikçe gör, sorunlu kareleri işaretle, dosya biçiminde dışa aktar. -->
+<style>
+  body { font: 14px/1.4 -apple-system, system-ui, sans-serif; margin: 12px; color: #333; background: #f4f1ea; }
+  h1 { font-weight: 500; font-size: 20px; margin: 0 0 8px; }
+  .ust, .palet { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin-bottom: 8px; }
+  .palet button { width: 30px; height: 30px; border: 2px solid #fff; border-radius: 4px; cursor: pointer; box-shadow: 0 0 0 1px #aaa; }
+  .palet button.sec { box-shadow: 0 0 0 3px #333; }
+  .palet button[data-r="."] { background: repeating-linear-gradient(45deg, #fff, #fff 4px, #eee 4px, #eee 8px); }
+  .govde { display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-start; }
+  canvas { background: #fbf9f2; touch-action: none; box-shadow: 0 0 0 1px #ccc; }
+  #durum { font-size: 15px; margin: 6px 0; } .tek { color: #2e7d32; } .cok, .yok { color: #a8322d; } .bil { color: #e07a1f; }
+  textarea { width: min(640px, 100%); height: 220px; font: 12px/1.3 ui-monospace, monospace; }
+  .aciklama { color: #777; font-size: 12px; max-width: 520px; }
+  label { margin-right: 4px; }
+</style>
+</head>
+<body>
+<h1>Resim atölyesi</h1>
+<div class="ust">
+  <label>resim <select id="sec"><option value="">yeni</option></select></label>
+  <label>en <input id="en" type="number" min="2" max="30" value="15" style="width:52px"></label>
+  <label>boy <input id="boy" type="number" min="2" max="30" value="15" style="width:52px"></label>
+  <button id="boyut">boyutla</button>
+  <label>id <input id="id" value="yeni-resim" style="width:120px"></label>
+  <label>ad <input id="ad" value="Yeni resim" style="width:120px"></label>
+  <label>kategori <select id="kat"></select></label>
+  <button id="temizle">temizle</button>
+  <button id="kaydir-sol">◀</button><button id="kaydir-sag">▶</button><button id="kaydir-yuk">▲</button><button id="kaydir-as">▼</button>
+</div>
+<div class="palet" id="palet"></div>
+<div id="durum">—</div>
+<p class="aciklama">Sol tık: seçili renk · sağ tık: sil. Kırmızı çerçeve: iki çözümün ayrıştığı kareler · turuncu: yalnız sınamayla çözülen kareler · yeşil nokta: önerilen düzeltme · mavi nokta: seçilen başlangıç karesi.</p>
+<div class="govde">
+  <canvas id="cv"></canvas>
+  <div>
+    <p>siyah-beyaz (oyundaki boy) · renkli</p>
+    <canvas id="bw"></canvas> <canvas id="renkli"></canvas>
+    <p><button id="disa">dışa aktar</button> <button id="ice">içe al</button> <button id="kopya">panoya kopyala</button></p>
+    <textarea id="metin" spellcheck="false"></textarea>
+  </div>
+</div>
+
+<script src="../config.js"></script>
+<script src="../kit/bulmaca/ipucu.js"></script>
+<script src="../nonogram/model.js"></script>
+<script src="../nonogram/linesolver.js"></script>
+<script src="../nonogram/solver.js"></script>
+<script src="../nonogram/difficulty.js"></script>
+<script src="../data/defterler.js"></script>
+<script src="../data/resimler/mutfak.js"></script>
+<script src="../data/resimler/hayvanlar.js"></script>
+<script src="../data/resimler/sehir.js"></script>
+<script src="../data/resimler/doga.js"></script>
+<script src="../data/resimler/okul.js"></script>
+<script src="../data/resimler/defterde.js"></script>
+<script src="../data/resimler/tasitlar.js"></script>
+<script src="../data/resimler/muzik.js"></script>
+<script>
+(function () {
+  'use strict';
+  const PALET = { siyah: '#2b2b2b', gri: '#8d8d8d', kahve: '#6b4423', kirmizi: '#a8322d', turuncu: '#e07a1f', hardal: '#c9a227', acikyesil: '#7dbb57', koyuyesil: '#2e7d32', acikmavi: '#5dade2', lacivert: '#23395d', mor: '#6a4c93', pembe: '#e8a0bf' };
+  const HARF = { siyah: 's', gri: 'g', kahve: 'b', kirmizi: 'k', turuncu: 't', hardal: 'h', acikyesil: 'a', koyuyesil: 'y', acikmavi: 'm', lacivert: 'l', mor: 'v', pembe: 'p' };
+  const { model: M, solver: S, difficulty: D } = KK;
+  const $ = (id) => document.getElementById(id);
+  let en = 15, boy = 15, g = [], secili = 'siyah', K = 26, analiz = null, zaman = 0, ciziyor = null;
+
+  const kat = $('kat');
+  for (const d of KK_DEFTERLER) { const o = document.createElement('option'); o.value = d.id; o.textContent = d.ad; kat.appendChild(o); }
+  for (const d of KK_DEFTERLER) for (const r of KK_RESIMLER[d.id] || []) { const o = document.createElement('option'); o.value = d.id + '/' + r.id; o.textContent = `${d.ad} · ${r.ad} (${r.en}×${r.boy})`; $('sec').appendChild(o); }
+  const pal = $('palet');
+  for (const r of ['.', ...Object.keys(PALET)]) {
+    const b = document.createElement('button'); b.dataset.r = r; b.title = r; if (r !== '.') b.style.background = PALET[r];
+    b.addEventListener('click', () => { secili = r; pal.querySelectorAll('button').forEach(x => x.classList.toggle('sec', x === b)); });
+    pal.appendChild(b); if (r === 'siyah') b.classList.add('sec');
+  }
+
+  function yeni(w, h) { en = w; boy = h; g = Array.from({ length: h }, () => Array(w).fill('.')); K = Math.max(12, Math.min(30, Math.floor(560 / Math.max(w, h)))); hesapla(); }
+  function satirlar() {
+    const harfler = {}, palet = {};
+    const s = g.map(r => r.map(c => { if (c === '.') return '.'; const h = HARF[c]; harfler[h] = c; palet[h] = c; return h; }).join(''));
+    return { s, palet };
+  }
+
+  function hesapla() {
+    clearTimeout(zaman);
+    zaman = setTimeout(() => {
+      const { s } = satirlar();
+      const b = M.bulmacaYap({ id: 'atolye', en, boy, satirlar: s });
+      const t0 = performance.now(), t = S.tekillik(b, { dugumButcesi: 30000 });
+      analiz = { t, fark: new Set(), sinama: new Set(), oneri: [], bas: [] };
+      if (t.sonuc === 'cok') {
+        for (let i = 0; i < en * boy; i++) if (t.cozumler[0][i] !== t.cozumler[1][i]) analiz.fark.add(i);
+        analiz.oneri = D.duzeltmeOner(b, { enCok: 3 });
+      }
+      let metin = `<span class="${t.sonuc === 'tek' ? 'tek' : t.sonuc === 'bilinmiyor' ? 'bil' : 'cok'}">${t.sonuc}</span>`;
+      if (t.sonuc === 'tek') {
+        const d = D.derece(b, { adimlar: true });
+        for (const a of d.adimlar || []) if (a.teknik.startsWith('sinama')) for (const h of a.hucreler) analiz.sinama.add(h.r * en + h.c);
+        metin += ` · bant <b>${d.bant}</b> · puan ${d.puan} · ${d.adim} adım · ${Object.entries(d.teknikler).map(([k, v]) => k + ' ' + v).join(', ')}`;
+      }
+      if (t.sonuc !== 'tek' || analiz.sinama.size) {
+        const n = Math.max(en, boy), hedef = n <= 5 ? 'kolay' : n <= 10 ? 'orta' : n <= 15 ? 'zor' : 'uzman';
+        const o = D.baslangicOner(b, { hedefBant: hedef, enCok: 40 });
+        if (o) { analiz.bas = o.baslangic; metin += ` · ${hedef} için ${o.baslangic.length} başlangıç karesi`; }
+      }
+      if (analiz.oneri.length) metin += ` · öneri: ${analiz.oneri.map(o => o.hucreler.map(h => `(${h.r + 1},${h.c + 1})`).join('+')).join(' | ')}`;
+      metin += ` · ${(performance.now() - t0).toFixed(0)} ms`;
+      $('durum').innerHTML = metin;
+      ciz();
+    }, 150);
+    ciz();
+  }
+
+  function ciz() {
+    const cv = $('cv'), dpr = Math.min(2, devicePixelRatio || 1), W = en * K, H = boy * K;
+    cv.width = W * dpr; cv.height = H * dpr; cv.style.width = W + 'px'; cv.style.height = H + 'px';
+    const c = cv.getContext('2d'); c.scale(dpr, dpr); c.fillStyle = '#fbf9f2'; c.fillRect(0, 0, W, H);
+    for (let y = 0; y < boy; y++) for (let x = 0; x < en; x++) if (g[y][x] !== '.') { c.fillStyle = PALET[g[y][x]]; c.fillRect(x * K, y * K, K, K); }
+    for (let x = 0; x <= en; x++) { c.fillStyle = x % 5 ? 'rgba(86,140,214,.25)' : 'rgba(86,140,214,.7)'; c.fillRect(x * K - .5, 0, 1, H); }
+    for (let y = 0; y <= boy; y++) { c.fillStyle = y % 5 ? 'rgba(86,140,214,.25)' : 'rgba(86,140,214,.7)'; c.fillRect(0, y * K - .5, W, 1); }
+    if (analiz) {
+      c.lineWidth = 2;
+      for (const i of analiz.fark) { c.strokeStyle = '#a8322d'; c.strokeRect((i % en) * K + 2, ((i / en) | 0) * K + 2, K - 4, K - 4); }
+      for (const i of analiz.sinama) { c.strokeStyle = '#e07a1f'; c.strokeRect((i % en) * K + 3, ((i / en) | 0) * K + 3, K - 6, K - 6); }
+      for (const o of analiz.oneri.slice(0, 1)) for (const h of o.hucreler) { c.fillStyle = '#2e7d32'; c.beginPath(); c.arc(h.c * K + K / 2, h.r * K + K / 2, K * .18, 0, 7); c.fill(); }
+      for (const h of analiz.bas) { c.fillStyle = '#5dade2'; c.beginPath(); c.arc(h.c * K + K / 2, h.r * K + K / 2, K * .14, 0, 7); c.fill(); }
+    }
+    // önizlemeler
+    const k = { 5: 40, 10: 28, 15: 22, 20: 18, 25: 14 }[Math.max(en, boy)] || 16;
+    for (const [id, renkli] of [['bw', false], ['renkli', true]]) {
+      const p = $(id); p.width = en * k * dpr; p.height = boy * k * dpr; p.style.width = en * k + 'px'; p.style.height = boy * k + 'px';
+      const pc = p.getContext('2d'); pc.scale(dpr, dpr); pc.fillStyle = '#fbf9f2'; pc.fillRect(0, 0, en * k, boy * k);
+      for (let y = 0; y < boy; y++) for (let x = 0; x < en; x++) if (g[y][x] !== '.') { pc.fillStyle = renkli ? PALET[g[y][x]] : '#3c3c3c'; pc.fillRect(x * k, y * k, k, k); }
+    }
+  }
+
+  const cv = $('cv');
+  const kare = (e) => { const r = cv.getBoundingClientRect(); return [Math.floor((e.clientY - r.top) / K), Math.floor((e.clientX - r.left) / K)]; };
+  cv.addEventListener('contextmenu', (e) => e.preventDefault());
+  cv.addEventListener('pointerdown', (e) => { e.preventDefault(); cv.setPointerCapture(e.pointerId); ciziyor = e.button === 2 ? '.' : secili; boya(e); });
+  cv.addEventListener('pointermove', (e) => { if (ciziyor) boya(e); });
+  cv.addEventListener('pointerup', () => { ciziyor = null; hesapla(); });
+  function boya(e) { const [r, c] = kare(e); if (r >= 0 && c >= 0 && r < boy && c < en && g[r][c] !== ciziyor) { g[r][c] = ciziyor; analiz = null; ciz(); } }
+
+  function disaAktar() {
+    const { s, palet } = satirlar();
+    const q = (x) => `'${String(x).replace(/'/g, "\\'")}'`;
+    $('metin').value = `  { id: ${q($('id').value)}, ad: ${q($('ad').value)}, kategori: ${q(kat.value)}, en: ${en}, boy: ${boy},\n    satirlar: [\n${s.map(x => '      ' + q(x)).join(',\n')},\n    ],\n    palet: { ${Object.entries(palet).map(([k, v]) => `${k}: ${q(v)}`).join(', ')} },\n    not: '' },`;
+  }
+  function iceAl(r) {
+    yeni(r.en, r.boy);
+    $('en').value = r.en; $('boy').value = r.boy; $('id').value = r.id; $('ad').value = r.ad; if (r.kategori) kat.value = r.kategori;
+    for (let y = 0; y < r.boy; y++) for (let x = 0; x < r.en; x++) { const ch = r.satirlar[y][x]; g[y][x] = ch === '.' ? '.' : (r.palet[ch] || 'siyah'); }
+    hesapla();
+  }
+  $('disa').addEventListener('click', disaAktar);
+  $('kopya').addEventListener('click', async () => { disaAktar(); try { await navigator.clipboard.writeText($('metin').value); } catch (e) { $('metin').select(); } });
+  $('ice').addEventListener('click', () => { try { const r = Function('return (' + $('metin').value.trim().replace(/,\s*$/, '') + ')')(); iceAl(r); } catch (e) { alert('Okunamadı: ' + e.message); } });
+  $('sec').addEventListener('change', (e) => { if (!e.target.value) return; const [d, id] = e.target.value.split('/'); iceAl(KK_RESIMLER[d].find(r => r.id === id)); });
+  $('boyut').addEventListener('click', () => { const eski = g; yeni(+$('en').value, +$('boy').value); for (let y = 0; y < boy; y++) for (let x = 0; x < en; x++) if (eski[y] && eski[y][x]) g[y][x] = eski[y][x]; hesapla(); });
+  $('temizle').addEventListener('click', () => yeni(en, boy));
+  const kaydir = (dy, dx) => { const yg = Array.from({ length: boy }, () => Array(en).fill('.')); for (let y = 0; y < boy; y++) for (let x = 0; x < en; x++) { const yy = y + dy, xx = x + dx; if (yy >= 0 && xx >= 0 && yy < boy && xx < en) yg[yy][xx] = g[y][x]; } g = yg; hesapla(); };
+  $('kaydir-sol').addEventListener('click', () => kaydir(0, -1)); $('kaydir-sag').addEventListener('click', () => kaydir(0, 1));
+  $('kaydir-yuk').addEventListener('click', () => kaydir(-1, 0)); $('kaydir-as').addEventListener('click', () => kaydir(1, 0));
+  yeni(15, 15);
+})();
+</script>
+</body>
+</html>

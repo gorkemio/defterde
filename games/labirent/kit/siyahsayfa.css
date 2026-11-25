@@ -1,0 +1,110 @@
+/* kit/siyahsayfa.css — siyah sayfalı eskiz defteri. Hangi oyun olduğunu bilmez.
+   <html data-kagit="siyah"> ile açılır; öznitelik yoksa hiçbir kural eşleşmez (kareli/noktalı sayfa aynen kalır).
+   Basılı/kâğıda ait şeyler burada: sıcak siyah kâğıt, lif dokusu (lif.png, scripts/doku.mjs üretir), kenar kararması,
+   cilt gölgesi, kapak, sayfa çevirme. Kalemle çizilen her şey jel kalemle (kit/jelkalem.js) canvas'ta ya da SVG'de.
+   Oyunun verebileceği değişkenler: --defter-bosluk (defterin ekran kenarına uzaklığı), --egim (sayfa eğimi). */
+
+html[data-kagit="siyah"] {
+  --kagit: #1c1b1a;
+  --kagit-koyu: #141312;
+  --kapak: #0d0c0c;
+  --jel-beyaz: #f1eee6;
+  --gumus: #c9c9c4;
+  --gumus-koyu: #8f8e8a;
+  --kursun: #8f8e8a;           /* kit'in "kurşun" rolü: soluk notlar, odak çerçevesi */
+  --mavi: #c9c9c4;             /* kit'in varsayılan mürekkep rolü: gümüş */
+  --egim: .7deg;
+  --defter-bosluk: 10px;
+  --imlec-jel: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath d='M3 29 L6 21 L23 4 Q26 1.5 28.5 4 Q31 6.5 28 9 L11 26 Z' fill='%23262524' stroke='%23f1eee6' stroke-width='1.6' stroke-linejoin='round'/%3E%3Cpath d='M3 29 L6 21 L11 26 Z' fill='%23f1eee6'/%3E%3Ccircle cx='4.3' cy='27.7' r='1.2' fill='%233fd6c8'/%3E%3C/svg%3E") 3 29, crosshair;
+  --kalem-imlec: var(--imlec-jel);
+}
+
+html[data-kagit="siyah"] body {
+  display: block;
+  overflow: hidden;
+  color: var(--gumus);
+  background:
+    radial-gradient(ellipse at 50% 35%, rgba(255, 240, 210, .18), transparent 70%),
+    url("gren.png"),
+    var(--masa);
+}
+
+/* İçerik ekranla hizalıdır; eğim yalnız kapak ve kâğıt dekoruna uygulanır. */
+html[data-kagit="siyah"] .defter {
+  position: fixed;
+  inset: calc(env(safe-area-inset-top) + var(--defter-bosluk)) calc(env(safe-area-inset-right) + var(--defter-bosluk))
+         calc(env(safe-area-inset-bottom) + var(--defter-bosluk)) calc(env(safe-area-inset-left) + var(--defter-bosluk));
+  margin: 0;
+  transform: none;
+  will-change: auto;
+  perspective: 1800px;
+}
+
+/* Kapak: sert siyah karton; sayfanın sağında ve altında birkaç piksel, solda cilt kadar taşar */
+html[data-kagit="siyah"] .defter::before {
+  content: '';
+  position: absolute;
+  inset: -3px -5px -6px -9px;
+  border-radius: 6px 9px 9px 6px;
+  background:
+    linear-gradient(to right, rgba(255, 255, 255, .06), transparent 9px),
+    linear-gradient(160deg, #1d1c1b, var(--kapak) 55%);
+  box-shadow: 10px 18px 34px -8px rgba(40, 24, 8, .55), 2px 3px 6px rgba(0, 0, 0, .35);
+  transform: rotate(var(--egim));
+  /* Taşan kapağı sayfanın merkezi çevresinde döndür. */
+  transform-origin: calc(50% + 2px) calc(50% - 1.5px);
+  pointer-events: none;
+}
+
+html[data-kagit="siyah"] .sayfa {
+  position: absolute;
+  inset: 0;
+  isolation: isolate;
+  background: none;
+  box-shadow: none;
+  overflow: visible;
+  cursor: var(--kalem-imlec);
+  transform-origin: left center;
+  backface-visibility: hidden;
+}
+
+html[data-kagit="siyah"] .sayfa::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: 2px 5px 5px 2px;
+  background-color: var(--kagit);
+  background-image:
+    /* cilt: sola doğru koyulaşan oluk ve cilde değen ince açık kenar */
+    linear-gradient(to right, rgba(0, 0, 0, .55) 0, rgba(0, 0, 0, .28) 10px, rgba(0, 0, 0, .1) 26px, transparent 56px),
+    linear-gradient(to right, rgba(255, 250, 240, .07) 0, rgba(255, 250, 240, .07) 1px, transparent 1px),
+    /* kenar kararması: kâğıt ışığı ortada toplar */
+    radial-gradient(ellipse 120% 105% at 54% 46%, transparent 55%, rgba(0, 0, 0, .34) 100%),
+    url("lif.png");
+  background-size: 100% 100%, 100% 100%, 100% 100%, 256px 256px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .025), 1px 1px 2px rgba(0, 0, 0, .5);
+  transform: rotate(var(--egim));
+  pointer-events: none;
+}
+
+/* Sayfa çevirme: üstteki sayfa cilt (sol kenar) çevresinde kalkar ve sola yatar; alttaki yeni sayfa hazırdır.
+   Kalın kâğıdın arkası boştur: içerik sayfa kenara dönerken söner, arkası koyu kâğıt olarak görünür. */
+html[data-kagit="siyah"] .sayfa.ceviriliyor {
+  z-index: 3;
+  backface-visibility: visible;
+  animation: sayfaCevir .4s cubic-bezier(.45, .05, .55, .95) forwards;
+}
+html[data-kagit="siyah"] .sayfa.ceviriliyor::before { box-shadow: 18px 0 28px rgba(0, 0, 0, .45); }
+html[data-kagit="siyah"] .sayfa.ceviriliyor > * { animation: sayfaIcerik .4s linear forwards; }
+@keyframes sayfaCevir {
+  from { transform: rotateY(0); filter: brightness(1); }
+  50% { filter: brightness(.7); }
+  to { transform: rotateY(-165deg); filter: brightness(.45); }
+}
+@keyframes sayfaIcerik { 0%, 40% { opacity: 1; } 50%, 100% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  html[data-kagit="siyah"] .sayfa.ceviriliyor { animation: none; display: none; }
+}
+
+html[data-kagit="siyah"] .uyari { background: var(--kagit); color: var(--jel-beyaz); }

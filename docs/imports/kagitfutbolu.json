@@ -1,0 +1,121 @@
+{
+  "slug": "kagitfutbolu",
+  "source": "../kagitfutbolu",
+  "commit": "abee87648355b375268aab3062458f5b0765228d",
+  "status": "?? node_modules/\n",
+  "importedAt": "2026-10-19T12:01:08.816Z",
+  "files": {
+    ".gitignore": "231ba0bea53609e6898cb5642b3ee18d0d680f30ecbed5f808d9db5c3a70901e",
+    "README.md": "21d59653eccb6236ebdeeea9183dbba945337c9bb1756a871bbfc3066f1cec5e",
+    "ai.js": "c09c83cbba6d0e0301e91d00fada9b23d4dbf2febc8823fd442637918252e690",
+    "assets/README.md": "dd2eb55bc2a372121e52e1f5d30f3b9775ef66ce0d19e7e6dd593d64c3550ca6",
+    "assets/gol.mp3": "37572399dcc18d603221bdd5f050ee8074328082354035c998a3ca484cd8ee92",
+    "assets/varliklar.js": "6dc5a4d0640cfe533732e511b33debca101f8085f092321ac4be250232af498b",
+    "assets/vendor/rough-4.6.6.js": "6853af8619532f3939b156cd16824d2e14f31e71d3df306ad5558eeafacab194",
+    "assets/vendor/rough-LICENSE.txt": "dca9a392272606ac748ac0976a2a1133f14eef841c27beaa51a844d53c56a09d",
+    "board.js": "425177189931fbd694aef897996a29a55a9c6177fa6cf11dd12ff893af670895",
+    "config.js": "69e4d6731eae9c2dd70e4b0b1ad24c8f382dcb196d1c55c6a4d542a52d1724dc",
+    "defter.css": "8c0b29ca3373c31e37b8837df80830295b34eedc6684bea160b24b935e33f5b4",
+    "draw.js": "98ab88b22cf743744abebcd97a27ea0acdc275e654b0c41075e480604f879b91",
+    "gorunum.js": "c74aed260e2e3ac650999b107a5ffae8e855e7ab428fd613d7fc904230a04d0d",
+    "index.html": "47f52bcd4aef7bd9da938d287b7f91c90d78ee376ee1ce0b7c8bbdc0b4b9d5b5",
+    "kaptan.js": "861e5e26b72abde1ae9f5f737c550ce11c3b8da6c78514d39d9cfc07109c7b15",
+    "kit/README.md": "c9a9789eb7e10915889cbaa6ebe723b292d615f3bf004eedfb965b4391a04d5d",
+    "kit/gren.png": "454bfa9e1918b3d24f8d86651333f73f17a2e6b1d11e51e0e618bb7e1a3d5bf5",
+    "kit/kagit.css": "b60e04237bebe6723aa220462fabf4aed50debe7991b8b5548126ebfd43a1748",
+    "kit/kalem.js": "50e6a9360c95de7280a58267ef4123c588c78783b2a91f6c33946b338548e1ab",
+    "kit/karakter.js": "981eec7de688e55f85e360f89516f4bc5cb01c6ed6d06bbbc03374e3db175855",
+    "kit/ses.js": "5c37db7cfc13cb4172450cefe191a5208846a4318a2732250743b5671e8a71ca",
+    "layout.js": "a4714852e5e06c3472f323727142a8b0568c5caf4240e097369c79316ab56fd4",
+    "package-lock.json": "523edd8f8a7fdff756e711ceccd197d9210bc43c04f56043b6fc54a2a971736f",
+    "package.json": "a560421df787e8c7b863b0e6d0e79c0a2326c3af9480edb2dba4be76e4c7e58a",
+    "sesler.js": "a71d366a14158eadde6b1edeed7514e808352844c8394ab3249b334910f20ce1",
+    "style.css": "f0f375a890fd2a873acd30d347d876c071f15f3a8b747fa0e2ee4706f8afa8fc",
+    "surum.sh": "aa546c2b05276cf83daa5afc35b69eb6bb8655fc18cd256018952f8d4279e748",
+    "test/ai.test.js": "3be560970be3c5663eb51929c1cc3e90491f7f6780de397a09e40c5c15ea031b",
+    "test/board.test.js": "9548775c4e591b6ba92ba1f73b79a39defe3f6caff497f315d3f79da8a39de44",
+    "test/browser.spec.js": "19ae1dc75ed5a9e9a96ac35e1c1b96054cc9a47c8091973ced6206572d02ca11",
+    "test/layout.test.js": "be269646dd4a401073953008180fc0339ddd275e367488f53e98d8d34bd6f289",
+    "test/perf.js": "2aa16a5af72026335b2e60ca3298ae8a91772d29623df06bd52a550d026da8f2",
+    "test/ses.test.js": "bdbf5c4ad53b274089a85d133c1697dac67e0b935b8fdb72f3441737f9b9d6e1",
+    "ui.js": "8a16ac471ff5347beb36e8a62039ab2c0f5d7826fe10dbecc0d7d78962b32d44"
+  },
+  "runtime": {
+    "ai.js": "c09c83cbba6d0e0301e91d00fada9b23d4dbf2febc8823fd442637918252e690",
+    "assets/gol.mp3": "37572399dcc18d603221bdd5f050ee8074328082354035c998a3ca484cd8ee92",
+    "assets/varliklar.js": "6dc5a4d0640cfe533732e511b33debca101f8085f092321ac4be250232af498b",
+    "assets/vendor/rough-4.6.6.js": "6853af8619532f3939b156cd16824d2e14f31e71d3df306ad5558eeafacab194",
+    "assets/vendor/rough-LICENSE.txt": "dca9a392272606ac748ac0976a2a1133f14eef841c27beaa51a844d53c56a09d",
+    "board.js": "425177189931fbd694aef897996a29a55a9c6177fa6cf11dd12ff893af670895",
+    "config.js": "69e4d6731eae9c2dd70e4b0b1ad24c8f382dcb196d1c55c6a4d542a52d1724dc",
+    "draw.js": "98ab88b22cf743744abebcd97a27ea0acdc275e654b0c41075e480604f879b91",
+    "gorunum.js": "c74aed260e2e3ac650999b107a5ffae8e855e7ab428fd613d7fc904230a04d0d",
+    "index.html": "47f52bcd4aef7bd9da938d287b7f91c90d78ee376ee1ce0b7c8bbdc0b4b9d5b5",
+    "kaptan.js": "861e5e26b72abde1ae9f5f737c550ce11c3b8da6c78514d39d9cfc07109c7b15",
+    "kit/gren.png": "454bfa9e1918b3d24f8d86651333f73f17a2e6b1d11e51e0e618bb7e1a3d5bf5",
+    "kit/kagit.css": "b60e04237bebe6723aa220462fabf4aed50debe7991b8b5548126ebfd43a1748",
+    "kit/kalem.js": "50e6a9360c95de7280a58267ef4123c588c78783b2a91f6c33946b338548e1ab",
+    "kit/karakter.js": "981eec7de688e55f85e360f89516f4bc5cb01c6ed6d06bbbc03374e3db175855",
+    "kit/ses.js": "5c37db7cfc13cb4172450cefe191a5208846a4318a2732250743b5671e8a71ca",
+    "layout.js": "a4714852e5e06c3472f323727142a8b0568c5caf4240e097369c79316ab56fd4",
+    "sesler.js": "a71d366a14158eadde6b1edeed7514e808352844c8394ab3249b334910f20ce1",
+    "style.css": "f0f375a890fd2a873acd30d347d876c071f15f3a8b747fa0e2ee4706f8afa8fc",
+    "ui.js": "8a16ac471ff5347beb36e8a62039ab2c0f5d7826fe10dbecc0d7d78962b32d44",
+    "defter.css": "8c0b29ca3373c31e37b8837df80830295b34eedc6684bea160b24b935e33f5b4"
+  },
+  "localChanges": [
+    {
+      "file": "index.html",
+      "reason": "Mevcut ← İçindekiler bağlantısı ve varsa yön uyarısındaki dönüş korundu; yerel CSS/script URL’leri içerik hash’iyle sürümlenir. Son kullanıcı kararı: Amiral Battı ile aynı açık #fbf9f2 kâğıt, okunaklı mavi kareler ve açık masa korunur; sarı kenar karartması kaldırılır. Tek sayfalılarda iki arka yaprak ve tek dış gölge, Amiral Battı’da katmansız çift sayfa. Yalnız görünüm renkleri değişir; kurallar/kayıtlar aynı kalır."
+    },
+    {
+      "file": "style.css",
+      "reason": "Mevcut İçindekiler bağlantısı ve 44 px hedef/48 px yerleşim payı korundu. Önceki platform yaprakları tekrar eklenmez; kaynak yaprakları kullanılır, baskıda gizlenir. Son kullanıcı kararı: Amiral Battı ile aynı açık #fbf9f2 kâğıt, okunaklı mavi kareler ve açık masa korunur; sarı kenar karartması kaldırılır. Tek sayfalılarda iki arka yaprak ve tek dış gölge, Amiral Battı’da katmansız çift sayfa. Yalnız görünüm renkleri değişir; kurallar/kayıtlar aynı kalır."
+    },
+    {
+      "file": "config.js",
+      "reason": "Son kullanıcı kararı: Amiral Battı ile aynı açık #fbf9f2 kâğıt, okunaklı mavi kareler ve açık masa korunur; sarı kenar karartması kaldırılır. Tek sayfalılarda iki arka yaprak ve tek dış gölge, Amiral Battı’da katmansız çift sayfa. Yalnız görünüm renkleri değişir; kurallar/kayıtlar aynı kalır."
+    },
+    {
+      "file": "kaptan.js",
+      "reason": "Son kullanıcı kararı: Amiral Battı ile aynı açık #fbf9f2 kâğıt, okunaklı mavi kareler ve açık masa korunur; sarı kenar karartması kaldırılır. Tek sayfalılarda iki arka yaprak ve tek dış gölge, Amiral Battı’da katmansız çift sayfa. Yalnız görünüm renkleri değişir; kurallar/kayıtlar aynı kalır."
+    },
+    {
+      "file": "defter.css",
+      "reason": "Son kullanıcı kararı: Amiral Battı ile aynı açık #fbf9f2 kâğıt, okunaklı mavi kareler ve açık masa korunur; sarı kenar karartması kaldırılır. Tek sayfalılarda iki arka yaprak ve tek dış gölge, Amiral Battı’da katmansız çift sayfa. Yalnız görünüm renkleri değişir; kurallar/kayıtlar aynı kalır."
+    }
+  ],
+  "sourceVerification": {
+    "source": "../kagitfutbolu",
+    "commit": "6e9bbd7499a6c9475e84f7509a9a47b2fa56f46d",
+    "status": "?? node_modules/\n",
+    "files": {
+      ".gitignore": "cf237c7aff44efbe6e502e645c3e06da03a69d7bdeb43392108ef3348143417e",
+      "PLAN.md": "f4a77114a4295e7aa12fa8748edba50d19f9b0eaeb02eada2d0a868f7c2628da",
+      "ai.js": "c09c83cbba6d0e0301e91d00fada9b23d4dbf2febc8823fd442637918252e690",
+      "assets/README.md": "4afa5633a4fc6395a3b5a7050bfd82546f177c97eef3a1fafbf1a12879b0dc1a",
+      "assets/gol.mp3": "37572399dcc18d603221bdd5f050ee8074328082354035c998a3ca484cd8ee92",
+      "assets/varliklar.js": "6dc5a4d0640cfe533732e511b33debca101f8085f092321ac4be250232af498b",
+      "board.js": "425177189931fbd694aef897996a29a55a9c6177fa6cf11dd12ff893af670895",
+      "config.js": "433741163aaaa853867d77a784a0d8406e31f80dc906942994056ba647891875",
+      "draw.js": "a55021e63b7644651490833eb9bf8f460b4200b793620c3ac0c50b921f5ebb94",
+      "index.html": "8509b9b1d1cdcdbb14277bf98ca941f355277af433105be8a5a9322b31cab3ec",
+      "kaptan.js": "1e3b5d91610588e9bd8ca9656ff74950c5587b0975c5f7262e516d088a42a1e0",
+      "kit/README.md": "c9a9789eb7e10915889cbaa6ebe723b292d615f3bf004eedfb965b4391a04d5d",
+      "kit/gren.png": "454bfa9e1918b3d24f8d86651333f73f17a2e6b1d11e51e0e618bb7e1a3d5bf5",
+      "kit/kagit.css": "5709df176175bf3c41f252819313fc06c9ca1c7736b97affa30e69495090517f",
+      "kit/kalem.js": "50e6a9360c95de7280a58267ef4123c588c78783b2a91f6c33946b338548e1ab",
+      "kit/karakter.js": "981eec7de688e55f85e360f89516f4bc5cb01c6ed6d06bbbc03374e3db175855",
+      "kit/ses.js": "29b6f748f6f014c6e0530efcb594a33dc796331baf27e5b78b631da59a2ea7e7",
+      "sesler.js": "a71d366a14158eadde6b1edeed7514e808352844c8394ab3249b334910f20ce1",
+      "style.css": "28313b9ea24d6b65def850334967aa9e98d154ff796e52931beb681514e8584b",
+      "surum.sh": "61dccbfd14af5052d7e8c2b236bc81b4358731adc79066538e118eda5d78b8bd",
+      "test/ai.test.js": "3be560970be3c5663eb51929c1cc3e90491f7f6780de397a09e40c5c15ea031b",
+      "test/board.test.js": "9548775c4e591b6ba92ba1f73b79a39defe3f6caff497f315d3f79da8a39de44",
+      "test/perf.js": "b1c202ba444d9851623c6314a3e4385bc45d056736eba4b05b8f25767d3e4b98",
+      "ui.js": "fa8b129a5a9ca6bd35634db0041efb6ba834ebfacdffc26b703c084a18955bb1"
+    }
+  },
+  "selectionReason": "6e9bbd7 geri dönüşü yerine 1fad350 duyarlı oyun düzeni ve abee876 görünüm güncellemesi korundu; kullanıcı önceki iyileştirmelerin kaybolmamasını istedi.",
+  "recordedAt": "2026-11-25T18:28:43.089Z"
+}

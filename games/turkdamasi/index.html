@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="tr" data-malzeme="kursunkalem">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#b6a58a">
+  <title>Türk Daması — Defterde</title>
+  <link rel="icon" href="assets/simge.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="kit/kagit.css?v=556272b28114">
+  <link rel="stylesheet" href="kit/kursunkalem.css?v=4e4510ae7535">
+  <link rel="stylesheet" href="style.css?v=a19dd9fdf6e0">
+</head>
+<body>
+  <noscript><p class="uyari">Bu defteri açmak için JavaScript gerekiyor.</p></noscript>
+  <main class="defter" aria-labelledby="baslik">
+    <a class="defterde-donus" href="/">← İçindekiler</a>
+    <article class="sayfa" id="sayfa">
+      <div class="kagit-yuzeyi" id="kagit-yuzeyi" aria-hidden="true"></div>
+      <header class="ust">
+        <h1 id="baslik"><span class="baslik-yazi">Türk Daması<svg id="baslik-cizgi" aria-hidden="true"></svg></span></h1>
+        <div class="durum">
+          <p class="skor" id="skor">
+            <span class="skor-etiket">Kalan taş</span>
+            <span class="skor-satir">
+              <span class="skor-oyuncu mavi"><i class="nokta" aria-hidden="true"></i><span id="mavi-ad">Mavi</span></span>
+              <strong class="skor-sayi mavi" id="mavi-sayi">16</strong><span class="skor-tire" aria-hidden="true">—</span><strong class="skor-sayi kirmizi" id="kirmizi-sayi">16</strong>
+              <span class="skor-oyuncu kirmizi"><span id="kirmizi-ad">Kırmızı</span><i class="nokta" aria-hidden="true"></i></span>
+            </span>
+          </p>
+          <p class="sira" id="sira"><span id="sira-yazi">Sıra mavide</span></p>
+          <p class="kenar-notu" id="kenar-notu">Bir taş seç, sonra gideceği kareyi.</p>
+        </div>
+      </header>
+
+      <section class="ogretici-bant" id="ogretici-bant" aria-label="Öğretici örneği" hidden>
+        <p id="ogretici-durum"></p>
+        <button class="dugme" id="ornek-tekrar" type="button">Yeniden izle</button>
+        <button class="dugme" id="oyuna-don" type="button">Oyuna dön</button>
+      </section>
+      <div class="oyun-alani" id="oyun-alani">
+        <aside class="yan kirmizi" aria-labelledby="kirmizi-yan-ad">
+          <span class="yan-ad" id="kirmizi-yan-ad">Kırmızı</span>
+          <svg class="oyuncu-tasi" id="rakip-tas" viewBox="-50 -54 100 108" aria-hidden="true"></svg>
+          <span class="yan-etiket">aldıkları</span>
+          <svg class="alinanlar" id="kirmizi-alinan" viewBox="-50 -50 200 440" aria-hidden="true"></svg>
+          <figure class="dama-notu">
+            <svg id="dama-ornek-kirmizi" viewBox="-50 -54 100 108" role="img" aria-label="Küçük taçlı kırmızı dama taşı"></svg>
+            <figcaption>Dama olunca…</figcaption>
+          </figure>
+        </aside>
+
+        <div class="tahta" id="tahta">
+          <svg id="tahta-cizim" viewBox="0 0 800 800" aria-hidden="true"></svg>
+          <div id="hucreler" role="grid" aria-label="Türk Daması tahtası" aria-describedby="kenar-notu" aria-rowcount="8" aria-colcount="8"></div>
+          <div class="satir-adlari" aria-hidden="true"><span>8</span><span>7</span><span>6</span><span>5</span><span>4</span><span>3</span><span>2</span><span>1</span></div>
+          <div class="sutun-adlari" aria-hidden="true"><span>a</span><span>b</span><span>c</span><span>d</span><span>e</span><span>f</span><span>g</span><span>h</span></div>
+        </div>
+
+        <aside class="yan mavi" aria-labelledby="mavi-yan-ad">
+          <span class="yan-ad" id="mavi-yan-ad">Mavi</span>
+          <svg class="oyuncu-tasi" id="sen-tas" viewBox="-50 -54 100 108" aria-hidden="true"></svg>
+          <span class="yan-etiket">aldıkları</span>
+          <svg class="alinanlar" id="mavi-alinan" viewBox="-50 -50 200 440" aria-hidden="true"></svg>
+          <figure class="dama-notu">
+            <svg id="dama-ornek" viewBox="-50 -54 100 108" role="img" aria-label="Küçük taçlı mavi dama taşı"></svg>
+            <figcaption>Dama olunca…</figcaption>
+          </figure>
+        </aside>
+      </div>
+
+      <footer class="alt">
+        <button class="mod" id="ayarlar-ac" type="button" aria-haspopup="dialog"><span id="oyun-notu">Bilgisayara karşı · Orta</span></button>
+        <nav class="komutlar" aria-label="Oyun komutları">
+          <button class="dugme sozcuk" id="yeni-oyun" type="button"><span class="yazi">Yeni oyun</span></button>
+          <button class="dugme sozcuk" id="geri-al" type="button" disabled><span class="yazi">Geri al</span></button>
+          <button class="dugme sozcuk" id="ipucu" type="button"><span class="yazi">İpucu</span></button>
+          <button class="dugme sozcuk" id="nasil" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="nasil-not"><span class="yazi">Nasıl oynanır?</span></button>
+          <button class="dugme ses" id="ses" type="button" aria-pressed="false" aria-label="Ses">
+            <svg id="ses-simge" viewBox="0 0 44 44" aria-hidden="true"></svg>
+            <span class="yazi">Ses kapalı</span>
+          </button>
+        </nav>
+      </footer>
+    </article>
+  </main>
+  <p class="gizli" id="duyuru" role="status"></p>
+
+  <dialog class="nasil-not" id="nasil-not" aria-labelledby="nasil-baslik">
+    <header class="nasil-ust">
+      <h2 id="nasil-baslik" tabindex="-1">Nasıl oynanır?</h2>
+      <button class="dugme" id="nasil-kapat" type="button">Kapat</button>
+    </header>
+    <div class="nasil-icerik">
+      <div class="kural-ozeti">
+        <div>
+          <p>Taşın bir kare ileri ya da yana gider. Çapraz ve geri gidemez.</p>
+          <p>Alabileceğin taş varsa almalısın. Birden fazla yol varsa en çok taşı alan yolu seçersin.</p>
+          <p>Son sıraya ulaşan taşın dama olur. Dama ileri, geri ve yanlara uzun adımlar atabilir.</p>
+          <p>Alma zincirinde dama bir önceki yönün tam tersine dönemez. Son sıraya alarak varan normal taş, bitişik almalarını tamamladıktan sonra taç takar.</p>
+          <p>Rakibin taşı ya da hamlesi kalmazsa kazanırsın. İki tarafta birer taş kalırsa, aynı konum aynı sırayla üçüncü kez oluşursa veya teklif kabul edilirse oyun berabere biter.</p>
+          <p>Klavyede oklarla gezin; Enter ya da boşluk tuşuyla taşı ve hedefi seç. Geri al, yarım kalan almayı veya son turu geri getirir.</p>
+        </div>
+        <figure>
+          <svg id="ogretici-dama" viewBox="-50 -54 100 108" role="img" aria-label="Dama taşında küçük bir taç bulunur"></svg>
+          <figcaption>Küçük taç,<br>büyük adımlar.</figcaption>
+        </figure>
+      </div>
+      <div class="ornekler" aria-label="İzlenebilir örnekler">
+        <p>Bir örnek izle; oyunun seni burada bekler.</p>
+        <div><span>Normal hareket</span><button class="dugme" type="button" data-ornek="move" aria-label="Normal hareket örneğini izle">İzle</button></div>
+        <div><span>Zorunlu alma</span><button class="dugme" type="button" data-ornek="capture" aria-label="Zorunlu alma örneğini izle">İzle</button></div>
+        <div><span>Çoklu alma</span><button class="dugme" type="button" data-ornek="chain" aria-label="Çoklu alma örneğini izle">İzle</button></div>
+        <div><span>Dama olma</span><button class="dugme" type="button" data-ornek="crown" aria-label="Dama olma örneğini izle">İzle</button></div>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog id="ayarlar" aria-labelledby="ayarlar-baslik">
+    <form id="ayar-form">
+      <h2 id="ayarlar-baslik">Nasıl oynayalım?</h2>
+      <fieldset class="ayar-grubu">
+        <legend>Rakibin</legend>
+        <div class="ayar-secenekleri">
+          <label><input type="radio" name="mode" value="ai" checked><span>Bilgisayar</span></label>
+          <label><input type="radio" name="mode" value="local"><span>İki kişi</span></label>
+        </div>
+      </fieldset>
+      <fieldset class="ayar-grubu ai-ayari">
+        <legend>Rengin</legend>
+        <div class="ayar-secenekleri">
+          <label><input type="radio" name="human" value="1" checked><span>Mavi</span></label>
+          <label><input type="radio" name="human" value="-1"><span>Kırmızı</span></label>
+        </div>
+      </fieldset>
+      <fieldset class="ayar-grubu ai-ayari">
+        <legend>Zorluk</legend>
+        <div class="ayar-secenekleri">
+          <label><input type="radio" name="level" value="easy"><span>Kolay</span></label>
+          <label><input type="radio" name="level" value="medium" checked><span>Orta</span></label>
+          <label><input type="radio" name="level" value="hard"><span>Zor</span></label>
+        </div>
+      </fieldset>
+      <label class="secenek"><input name="help" type="checkbox" checked> Gidilebilir kareleri göster</label>
+      <fieldset class="ayar-grubu">
+        <legend>Hareket</legend>
+        <div class="ayar-secenekleri">
+          <label><input type="radio" name="motion" value="system" checked><span>Cihaz tercihi</span></label>
+          <label><input type="radio" name="motion" value="reduce"><span>Hareketsiz</span></label>
+          <label><input type="radio" name="motion" value="full"><span>Hareketli</span></label>
+        </div>
+      </fieldset>
+      <p class="ayar-notu">Kaydettiğinde yeni oyun başlar. Mavi her zaman ilk oynar.</p>
+      <div class="dialog-komutlar">
+        <button class="dugme" type="submit">Yeni oyun başlat</button>
+        <button class="dugme" id="ayarlar-kapat" type="button">Vazgeç</button>
+      </div>
+      <button class="dugme teklif-dugmesi" id="beraberlik" type="button">Beraberlik teklif et</button>
+    </form>
+  </dialog>
+  <dialog id="teklif" aria-labelledby="teklif-baslik">
+    <h2 id="teklif-baslik">Berabere sayalım mı?</h2>
+    <p id="teklif-yazi"></p>
+    <div class="dialog-komutlar">
+      <button class="dugme" id="teklif-kabul" type="button">Kabul et</button>
+      <button class="dugme" id="teklif-ret" type="button">Devam edelim</button>
+    </div>
+  </dialog>
+  <dialog id="sonuc" class="sonuc-notu" aria-labelledby="sonuc-baslik" aria-describedby="sonuc-aciklama">
+    <div class="sonuc-taslar" aria-hidden="true">
+      <svg id="sonuc-mavi" viewBox="-50 -54 100 108"></svg>
+      <svg id="sonuc-kirmizi" viewBox="-50 -54 100 108"></svg>
+    </div>
+    <h2 id="sonuc-baslik"></h2>
+    <svg class="sonuc-alt-cizgi" id="sonuc-cizgi" aria-hidden="true"></svg>
+    <p id="sonuc-aciklama"></p>
+    <p class="sonuc-davet" id="sonuc-davet"></p>
+    <div class="dialog-komutlar">
+      <button class="dugme" id="sonuc-yeni" type="button" autofocus>Yeniden oyna</button>
+      <button class="dugme" id="sonuc-kapat" type="button">Tahtaya bak</button>
+    </div>
+  </dialog>
+  <script src="assets/vendor/rough-4.6.6.js?v=6853af861953"></script>
+  <script src="kit/kalem.js?v=2301a219cebb"></script>
+  <script src="kit/ses.js?v=c92bc678c362"></script>
+  <script src="kit/malzeme.js?v=7f1b2fbadc51"></script>
+  <script src="kit/kursunkalem.js?v=8a368d63ea29"></script>
+  <script src="kit/kuruboya.js?v=bf4992cf6a24"></script>
+  <script src="config.js?v=0bd029e039ed"></script>
+  <script src="settings.js?v=31b78a180088"></script>
+  <script src="board.js?v=89c1b5eb321c"></script>
+  <script src="ai.js?v=e76fa9d19a01"></script>
+  <script src="session.js?v=c24d6d17dcc9"></script>
+  <script src="lessons.js?v=f10609b7643f"></script>
+  <script src="tutorial.js?v=8ba03582704d"></script>
+  <script src="layout.js?v=0162e34f32e8"></script>
+  <script src="kit/damatasi.js?v=ea251e8d4927"></script>
+  <script src="draw.js?v=b3cd1e5e86df"></script>
+  <script src="result.js?v=75f5d7be4236"></script>
+  <script src="ui.js?v=f65169671524"></script>
+</body>
+</html>

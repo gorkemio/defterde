@@ -1,0 +1,26 @@
+{
+  "id": "marti",
+  "ad": "Martı",
+  "orijinalAd": "Suzanne",
+  "zorluk": 3,
+  "tur": "suzulme",
+  "surum": 2,
+  "kaynak": "John Collins, 2012 mesafe dünya rekoru (Suzanne)",
+  "kagit": {"en":1.41422,"boy":1},
+  "karakter": {"hiz":4,"suzulme":8,"denge":8,"akrobasi":2},
+  "aciklama": "Dünya rekoru kıran planör. Yatay kağıttan kısa, geniş kanatlı; yumuşak at, uzun süzülsün.",
+  "beklenen": {"poligon":48,"kutu":[0.6525,0.3536,0.9432,1.2052],"enKalin":48},
+  "ucusGorunumu": null,
+  "adimlar": [
+    {"tip":"vadi","cizgi":{"nokta":[1.41422,0],"hedef":[0,1.41422]},"katman":"hepsi","ac":true,"ayna":true,"metin":"Kağıdı yatay tut. Üst köşeyi karşı kenara katla ve aç; öbür köşe için de yap: bir X kırışığı."},
+    {"tip":"vadi","cizgi":{"nokta":[1.41422,1],"hedef":[1.12133,1.12133]},"katman":"hepsi","ac":true,"ayna":true,"metin":"Yan kenarı ilk çapraz kırışığa getir ve aç; öbür yanda da."},
+    {"tip":"vadi","cizgi":{"nokta":[0,1],"hedef":[0.29289,1.12133]},"katman":"hepsi","ayna":true,"metin":"Sol kapağı katla, sağ kapağı da onun üstüne katla."},
+    {"tip":"vadi","cizgi":[[0,0.353555],[1.41422,0.353555]],"katman":"hepsi","tut":[0.70711,0],"metin":"Kapak kenarlarının kesiştiği yerden üst kısmı aşağı katla; üst kenar alt kenara paralel."},
+    {"tip":"vadi","cizgi":[[0.70711,0.353555],[0.10711,0.953555]],"katman":"hepsi","tut":[0.43934,0.353555],"ayna":true,"metin":"Üst köşeleri ortada buluştur."},
+    {"tip":"cevir","metin":"Uçağı ters çevir."},
+    {"tip":"vadi","cizgi":[[0.70711,0],[0.70711,1]],"katman":"hepsi","tut":[1.24264,1],"metin":"Ortadan ikiye katla: alt kenar üst kenara."},
+    {"tip":"vadi","cizgi":{"nokta":[0.17158,1],"hedef":[0.70711,1.18409]},"katman":"ust","kanat":"sol","poz":90,"metin":"Kanadı burnun biraz gerisinden başlayarak aşağı katla; çapraz kenar arka köşeyle hizalansın."},
+    {"tip":"cevir","metin":"Uçağı ters çevir."},
+    {"tip":"vadi","cizgi":{"nokta":[1.24264,1],"hedef":[0.70711,1.18409]},"katman":"ust","kanat":"sag","poz":90,"metin":"Öbür kanadı da aynı hizada katla."}
+  ]
+}

@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="tr" data-malzeme="kursunkalem">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#b6a58a">
+  <title>Mangala — defterde</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="kit/kagit.css?v=556272b28114">
+  <link rel="stylesheet" href="kit/kursunkalem.css?v=4e4510ae7535">
+  <link rel="stylesheet" href="style.css?v=c37c5b0e1e75">
+  <script defer src="assets/vendor/rough-4.6.6.js?v=6853af861953"></script>
+  <script defer src="kit/kalem.js?v=2301a219cebb"></script>
+  <script defer src="kit/ses.js?v=c92bc678c362"></script>
+  <script defer src="kit/malzeme.js?v=7f1b2fbadc51"></script>
+  <script defer src="kit/kursunkalem.js?v=8a368d63ea29"></script>
+  <script defer src="board.js?v=f7aa3e81a29c"></script>
+  <script defer src="match.js?v=477f8fa0d300"></script>
+  <script defer src="ai.js?v=aab198db4a5d"></script>
+  <script defer src="draw.js?v=fee8338ecb63"></script>
+  <script defer src="ui.js?v=a912a8dc7cc5"></script>
+</head>
+<body>
+  <main class="notebook" aria-labelledby="game-title">
+    <a class="back-link defterde-donus" href="/">← İçindekiler</a>
+    <section class="sayfa" aria-label="Mangala tahtası">
+      <div class="paper-surface" aria-hidden="true"></div>
+      <header class="heading">
+        <h1 id="game-title"><span class="pencil-underline title-word" data-ink="red">Mangala</span></h1>
+        <div class="turn">
+          <div class="score" aria-label="Hazine: Sen 0, Bilgisayar 0">
+            <span class="score-label">Hazine</span>
+            <span class="score-line"><span class="player-name"><i class="player-dot blue" aria-hidden="true"></i><span data-name="0">Sen</span></span>
+              <span class="score-number" id="score-0">0</span><span class="score-dash" aria-hidden="true">—</span>
+              <span class="score-number" id="score-1">0</span><span class="player-name"><span data-name="1">Bilgisayar</span><i class="player-dot red" aria-hidden="true"></i></span></span>
+          </div>
+          <p class="match-score" id="match-score" hidden></p>
+          <div class="turn-status">
+            <p class="turn-title">Sıra sende</p>
+            <p class="turn-instruction" id="selection-note">Bir kuyu seç</p>
+          </div>
+        </div>
+      </header>
+
+      <div class="board" role="group" aria-label="İki sıra altışar kuyu ve iki hazine">
+        <div class="store store-top" data-position="13">
+          <span class="store-owner">Bilgisayar</span>
+          <div class="store-well">
+            <svg aria-hidden="true" data-store="13"></svg>
+            <output class="store-count" aria-live="off" aria-label="Bilgisayarın hazinesi, 0 taş">0</output>
+          </div>
+          <span class="store-caption">Hazine</span>
+        </div>
+        <p class="row-label row-label-top" id="top-row-label"><span class="pencil-underline" data-ink="red">Bilgisayarın kuyuları</span></p>
+        <div class="pit-row pit-row-top" id="top-pits" role="group" aria-labelledby="top-row-label"></div>
+        <div class="pit-row pit-row-bottom" id="bottom-pits" role="group" aria-labelledby="bottom-row-label"></div>
+        <p class="row-label row-label-bottom" id="bottom-row-label"><span class="pencil-underline" data-ink="blue">Senin kuyuların</span></p>
+        <div class="store store-bottom" data-position="6">
+          <span class="store-owner">Sen</span>
+          <div class="store-well">
+            <svg aria-hidden="true" data-store="6"></svg>
+            <output class="store-count" aria-live="off" aria-label="Senin hazinen, 0 taş">0</output>
+          </div>
+          <span class="store-caption">Hazine</span>
+        </div>
+      </div>
+
+      <section class="result-note" id="result-note" aria-labelledby="result-title" hidden>
+        <h2 id="result-title" tabindex="-1"></h2>
+        <p id="result-detail"></p>
+        <p id="set-history"></p>
+        <button type="button" class="word-command" id="next-set">Sonraki set</button>
+        <button type="button" class="word-command" id="result-new">Yeni oyun</button>
+      </section>
+      <footer class="footer">
+        <p class="invitation" id="move-note"></p>
+        <div class="animation-note"><span id="held-stones" aria-hidden="true" hidden></span><button type="button" id="skip-animation" class="small-command" hidden>Dağıtımı atla</button></div>
+        <div class="footer-line">
+          <button class="mode" id="settings-open" type="button" aria-haspopup="dialog" title="Ayarlar"><span id="mode-summary">Bilgisayara karşı · Orta · Tek set</span></button>
+          <nav class="commands" aria-label="Oyun komutları">
+            <button class="word-command" id="new-game" type="button"><span class="pencil-underline">Yeni oyun</span></button>
+            <button class="word-command undo" id="undo" type="button" disabled><span class="pencil-underline" data-ink="graphite">Geri al</span></button>
+            <button class="word-command" id="hint" type="button"><span class="pencil-underline">İpucu</span></button>
+            <button class="word-command" id="help-open" type="button" aria-haspopup="dialog"><span class="pencil-underline">Nasıl oynanır?</span></button>
+            <button class="word-command sound" id="sound" type="button" aria-pressed="false" aria-label="Sesi aç" title="Sesi aç">
+              <svg id="sound-icon" viewBox="0 0 44 44" aria-hidden="true"></svg>
+              <span class="sound-text">Ses kapalı</span>
+            </button>
+          </nav>
+        </div>
+      </footer>
+      <noscript><p class="no-script">Tahtayı görmek için JavaScript’i etkinleştir.</p></noscript>
+    </section>
+  </main>
+  <div id="carried-stone" aria-hidden="true" hidden><svg viewBox="0 0 24 24"><ellipse cx="12" cy="12" rx="9" ry="7" fill="#f2c79a" stroke="#a65a1c"/><path d="m5 10 11 5m-10-8 12 5m-8-7 9 4" stroke="#e8842a" stroke-width="1.1"/></svg></div>
+  <dialog id="settings-dialog" class="paper-note" aria-labelledby="settings-title">
+    <form id="settings-form">
+      <div class="note-heading"><h2 id="settings-title">Yeni bir oyun</h2><button class="small-command" type="button" data-close="settings-dialog" aria-label="Ayarları kapat">Kapat</button></div>
+      <p>Seçimlerin yeni oyunla birlikte uygulanır.</p>
+      <label>Rakip <select name="mode"><option value="computer">Bilgisayar</option><option value="local">Aynı cihazda iki kişi</option></select></label>
+      <label id="difficulty-label">Zorluk <select name="difficulty"><option value="easy">Kolay</option><option value="medium">Orta</option><option value="hard">Zor</option></select></label>
+      <label>Oyun uzunluğu <select name="sets"><option value="1">Tek set</option><option value="5">Beş setlik maç</option></select></label>
+      <label class="check-label"><input type="checkbox" name="preview"> Kuyuya odaklanınca hamle sonucunu göster</label>
+      <p class="note-small">İlk başlayan kura ile seçilir. Beş setlik maçta sonraki setlere sırayla başlanır.</p>
+      <button class="word-command primary-command" type="submit">Yeni oyuna başla</button>
+    </form>
+  </dialog>
+  <dialog id="help-dialog" class="paper-note help-note" aria-labelledby="help-title">
+    <div class="note-heading"><h2 id="help-title">Nasıl oynanır?</h2><button class="small-command" type="button" data-close="help-dialog" aria-label="Yardımı kapat">Kapat</button></div>
+    <p>Kendi sırandaki dolu bir kuyuyu seç. Taşlar alt sırada sağa, üst sırada sola ilerler; kendi hazinene uğrar, rakibin hazinesini atlar.</p>
+    <ol class="rules">
+      <li>Birden fazla taş varsa ilkini seçtiğin kuyuya bırak. Tek taş varsa bir sonraki konuma taşı.</li>
+      <li>Son taş kendi hazinene düşerse yeniden oyna.</li>
+      <li>Son taş rakip kuyusundaki sayıyı çift yaparsa o kuyudaki taşları al.</li>
+      <li>Son taş kendi boş kuyuna düşerse, karşı kuyu doluysa ikisini birlikte al.</li>
+    </ol>
+    <p><strong>Kuyularını ilk boşaltan, karşıda kalan taşları da toplar.</strong> En çok hazine taşı seti kazanır. 24–24 beraberliktir.</p>
+    <p class="note-small">Bu oyunda tek taş doğrudan kendi hazinene düşerse, set sürüyorsa yine ek hamle verilir. Bu, seçtiğimiz kural yorumudur. Kale kuralı kullanılmaz.</p>
+    <section class="tutorial" aria-labelledby="example-title">
+      <label>Bir örnek dene <select id="example-select"><option value="0">İlk taş kaynakta kalır</option><option value="1">Hazine ve ek hamle</option><option value="2">Çift sayıda taş kazanma</option><option value="3">Boş kuyu ve karşıdan alma</option></select></label>
+      <h3 id="example-title"></h3>
+      <div id="example-board" class="example-board" aria-label="Örneğin taş sayıları"></div>
+      <p id="example-note" aria-live="polite" aria-atomic="true"></p>
+      <button type="button" id="example-play" class="word-command">Örnek hamleyi oyna</button>
+      <button type="button" id="example-reset" class="small-command">Başa al</button>
+    </section>
+    <p class="note-small">Ok tuşları kuyular arasında dolaşır. Enter veya boşluk hamleyi oynar. Yardım açıkken oyun bekler; örnekler maçını değiştirmez.</p>
+  </dialog>
+  <p class="sr-only" role="status" aria-live="polite" aria-atomic="true" id="announcement"></p>
+</body>
+</html>

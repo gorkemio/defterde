@@ -1,0 +1,140 @@
+/* Nokta Oyunu yerleşimi. Ölçüler layout.js'ten: --sq (yarım nokta aralığı, px), --W/--H (sayfa, sq), --tx/--ty/--tw/--th
+   (tahta), --kx/--ky/--kw (komutlar), --nx/--ny/--nw (açılan notlar). Kâğıt kit/kagit.css'in noktalı sayfası,
+   kalem kit/kursunkalem.css, boya kit/kuruboya.css. Süs yok. */
+:root { --W: 17; --H: 19; --tx: 6; --ty: 5; --tw: 8; --th: 8; }
+body { display: flex; flex-direction: column; justify-content: safe center; align-items: center; overflow-x: hidden; }
+body.kaydir { overflow: auto; align-items: flex-start; }
+.defter { flex: none; margin: 8px 12px; transform: rotate(-.6deg); }
+body[data-duzen="dikey"] .defter { margin: 4px; transform: rotate(-.35deg); }
+
+.sayfa {
+  width: calc(var(--sq) * var(--W));
+  height: calc(var(--sq) * var(--H));
+  overflow: hidden;
+}
+/* Sayfanın basılı noktaları tahtanın noktalarıyla çakışır: örgünün fazı tahta köşesinden */
+html[data-kagit="noktali"] .sayfa {
+  --nokta: calc(var(--sq) * 2);
+  --nokta-x: calc(var(--sq) * var(--tx));
+  --nokta-y: calc(var(--sq) * var(--ty));
+}
+
+.katman { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
+.katman .cizgiler > g { opacity: .8; }
+.katman .cizgiler > g.son { opacity: 1; }
+.katman .cizgiler > g.son path { stroke-width: 1.85; }
+
+/* Dokunma alanı: tahta + her yanda 24 px (en yakın çizgi bu alanda aranır) */
+.tahta-alan {
+  position: absolute;
+  left: calc(var(--sq) * var(--tx) - 24px); top: calc(var(--sq) * var(--ty) - 24px);
+  width: calc(var(--sq) * var(--tw) + 48px); height: calc(var(--sq) * var(--th) + 48px);
+  touch-action: manipulation;
+}
+.tahta-alan.etkin { cursor: var(--kalem-imlec); }
+.tahta-alan:focus { outline: none; }
+.tahta-alan:focus-visible { outline: none; }   /* klavye imleci tahtada kalemle çizilir (draw.imlecCiz) */
+
+/* Komutlar: altı kalemle çizili sözcükler */
+.komutlar {
+  position: absolute; display: flex; flex-wrap: wrap; align-items: baseline;
+  column-gap: max(10px, calc(var(--sq) * .45)); row-gap: 0;
+  left: calc(var(--sq) * var(--kx)); top: calc(var(--sq) * var(--ky)); width: calc(var(--sq) * var(--kw));
+}
+.sozcuk {
+  min-height: 44px; display: inline-flex; align-items: center;
+  font-size: max(16px, calc(var(--sq) * .62)); line-height: 1.1; white-space: nowrap;
+}
+.sozcuk .yazi { position: relative; }
+
+/* Açılan not: tahtanın üstünde kâğıdın açık bir yerine kalemle yazılmış (çerçeve yok; noktalar silik görünür) */
+.not {
+  position: absolute; left: calc(var(--sq) * var(--nx)); top: calc(var(--sq) * var(--ny)); width: calc(var(--sq) * var(--nw));
+  padding: calc(var(--sq) * .4) calc(var(--sq) * .5);
+  background: rgba(251, 249, 242, .95); font-size: max(16px, calc(var(--sq) * .62)); line-height: 1.4; color: var(--grafit);
+}
+.not p { margin: 0 0 .5em; }
+.not-komut { display: flex; flex-wrap: wrap; column-gap: calc(var(--sq) * .8); margin-top: .3em !important; }
+body.not-acik .komutlar, body.gosteri .komutlar { visibility: hidden; }
+
+/* İzle: komutların yerinde kurşun kalemle kenar notu */
+.aciklama {
+  position: absolute; left: calc(var(--sq) * var(--kx)); top: calc(var(--sq) * var(--ky)); width: calc(var(--sq) * var(--kw));
+  margin: 0; font-size: max(16px, calc(var(--sq) * .58)); line-height: 1.35; color: var(--grafit);
+}
+.aciklama-metin { margin: 0 0 .2em; }
+.aciklama-metin .vurgu { color: var(--kirmizi-kursun); }
+
+button:focus { outline: none; }
+button:focus-visible { outline: 1px dashed var(--grafit); outline-offset: 2px; }
+@media (forced-colors: active) { button:focus-visible { outline-color: CanvasText; } }
+
+/* Ayarlar notu: seçili değerin altı çizili (Kit.kalem.dugmeAltiCiz); bekleyen ayar "yeni sayfada" */
+.ayarlar { color: var(--grafit-acik); }
+.ayar-grup { margin: 0 !important; display: flex; flex-wrap: wrap; align-items: center; min-height: 40px; column-gap: 0; }
+.ayar-ad { min-width: 4.6em; margin-right: .3em; color: var(--grafit); }
+.ara { margin: 0 .12em; opacity: .7; }
+.ayar {
+  position: relative; display: inline-flex; align-items: center; min-height: 40px; min-width: 32px; padding: 0 .22em;
+  margin: 0; border: 0; background: transparent; color: inherit; font: inherit; cursor: pointer; touch-action: manipulation;
+}
+.ayar[aria-pressed="true"] { color: var(--grafit); }
+.ayar .cerceve, .harf-giris-kap .cerceve { position: absolute; left: 0; top: 0; overflow: visible; pointer-events: none; }
+.ayar-grup[data-gizli="true"] { display: none; }
+.harf-kutu { display: inline-flex; align-items: center; margin-right: 1em; color: var(--grafit); }
+.harf-giris-kap { position: relative; display: inline-block; margin-left: .35em; }
+.harf-giris {
+  width: 1.5em; height: 40px; padding: 0; border: 0; background: transparent; text-align: center;
+  font: inherit; font-size: 1.35em; color: var(--kuruboya-1); caret-color: var(--grafit); outline: none;
+}
+#harf-1 { color: var(--kuruboya-2); }
+.harf-giris:focus-visible { outline: 1px dashed var(--grafit); outline-offset: -4px; }
+.renk-1 { color: #2e8b57; } .renk-2 { color: #e8842a; } .renk-mor { color: #6a4c93; } .renk-sari { color: #c99a1e; }
+.yeni-not { margin: .2em 0 0 !important; font-size: .9em; color: var(--kirmizi-kursun); }
+
+/* Sayfa çevirme: kalkan eski sayfanın kopyası (cilt sol kenarda) */
+.sayfa.cevrilen {
+  position: absolute; left: 0; top: 0; z-index: 20; pointer-events: none;
+  transform-origin: 0 50%; backface-visibility: hidden; -webkit-backface-visibility: hidden; will-change: transform;
+}
+
+/* Bulmaca: oyun sonunda "sonraki bulmaca" ve "tekrar" komutların başına gelir; ayarlarda ilerleme satırı */
+html[data-malzeme] .bulmaca-komut { color: var(--kirmizi-kursun); }
+.bulmaca-bilgi { color: var(--grafit); }
+
+/* Defterde platform kopyası: kaynağa dokunmadan ana sayfaya dönüş. */
+body { position: relative; padding-top: calc(48px + env(safe-area-inset-top, 0px)); }
+main { position: relative; }
+.defterde-donus {
+  position: absolute; bottom: 100%; left: 8px;
+  display: inline-flex; align-items: center; min-height: 44px; padding: 0 8px;
+  color: #393732; font-family: inherit; font-size: 18px; line-height: 1.4;
+  background: none; border: 0; text-decoration: none; white-space: nowrap; touch-action: manipulation;
+}
+.defterde-donus:hover, .defterde-donus:active { color: #182e7c; text-decoration: underline; text-underline-offset: 3px; }
+.defterde-donus:focus-visible { outline: 2px dashed #182e7c; outline-offset: -2px; }
+.defterde-donus-dialog { position: static; }
+:root:has(:fullscreen) .defterde-donus, :root:fullscreen .defterde-donus, body.tam-ekran .defterde-donus { display: none; }
+:root:has(:fullscreen) body, :root:fullscreen body, body.tam-ekran { padding-top: env(safe-area-inset-top, 0px); }
+@media print { .defterde-donus { display: none !important; } body { padding-top: 0; } }
+
+
+/* Platform kopyası: oyunların kalemleri ve noktalı/çizgili sayfası korunur. */
+html:root { --kagit: #fbf9f2; }
+html:root main.defter { position: relative; isolation: isolate; }
+html:root main.defter::before, html:root main.defter::after {
+  content: ''; position: absolute; inset: 0; pointer-events: none; border-radius: 0;
+  background: url("kit/gren.png") #f7f4eb;
+}
+html:root main.defter::before {
+  z-index: -2; background-color: #efebdf; transform: translate(4px, 6px);
+  box-shadow: 16px 28px 40px -6px rgba(58, 36, 16, .44);
+}
+html:root main.defter::after { z-index: -1; transform: translate(2px, 3px); box-shadow: none; }
+html:root .sayfa { box-shadow: inset 0 1px 2px rgba(255, 255, 255, .85); }
+@media (max-width: 600px), (max-height: 500px) {
+  html:root main.defter { transform: none; }
+  html:root main.defter::before { transform: translate(2px, 3px); }
+  html:root main.defter::after { transform: translate(1px, 1.5px); }
+}
+@media print { main.defter::before, main.defter::after { display: none !important; } }

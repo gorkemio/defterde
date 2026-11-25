@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="tr" data-malzeme="dolmakalem">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#b6a58a">
+  <title>5'li XOX</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%23fbf9f2'/%3E%3Cpath d='M8 8 L15 15 M15 8 L8 15' stroke='%231b2a5e' stroke-width='2.6' stroke-linecap='round'/%3E%3Ccircle cx='21.5' cy='21.5' r='5' fill='none' stroke='%23b3261e' stroke-width='2.4'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="kit/kagit.css?v=556272b28114">
+  <link rel="stylesheet" href="kit/dolmakalem.css?v=c3b18398993e">
+  <link rel="stylesheet" href="style.css?v=1bbb25614a1f">
+</head>
+<body>
+  <noscript><p class="uyari">Bu defteri açmak için JavaScript gerekiyor.</p></noscript>
+  <p class="gizli" id="duyuru" role="status" aria-live="polite"></p>
+
+  <main class="defter" id="defter">
+    <a class="defterde-donus" href="/">← İçindekiler</a>
+    <section class="sayfa" id="sayfa" aria-label="5'li XOX sayfası">
+      <header class="ust" id="ust">
+        <h1 class="baslik" id="baslik" aria-label="5'li XOX">5<span class="kesme" aria-hidden="true">'</span>li XOX</h1>
+      </header>
+
+      <aside class="marj" id="marj" aria-live="off">
+        <p class="marj-not murekkep-kirmizi" id="dusunuyor" hidden>düşünüyor</p>
+        <p class="marj-not kursun" id="marj-not" hidden></p>
+        <p class="marj-not kursun" id="seri-not" hidden></p>
+        <div class="terimler" id="terimler"></div>
+      </aside>
+
+      <div class="tahta-kap" id="tahta-kap">
+        <div class="tahta-alan" id="tahta-alan">
+          <svg class="tahta" id="tahta" aria-hidden="true"></svg>
+          <div class="hucreler" id="hucreler" role="group" aria-label="Oyun alanı: oklarla gez, Enter ile yaz"></div>
+        </div>
+      </div>
+
+      <div class="alt" id="alt">
+        <nav class="komutlar" id="komutlar" aria-label="Komutlar">
+          <button class="dugme sozcuk" id="yeni" type="button"><span class="yazi">Yeni oyun</span></button>
+          <button class="dugme sozcuk" id="geri" type="button"><span class="yazi">Geri al</span></button>
+          <button class="dugme sozcuk" id="ipucu" type="button"><span class="yazi">İpucu</span></button>
+          <button class="dugme sozcuk" id="tehditler" type="button" aria-pressed="true"><span class="yazi">Tehditler</span></button>
+          <button class="dugme sozcuk" id="nasil" type="button"><span class="yazi">Nasıl oynanır?</span></button>
+          <button class="dugme sozcuk" id="ses" type="button" aria-pressed="true"><span class="yazi">Ses</span></button>
+        </nav>
+        <div class="son-satir" id="son-satir">
+          <button class="dugme sozcuk kursun-sozcuk" id="analiz" type="button" hidden><span class="yazi">nerede kaybettim?</span></button>
+          <button class="dugme sozcuk kursun-sozcuk" id="analiz-kapat" type="button" hidden><span class="yazi">geri</span></button>
+          <button class="dugme sozcuk kursun-sozcuk" id="izle-dur" type="button" hidden><span class="yazi">dur</span></button>
+          <p class="aciklama kursun" id="aciklama" aria-live="polite"></p>
+        </div>
+
+        <div class="nasil-not" id="nasil-not" hidden>
+          <p>Sırayla bir kareye X ya da O yazılır; X başlar.</p>
+          <p>Yatayda, dikeyde ya da çaprazda art arda beş yazan kazanır.</p>
+          <p>Rakibin açık üçünü ve dördünü zamanında kapat; iki tehdidi birden kuran (çatal) kazanır.</p>
+          <p class="nasil-komut">
+            <button class="dugme sozcuk kursun-sozcuk" id="izle" type="button"><span class="yazi">izle</span></button>
+            <button class="dugme sozcuk kursun-sozcuk" id="nasil-kapat" type="button"><span class="yazi">kapat</span></button></p>
+        </div>
+
+        <div class="ayarlar" id="ayarlar">
+          <p class="ayar-grup"><span class="ayar-ad">rakip:</span>
+            <button class="ayar" type="button" data-ayar="rakip" data-deger="bilgisayar">bilgisayar</button><span class="ara">·</span>
+            <button class="ayar" type="button" data-ayar="rakip" data-deger="ikiKisi">iki kişi</button></p>
+          <p class="ayar-grup" data-rakip="ikiKisi"><span class="ayar-ad">mürekkep:</span>
+            <span class="lekeler" id="lekeler"></span></p>
+          <p class="ayar-grup" data-rakip="bilgisayar"><span class="ayar-ad">zorluk:</span>
+            <button class="ayar" type="button" data-ayar="zorluk" data-deger="kolay">kolay</button><span class="ara">·</span>
+            <button class="ayar" type="button" data-ayar="zorluk" data-deger="orta">orta</button><span class="ara">·</span>
+            <button class="ayar" type="button" data-ayar="zorluk" data-deger="zor">zor</button></p>
+          <p class="ayar-grup"><span class="ayar-ad">sayfa:</span>
+            <button class="ayar" type="button" data-ayar="sayfa" data-deger="sabit">15×15</button><span class="ara">·</span>
+            <button class="ayar" type="button" data-ayar="sayfa" data-deger="sinirsiz">sınırsız</button></p>
+          <p class="ayar-grup"><span class="ayar-ad">seri:</span>
+            <button class="ayar" type="button" data-ayar="seri" data-deger="1">tek oyun</button><span class="ara">·</span>
+            <button class="ayar" type="button" data-ayar="seri" data-deger="3">3 galibiyet</button></p>
+          <p class="ayar-grup" data-dokunmatik><span class="ayar-ad">dokunuş:</span>
+            <button class="ayar" type="button" data-ayar="ikiDokunus" data-deger="hayir">tek</button><span class="ara">·</span>
+            <button class="ayar" type="button" data-ayar="ikiDokunus" data-deger="evet">iki (önce taslak)</button></p>
+        </div>
+        <p class="ayar-not kursun" id="ayar-not" aria-live="polite"></p>
+        <p class="not baslik" id="not"></p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Yerel sabit sürüm; klasik betikler file:// altında da çalışır. kit/karakter.js, kursunkalem.* ve kecelikalem.* bu oyunda yüklenmez. -->
+  <script src="assets/vendor/rough-4.6.6.js?v=6853af861953"></script>
+  <script src="kit/kalem.js?v=ecbde10af5d8"></script>
+  <script src="kit/ses.js?v=c92bc678c362"></script>
+  <script src="kit/malzeme.js?v=7f1b2fbadc51"></script>
+  <script src="kit/dolmakalem.js?v=ed0fd45bd52e"></script>
+  <script src="board.js?v=783d647941ae"></script>
+  <script src="eval.js?v=924e4246c65e"></script>
+  <script src="ai.js?v=5413417a4050"></script>
+  <script src="config.js?v=adf133684bad"></script>
+  <script src="draw.js?v=4fac02174f26"></script>
+  <script src="ui.js?v=338c0930ea1c"></script>
+</body>
+</html>

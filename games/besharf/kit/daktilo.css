@@ -1,0 +1,41 @@
+/* kit/daktilo.css — daktilo yazısı (Kit.daktilo). Yalnız .daktilo, .daktilo-harf, .daktilo-satir altında eşleşir. */
+
+@font-face {
+  font-family: 'Courier Prime';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../assets/fonts/CourierPrime-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Courier Prime';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../assets/fonts/CourierPrime-Bold.ttf') format('truetype');
+}
+
+:root {
+  --serit-siyah: #262321;
+  --serit-kirmizi: #b02a24;
+  --daktilo-yazi: 'Courier Prime', 'Courier New', Courier, monospace;
+}
+
+/* SVG'de basılan harfler (kagit.css'teki svg text kuralını ezer) */
+svg .daktilo-harf text,
+svg text.daktilo { font-family: var(--daktilo-yazi); font-weight: 400; font-kerning: none; }
+
+/* HTML'de basılan metin: harf başına span (Kit.daktilo.metin) */
+.daktilo {
+  font-family: var(--daktilo-yazi);
+  font-weight: 400;
+  color: var(--serit-siyah);
+  letter-spacing: 0;
+  font-kerning: none;
+}
+.daktilo.kirmizi-serit { color: var(--serit-kirmizi); }
+.daktilo .dh {
+  display: inline-block;
+  text-shadow: 0 0 .35px currentColor;     /* şerit mürekkebinin hafif yayılması */
+}
+.daktilo .dh.koyu { text-shadow: 0 0 .5px currentColor, 0 0 .5px currentColor; }

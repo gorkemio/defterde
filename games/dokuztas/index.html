@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="tr" data-malzeme="kursunkalem">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#b6a58a">
+  <title>Dokuz Taş</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%23fbf9f2'/%3E%3Cpath d='M5 5H27V27H5ZM10 10H22V22H10ZM16 5V10M27 16H22M16 27V22M5 16H10' fill='none' stroke='%234a4a4a' stroke-width='1.6'/%3E%3Cellipse cx='16.5' cy='5.5' rx='3.4' ry='3' fill='%233b3835'/%3E%3Cellipse cx='22' cy='22' rx='3.4' ry='3' fill='%23e8e2d4' stroke='%23999' stroke-width='.6'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="kit/kagit.css?v=556272b28114">
+  <link rel="stylesheet" href="kit/kursunkalem.css?v=4e4510ae7535">
+  <link rel="stylesheet" href="style.css?v=bf897129f814">
+</head>
+<body>
+  <noscript><p class="uyari">Bu defteri açmak için JavaScript gerekiyor.</p></noscript>
+  <p class="gizli" id="duyuru" role="status" aria-live="polite"></p>
+
+  <main class="defter" id="defter">
+    <a class="defterde-donus" href="/" aria-label="Defterde oyunlarının içindekiler sayfasına dön">← İçindekiler</a>
+    <section class="sayfa" id="sayfa" aria-label="Dokuz Taş sayfası">
+      <svg class="katman" id="kagit" aria-hidden="true"></svg>
+      <svg class="katman" id="nesneler" aria-hidden="true"></svg>
+      <div class="noktalar" id="noktalar" role="group" aria-label="Tahta"></div>
+
+      <nav class="komutlar" id="komutlar" aria-label="Komutlar">
+        <button class="dugme sozcuk" id="yeni-oyun" type="button"><span class="yazi">Yeni oyun</span></button>
+        <button class="dugme sozcuk" id="geri-al" type="button"><span class="yazi">Geri al</span></button>
+        <button class="dugme sozcuk" id="ipucu" type="button"><span class="yazi">İpucu</span></button>
+        <button class="dugme sozcuk" id="nasil" type="button" aria-expanded="false" aria-controls="nasil-not"><span class="yazi">Nasıl oynanır?</span></button>
+        <button class="dugme sozcuk" id="ses" type="button" aria-pressed="false"><span class="yazi">Ses</span></button>
+        <button class="dugme sozcuk" id="ayarlar-ac" type="button" aria-expanded="false" aria-controls="ayarlar"><span class="yazi">Ayarlar</span></button>
+      </nav>
+
+      <button class="dugme sozcuk tekrar" id="tekrar" type="button" hidden><span class="yazi">tekrar</span></button>
+
+      <section class="nasil" id="nasil-not" aria-labelledby="nasil-baslik" hidden>
+        <h2 class="gizli" id="nasil-baslik">Nasıl oynanır?</h2>
+        <p>Sırayla dokuz taşını boş noktalara koyarsın; taşlar bitince bir taşını çizgi boyunca komşu boş noktaya kaydırırsın.</p>
+        <p>Aynı çizgide üç taşını yan yana getirirsen değirmen kurarsın ve rakibin bir taşını alırsın; değirmendeki taş alınamaz.</p>
+        <p>Üç taşı kalan uçar, istediği boş noktaya gider; rakibini iki taşa düşüren ya da kıpırdayamaz bırakan kazanır.</p>
+        <p class="nasil-komut">
+          <button class="dugme sozcuk" id="gosteri" type="button"><span class="yazi">kendi kendine oynasın</span></button>
+          <button class="dugme sozcuk" id="nasil-kapat" type="button"><span class="yazi">kapat</span></button>
+        </p>
+      </section>
+      <p class="aciklama" id="aciklama" aria-live="polite" hidden></p>
+
+      <section class="nasil ayarlar" id="ayarlar" aria-labelledby="ayarlar-baslik" hidden>
+        <h2 class="gizli" id="ayarlar-baslik">Ayarlar</h2>
+        <p class="ayar-grup"><span class="ayar-ad">zorluk:</span>
+          <button class="ayar" type="button" data-ayar="zorluk" data-deger="kolay"><span class="yazi">kolay</span></button><span class="ara">·</span>
+          <button class="ayar" type="button" data-ayar="zorluk" data-deger="orta"><span class="yazi">orta</span></button><span class="ara">·</span>
+          <button class="ayar" type="button" data-ayar="zorluk" data-deger="zor"><span class="yazi">zor</span></button></p>
+        <p class="ayar-grup"><span class="ayar-ad">rakip:</span>
+          <button class="ayar" type="button" data-ayar="ikiKisi" data-deger="hayir"><span class="yazi">bilgisayar</span></button><span class="ara">·</span>
+          <button class="ayar" type="button" data-ayar="ikiKisi" data-deger="evet"><span class="yazi">iki kişi</span></button></p>
+        <p class="ayar-grup"><span class="ayar-ad">taşlar:</span>
+          <button class="ayar" type="button" data-ayar="tasSeti" data-deger="cakil"><span class="yazi">çakıl</span></button><span class="ara">·</span>
+          <button class="ayar" type="button" data-ayar="tasSeti" data-deger="fasulye"><span class="yazi">fasulye</span></button></p>
+        <p class="ayar-grup"><span class="ayar-ad">uçma:</span>
+          <button class="ayar" type="button" data-ayar="ucma" data-deger="evet"><span class="yazi">açık</span></button><span class="ara">·</span>
+          <button class="ayar" type="button" data-ayar="ucma" data-deger="hayir"><span class="yazi">kapalı</span></button></p>
+        <p class="ayar-grup"><span class="ayar-ad">notasyon:</span>
+          <button class="ayar" type="button" data-ayar="notasyon" data-deger="evet"><span class="yazi">açık</span></button><span class="ara">·</span>
+          <button class="ayar" type="button" data-ayar="notasyon" data-deger="hayir"><span class="yazi">kapalı</span></button></p>
+        <p class="yeni-not" id="yeni-not" role="status" aria-live="polite" hidden></p>
+        <p class="nasil-komut">
+          <button class="dugme sozcuk" id="ayarlar-kapat" type="button"><span class="yazi">kapat</span></button>
+        </p>
+      </section>
+    </section>
+  </main>
+
+  <!-- Yerel sabit sürüm; klasik betik file:// altında da çalışır. kit/karakter.js bu oyunda yüklenmez. -->
+  <script src="assets/vendor/rough-4.6.6.js?v=6853af861953"></script>
+  <script src="kit/kalem.js?v=2301a219cebb"></script>
+  <script src="kit/ses.js?v=c92bc678c362"></script>
+  <script src="kit/malzeme.js?v=7f1b2fbadc51"></script>
+  <script src="kit/kursunkalem.js?v=8a368d63ea29"></script>
+  <script src="config.js?v=207730011f2c"></script>
+  <script src="board.js?v=2cca725fb607"></script>
+  <script src="ai.js?v=bc6407b2bfd3"></script>
+  <script src="layout.js?v=b85f06bbdd3c"></script>
+  <script src="draw.js?v=72d87bd55836"></script>
+  <script src="ui.js?v=17f7e3e12723"></script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#b6a58a">
+  <title>Tangram — Defterde</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="kit/kagit.css?v=556272b28114">
+  <link rel="stylesheet" href="style.css?v=78bd5996d429">
+  <link rel="stylesheet" href="notebook.css?v=b7ca22047118">
+  <script defer src="assets/vendor/rough-4.6.6.js?v=6853af861953"></script>
+  <script defer src="assets/vendor/polygon-clipping-0.15.7.js?v=7f8619e84a86"></script>
+  <script defer src="kit/kalem.js?v=2301a219cebb"></script>
+  <script defer src="geometry.js?v=a341685d97f4"></script>
+  <script defer src="board.js?v=1d01a66f029a"></script>
+  <script defer src="puzzles/kara-hayvanlari.js?v=2b9e52dfef24"></script>
+  <script defer src="puzzles/kuslar.js?v=cd5ceacec704"></script>
+  <script defer src="puzzles/deniz-canlilari.js?v=3ba354989e7d"></script>
+  <script defer src="puzzles/insanlar.js?v=8bdcd26a78cc"></script>
+  <script defer src="puzzles/tasitlar.js?v=b9c392878732"></script>
+  <script defer src="puzzles/yapilar.js?v=f35fb68567bf"></script>
+  <script defer src="puzzles/ev-esyalari.js?v=ac6077ea491d"></script>
+  <script defer src="puzzles/nesneler.js?v=a1b346d6609f"></script>
+  <script defer src="puzzles/doga.js?v=e9561fe12899"></script>
+  <script defer src="puzzles/geometri.js?v=c23ef1377f6a"></script>
+  <script defer src="puzzles/catalog.js?v=4c38d5b40cf4"></script>
+  <script defer src="validation.js?v=9cb87bfaeb05"></script>
+  <script defer src="authoring.js?v=95226268e2f2"></script>
+  <script defer src="storage.js?v=662ed9f3134b"></script>
+  <script defer src="catalog.js?v=1b2a3dff0f86"></script>
+  <script defer src="learning.js?v=75f034e57dd2"></script>
+  <script defer src="sound.js?v=bd5346958ed4"></script>
+  <script defer src="draw.js?v=5763ff396384"></script>
+  <script defer src="input.js?v=3ea18266fff5"></script>
+  <script defer src="ui.js?v=f768a92b750a"></script>
+</head>
+<body class="tangram-app">
+  <noscript><p class="uyari">Bu defteri açmak için JavaScript gerekiyor.</p></noscript>
+  <main class="notebook" id="notebook">
+    <a class="defterde-return" href="/">← İçindekiler</a>
+    <div class="paper-back far" aria-hidden="true"></div>
+    <div class="paper-back near" aria-hidden="true"></div>
+    <div class="paper-surface" aria-hidden="true"></div>
+    <div class="sheet sayfa catalog-page" id="catalog-page">
+      <header class="sheet-header catalog-header" id="catalog-header">
+        <div class="title-block"><h1><span>Tangram</span><svg class="title-line" aria-hidden="true"></svg></h1><p id="edition-count" class="subtitle"></p></div>
+        <div class="catalog-heading">          <label class="search">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6.5"/><path d="m15 15 6 6"/></svg>
+            <span class="gizli">Şekil ara</span>
+            <input id="search" type="search" placeholder="Şekil ara…" autocomplete="off" maxlength="80">
+          </label>
+          <details class="catalog-options"><summary>Filtreler<span class="wide-label"> ve seçim</span></summary><div class="catalog-tools">
+          <label>Göster<select id="status-filter"><option value="all">Tümü</option><option value="completed">Tamamlananlar</option><option value="incomplete">Tamamlanmayanlar</option><option value="favorites">Favoriler</option></select></label>
+          <label>Zorluk<select id="difficulty-filter"><option value="all">Tüm zorluklar</option><option value="kolay">Kolay</option><option value="orta">Orta</option><option value="zor">Zor</option></select></label>
+          <button id="random-puzzle" class="word-button" type="button">Rastgele şekil</button>
+          <button id="resume-puzzle" class="word-button" type="button" hidden>Son şekle devam</button>
+          <nav class="content-links" aria-label="İçerik araçları"><a href="review.html">İsimsiz incele</a><a href="editor.html">Şekil atölyesi</a></nav>
+        </div></details></div>
+      </header>
+      <section id="catalog-view" aria-labelledby="catalog-title">
+        <h2 id="catalog-title" class="gizli" tabindex="-1">Şekiller</h2>
+        <div class="catalog-browse" id="catalog-browse"><nav id="categories" class="categories" aria-label="Şekil kategorisi"></nav>
+        <label class="category-picker">Kategori<select id="category-select" aria-label="Şekil kategorisi"></select></label></div>
+        <p id="result-announcement" class="gizli" role="status" aria-live="polite"></p>
+        <ul id="catalog-grid" class="catalog-grid"></ul>
+        <div id="empty-state" class="empty-state" hidden>
+          <p>Bu sayfada böyle bir şekil yok.</p>
+          <button id="clear-filters" class="word-button" type="button">Tüm şekilleri göster</button>
+        </div>
+        <footer class="catalog-footer" id="catalog-footer">
+          <span id="catalog-count" class="gizli"></span>
+          <p id="category-progress" class="catalog-progress"></p><a class="word-button design-link" href="design.html">Kendi şeklini yap</a>
+          <nav class="pagination" aria-label="Katalog sayfaları"><button id="previous-page" class="word-button page-arrow" type="button" aria-label="Önceki sayfa"><svg viewBox="0 0 32 24" aria-hidden="true"><path d="M28 12H4m8-8-8 8 8 8"/></svg></button><span id="page-label"></span><button id="next-page" class="word-button page-arrow" type="button" aria-label="Sonraki sayfa"><svg viewBox="0 0 32 24" aria-hidden="true"><path d="M4 12h24m-8-8 8 8-8 8"/></svg></button></nav>
+        </footer>
+      </section>
+
+    </div>
+    <div class="sheet sayfa play-page" id="play-page" hidden>
+      <section id="game-view" aria-labelledby="puzzle-title" hidden>
+        <header class="game-page-header">
+          <div class="title-block"><h1 class="mobile-game-title"><span>Tangram</span><svg class="title-line" aria-hidden="true"></svg></h1><p class="subtitle">Parçaları siluete yerleştir</p></div>
+          <button id="back-to-catalog" class="word-button back-button" type="button">
+            <svg viewBox="0 0 26 20" aria-hidden="true"><path d="M23 10H3m7-7-7 7 7 7"/></svg>Şekiller
+          </button></header>
+        <div class="play-topline">
+        <div class="puzzle-heading">
+          <div>
+            <div class="puzzle-title-line"><span id="puzzle-number" aria-hidden="true"></span><h2 id="puzzle-title" tabindex="-1"></h2></div>
+            <p id="puzzle-category"></p>
+          </div>
+          <span class="difficulty"><span aria-hidden="true" class="difficulty-mark"></span><span id="puzzle-difficulty"></span></span>
+        </div>
+        <details class="game-options"><summary aria-label="Yardım ve seçenekler">Yardım</summary><div class="help-panel">
+        <div class="game-topline">
+
+          <button id="favorite-puzzle" class="word-button" type="button" aria-pressed="false">Favorilere ekle</button>
+          <a id="edit-design" class="word-button" hidden>Kendi şeklini düzenle</a>
+          <button id="color-preview" class="word-button" aria-pressed="false" type="button">Çözümü göster</button>
+        </div>
+        <div class="learning-controls"><label><input id="show-boundaries" type="checkbox"> İç sınırları göster</label><span id="tutorial-note"></span></div>
+        <p id="play-help" class="play-help input-help"><span class="mouse-help"><strong>Tıkla al, tekrar tıkla bırak.</strong> Parça elindeyken sağ tık veya iki parmakla kaydır: döndür. Sürükleyerek de oynayabilirsin.</span><span class="touch-help">Parçayı sürükle veya seçip boş bir yere dokun. Döndürmek için alttaki komutları kullan.</span></p>
+        <div id="selection-actions" class="selection-actions" hidden>
+          <button id="align-piece" class="word-button" type="button" data-action="align" disabled>Hizala</button>
+          <button id="return-piece" class="word-button" type="button" data-action="tray" disabled>Parçayı alta al</button>
+        </div>
+        <details class="keyboard-help">
+          <summary>Klavye ile oyna</summary>
+          <p>1–7: parça seç · Oklar: taşı · Shift + ok: ince taşı · Q/E: döndür · F: ters çevir · Enter: hizala · Delete: alta al · Ctrl/Cmd + Z: geri al · Escape: sürüklemeyi iptal et.</p>
+        </details>
+        <p id="preview-notice" class="preview-notice">Her şekil aynı yedi parça. İlerleme bu tarayıcıda saklanır.</p>
+        </div></details></div>
+        <div class="scene-wrap">
+          <svg id="scene" class="scene" role="group" aria-label="Hedef siluet ve yedi tangram parçası" aria-describedby="play-help"></svg>
+        </div>
+        <section id="completion" class="completion" aria-label="Bulmaca tamamlandı" hidden>
+          <p role="status">Tamamlandı.</p>
+          <p id="next-status"></p>
+          <button id="next-puzzle" class="word-button" type="button">Sonraki şekil</button>
+          <button id="completed-back" class="word-button" type="button">Şekillere dön</button>
+        </section>
+        <p id="selection-status" class="selection-status" role="status" aria-live="polite"></p>
+        <p id="placement-status" class="placement-status"></p>
+        <nav class="game-controls" aria-label="Oyun komutları" aria-describedby="preview-notice">
+          <div class="control-group">
+            <button id="undo" class="word-button" type="button" data-action="undo" disabled>Geri al</button>
+            <button id="reset" class="word-button" type="button" data-action="reset" disabled>Baştan</button>
+            <button id="hint" class="word-button" type="button">İpucu</button>
+          </div>
+          <div class="control-group">
+            <button id="rotate-left" class="word-button" type="button" data-action="left" disabled aria-label="Sola 45 derece döndür"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8a8 8 0 1 1-1 9M6 3v5h5"/></svg></button>
+            <button id="rotate-right" class="word-button" type="button" data-action="right" disabled aria-label="Sağa 45 derece döndür">Döndür<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8a8 8 0 1 0 1 9m-1-14v5h-5"/></svg></button>
+            <button id="flip" class="word-button" type="button" data-action="flip" disabled>Ters çevir</button>
+          </div>
+          <button id="sound" class="word-button sound-button" type="button" aria-pressed="true" aria-label="Sesi kapat">
+            <svg viewBox="0 0 28 28" aria-hidden="true"><path d="M4 11h5l6-5v16l-6-5H4Zm15 0 6 6m0-6-6 6"/></svg>
+          </button>
+        </nav>
+
+      </section>
+    </div>
+  </main>
+  <p id="storage-status" class="storage-status" role="status"></p>
+  <div id="touch-lens" class="touch-lens" hidden aria-hidden="true"><svg></svg></div>
+  <p class="gizli" id="error-message" role="alert"></p>
+</body>
+</html>

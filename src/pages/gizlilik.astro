@@ -1,0 +1,63 @@
+---
+import Sheet from '../components/Sheet.astro';
+---
+
+<Sheet
+  title="Gizlilik"
+  description="Oyun kayıtları, günlük sayfa açılışı toplamları ve yönetici çerezleri hakkında."
+>
+  <article class="prose">
+    <h1>Gizlilik, açıkça.</h1>
+    <h2>Oyun kayıtları cihazında</h2>
+    <p>
+      Oyunlar kendi ayarlarını, destekledikleri kayıtları, geçmişi ve
+      istatistikleri tarayıcının yerel depolamasında tutar. Bu verileri Defterde
+      sunucusuna göndermeyiz. Tarayıcı verilerini silmek bu kayıtları da
+      silebilir. Başka cihazda otomatik olarak görünmezler.
+    </p>
+    <h2>Ne sayıyoruz?</h2>
+    <p>
+      Yalnız başarılı oyun giriş sayfası açılışlarını oyun ve gün bazında
+      topluyoruz. Gün sınırı İstanbul saatidir. Bu sayı benzersiz kişi, başlayan
+      maç veya tamamlanan oyun sayısı değildir. Aynı sayfayı yenilemek yeniden
+      sayılabilir; bazı ön yüklemeler ve veritabanı kesintileri sayılmaz.
+    </p>
+    <p>
+      Bu sayaçta IP adresi, oyuncu adı, kelime, uçak adı ve paylaşım notu
+      saklamıyoruz. Reklam veya üçüncü taraf analiz betiği yok. Günlük toplamlar
+      en fazla 13 ay tutulur.
+    </p>
+    <h2>Paylaşım ve dış kaynaklar</h2>
+    <p>
+      Kağıt Hangar'ın paylaşım bağlantısındaki bilgiler, bağlantıyı verdiğin
+      kişi tarafından görülebilir. Oyunun baskı ve pano işlemleri kendi
+      kontrollerinle gerçekleşir.
+    </p>
+    <p>
+      Bazı oyunlar Google Fonts'tan yazı tipi yükler. Kağıt Hangar ayrıca
+      jsDelivr üzerinden rough.js ve lz-string alır. Bu sağlayıcılar dosya
+      isteği sırasında IP adresini görebilir. Bu nedenle bütün oyunların dış ağ
+      olmadan çalıştığını söylemiyoruz. Platformun kendi fontu ve çizimleri
+      yereldir.
+    </p>
+    <h2>Yalnız yönetici için giriş</h2>
+    <p>
+      Oyuncular hesap açmaz. Site sahibi GitHub ile giriş yaptığında, erişimi
+      doğrulamak için GitHub kullanıcı ID'si kullanılır. GitHub erişim belirteci
+      saklanmaz. Yönetim oturumu ve CSRF koruması için gerekli çerezler
+      kullanılır; oturum 8 saatte sona erer. Kısa süreli giriş doğrulaması 10
+      dakika geçerlidir.
+    </p>
+    <p>
+      Yönetim işlemlerinin türü, zamanı ve yönetici ID'si işlem geçmişine
+      kaydedilir; kayıtlar 13 ay tutulur. Katalog revizyonları geri alma için
+      saklanır.
+    </p>
+    <h2>Sunucu kayıtları</h2>
+    <p>
+      Uygulama erişim günlüğü IP ve istek URL'si kaydetmez. Barındırma ve ağ
+      hizmetlerinin ayrıca işlediği teknik kayıtlar, bu uygulamanın oyun
+      sayacından ayrıdır.
+    </p>
+  </article>
+</Sheet>

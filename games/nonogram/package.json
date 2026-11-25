@@ -1,0 +1,10 @@
+{
+  "name": "kare-karalamaca",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "bench": "node test/bench.js",
+    "resimler": "node scripts/resimler.mjs"
+  }
+}

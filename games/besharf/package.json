@@ -1,0 +1,11 @@
+{
+  "name": "bes-harf-defter",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "test": "node --test \"test/*.test.{js,mjs}\"",
+    "kelimeler": "node scripts/kelimeler.mjs",
+    "oneriler": "node scripts/oneriler.mjs",
+    "olc": "node scripts/olc.mjs"
+  }
+}

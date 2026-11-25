@@ -1,0 +1,13 @@
+# scripts/izinli.txt — kaba/hakaret/argo kuralından MUAF tutulan masum kelimeler (satır başına bir).
+# Bu kelimelerin yalnız ikincil bir anlamı kaba ya da hakaret etiketli; o anlamlar yine GİZLENİR, kelime oyunda kalır.
+# (Ana anlamı kaba olan hiçbir kelime buraya yazılmaz.) Değişince: node scripts/hazirla.mjs
+alo        # telefonda açılış sözü; "kendisine bakmasını isteme" anlamı kaba etiketli
+hayvan     # ikincil anlam: hakaret sözü
+inek       # ikincil anlam: kaba gönderme
+köpek      # ikincil anlam: aşağılama
+sığır      # ikincil anlam: hakaret
+parlak     # ikincil anlam: kaba (oğlan)
+oğlan      # erkek çocuk; ikincil anlam kaba
+tayfa      # gemi mürettebatı; ikincil anlam kaba
+uydurmak   # yakıştırmak, uydurmak; ikincil anlam kaba
+çomar      # çoban köpeği; ikincil anlam hakaret

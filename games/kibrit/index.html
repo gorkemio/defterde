@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="tr" data-malzeme="kursunkalem">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#b6a58a">
+  <meta name="description" content="Defterin üstündeki kibrit çöplerinden yapılmış yanlış eşitliği bir çöpün yerini değiştirerek doğru yap; bilgisayara karşı maç.">
+  <title>Kibrit Bulmacası — Defterde</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%23e8e2d0'/%3E%3Cpath d='M6 25 L23 8' stroke='%23d9bf8c' stroke-width='3.4' stroke-linecap='round'/%3E%3Cellipse cx='24.2' cy='6.8' rx='3.6' ry='2.6' transform='rotate(-45 24.2 6.8)' fill='%23b52e24'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="kit/kagit.css?v=74683cd6">
+  <link rel="stylesheet" href="kit/kursunkalem.css?v=0c38673e">
+  <link rel="stylesheet" href="kit/kibrit.css?v=a8cac7ba">
+  <link rel="stylesheet" href="kit/yanik.css?v=28c7ef46">
+  <link rel="stylesheet" href="style.css?v=038bc302">
+</head>
+<body>
+  <noscript><p class="uyari">Bu defteri açmak için JavaScript gerekiyor.</p></noscript>
+  <p class="gizli" id="duyuru" role="status" aria-live="polite"></p>
+  <p class="gizli" id="sahne-yardim">Tab ile çöpler arasında gez, Enter ile çöpü al; sonra Tab ile boş yuvaya gelip Enter ile bırak. Escape vazgeçer. Ctrl+Z geri alır.</p>
+
+  <!-- Açık defter: sol sayfa senin, sağ sayfa bilgisayarın. Telefonda tek sayfa (ui/sahne.js parçaları taşır). -->
+  <main class="defter acik" id="defter">
+    <a class="defterde-donus" href="/">← İçindekiler</a>
+    <section class="sayfa sol" id="sayfa" aria-label="Senin sayfan">
+      <header class="ust" id="ust">
+        <h1 class="baslik"><span class="yazi" id="baslik">Kibrit</span></h1>
+        <p class="mod-notu" id="mod-notu"></p>
+      </header>
+
+      <!-- Defter marjı: kurşun kalemle süre ve hamle -->
+      <aside class="marj" id="marj" aria-label="Süre ve hamle">
+        <div class="marj-kalem" id="marj-kalem"></div>
+      </aside>
+
+      <div class="oyun-alani" id="oyun-alani">
+        <article class="bulmaca oyuncu" id="kupur" aria-labelledby="kupur-baslik"></article>
+        <div class="oyun-alt">
+          <ul class="marj-not" id="marj-not" aria-live="polite"></ul>
+          <div class="kutu-yer" id="kutu-yer"></div>
+        </div>
+        <!-- Sayfanın dibinde kalemle: rakamlar böyle yazılır -->
+        <div class="rakamlar alt-efsane" id="rakamlar"></div>
+      </div>
+
+      <nav class="komutlar oyun-komut" id="komutlar" aria-label="Oyun komutları">
+        <button class="dugme sozcuk" id="k-sonraki" type="button" hidden><span class="yazi">sonraki tur</span></button>
+        <button class="dugme sozcuk" id="k-geri" type="button"><span class="yazi">Geri al</span></button>
+        <button class="dugme sozcuk" id="k-bastan" type="button"><span class="yazi">Baştan</span></button>
+        <button class="dugme sozcuk" id="k-ipucu" type="button"><span class="yazi">İpucu</span></button>
+        <button class="dugme sozcuk" id="k-pes" type="button"><span class="yazi">Pes et</span></button>
+        <button class="dugme sozcuk" id="k-paylas" type="button" hidden><span class="yazi">Paylaş</span></button>
+      </nav>
+    </section>
+
+    <section class="sayfa sag" id="sayfa-sag" aria-label="Bilgisayarın sayfası">
+      <!-- Skor kartı: kurşun kalem çetele -->
+      <header class="skor-bas" id="skor-bas" aria-label="Skor"></header>
+
+      <!-- Bilgisayarın alıştırma kutusu: aynı bulmaca; bulduğu an çöpleri çözüme kayar -->
+      <section class="rakip" id="rakip" aria-label="Bilgisayar" hidden>
+        <article class="bulmaca rakip-kart" id="rakip-kart" aria-labelledby="rakip-kart-baslik"></article>
+        <div class="rakip-ad"><span class="kalem-yazi" id="rakip-ad">Bilgisayar</span><svg class="centik" id="centik" aria-hidden="true"></svg></div>
+        <p class="gizli" id="rakip-durum" aria-live="polite"></p>
+      </section>
+
+      <!-- Kitaplar: açık kitabın yüz bulmacası (çözülenlere tik, şimdiki halkalı) -->
+      <section class="kitap-sayfa" id="kitap-sayfa" aria-labelledby="kitap-sayfa-baslik" hidden>
+        <h2 class="gecmis-baslik" id="kitap-sayfa-baslik"></h2>
+        <div class="bulmaca-izgara" id="kitap-izgara"></div>
+      </section>
+
+      <!-- Maç defteri: tur tur kurşun kalem kayıt (tek kişilik modlarda son bulmacalar) -->
+      <section class="gecmis" id="gecmis" aria-labelledby="gecmis-baslik">
+        <h2 class="gecmis-baslik" id="gecmis-baslik"></h2>
+        <ol class="tur-gecmisi" id="tur-gecmisi"></ol>
+      </section>
+
+      <!-- Sayfa dibinde kalemle yazılmış not -->
+      <div class="yan" id="yan">
+        <aside class="dipnot" id="spot" aria-label="Uyarı">
+          <p><span class="dipnot-ad">Not:</span> Kibrit oyuncak değildir. Bu bulmacalar kâğıt üstünde çözülür; ateşle oynamayın. Kibriti çocukların ulaşamayacağı bir yerde saklayın.</p>
+        </aside>
+      </div>
+
+      <nav class="komutlar genel-komut" id="komutlar-genel" aria-label="Genel komutlar">
+        <button class="dugme sozcuk" id="k-yeni" type="button"><span class="yazi">Yeni maç</span></button>
+        <button class="dugme sozcuk" id="k-modlar" type="button" aria-expanded="false" aria-controls="modlar"><span class="yazi">Modlar</span></button>
+        <button class="dugme sozcuk" id="k-ayarlar" type="button" aria-expanded="false" aria-controls="ayarlar"><span class="yazi">Ayarlar</span></button>
+        <button class="dugme ikon" id="k-ses" type="button" aria-pressed="true" aria-label="Ses"><svg class="ses-simge" viewBox="0 0 40 40" aria-hidden="true"></svg></button>
+      </nav>
+    </section>
+
+    <div class="kenar-damga" id="kenar-damga" aria-hidden="true"></div>
+  </main>
+
+  <!-- Kalem notları: modlar, ayarlar, kitaplar, iki kişi devri. Ekranın ortasında, defterden koparılmış kareli yaprak. -->
+  <div class="not-katman" id="not-katman">
+    <section class="not" id="modlar" role="dialog" aria-modal="true" aria-labelledby="modlar-baslik" hidden>
+      <h2 class="not-baslik" id="modlar-baslik">Modlar</h2>
+      <ul class="mod-liste">
+        <li><button class="dugme sozcuk mod" type="button" data-mod="mac"><span class="yazi">Maç</span></button> <span class="aciklama">bilgisayara karşı; önce çözen turu alır</span></li>
+        <li><button class="dugme sozcuk mod" type="button" data-mod="hepsini"><span class="yazi">Hepsini Bul</span></button> <span class="aciklama">bütün çözümleri 75 saniyede</span></li>
+        <li><button class="dugme sozcuk mod" type="button" data-mod="boz"><span class="yazi">Boz ve Düzelt</span></button> <span class="aciklama">sen bozarsın, o düzeltir; o bozar, sen düzeltirsin</span></li>
+        <li><button class="dugme sozcuk mod" type="button" data-mod="kitap"><span class="yazi">Kitaplar</span></button> <span class="aciklama">yüzer bulmacalık kitaplar</span></li>
+        <li><button class="dugme sozcuk mod" type="button" data-mod="sonsuz"><span class="yazi">Sonsuz</span></button> <span class="aciklama">puanına göre sıradaki</span></li>
+        <li><button class="dugme sozcuk mod" type="button" data-mod="gunun"><span class="yazi">Günün bulmacası</span></button> <span class="aciklama">herkese aynı</span></li>
+        <li><button class="dugme sozcuk mod" type="button" data-mod="ikiKisi"><span class="yazi">İki kişi</span></button> <span class="aciklama">aynı cihazda</span></li>
+      </ul>
+      <p class="not-komut"><button class="dugme sozcuk" type="button" data-kapat="modlar"><span class="yazi">kapat</span></button></p>
+    </section>
+
+    <section class="not" id="ayarlar" role="dialog" aria-modal="true" aria-labelledby="ayarlar-baslik" hidden>
+      <h2 class="not-baslik" id="ayarlar-baslik">Ayarlar</h2>
+      <div id="ayar-gruplar"></div>
+      <p class="yeni-not" id="ayar-not" role="status" aria-live="polite" hidden></p>
+      <p class="not-komut"><button class="dugme sozcuk" type="button" data-kapat="ayarlar"><span class="yazi">kapat</span></button></p>
+    </section>
+
+    <section class="not" id="kitaplar" role="dialog" aria-modal="true" aria-labelledby="kitaplar-baslik" hidden>
+      <h2 class="not-baslik" id="kitaplar-baslik">İçindekiler</h2>
+      <div id="kitap-icerik"></div>
+      <p class="not-komut"><button class="dugme sozcuk" type="button" data-kapat="kitaplar"><span class="yazi">kapat</span></button></p>
+    </section>
+
+    <section class="not" id="devir" role="dialog" aria-modal="true" aria-labelledby="devir-baslik" hidden>
+      <h2 class="not-baslik" id="devir-baslik"></h2>
+      <p id="devir-metin"></p>
+      <div id="devir-secim"></div>
+      <p class="not-komut"><button class="dugme sozcuk" type="button" id="devir-tamam"><span class="yazi">hazırım</span></button></p>
+    </section>
+  </div>
+
+  <!-- İki kişi karşılıklı yarış: ekran ikiye bölünür, üst yarı 180° döner -->
+  <section class="yaris" id="yaris" hidden aria-label="Karşılıklı yarış">
+    <div class="yaris-yari ust-yari sayfa" id="yaris-ust"></div>
+    <div class="yaris-orta" id="yaris-orta"></div>
+    <div class="yaris-yari alt-yari sayfa" id="yaris-alt"></div>
+  </section>
+
+  <!-- Yerel sabit sürüm; klasik betik file:// altında da çalışır. kit/karakter.js bu oyunda yüklenmez. -->
+  <script src="assets/vendor/rough-4.6.6.js?v=6853af86"></script>
+  <script src="kit/kalem.js?v=ecbde10a"></script>
+  <script src="kit/ses.js?v=c92bc678"></script>
+  <script src="kit/malzeme.js?v=7f1b2fba"></script>
+  <script src="kit/kursunkalem.js?v=8a368d63"></script>
+  <script src="kit/rakam.js?v=6546d559"></script>
+  <script src="kit/kibrit.js?v=225aebd1"></script>
+  <script src="kit/yanik.js?v=f9649f74"></script>
+  <script src="config.js?v=73dae2c4"></script>
+  <script src="engine/model.js?v=0c78b28e"></script>
+  <script src="engine/solver.js?v=86a0e72b"></script>
+  <script src="engine/ai.js?v=3644482c"></script>
+  <script src="engine/difficulty.js?v=f1479315"></script>
+  <script src="engine/generator.js?v=a8313d78"></script>
+  <script src="engine/rating.js?v=53f12e1d"></script>
+  <script src="data/havuz/meta.js?v=2bc3b7af"></script>
+  <script src="audio/sesler.js?v=f26bdb16"></script>
+  <script src="ui/depo.js?v=a56987f4"></script>
+  <script src="ui/sahne.js?v=99c2eb42"></script>
+  <script src="ui/kupur.js?v=7a4372c6"></script>
+  <script src="ui/surukle.js?v=f4bfa81e"></script>
+  <script src="ui/marj.js?v=76a1bd55"></script>
+  <script src="ui/havuz.js?v=47aac8db"></script>
+  <script src="ui/modlar.js?v=182c3b3b"></script>
+  <script src="ui/ayarlar.js?v=80a3209f"></script>
+  <script src="ui/ana.js?v=5ae4498c"></script>
+</body>
+</html>

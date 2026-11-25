@@ -1,0 +1,55 @@
+/* defter.css — masa, yaşlı defter kâğıdı, altta duran yapraklar ve gölge. Dokuz Taş'taki defter hissinin
+   (dokuztas/kit/kursunkalem.css) bu oyuna uyarlanmış hâli; mürekkep rengi, font ve düğmelere dokunmaz.
+   Kâğıdın kendisi, eğimi ve basılı kare/marj deseni .sayfa::before'dadır (gorunum.js kareleri saha noktalarına hizalar).
+   Burada yalnız: kâğıdın tonu, kenarlardaki sararma, gölgesi, altındaki yapraklar ve ahşap masa vardır.
+   Gren için kit/gren.png yolu açık yazılır: var(--gren) bu dosyadan kullanılsa göreli yol yanlış çözülürdü. */
+
+:root {
+  --kagit: #fbf9f2;                         /* biraz sıcak, eskimiş defter kâğıdı */
+  --izgara: rgba(86, 140, 214, .32);        /* kareler soluk mavi-gri */
+  --marj: rgba(214, 64, 64, .6);           /* marj solmuş kırmızı */
+  --masa: #b6a58a;
+}
+
+/* Ahşap masa: sol üstten lamba ışığı, kenarlarda karanlık, yatay lif çizgileri ve gren */
+body {
+  background:
+    radial-gradient(ellipse at 50% 40%, rgba(255, 255, 255, .22), transparent 70%),
+    url("kit/gren.png"),
+    #b6a58a;
+}
+
+/* Defter tek yığındır: alttaki yapraklar sayfanın arkasında kalsın diye kendi yığın bağlamını kurar */
+.defter { isolation: isolate; }
+
+/* Üstteki sayfa: kenarlara doğru hafif sararma, üst kenarda ışık, temas gölgesi ve masaya düşen uzun yumuşak gölge */
+.sayfa::before {
+  box-shadow:
+    inset 0 1px 2px rgba(255, 255, 255, .8),
+    0 1px 1px rgba(40, 24, 10, .25),
+    14px 26px 44px -10px rgba(30, 18, 6, .55);
+}
+
+/* Altta duran iki yaprak: üstteki sayfa gibi eğimlidir, ona göre biraz farklı yatar ve kendi gölgesini taşır.
+   Kayma ve dönme küçük ekranda azdır (gövde boşluğu 8 px), geniş masaüstünde belirgindir. */
+.defter::before,
+.defter::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: url("kit/gren.png"), #f7f4eb;
+  background-size: 256px 256px, auto;
+  box-shadow: 0 1px 2px rgba(40, 24, 10, .3), 6px 12px 22px -8px rgba(30, 18, 6, .4);
+}
+.defter::before { transform: translate(3px, 3px) rotate(calc(var(--defter-egimi, 0deg) + .4deg)); }
+.defter::after {
+  background: url("kit/gren.png"), #efebdf;
+  background-size: 256px 256px, auto;
+  transform: translate(-2px, 4px) rotate(calc(var(--defter-egimi, 0deg) - .3deg));
+}
+@media (min-width: 1100px) and (min-height: 680px) {
+  .defter::before { transform: translate(5px, 4px) rotate(calc(var(--defter-egimi, 0deg) + .7deg)); }
+  .defter::after  { transform: translate(-3px, 7px) rotate(calc(var(--defter-egimi, 0deg) - .5deg)); }
+}

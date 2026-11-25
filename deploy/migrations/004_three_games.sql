@@ -1,0 +1,27 @@
+-- Append the three games without publishing draft edits or changing past revisions.
+DO $$
+DECLARE
+  state catalog_state%ROWTYPE;
+  published jsonb;
+  entry jsonb;
+  additions jsonb := '[{"slug":"xox","title":"5’li XOX","description":"X ve O’ları yerleştir, beşini aynı sırada buluştur.","visible":true},{"slug":"noktaoyunu","title":"Nokta Oyunu","description":"Noktaları birleştir, kutuları kapat, sayfayı renklendir.","visible":true},{"slug":"sayibulma","title":"Sayı Bulma","description":"Artı ve eksi ipuçlarını izle, gizli sayıyı bul.","visible":true}]'::jsonb;
+  changed boolean := false;
+  next_revision integer;
+BEGIN
+  SELECT * INTO state FROM catalog_state WHERE id=1 FOR UPDATE;
+  IF NOT FOUND THEN RETURN; END IF;
+  SELECT items INTO STRICT published FROM catalog_revisions WHERE id=state.published_revision;
+  FOR entry IN SELECT value FROM jsonb_array_elements(additions) LOOP
+    IF NOT state.draft @> jsonb_build_array(jsonb_build_object('slug',entry->>'slug')) THEN
+      state.draft := state.draft || jsonb_build_array(entry); changed := true;
+    END IF;
+    IF NOT published @> jsonb_build_array(jsonb_build_object('slug',entry->>'slug')) THEN
+      published := published || jsonb_build_array(entry); changed := true;
+    END IF;
+  END LOOP;
+  IF NOT changed THEN RETURN; END IF;
+  SELECT GREATEST(state.version,COALESCE(MAX(id),0))+1 INTO next_revision FROM catalog_revisions;
+  INSERT INTO catalog_revisions(id,items,actor) VALUES (next_revision,published,'migration:004_three_games');
+  UPDATE catalog_state SET draft=state.draft, version=next_revision, published_revision=next_revision WHERE id=1;
+  INSERT INTO admin_audit(action,actor,revision) VALUES ('register_games','migration:004_three_games',next_revision);
+END $$;

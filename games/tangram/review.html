@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#b6a58a"><title>Bu neye benziyor? · Tangram</title><link rel="icon" href="assets/favicon.svg"><link rel="stylesheet" href="kit/kagit.css?v=556272b28114"><link rel="stylesheet" href="style.css?v=78bd5996d429"><link rel="stylesheet" href="tools/tools.css?v=a0c1dce3424c">
+<script defer src="assets/vendor/rough-4.6.6.js?v=6853af861953"></script>
+<script defer src="assets/vendor/polygon-clipping-0.15.7.js?v=7f8619e84a86"></script>
+<script defer src="kit/kalem.js?v=2301a219cebb"></script>
+<script defer src="geometry.js?v=a341685d97f4"></script>
+<script defer src="board.js?v=1d01a66f029a"></script>
+<script defer src="validation.js?v=9cb87bfaeb05"></script>
+<script defer src="authoring.js?v=95226268e2f2"></script>
+<script defer src="puzzles/kara-hayvanlari.js?v=2b9e52dfef24"></script>
+<script defer src="puzzles/kuslar.js?v=cd5ceacec704"></script>
+<script defer src="puzzles/deniz-canlilari.js?v=3ba354989e7d"></script>
+<script defer src="puzzles/insanlar.js?v=8bdcd26a78cc"></script>
+<script defer src="puzzles/tasitlar.js?v=b9c392878732"></script>
+<script defer src="puzzles/yapilar.js?v=f35fb68567bf"></script>
+<script defer src="puzzles/ev-esyalari.js?v=ac6077ea491d"></script>
+<script defer src="puzzles/nesneler.js?v=a1b346d6609f"></script>
+<script defer src="puzzles/doga.js?v=e9561fe12899"></script>
+<script defer src="puzzles/geometri.js?v=c23ef1377f6a"></script>
+<script defer src="puzzles/catalog.js?v=4c38d5b40cf4"></script>
+<script defer src="draw.js?v=5763ff396384"></script>
+<script defer src="tools/review.js?v=fbb1b167b500"></script>
+</head><body><noscript>Bu sayfa JavaScript gerektirir.</noscript><main class="notebook"><div class="paper-back far" aria-hidden="true"></div><div class="paper-back near" aria-hidden="true"></div><div class="paper-surface" aria-hidden="true"></div><div class="sheet sayfa tools-sheet"><header class="sheet-header"><h1><span>Bu neye benziyor?</span><svg class="title-line" aria-hidden="true"></svg></h1><span class="wordmark">defterde<svg aria-hidden="true"></svg></span></header><nav class="tool-nav" aria-label="Tangram sayfaları"><a href="index.html" class="word-button">Oyuna dön</a><a href="editor.html" class="word-button">Şekil atölyesi</a><a href="review.html" class="word-button">İsimsiz inceleme</a></nav>
+<p class="tool-intro">Önce siluetlere isim vermeyi dene. Sonra adları açıp tanınanları ve yeniden çalışılması gerekenleri işaretle. Geometri kontrolü, tanınabilirliğin yerine geçmez.</p>
+<div class="review-controls"><label class="check-label"><input id="show-names" type="checkbox">Adları göster</label><label class="check-label"><input id="show-categories" type="checkbox">Kategorileri göster</label><label class="check-label"><input id="show-seams" type="checkbox">Parça sınırlarını göster</label><button id="shuffle" class="word-button" type="button">Sırayı karıştır</button></div>
+<p id="review-summary" role="status"></p><p id="review-storage" class="tool-note" role="status"></p>
+<ol id="review-grid" class="review-grid"></ol>
+<nav class="review-pages" aria-label="İnceleme sayfaları"><button id="previous-page" class="word-button" type="button">Önceki sayfa</button><span id="page-label" role="status"></span><button id="next-page" class="word-button" type="button">Sonraki sayfa</button></nav>
+<section class="data-section"><h2>İnceleme notların</h2><p>Notlar mümkünse bu tarayıcıda saklanır. Dışa aktarma yalnız bir rapor üretir; oyunun kataloğunu değiştirmez. Kabul kararlarını ve düzeltme notlarını bu raporla paylaşabilirsin.</p><button id="export-review" class="word-button" type="button">İnceleme raporunu hazırla</button><button id="download-review" class="word-button" type="button" disabled>Raporu indir</button><label>İnceleme raporu<textarea id="review-data" rows="5" readonly spellcheck="false"></textarea></label><p id="report-status" role="status"></p></section>
+</div></main></body></html>

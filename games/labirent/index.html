@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="tr" data-kagit="siyah" data-malzeme="jelkalem">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#b6a58a">
+  <meta name="description" content="Siyah sayfalı eskiz defterine beyaz jel kalemle çizilmiş labirent; yolu simli jel kalemle sen çiz, kronometre marjda.">
+  <title>Labirent — Defterde</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%231c1b1a'/%3E%3Cpath d='M6 6 H26 V26 H12 V12 H20 V20' fill='none' stroke='%23f1eee6' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='16' cy='19' r='2.4' fill='%233fd6c8'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="kit/kagit.css?v=74683cd6">
+  <link rel="stylesheet" href="kit/siyahsayfa.css?v=ae17b9af">
+  <link rel="stylesheet" href="kit/jelkalem.css?v=ec4a6b8c">
+  <link rel="stylesheet" href="style.css?v=f9290040">
+</head>
+<body>
+  <noscript><p class="uyari">Bu defteri açmak için JavaScript gerekiyor.</p></noscript>
+  <p class="gizli" id="duyuru" role="status" aria-live="polite"></p>
+
+  <main class="defter" id="defter">
+    <a class="defterde-donus" href="/">← İçindekiler</a>
+    <section class="sayfa" id="sayfa" aria-label="Labirent sayfası">
+      <header class="ust-marj" id="ust-marj">
+        <h1 class="baslik beyaz"><span class="yazi" id="baslik">Labirent</span></h1>
+        <p class="kronometre gumus" id="kronometre" role="timer"><span class="yazi">0:00</span></p>
+        <nav class="modlar" id="modlar" aria-label="Modlar"></nav>
+        <p class="kunye gumus" id="kunye"></p>
+      </header>
+
+      <div class="alan" id="alan">
+        <canvas class="ekran" id="ekran" aria-label="Labirent" role="img"></canvas>
+      </div>
+
+      <footer class="alt-marj" id="alt-marj">
+        <div class="sonuc bos" id="sonuc" aria-hidden="true"></div>
+        <nav class="komutlar" id="komutlar" aria-label="Komutlar"></nav>
+      </footer>
+
+      <!-- Kalem notları: sayfanın üstünde açılır -->
+      <section class="not" id="not-serbest" aria-labelledby="serbest-baslik" hidden>
+        <h2 class="not-baslik beyaz" id="serbest-baslik">Serbest</h2>
+        <div id="serbest-secim"></div>
+        <p class="not-satir"><span class="not-ad gumus">kod</span> <span class="kod gumus" id="serbest-kod"></span>
+          <button class="dugme sozcuk" id="kod-kopyala" type="button"><span class="yazi">kodu kopyala</span></button>
+          <button class="dugme sozcuk" id="link-kopyala" type="button"><span class="yazi">linki kopyala</span></button></p>
+        <p class="not-satir"><label class="not-ad gumus" for="kod-gir">kod gir</label>
+          <input class="kod-gir" id="kod-gir" type="text" inputmode="text" autocomplete="off" autocapitalize="characters" spellcheck="false" maxlength="12" placeholder="D-O-W-7KQ9">
+          <button class="dugme sozcuk" id="kod-ac" type="button"><span class="yazi">aç</span></button></p>
+        <p class="not-uyari gumus" id="kod-not" role="status" aria-live="polite"></p>
+        <p class="not-komut"><button class="dugme sozcuk" id="serbest-yeni" type="button"><span class="yazi">Yeni labirent</span></button>
+          <button class="dugme sozcuk" type="button" data-kapat="not-serbest"><span class="yazi">kapat</span></button></p>
+      </section>
+      <section class="not" id="not-hayalet" aria-labelledby="hayalet-baslik" hidden>
+        <h2 class="not-baslik beyaz" id="hayalet-baslik">Hayalet</h2>
+        <p class="not-aciklama gumus">rakip ilk çizginle başlar; önce çıkan kazanır</p>
+        <div id="hayalet-secim"></div>
+        <p class="not-uyari gumus" id="hayalet-not" role="status" aria-live="polite"></p>
+        <p class="not-komut"><button class="dugme sozcuk" type="button" data-kapat="not-hayalet"><span class="yazi">kapat</span></button></p>
+      </section>
+      <section class="not" id="not-bolum" aria-labelledby="bolum-baslik" hidden>
+        <h2 class="not-baslik beyaz" id="bolum-baslik">Bölümler</h2>
+        <p class="not-aciklama gumus">her türün defterinde kolaydan zora 20 seviye; biten sonrakini açar</p>
+        <div id="bolum-liste"></div>
+        <p class="not-komut"><button class="dugme sozcuk" type="button" data-kapat="not-bolum"><span class="yazi">kapat</span></button></p>
+      </section>
+      <section class="not" id="not-ayarlar" aria-labelledby="ayarlar-baslik" hidden>
+        <h2 class="not-baslik beyaz" id="ayarlar-baslik">Ayarlar</h2>
+        <p class="not-satir"><span class="not-ad gumus">kalem</span> <span class="renkler" id="renk-secim"></span></p>
+        <div id="iz-secim"></div>
+        <div id="uv-secim"></div>
+        <div id="genel-secim"></div>
+        <p class="not-komut"><button class="dugme sozcuk" type="button" data-kapat="not-ayarlar"><span class="yazi">kapat</span></button></p>
+      </section>
+    </section>
+  </main>
+
+  <!-- Yazdır: yalnız baskıda görünür (ui/yazdir.js doldurur) -->
+  <section class="yazdir" id="yazdir" aria-hidden="true"></section>
+
+  <!-- Yerel sabit sürüm; klasik betik file:// altında da çalışır. -->
+  <script src="assets/vendor/rough-4.6.6.js?v=6853af86"></script>
+  <script src="kit/kalem.js?v=ecbde10a"></script>
+  <script src="kit/ses.js?v=c92bc678"></script>
+  <script src="kit/malzeme.js?v=7f1b2fba"></script>
+  <script src="kit/jelkalem.js?v=97504045"></script>
+  <script src="kit/uv.js?v=9b417ca2"></script>
+  <script src="kit/silgi.js?v=bff27f13"></script>
+  <script src="config.js?v=ea025880"></script>
+  <script src="engine/rng.js?v=5cb4cbf5"></script>
+  <script src="engine/topology.js?v=2af06441"></script>
+  <script src="engine/generate.js?v=8ed40e61"></script>
+  <script src="engine/eller.js?v=882b2da9"></script>
+  <script src="engine/ghost.js?v=51da8a4e"></script>
+  <script src="engine/solve.js?v=3b31fca1"></script>
+  <script src="data/bolumler.js?v=a7022b62"></script>
+  <script src="engine/path.js?v=1fcf4b85"></script>
+  <script src="render/sahne.js?v=27e46bcd"></script>
+  <script src="render/maze.js?v=fb127851"></script>
+  <script src="render/path.js?v=7d7d7d7d"></script>
+  <script src="render/uv.js?v=95d85466"></script>
+  <script src="render/margin.js?v=cb490a62"></script>
+  <script src="audio/ses.js?v=7b47519a"></script>
+  <script src="ui/depo.js?v=ee8a4d47"></script>
+  <script src="ui/kod.js?v=25f9cf45"></script>
+  <script src="ui/giris.js?v=66d8ff39"></script>
+  <script src="ui/ayarlar.js?v=ab6b95bb"></script>
+  <script src="ui/oyun.js?v=9af5cebb"></script>
+  <script src="ui/yazdir.js?v=b5da19e5"></script>
+  <script src="ui/sonsuz.js?v=d618e481"></script>
+  <script src="ui/modlar.js?v=1da6fbdf"></script>
+  <script src="ui/ana.js?v=8920e25c"></script>
+</body>
+</html>

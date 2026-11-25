@@ -1,0 +1,31 @@
+/* kit/jelkalem.css — "jel kalem" malzemesi: Mynerve el yazısı, beyaz ve gümüş jel. Hangi oyun olduğunu bilmez.
+   <html data-malzeme="jelkalem"> ile açılır. Koyu sayfa için yazılmıştır (kit/siyahsayfa.css).
+   .gumus: gümüş jel yazı (harf başına hafif metal parıltı); .beyaz: beyaz jel. */
+
+@font-face {
+  font-family: 'Mynerve';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../assets/fonts/Mynerve-Regular-tr.ttf') format('truetype');
+}
+
+html[data-malzeme="jelkalem"] body,
+html[data-malzeme="jelkalem"] svg text { font-family: 'Mynerve', 'Segoe Print', 'Bradley Hand', cursive; }
+
+html[data-malzeme="jelkalem"] .beyaz { color: var(--jel-beyaz, #f1eee6); }
+html[data-malzeme="jelkalem"] .gumus { color: var(--gumus, #c9c9c4); }
+
+/* Gümüş jel mürekkebi metaliktir: her harf ışığı biraz farklı açıdan alır (harfle() harf başına span verir) */
+html[data-malzeme="jelkalem"] .gumus .harf {
+  background: linear-gradient(172deg, #ecebe6 0%, #c3c2bd 38%, #9d9c97 52%, #d9d8d2 74%, #a8a7a2 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+html[data-malzeme="jelkalem"] .dugme { color: var(--gumus, #c9c9c4); }
+html[data-malzeme="jelkalem"] .dugme[disabled] { color: var(--gumus-koyu, #8f8e8a); opacity: .6; }
+html[data-malzeme="jelkalem"] .dugme.etkin { color: var(--jel-beyaz, #f1eee6); }
+html[data-malzeme="jelkalem"] .dugme.etkin .harf { background: none; color: var(--jel-beyaz, #f1eee6); }
+html[data-malzeme="jelkalem"] .dugme:focus-visible { outline: 1.5px dotted rgba(201, 201, 196, .55); outline-offset: 3px; border-radius: 6px; }

@@ -1,0 +1,9 @@
+# Örnek: Traefik dinamik dosya yapılandırmasına eklenir (compose etiketlerine alternatif).
+# Yalnız www.<alan adı> router'ına defterde-www@file olarak bağlanır; alan adını kendi adresinle değiştir.
+http:
+  middlewares:
+    defterde-www:
+      redirectRegex:
+        regex: '^https?://www\.defterde\.com/(.*)'
+        replacement: 'https://defterde.com/${1}'
+        permanent: true

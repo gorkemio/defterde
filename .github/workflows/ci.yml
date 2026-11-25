@@ -1,0 +1,90 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  ASTRO_TELEMETRY_DISABLED: '1'
+
+jobs:
+  test:
+    name: Denetim, build ve testler
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:17-alpine
+        env:
+          POSTGRES_USER: defterde
+          POSTGRES_PASSWORD: test
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd "pg_isready -U defterde"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - name: Biçim
+        run: npm run format:check
+      - name: Tür denetimi
+        run: npm run check
+      - name: Oyun kopyaları kayıtlarla aynı mı?
+        run: npm run games:verify
+      - run: npm run build
+      - name: Test veritabanları
+        env:
+          PGPASSWORD: test
+        run: |
+          for db in defterde besharf dokuztas domino kakuro kibrit labirent mangala nonogram rally tangram three_games turkdamasi; do
+            psql -h localhost -U defterde -d postgres -c "CREATE DATABASE ${db}_test"
+          done
+      - name: Platform testleri (PostgreSQL ile)
+        run: |
+          base=postgres://defterde:test@localhost:5432
+          export TEST_DATABASE_URL=$base/defterde_test
+          for n in BESHARF DOKUZTAS DOMINO KAKURO KIBRIT LABIRENT MANGALA NONOGRAM RALLY TANGRAM THREE_GAMES TURKDAMASI; do
+            export TEST_${n}_DATABASE_URL=$base/$(echo $n | tr 'A-Z' 'a-z')_test
+          done
+          npm test
+      - name: Oyun testleri
+        run: npm run test:games
+
+  browser:
+    name: Tarayıcı testleri (Chromium)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: npm run build
+      - run: npx playwright install --with-deps chromium
+      - name: Sunucuyu başlat (veritabanısız)
+        run: |
+          node build/server/index.js > server.log 2>&1 &
+          for i in $(seq 1 30); do curl -fs http://localhost:4321/healthz && break; sleep 1; done
+      - run: npx playwright test --project=chromium
+      - if: failure()
+        uses: actions/upload-artifact@v7
+        with:
+          name: tarayici-test-sonuclari
+          path: |
+            test-results/
+            server.log
+          retention-days: 7

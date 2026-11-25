@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="tr" data-malzeme="kursunkalem">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#b6a58a">
+  <meta name="description" content="Defterde, kurşun kalemle çizilmiş iki kişilik domino.">
+  <title>Domino — defterde</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="kit/kagit.css?v=556272b28114">
+  <link rel="stylesheet" href="kit/kursunkalem.css?v=4e4510ae7535">
+  <link rel="stylesheet" href="style.css?v=686e86e21b1e">
+  <script defer src="assets/vendor/rough-4.6.6.js?v=6853af861953"></script>
+  <script defer src="kit/kalem.js?v=ecbde10af5d8"></script>
+  <script defer src="kit/ses.js?v=c92bc678c362"></script>
+  <script defer src="kit/malzeme.js?v=7f1b2fbadc51"></script>
+  <script defer src="kit/kursunkalem.js?v=8a368d63ea29"></script>
+  <script defer src="draw.js?v=5d630cc992ce"></script>
+  <script defer src="board.js?v=e6f4cde08d23"></script>
+  <script defer src="match.js?v=6407bbcc3bb4"></script>
+  <script defer src="view.js?v=268868ff6f7e"></script>
+  <script defer src="layout.js?v=0de89b2a7c3e"></script>
+  <script defer src="ai.js?v=f770eed04a02"></script>
+  <script defer src="ui-support.js?v=c8aaabe115d1"></script>
+  <script defer src="ui.js?v=985d5a295b8c"></script>
+</head>
+<body>
+  <main class="notebook" aria-labelledby="game-title">
+    <a class="back-link defterde-donus" href="/">← İçindekiler</a>
+    <section class="sayfa" aria-label="Domino masası">
+      <div class="paper-surface" aria-hidden="true"></div>
+      <header class="heading">
+        <h1 id="game-title"><span class="pencil-underline title-word" data-ink="red">Domino</span></h1>
+        <div class="turn">
+          <p class="score" aria-label="Maç skoru">
+            <span class="score-label" id="target">50 puana kadar · 1. el</span>
+            <span class="score-line">
+              <span class="player-name seat-0"><i class="player-dot" data-seat="0" aria-hidden="true"></i><span id="name-0">Sen</span></span>
+              <span class="score-number seat-0" id="score-0">0</span><span class="score-dash" aria-hidden="true">—</span><span class="score-number seat-1" id="score-1">0</span>
+              <span class="player-name seat-1"><span id="name-1">Bilgisayar</span><i class="player-dot" data-seat="1" aria-hidden="true"></i></span>
+            </span>
+          </p>
+          <p class="turn-title" id="turn-title">Sıra sende</p>
+          <p class="turn-instruction" id="turn-note">Bir taş seç</p>
+        </div>
+        <span class="signature pencil-underline" data-ink="graphite">defterde</span>
+      </header>
+
+      <div class="play-area">
+        <aside class="side opponent seat-1" aria-label="Bilgisayarın kapalı taşları">
+          <h2 class="side-name" id="opponent-name">Bilgisayar</h2>
+          <span class="side-label" id="opponent-count">7 taş</span>
+          <div id="opponent-tiles" class="opponent-tiles" aria-label="Rakibin kapalı taşları"></div>
+        </aside>
+
+        <section class="board-region" aria-label="Domino zinciri">
+          <svg class="board-guide" aria-hidden="true"></svg>
+          <div class="board-viewport" id="board-viewport" tabindex="0" aria-label="Oyun alanı. Yatay kaydırılabilir; uç kısayollarıyla iki uca ulaşabilirsin.">
+            <div class="board-space" id="board-space">
+              <div class="board-world" id="board-world">
+                <p id="board-empty" class="board-empty">İlk taş deftere düşsün.</p>
+                <div id="chain" role="list" aria-label="Domino zinciri, sol uçtan sağ uca"></div>
+                <div id="placement-preview" aria-hidden="true"></div>
+                <button class="end-point end-left" id="end-left" data-end="left" type="button" aria-label="Sol uç iki" aria-pressed="false">
+                  <span class="end-number">2</span><span class="end-caption">sol uç</span>
+                </button>
+                <button class="end-point end-right" id="end-right" data-end="right" type="button" aria-label="Sağ uç altı" aria-pressed="false">
+                  <span class="end-number">6</span><span class="end-caption">sağ uç</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <nav class="end-shortcuts" aria-label="Zincirin uçlarına git">
+            <button class="small-command" data-jump="left" type="button"><span class="yazi">← Sol uç · 2</span></button>
+            <span class="scroll-note">Tahtayı kaydırabilirsin</span>
+            <button class="small-command" data-jump="right" type="button"><span class="yazi">Sağ uç · 6 →</span></button>
+          </nav>
+        </section>
+
+        <aside class="side stock" aria-label="Kapalı çekme havuzu">
+          <h2 class="side-name">Havuz</h2>
+          <span class="side-label"><span id="stock-count">14</span> taş</span>
+          <div class="stock-drawing" id="stock-drawing" aria-hidden="true"></div>
+          <button class="word-button draw-command" id="draw" type="button" disabled><span class="yazi">Taş çek</span></button>
+        </aside>
+      </div>
+
+      <section class="hand-region seat-0" aria-label="Senin taşların">
+        <div class="hand-heading">
+          <h2 class="side-name" id="hand-name">Sen</h2>
+          <span class="side-label" id="hand-count">7 taş</span>
+          <button class="small-command" id="sort" type="button">Sırala</button>
+        </div>
+        <div class="hand" id="hand" role="group" aria-label="Taşların. Ok tuşlarıyla gez, Enter veya boşlukla seç."></div>
+        <div class="move-actions">
+          <button class="word-button play-command" id="play" type="button" disabled><span class="yazi">Oyna</span></button>
+          <span class="selection-note" id="selection-note">Altı çizili taşlar oynanabilir.</span>
+        </div>
+        <section id="result" class="result-note" aria-labelledby="result-title" hidden>
+          <h2 id="result-title" tabindex="-1" aria-describedby="result-detail"></h2>
+          <p id="result-detail"></p>
+          <div class="result-actions">
+            <button class="word-button" id="next-round" type="button"><span class="yazi">Sonraki el</span></button>
+            <button class="word-button" id="result-new" type="button"><span class="yazi">Yeni maç</span></button>
+          </div>
+        </section>
+      </section>
+
+      <footer class="footer">
+        <button class="mode" id="settings-open" type="button" aria-haspopup="dialog" title="Ayarlar"><span id="settings-note">Bilgisayara karşı · Orta · 50 puan</span></button>
+        <nav class="commands" aria-label="Oyun komutları">
+          <button class="word-button" id="new-match" type="button"><span class="yazi">Yeni maç</span></button>
+          <button class="word-button undo" id="clear" type="button" disabled><span class="yazi">Geri al</span></button>
+          <button class="word-button" id="hint" type="button" disabled><span class="yazi">İpucu</span></button>
+          <button class="word-button" id="help-open" type="button" aria-haspopup="dialog"><span class="yazi">Nasıl oynanır?</span></button>
+          <button class="sound" id="sound" type="button" aria-pressed="true" aria-label="Sesi kapat" title="Sesi kapat">
+            <svg id="sound-icon" viewBox="0 0 44 40" aria-hidden="true"></svg>
+            <span class="sound-text">Ses açık</span>
+          </button>
+        </nav>
+      </footer>
+      <noscript><p class="no-script">Taşları görmek için JavaScript’i etkinleştir.</p></noscript>
+    </section>
+  </main>
+
+  <p class="sr-only" id="announcement" role="status" aria-live="polite"></p>
+
+  <dialog id="setup" class="paper-note" aria-labelledby="setup-title">
+    <form id="setup-form">
+      <div class="note-heading"><h2 id="setup-title">Yeni bir maç</h2><button class="small-command" id="setup-cancel" type="button" aria-label="Ayarları kapat">Kapat</button></div>
+      <p>Seçimlerin yeni maçla birlikte uygulanır.</p>
+      <fieldset class="choice-group"><legend>Rakip</legend>
+        <div class="choice-options">
+          <label class="choice"><input type="radio" name="mode" value="computer" checked><span>Bilgisayar</span></label>
+          <label class="choice"><input type="radio" name="mode" value="local"><span>Aynı cihazda iki kişi</span></label>
+        </div>
+      </fieldset>
+      <fieldset class="choice-group" id="difficulty-label"><legend>Zorluk</legend>
+        <div class="choice-options">
+          <label class="choice"><input type="radio" name="difficulty" value="easy"><span>Kolay</span></label>
+          <label class="choice"><input type="radio" name="difficulty" value="medium" checked><span>Orta</span></label>
+          <label class="choice"><input type="radio" name="difficulty" value="hard"><span>Zor</span></label>
+        </div>
+      </fieldset>
+      <fieldset class="choice-group"><legend>Maç</legend>
+        <div class="choice-options">
+          <label class="choice"><input type="radio" name="target" value="0"><span>Tek el</span></label>
+          <label class="choice"><input type="radio" name="target" value="50" checked><span>50 puan</span></label>
+          <label class="choice"><input type="radio" name="target" value="100"><span>100 puan</span></label>
+        </div>
+      </fieldset>
+      <div class="setup-row">
+        <label>Adın<input name="firstName" maxlength="18" value="Sen" autocomplete="off"></label>
+        <label id="second-name-label" hidden>Diğer oyuncu<input name="secondName" maxlength="18" value="İkinci oyuncu" autocomplete="off"></label>
+      </div>
+      <p class="note-small">İki kişide, sıra değişince taşlar kapanır. Cihazı diğer oyuncuya ver.</p>
+      <button class="word-button primary-command" type="submit"><span class="yazi">Yeni maça başla</span></button>
+    </form>
+  </dialog>
+  <dialog id="handover" class="paper-note handover-note" aria-labelledby="handover-title">
+    <h2 id="handover-title">Sıra değişti</h2>
+    <p id="handover-name"></p><p class="note-small">Taşların yalnız sen hazır olduğunda açılır.</p>
+    <button class="word-button primary-command" id="ready" type="button"><span class="yazi">Hazırım</span></button>
+  </dialog>
+  <dialog id="help" class="paper-note help-note" aria-labelledby="help-title">
+    <div class="note-heading"><h2 id="help-title">Nasıl oynanır?</h2><form method="dialog"><button class="small-command" aria-label="Yardımı kapat">Kapat</button></form></div>
+    <p>İki oyuncu, yedişer taş. Ortada kapalı bir çekme havuzu.</p>
+    <ol class="rules">
+      <li>Zincirin bir ucuyla aynı sayıyı taşıyan taşını seç, hangi uca koyacağını göster ve <strong>Oyna</strong> de. Çiftler enine durur; zincir yine iki uçludur.</li>
+      <li>Oynayacak taşın yoksa <strong>Taş çek</strong>. Uygun taş gelene veya havuz bitene kadar çekilir. Havuz boşsa sıra geçer.</li>
+      <li>Elini ilk bitiren, rakibinin kalan noktalarını alır. İki oyuncu da geçerse el kilitlenir; noktası az olan fark kadar puan kazanır.</li>
+      <li>Dağıtılan ellerdeki en büyük çift başlar. Çift yoksa toplamı en yüksek taş; eşitlikte büyük yarısı yüksek olan başlar.</li>
+    </ol>
+    <p class="note-small">Uygun taşın varken çekemezsin. Çektiğin ilk uygun taşta durulur; ucu seçip kendin oynarsın. Tek pas eli bitirmez. Sıfır yalnız sıfırla eşleşir.</p>
+    <p class="note-small"><strong>Geri al</strong> yalnız seçimi temizler; oynanan veya çekilen taş geri dönmez. Ok tuşları, Home ve End elde gezinir; Enter/boşluk seçer, Escape seçimi temizler. İpucu olası dağılımları değerlendirir; taşı kendisi oynamaz.</p>
+  </dialog>
+</body>
+</html>

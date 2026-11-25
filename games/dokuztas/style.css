@@ -1,0 +1,122 @@
+/* Dokuz Taş yerleşimi. Ölçüler layout.js'ten: --sq (bir defter karesi, px), --W/--H (sayfa, kare).
+   Kâğıt kit/kagit.css'ten, kurşun kalem malzemesi kit/kursunkalem.css'ten. Süs yok. */
+:root { --W: 28; --H: 28; }
+body { display: flex; flex-direction: column; justify-content: safe center; align-items: center; overflow-x: hidden; }
+.defter { flex: none; margin: 8px 0; transform: rotate(-.6deg); }
+body[data-duzen="dikey"] .defter { margin: 4px 0; transform: rotate(-.45deg); }
+
+.sayfa {
+  width: calc(var(--sq) * var(--W));
+  height: calc(var(--sq) * var(--H));
+  --marj-x: calc(var(--sq) * var(--marj-kare, 6));
+  overflow: hidden;
+}
+
+.katman { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
+
+/* Tahta noktaları: görünmez düğmeler (çizim SVG'de). 2×2 kare, merkez noktada. */
+.noktalar { position: absolute; inset: 0; pointer-events: none; }
+.nokta {
+  position: absolute;
+  width: calc(var(--sq) * 2); height: calc(var(--sq) * 2);
+  margin: calc(var(--sq) * -1) 0 0 calc(var(--sq) * -1);
+  padding: 0; border: 0; border-radius: 50%; background: transparent;
+  pointer-events: auto; touch-action: manipulation;
+}
+.nokta:focus { outline: none; }
+.nokta:focus-visible { outline: 1px dashed var(--grafit); outline-offset: -6px; }
+.noktalar .nokta { cursor: default; }
+.noktalar.etkin .nokta.konur { cursor: var(--kalem-imlec); }
+.noktalar.etkin .nokta.oynar { cursor: grab; }
+.noktalar.etkin .nokta.oynar:active { cursor: grabbing; }
+.nokta { touch-action: none; }
+
+/* Oyun sonu: tahtanın ortasındaki sonuç yazısının altında altı çizili "tekrar" */
+html[data-malzeme] .tekrar {
+  position: absolute; left: calc(var(--sq) * var(--tx)); top: calc(var(--sq) * var(--ty)); transform: translateX(-50%);
+  color: var(--kirmizi-kursun); font-size: calc(var(--sq) * .95);
+  text-shadow: 0 0 3px var(--kagit), 0 0 3px var(--kagit), 0 0 6px var(--kagit);
+}
+.yeni-not { margin: .2em 0 0 !important; font-size: .9em; color: var(--kirmizi-kursun); }
+
+/* Komutlar: altı kalemle çizili sözcükler */
+.komutlar {
+  position: absolute; display: flex; flex-wrap: wrap; align-items: baseline; column-gap: calc(var(--sq) * .55); row-gap: 0;
+  left: calc(var(--sq) * var(--kx)); top: calc(var(--sq) * var(--ky)); width: calc(var(--sq) * var(--kw));
+}
+.sozcuk {
+  min-height: 44px; display: inline-flex; align-items: center;
+  font-size: calc(var(--sq) * .82); line-height: 1.1; white-space: nowrap;
+}
+.sozcuk .yazi { position: relative; }
+
+/* Ayarlar: "Nasıl oynanır" gibi tahtanın üstünde açılan kalem notu; seçili değerin altı çizili */
+.ayarlar { color: var(--grafit-acik); }
+.ayarlar .ayar-grup { margin: 0; display: flex; flex-wrap: wrap; align-items: center; min-height: 40px; }
+.ayar-ad { min-width: 5.2em; margin-right: .35em; color: var(--grafit); }
+.ara { margin: 0 .1em; opacity: .7; }
+.ayar {
+  position: relative; display: inline-flex; align-items: center; min-height: 36px; padding: 0 .2em;
+  margin: 0; border: 0; background: transparent; color: inherit; font: inherit; cursor: pointer; touch-action: manipulation;
+}
+.ayar[aria-pressed="true"] { color: var(--grafit); }
+.ayar .cerceve { position: absolute; left: 0; top: 0; overflow: visible; pointer-events: none; }
+
+button:focus { outline: none; }
+button:focus-visible { outline: 1px dashed var(--grafit); outline-offset: 2px; }
+@media (forced-colors: active) { button:focus-visible { outline-color: CanvasText; } }
+
+/* Nasıl oynanır: tahtanın üstünde kâğıdın açık bir yerine kalemle yazılmış not (çerçeve yok; altındaki kareler silik görünür) */
+.nasil {
+  position: absolute; left: calc(var(--sq) * var(--nx)); top: calc(var(--sq) * var(--ny)); width: calc(var(--sq) * var(--nw));
+  padding: calc(var(--sq) * .5) calc(var(--sq) * .6);
+  background: rgba(251, 249, 242, .94); font-size: calc(var(--sq) * .68); line-height: 1.4; color: var(--grafit);
+}
+.nasil p { margin: 0 0 .6em; }
+.nasil-komut { display: flex; flex-wrap: wrap; column-gap: calc(var(--sq) * .8); margin-top: .4em !important; }
+.nasil .sozcuk { font-size: calc(var(--sq) * .8); }
+/* Kendi kendine oynarken komutların yerinde hamle açıklaması */
+.aciklama {
+  position: absolute; left: calc(var(--sq) * var(--kx)); top: calc(var(--sq) * var(--ky)); width: calc(var(--sq) * var(--kw));
+  margin: 0; padding-top: calc(var(--sq) * .3); font-size: calc(var(--sq) * .78); line-height: 1.35; color: var(--grafit);
+}
+body.gosteri .komutlar, body.nasil-acik .komutlar, body.ayarlar-acik .komutlar { visibility: hidden; }
+
+/* Sayfa çevirme: kalkan eski sayfanın kopyası (cilt sol kenarda) */
+.sayfa.cevrilen {
+  position: absolute; left: 0; top: 0; z-index: 20; pointer-events: none;
+  transform-origin: 0 50%; backface-visibility: hidden; -webkit-backface-visibility: hidden; will-change: transform;
+}
+
+
+/* Defterde platform kopyası: kaynağa dokunmadan ana sayfaya dönüş. */
+body { position: relative; padding-top: calc(48px + env(safe-area-inset-top, 0px)); }
+main { position: relative; }
+.defterde-donus {
+  position: absolute; bottom: 100%; left: 8px;
+  display: inline-flex; align-items: center; min-height: 44px; padding: 0 8px;
+  color: #393732; font-family: inherit; font-size: 18px; line-height: 1.4;
+  background: none; border: 0; text-decoration: none; white-space: nowrap; touch-action: manipulation;
+}
+.defterde-donus:hover, .defterde-donus:active { color: #182e7c; text-decoration: underline; text-underline-offset: 3px; }
+.defterde-donus:focus-visible { outline: 2px dashed #182e7c; outline-offset: -2px; }
+.defterde-donus-dialog { position: static; }
+:root:has(:fullscreen) .defterde-donus, :root:fullscreen .defterde-donus, body.tam-ekran .defterde-donus { display: none; }
+:root:has(:fullscreen) body, :root:fullscreen body, body.tam-ekran { padding-top: env(safe-area-inset-top, 0px); }
+@media print { .defterde-donus { display: none !important; } body { padding-top: 0; } }
+
+/* Platform: dekoratif arka yapraklar baskıya taşınmaz. */
+@media print { main.defter::before, main.defter::after { display: none !important; } }
+
+/* Defterde ortak malzemesi: açık kâğıt, iki ince arka yaprak, yalnız altta dış gölge. */
+html:root main.defter { isolation: isolate; }
+html:root main.defter::before {
+  z-index: -2; background: url("kit/gren.png") #efebdf;
+  box-shadow: 16px 28px 40px -6px rgba(58, 36, 16, .44);
+}
+html:root main.defter::after {
+  z-index: -1; background: url("kit/gren.png") #f7f4eb;
+  box-shadow: none;
+}
+html:root { --sayfa-golgesi: inset 0 1px 2px rgba(255, 255, 255, .85); }
+html:root .sayfa { box-shadow: inset 0 1px 2px rgba(255, 255, 255, .85); }

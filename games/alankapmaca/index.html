@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#b6a58a">
+  <title>Alan Kapmaca</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='4' y='4' width='24' height='24' rx='5' fill='%23fbf9f2' stroke='%231f3b9b' stroke-width='2'/%3E%3Ccircle cx='11' cy='11' r='2.3' fill='%231f3b9b'/%3E%3Ccircle cx='16' cy='16' r='2.3' fill='%231f3b9b'/%3E%3Ccircle cx='21' cy='21' r='2.3' fill='%231f3b9b'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css?v=f951a164963b">
+</head>
+<body>
+  <noscript><p class="uyari">Bu defteri açmak için JavaScript gerekiyor.</p></noscript>
+
+  <p class="gizli" id="duyuru" role="status" aria-live="polite"></p>
+
+  <main class="defter" id="defter">
+    <a class="defterde-donus" href="/" aria-label="Defterde oyunlarının içindekiler sayfasına dön">← İçindekiler</a>
+    <section class="sayfa" id="sayfa" aria-label="Alan Kapmaca defteri">
+      <div class="kagit-yuzeyi" aria-hidden="true"></div>
+
+      <!-- Köşe karalamaları: en altta, oyuna karışmaz -->
+      <div class="susler" aria-hidden="true">
+        <svg class="susle gunes" data-sus="gunes" viewBox="0 0 100 100"></svg>
+        <svg class="susle yildiz" data-sus="yildiz" viewBox="0 0 40 40"></svg>
+        <svg class="susle formul" data-sus="formul" viewBox="0 0 180 30"></svg>
+        <svg class="susle kalp" data-sus="kalp" viewBox="0 0 80 80"></svg>
+      </div>
+
+      <svg class="hesap" id="hesap" role="img" aria-label="Puan çetelesi"></svg>
+      <svg class="tahta" id="tahta" role="application" tabindex="0"
+           aria-label="Oyun tahtası. Enter: zar at ya da çiz. Ok tuşları: yer seç. R: döndür."></svg>
+
+      <div class="kumanda">
+      <svg class="ust" id="ust" aria-hidden="true"></svg>
+      <svg class="skor" id="skor" aria-hidden="true"></svg>
+
+      <div class="zarlar" id="zarlar">
+        <button class="zar" id="zar-a" type="button" aria-label="Zar"><svg aria-hidden="true"></svg></button>
+        <span class="carpi" aria-hidden="true">×</span>
+        <button class="zar" id="zar-b" type="button" aria-label="Zar"><svg aria-hidden="true"></svg></button>
+      </div>
+
+      <div class="sayi-paneli" id="sayi-paneli" role="group" aria-label="Cevap için sayı tuşları" hidden>
+        <button class="dugme" type="button" data-sayi="1">1</button>
+        <button class="dugme" type="button" data-sayi="2">2</button>
+        <button class="dugme" type="button" data-sayi="3">3</button>
+        <button class="dugme" type="button" data-sayi="4">4</button>
+        <button class="dugme" type="button" data-sayi="5">5</button>
+        <button class="dugme" type="button" data-sayi="6">6</button>
+        <button class="dugme" type="button" data-sayi="7">7</button>
+        <button class="dugme" type="button" data-sayi="8">8</button>
+        <button class="dugme" type="button" data-sayi="9">9</button>
+        <button class="dugme" id="sayi-sil" type="button" aria-label="Son rakamı sil">Sil</button>
+        <button class="dugme" type="button" data-sayi="0">0</button>
+        <button class="dugme" id="sayi-tamam" type="button" aria-label="Cevabı onayla">Tamam</button>
+      </div>
+
+      <div class="cevap" id="cevap" hidden>
+        <span class="soru" id="soru"></span>
+        <span class="giris-kap" id="giris-kap">
+          <input class="giris" id="giris" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="3"
+                 autocomplete="off" placeholder="?" aria-label="Çarpımın sonucu">
+        </span>
+        <button class="dugme" id="tamam" type="button"><span class="yazi">Tamam</span></button>
+      </div>
+
+      <svg class="ipucu" id="ipucu" aria-hidden="true" hidden></svg>
+      <svg class="balon" id="balon" aria-hidden="true" hidden></svg>
+      <svg class="karakter" id="karakter" role="img" aria-label="Rakip: hesap makinesi"></svg>
+
+      <div class="dugmeler">
+        <button class="dugme" id="dondur" type="button"><span class="yazi">Döndür</span></button>
+        <button class="dugme" id="ciz" type="button"><span class="yazi">Çiz</span></button>
+        <span class="bosluk" aria-hidden="true"></span>
+        <button class="dugme" id="ayarlar" type="button"><span class="yazi">Ayarlar</span></button>
+        <button class="dugme" id="yeni-sayfa" type="button"><span class="yazi">Yeni sayfa</span></button>
+        <button class="dugme ses-dugme" id="ses-dugme" type="button" aria-pressed="false" aria-label="Sessiz">
+          <svg class="ikon" viewBox="0 0 40 40" aria-hidden="true"></svg>
+        </button>
+      </div>
+      </div>
+    </section>
+  </main>
+
+      <section class="ayarlar" id="ayarlar-paneli" role="dialog" aria-modal="true" aria-label="Ayarlar" hidden>
+        <svg class="ay-baslik" id="ay-baslik" aria-hidden="true"></svg>
+        <div class="ay-satirlar" id="ay-satirlar"></div>
+        <div class="ay-alt">
+          <p class="ay-not" id="ay-not">yeni sayfada geçerli</p>
+          <button class="dugme" id="ay-yeni" type="button"><span class="yazi">Yeni sayfa</span></button>
+          <button class="dugme" id="ay-kapat" type="button"><span class="yazi">Tamam</span></button>
+        </div>
+      </section>
+
+  <section class="yon-uyarisi" id="yon-uyarisi" role="dialog" aria-modal="true" aria-labelledby="yon-baslik" hidden>
+    <div class="yon-kagit">
+      <h1 id="yon-baslik">Cihazını yan çevir</h1>
+      <p id="yon-metin">Tahtanın tamamını görmek için yatay oyna. Oyunun ve kalan süren korunuyor.</p>
+      <button class="dugme" id="tam-ekran" type="button"><span class="yazi">Tam ekranı dene</span></button>
+      <button class="dugme" id="yon-ayarlar" type="button"><span class="yazi">Ayarlar</span></button>
+      <p id="yon-durum" role="status"></p>
+<a class="defterde-donus defterde-donus-dialog" href="/" aria-label="Defterde oyunlarının içindekiler sayfasına dön">← İçindekiler</a>
+    </div>
+  </section>
+
+  <!-- Yerel klasik betikler: internet olmadan ve file:// altında da çalışır. -->
+  <script src="assets/vendor/rough-4.6.6.js?v=6853af861953"></script>
+  <script src="config.js?v=fbc14a0c957c"></script>
+  <script src="assets/varliklar.js?v=53160a84cd44"></script>
+  <script src="game.js?v=a463a554d8d9"></script>
+  <script src="ai.js?v=358d8fb9da48"></script>
+  <script src="draw.js?v=08811705088b"></script>
+  <script src="ses.js?v=589fea80a025"></script>
+  <script src="layout.js?v=b6d6df859376"></script>
+  <script src="keypad.js?v=7a97b6bd2214"></script>
+  <script src="akis.js?v=a1c88b346978"></script>
+  <script src="main.js?v=a1b719fa36a9"></script>
+</body>
+</html>

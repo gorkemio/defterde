@@ -1,0 +1,24 @@
+{
+  "id": "buldog",
+  "ad": "Buldog",
+  "orijinalAd": "Bulldog Dart",
+  "zorluk": 2,
+  "tur": "mesafe",
+  "surum": 2,
+  "kaynak": "Bulldog Dart (Art of Manliness)",
+  "karakter": {"hiz":6,"suzulme":4,"denge":9,"akrobasi":2},
+  "aciklama": "Küt burunlu, inatçı bir dart. Duvara çarpsa da kolay kolay bozulmaz; yumuşak at.",
+  "beklenen": {"poligon":24,"kutu":[0.5,0.3536,0.8574,1.4686],"enKalin":16},
+  "ucusGorunumu": null,
+  "adimlar": [
+    {"tip":"vadi","cizgi":[[0.5,0],[0.5,1.414]],"katman":"hepsi","tut":[1,0.707],"ac":true,"metin":"Kağıdı uzunlamasına ikiye katla, sonra aç."},
+    {"tip":"vadi","cizgi":{"nokta":[0,0],"hedef":[0.5,0.5]},"katman":"hepsi","ayna":true,"metin":"Üst köşeleri orta çizgiye getir."},
+    {"tip":"cevir","metin":"Kağıdı ters çevir."},
+    {"tip":"vadi","cizgi":{"nokta":[0,0.5],"hedef":[0.5,0.707106781187]},"katman":"hepsi","ayna":true,"metin":"Köşeleri yine orta çizgiye getir; eğik kenar ortaya otursun."},
+    {"tip":"vadi","cizgi":[[0,0.353553390593],[1,0.353553390593]],"katman":"hepsi","tut":[0.5,0],"metin":"Sivri ucu, katların ortada buluştuğu yerin dibine indir: küt burun."},
+    {"tip":"vadi","cizgi":[[0.5,0],[0.5,1.414]],"katman":"hepsi","tut":[1,1.414],"metin":"Ortadan ikiye katla; küt burun içeride kalsın."},
+    {"tip":"vadi","cizgi":[[0.353553390593,0.353553390593],[0.041408875367,1.922809839238]],"katman":"ust","tut":[0,1.207106781187],"kanat":"sol","poz":90,"metin":"Kanadı aşağı katla; kanadın kenarı küt burnun üstüyle düz bir çizgi olsun."},
+    {"tip":"cevir","metin":"Uçağı ters çevir."},
+    {"tip":"vadi","cizgi":[[0.646446609407,0.353553390593],[0.958591124633,1.922809839238]],"katman":"ust","tut":[1,1.207106781187],"kanat":"sag","poz":90,"metin":"Öbür kanadı da aynı hizada katla."}
+  ]
+}

@@ -1,0 +1,152 @@
+---
+import Sheet from '../components/Sheet.astro';
+import GameList from '../components/GameList.astro';
+import { seed, decorate } from '../lib/catalog';
+import {
+  categories,
+  players,
+  discoveryMeta,
+  readFilters,
+  matchesGame,
+} from '../lib/discovery';
+import '../styles/discovery.css';
+
+const catalog = Astro.locals.catalog || seed;
+const filters = readFilters(Astro.url.searchParams);
+const games = decorate(catalog.items)
+  .filter((g) => g.visible)
+  .map((g) => ({
+    ...g,
+    ...(discoveryMeta[g.slug] ?? { categories: [], players: [] }),
+  }));
+const count = games.filter((g) => matchesGame(g, filters)).length;
+---
+
+<Sheet surface="discovery">
+  <section class="discovery-intro">
+    <h1>Bir defter dolusu oyun.</h1>
+    <div class="discovery-intro-line">
+      <p>Ücretsiz, reklamsız, üyeliksiz.</p>
+    </div>
+  </section>
+
+  <div class="discovery-layout" id="discovery">
+    <form
+      class="discovery-filters"
+      method="get"
+      action="/"
+      aria-label="Oyunları süz"
+    >
+      <div class="discovery-field">
+        <label for="game-search">Oyun ara</label>
+        <input
+          id="game-search"
+          name="q"
+          type="search"
+          value={filters.q}
+          maxlength="180"
+          placeholder="Adı ya da aklındaki…"
+          autocomplete="off"
+        />
+      </div>
+      <div class="discovery-field">
+        <label for="game-category">Oyun türü</label>
+        <select id="game-category" name="tur">
+          <option value="" selected={!filters.category}>
+            Tüm türler
+          </option>
+          {categories.map((c) => (
+            <option value={c.value} selected={filters.category === c.value}>
+              {c.label}
+            </option>
+          ))}
+        </select>
+      </div>
+      <fieldset class="discovery-players" aria-describedby="player-help">
+        <legend>Nasıl oynayacaksın?</legend>
+        <div class="discovery-player-options">
+          {players.map((p) => (
+            <label>
+              <input
+                type="radio"
+                name="oyuncu"
+                value={p.value}
+                checked={filters.player === p.value}
+              />
+              <span>{p.label}</span>
+            </label>
+          ))}
+        </div>
+        <p id="player-help">
+          Birlikte: aynı cihazda. Tek başına: bilgisayara karşı da oynanır.
+        </p>
+      </fieldset>
+      <div class="discovery-actions">
+        <button type="submit" class="discovery-apply">
+          Oyunları göster
+        </button>
+        <button
+          type="button"
+          class="discovery-random"
+          hidden
+          disabled={count === 0}
+        >
+          Bana bir oyun seç
+        </button>
+        <a href="/" data-clear>
+          Filtreleri temizle
+        </a>
+      </div>
+    </form>
+
+    <section
+      class="discovery-results"
+      id="oyunlar"
+      aria-labelledby="discovery-heading"
+    >
+      <div class="discovery-heading">
+        <h2 id="discovery-heading">Oyun rehberi</h2>
+        <p
+          id="discovery-count"
+          role="status"
+          aria-live="polite"
+          aria-atomic="true"
+        >
+          {count} oyun
+        </p>
+      </div>
+      <aside
+        id="discovery-pick"
+        class="discovery-pick"
+        hidden
+        aria-labelledby="pick-heading"
+      >
+        <h3 id="pick-heading">Şunu dene</h3>
+        <a id="pick-link" class="discovery-pick-link">
+          <img id="pick-image" width="80" height="60" alt="" />
+          <span>
+            <strong id="pick-title"></strong>
+            <span id="pick-description"></span>
+          </span>
+          <span class="discovery-play">Oyna →</span>
+        </a>
+      </aside>
+      <p
+        id="pick-announcement"
+        class="discovery-sr"
+        role="status"
+        aria-live="polite"
+      ></p>
+      <GameList items={catalog.items} filters={filters} />
+      <div id="discovery-empty" class="discovery-empty" hidden={count !== 0}>
+        <h3>Eşleşen oyun yok.</h3>
+        <p>Başka bir kelime dene veya filtreleri kaldır.</p>
+        <a href="/" data-clear>
+          Filtreleri temizle
+        </a>
+      </div>
+    </section>
+  </div>
+</Sheet>
+
+<script src="../client/discovery.ts"></script>

@@ -1,0 +1,15 @@
+---
+import Sheet from '../components/Sheet.astro';
+Astro.response.status = 404;
+---
+
+<Sheet title="Bu sayfa defterde yok" noindex>
+  <section class="prose">
+    <p class="eyebrow">Sayfa bulunamadı</p>
+    <h1>Bir sayfa atlamışız.</h1>
+    <p>Aradığın adres burada yok. İçindekilerden bir oyun seçebilirsin.</p>
+    <a class="ink-button" href="/">
+      İçindekilere dön →
+    </a>
+  </section>
+</Sheet>

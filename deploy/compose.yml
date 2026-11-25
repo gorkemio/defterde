@@ -1,0 +1,53 @@
+# Docker Compose / Dokploy servisi. Web 4321 portunu ters vekile (Traefik vb.) bağla.
+# Ayrıntılar: docs/DAGITIM.md
+services:
+  web:
+    build:
+      context: ..
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    environment:
+      PUBLIC_ORIGIN: ${PUBLIC_ORIGIN:?HTTPS alan adı gerekli}
+      DATABASE_URL: postgres://defterde:${POSTGRES_PASSWORD:?Veritabanı parolası gerekli}@db:5432/defterde
+      GITHUB_CLIENT_ID: ${GITHUB_CLIENT_ID:?GitHub OAuth client ID gerekli}
+      GITHUB_CLIENT_SECRET: ${GITHUB_CLIENT_SECRET:?GitHub OAuth secret gerekli}
+      GITHUB_OWNER_ID: ${GITHUB_OWNER_ID:?Sayısal GitHub kullanıcı ID gerekli}
+      # Traefik tek vekil hop'u: istemci IP'si oran sınırı için X-Forwarded-For'dan okunur.
+      TRUST_PROXY: ${TRUST_PROXY:-1}
+    volumes:
+      - catalog:/app/var
+    depends_on:
+      db:
+        condition: service_healthy
+    expose:
+      - '4321'
+    labels:
+      # www.<alan adı> → <alan adı> kalıcı yönlendirmesi; yalnız www router'ına bağlanır.
+      - 'traefik.http.middlewares.defterde-www.redirectregex.regex=^https?://www\.${SITE_HOST:-defterde.com}/(.*)'
+      - 'traefik.http.middlewares.defterde-www.redirectregex.replacement=https://${SITE_HOST:-defterde.com}/$${1}'
+      - 'traefik.http.middlewares.defterde-www.redirectregex.permanent=true'
+    networks:
+      - default
+      - database
+  db:
+    image: postgres:17-alpine@sha256:b0f9560a2de083e2cc7382e75f808c7381a32852a7ec49117deedb300e552b24
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: defterde
+      POSTGRES_USER: defterde
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Veritabanı parolası gerekli}
+    volumes:
+      - postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: [CMD-SHELL, 'pg_isready -U defterde -d defterde']
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - database
+volumes:
+  catalog:
+  postgres:
+networks:
+  database:
+    internal: true

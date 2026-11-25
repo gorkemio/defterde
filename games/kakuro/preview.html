@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="tr" data-malzeme="kursunkalem">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#b6a58a">
+  <meta name="description" content="Kareli defterde bir Kakuro molası. Toplamları tamamla, rakamları keşfet.">
+  <title>Kakuro — Defterde</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="kit/kagit.css">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="assets/vendor/rough-4.6.6.js"></script>
+  <script defer src="kit/kalem.js"></script>
+  <script defer src="kit/ses.js"></script>
+  <script defer src="kit/malzeme.js"></script>
+  <script defer src="kit/kursunkalem.js"></script>
+  <script defer src="kit/rakam.js"></script>
+  <script defer src="preview-data.js"></script>
+  <script defer src="draw.js"></script>
+  <script defer src="preview.js"></script>
+</head>
+<body>
+  <noscript><p class="uyari">Defteri açmak için tarayıcında JavaScript’i etkinleştir.</p></noscript>
+  <main class="notebook" aria-labelledby="title">
+    <div class="paper-back far" aria-hidden="true"></div>
+    <div class="paper-back near" aria-hidden="true"></div>
+    <div class="paper-surface" aria-hidden="true"></div>
+    <div class="sheet">
+      <header class="heading">
+        <div class="title-block">
+          <h1 id="title">Kakuro<svg class="title-underline" data-stroke="title" aria-hidden="true"></svg></h1>
+          <p class="subtitle">Toplamları tamamla</p>
+        </div>
+        <span class="signature">defterde<svg data-stroke="signature" aria-hidden="true"></svg></span>
+      </header>
+
+      <div class="play-layout">
+        <section class="board-region" aria-label="Kakuro tahtası">
+          <div class="board-meta">
+            <span><span id="puzzle-number">01</span><span class="meta-dot" aria-hidden="true">·</span><span id="difficulty">Kolay</span></span>
+            <span id="timer" class="timer" aria-label="Örnek süre: 0 dakika 0 saniye">00:00</span>
+          </div>
+          <p class="gizli" id="board-instructions">Görsel prova. Bir beyaz kareyi seçebilir, ok tuşlarıyla gezinebilirsin. Yatay ve dikey düğmeleri seçili karenin toplam grubunu gösterir. Sayı girişi sonraki fazda eklenecek.</p>
+          <div class="board-viewport" id="board-viewport">
+            <div class="board" id="board" role="grid" aria-label="Görsel prova tahtası" aria-describedby="board-instructions"></div>
+          </div>
+          <div class="group-details" aria-label="Seçili karenin toplamları">
+            <button class="group-button" id="across-button" type="button" aria-pressed="true">
+              <svg data-icon="right" aria-hidden="true"></svg><span>Yatay <strong id="across-total">6</strong></span>
+            </button>
+            <button class="group-button" id="down-button" type="button" aria-pressed="false">
+              <svg data-icon="down" aria-hidden="true"></svg><span>Dikey <strong id="down-total">34</strong></span>
+            </button>
+            <span class="scroll-cue" id="scroll-cue" hidden>Tahtayı kaydırabilirsin</span>
+          </div>
+        </section>
+
+        <aside class="margin-tools" aria-label="Sayılar ve araçlar">
+          <div class="progress-line">
+            <p class="progress"><span id="filled-count">0</span> <span class="fraction-slash">/</span> <span id="total-count">30</span> kare</p>
+            <svg data-stroke="separator" aria-hidden="true"></svg>
+          </div>
+          <p class="number-label">Bir sayı seç:</p>
+          <div class="number-pad" aria-label="Sayı girişi sonraki fazda etkinleşecek">
+            <button class="number-key" type="button" disabled aria-label="1 — görsel prova"><span>1</span></button>
+            <button class="number-key" type="button" disabled aria-label="2 — görsel prova"><span>2</span></button>
+            <button class="number-key" type="button" disabled aria-label="3 — görsel prova"><span>3</span></button>
+            <button class="number-key" type="button" disabled aria-label="4 — görsel prova"><span>4</span></button>
+            <button class="number-key" type="button" disabled aria-label="5 — görsel prova"><span>5</span></button>
+            <button class="number-key" type="button" disabled aria-label="6 — görsel prova"><span>6</span></button>
+            <button class="number-key" type="button" disabled aria-label="7 — görsel prova"><span>7</span></button>
+            <button class="number-key" type="button" disabled aria-label="8 — görsel prova"><span>8</span></button>
+            <button class="number-key" type="button" disabled aria-label="9 — görsel prova"><span>9</span></button>
+          </div>
+          <div class="tool-row">
+            <button class="word-button tool-button" type="button" disabled><svg class="tool-icon" data-icon="eraser" aria-hidden="true"></svg><span class="yazi">Sil</span><svg data-stroke="underline" aria-hidden="true"></svg></button>
+            <button class="word-button tool-button" type="button" disabled><svg class="tool-icon" data-icon="pencil" aria-hidden="true"></svg><span class="yazi">Not al</span><svg data-stroke="underline" aria-hidden="true"></svg></button>
+          </div>
+          <svg class="tool-separator" data-stroke="separator" aria-hidden="true"></svg>
+          <div class="tool-row">
+            <button class="word-button tool-button" type="button" disabled><svg class="tool-icon" data-icon="undo" aria-hidden="true"></svg><span class="yazi">Geri al</span><svg data-stroke="underline" aria-hidden="true"></svg></button>
+            <button class="word-button tool-button" type="button" disabled><svg class="tool-icon" data-icon="bulb" aria-hidden="true"></svg><span class="yazi">İpucu</span><svg data-stroke="underline" aria-hidden="true"></svg></button>
+          </div>
+          <svg class="tool-separator" data-stroke="separator" aria-hidden="true"></svg>
+          <p class="rule-note">Her grupta 1–9.<br> Rakamlar tekrarlanmaz.</p>
+        </aside>
+      </div>
+
+      <footer class="page-footer">
+        <div class="puzzle-links">
+          <button class="word-button" type="button" disabled><span class="yazi">Yeni bulmaca</span><svg data-stroke="underline" aria-hidden="true"></svg></button>
+          <button class="word-button quieter" type="button" disabled><span class="yazi">Bulmacalar</span><svg data-stroke="underline" aria-hidden="true"></svg></button>
+        </div>
+        <div class="help-links">
+          <button class="word-button" id="help-button" type="button" aria-expanded="false" aria-controls="help-panel"><span class="yazi">Nasıl oynanır?</span><svg data-stroke="underline" aria-hidden="true"></svg></button>
+          <button class="sound-button" type="button" disabled aria-label="Ses — sonraki fazda etkinleşecek"><svg data-icon="sound" aria-hidden="true"></svg></button>
+        </div>
+      </footer>
+
+      <section class="help-panel" id="help-panel" aria-labelledby="help-title" hidden>
+        <div class="help-heading"><h2 id="help-title">Üç küçük kural</h2><button id="close-help" class="word-button" type="button"><span class="yazi">Kapat</span><svg data-stroke="underline" aria-hidden="true"></svg></button></div>
+        <ol>
+          <li>Beyaz karelere <strong>1’den 9’a</strong> birer rakam yaz.</li>
+          <li>Koyu karenin <strong>sağ üstündeki toplam sağa</strong>, <strong>sol altındaki toplam aşağıya</strong> aittir.</li>
+          <li>Bir toplam grubunda aynı rakamı tekrar kullanma. Örneğin iki karenin toplamı 4 ise 1 ve 3 olabilir; 2 ve 2 olamaz.</li>
+        </ol>
+        <p>Küçük rakamlar kalem notlarıdır. Bunlar, aklındaki olasılıkları hatırlamak içindir.</p>
+      </section>
+    </div>
+  </main>
+
+  <section class="preview-bar" aria-label="Görsel prova seçenekleri">
+    <p><strong>Görsel prova</strong><span class="preview-description"> · Hücreleri seçebilirsin. Oyun kontrolleri henüz etkin değil.</span></p>
+    <div class="preview-options">
+      <div class="preview-views" role="group" aria-label="Örnek görünüm">
+        <button id="empty-view" class="preview-choice" type="button" aria-pressed="true">Boş başlangıç</button>
+        <button id="sample-view" class="preview-choice" type="button" aria-pressed="false">Sayı ve not örneği</button>
+      </div>
+      <label class="size-choice" for="preview-size">Tahta <select id="preview-size"><option value="small">7 × 7</option><option value="large">11 × 11</option></select></label>
+    </div>
+  </section>
+  <p class="gizli" id="announcement" role="status" aria-live="polite" aria-atomic="true"></p>
+</body>
+</html>

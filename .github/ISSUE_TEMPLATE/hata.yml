@@ -1,0 +1,32 @@
+name: Hata bildirimi
+description: Bir oyunda veya sitede beklenmeyen bir davranış
+labels: [hata]
+body:
+  - type: input
+    id: adres
+    attributes:
+      label: Sayfa veya oyun
+      placeholder: https://defterde.com/oyunlar/sos/
+    validations:
+      required: true
+  - type: textarea
+    id: ne-oldu
+    attributes:
+      label: Ne oldu, ne bekliyordun?
+    validations:
+      required: true
+  - type: textarea
+    id: adimlar
+    attributes:
+      label: Yeniden üretme adımları
+      placeholder: |
+        1. ...
+        2. ...
+  - type: input
+    id: ortam
+    attributes:
+      label: Cihaz ve tarayıcı
+      placeholder: iPhone 15, Safari 26
+  - type: markdown
+    attributes:
+      value: Güvenlik açığı bildirmek için bu formu değil, SECURITY.md'deki özel kanalı kullan.

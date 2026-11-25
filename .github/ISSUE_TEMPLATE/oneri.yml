@@ -1,0 +1,15 @@
+name: Öneri
+description: Yeni oyun, kural veya iyileştirme önerisi
+labels: [öneri]
+body:
+  - type: textarea
+    id: oneri
+    attributes:
+      label: Öneri
+      description: Ne eklenmeli veya değişmeli? Kâğıtta nasıl oynanıyor?
+    validations:
+      required: true
+  - type: textarea
+    id: neden
+    attributes:
+      label: Neden?

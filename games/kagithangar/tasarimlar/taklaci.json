@@ -1,0 +1,30 @@
+{
+  "id": "taklaci",
+  "ad": "Taklacı",
+  "orijinalAd": "Loop Plane",
+  "zorluk": 2,
+  "tur": "akrobasi",
+  "surum": 2,
+  "kaynak": "foldnfly.com Loop Plane (kanat yarıkları yerine kanatçık)",
+  "kagit": {"en":1.41422,"boy":1},
+  "varsayilanAyar": {"kanatcik":1},
+  "karakter": {"hiz":4,"suzulme":5,"denge":4,"akrobasi":9},
+  "aciklama": "Ağır rulo burunlu takla uçağı. Kanatçıkları yukarıdayken sertçe at, havada çember çizsin.",
+  "beklenen": {"poligon":36,"kutu":[0.5911,0.232,1.0822,1],"enKalin":24},
+  "ucusGorunumu": null,
+  "adimlar": [
+    {"tip":"vadi","cizgi":[[0.70711,0],[0.70711,1]],"katman":"hepsi","tut":[1.41422,0.5],"ac":true,"metin":"Kağıdı yatay tut, soldan sağa ikiye katla ve aç."},
+    {"tip":"vadi","cizgi":{"nokta":[0,0],"hedef":[0.70711,0.70711]},"katman":"hepsi","ayna":true,"metin":"Üst köşeleri orta çizgiye katla."},
+    {"tip":"vadi","cizgi":[[0,0.058],[1.41422,0.058]],"katman":"hepsi","tut":[0.70711,0],"metin":"Sivri ucu 1,25 cm aşağı katla."},
+    {"tip":"vadi","cizgi":[[0,0.116],[1.41422,0.116]],"katman":"hepsi","tut":[0.70711,0.058],"metin":"Bir kez daha aşağı katla."},
+    {"tip":"vadi","cizgi":[[0,0.174],[1.41422,0.174]],"katman":"hepsi","tut":[0.70711,0.116],"metin":"Bir kez daha aşağı katla."},
+    {"tip":"vadi","cizgi":[[0,0.232],[1.41422,0.232]],"katman":"hepsi","tut":[0.70711,0.174],"metin":"Son bir kez daha: ağır, rulo bir burun."},
+    {"tip":"vadi","cizgi":[[0.70711,0],[0.70711,1]],"katman":"hepsi","tut":[1.41422,1],"metin":"Ortadan ikiye katla."},
+    {"tip":"vadi","cizgi":[[0.59111,0],[0.59111,1]],"katman":"ust","tut":[0,1],"kanat":"sol","poz":90,"metin":"Kanadı gövdeye paralel katla; gövde 2,5 cm kalsın."},
+    {"tip":"cevir","metin":"Uçağı ters çevir."},
+    {"tip":"vadi","cizgi":[[0.82311,0],[0.82311,1]],"katman":"ust","tut":[1.41422,1],"kanat":"sag","poz":90,"metin":"Öbür kanadı da aynı hizada katla."},
+    {"tip":"vadi","cizgi":[[0.332,0],[0.332,1]],"katman":"ust","tut":[0.232,1],"poz":90,"metin":"Kanadın ucunu yukarı kıvır."},
+    {"tip":"cevir","metin":"Uçağı ters çevir."},
+    {"tip":"vadi","cizgi":[[1.08222,0],[1.08222,1]],"katman":"ust","tut":[1.18222,1],"poz":90,"metin":"Öbür kanadın ucunu da kıvır."}
+  ]
+}

@@ -1,0 +1,21 @@
+/* kit/kibrit.css — kibrit çöpü, yuva izi ve kibrit kutusu (Kit.kibrit). Yalnız .cop, .yuva, .kibrit-kutu altında eşleşir. */
+.cop { cursor: grab; }
+.cop.kalkik { cursor: grabbing; }
+.cop .cop-govde { transition: filter .15s; }
+.cop.uzerinde .cop-govde { filter: brightness(1.06) saturate(1.06); }
+.cop.isaretli .cop-govde { filter: drop-shadow(0 0 2.6px rgba(214, 160, 50, .95)) drop-shadow(0 0 1px rgba(214, 160, 50, .9)); }
+/* boş yuva: çöp boyunda çok soluk iz + matbaa noktaları (1 çöp konabilir, 2 bırakılacak yer, 3 uzakta: daha silik).
+   Kalınlık ve nokta aralığı kibrit.js'te çöp boyundan (öznitelik); burada yalnız renk ve görünürlük. */
+.yuva line { fill: none; stroke-linecap: round; opacity: 0; transition: opacity .18s; }
+.yuva .yuva-zemin { stroke: #9b7746; }
+.yuva .yuva-iz { stroke: #77644d; }
+.yuva .yuva-vurgu { stroke: #dba646; transition-duration: .12s; }
+.yuva[data-durum="1"] .yuva-zemin { opacity: .1; }
+.yuva[data-durum="1"] .yuva-iz { opacity: .72; }
+.yuva[data-durum="3"] .yuva-iz { opacity: .42; }
+.yuva[data-durum="2"] .yuva-zemin { opacity: .18; }
+.yuva[data-durum="2"] .yuva-iz { opacity: .95; stroke: #7a4a1c; }
+.yuva[data-durum="2"] .yuva-vurgu { opacity: .36; }
+.kibrit-kutu { display: block; overflow: visible; }
+.kibrit-kutu .cekmece { transition: transform .38s cubic-bezier(.3, .7, .3, 1); }
+@media (prefers-reduced-motion: reduce) { .kibrit-kutu .cekmece { transition: none; } .cop .cop-govde { transition: none; } }

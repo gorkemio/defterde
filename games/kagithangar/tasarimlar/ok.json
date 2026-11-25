@@ -1,0 +1,22 @@
+{
+  "id": "ok",
+  "ad": "Ok",
+  "orijinalAd": "Basic Dart",
+  "zorluk": 1,
+  "tur": "mesafe",
+  "surum": 2,
+  "kaynak": "foldnfly.com Basic Dart",
+  "karakter": {"hiz":7,"suzulme":4,"denge":6,"akrobasi":2},
+  "aciklama": "Herkesin ilk uçağı. Sert at, dümdüz gider.",
+  "beklenen": {"poligon":16,"kutu":[0.5,0,0.7813,1.4977],"enKalin":16},
+  "ucusGorunumu": null,
+  "adimlar": [
+    {"tip":"vadi","cizgi":[[0.5,0],[0.5,1.414]],"katman":"hepsi","tut":[1,0.707],"ac":true,"metin":"Kağıdı uzunlamasına ikiye katla, sonra aç."},
+    {"tip":"vadi","cizgi":{"nokta":[0,0],"hedef":[0.5,0.5]},"katman":"hepsi","ayna":true,"metin":"Üst köşeleri orta çizgiye getir."},
+    {"tip":"vadi","cizgi":{"nokta":[0,0.5],"hedef":[0.5,0.707106781187]},"katman":"hepsi","ayna":true,"metin":"Eğik kenarları da orta çizgiye getir."},
+    {"tip":"vadi","cizgi":[[0.5,0],[0.5,1.414]],"katman":"hepsi","tut":[1,1.414],"metin":"Ortadan ikiye katla; kapaklar içeride kalsın."},
+    {"tip":"vadi","cizgi":[[0.5,0],[0.187855484774,1.569256448645]],"katman":"ust","tut":[0,1.207106781187],"kanat":"sol","poz":90,"metin":"Kanadı burnun ucundan başlayarak aşağı katla; üst kenarı gövdenin alt kenarına otursun."},
+    {"tip":"cevir","metin":"Uçağı ters çevir."},
+    {"tip":"vadi","cizgi":[[0.5,0],[0.812144515226,1.569256448645]],"katman":"ust","tut":[1,1.207106781187],"kanat":"sag","poz":90,"metin":"Öbür kanadı da aynı şekilde katla."}
+  ]
+}

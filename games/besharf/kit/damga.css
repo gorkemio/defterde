@@ -1,0 +1,3 @@
+/* kit/damga.css — kırmızı lastik damga (Kit.damga). Yalnız svg.damga altında eşleşir. */
+svg.damga { position: absolute; z-index: 6; pointer-events: none; overflow: visible; mix-blend-mode: multiply; }
+svg.damga text { font-family: 'Archivo Narrow', 'Arial Narrow', sans-serif; }

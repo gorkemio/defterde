@@ -1,0 +1,9 @@
+{
+  "name": "kibrit-defter",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "uret": "node scripts/uret.mjs"
+  }
+}

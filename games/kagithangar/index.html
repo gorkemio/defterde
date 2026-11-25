@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#b6a58a">
+  <title>Kağıt Hangar</title>
+  <meta name="description" content="Kareli deftere çizilmiş bir oyun: kağıttan uçak katla, adını koy, boya, fırlat; en uzak uçuşları hangarına as.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Kağıt Hangar">
+  <meta property="og:description" content="Kağıttan uçak katla, adını koy, fırlat, hangarına as.">
+  <meta property="og:image" content="https://defterde.com/oyunlar/kagithangar/simge/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="tr_TR">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="simge/simge.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="simge/180.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- el yazısı fontu sayfayı bloklamadan yüklenir; uygulama gelmesini kendisi bekler (Kit.kalem.fontBekle) -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap"></noscript>
+  <link rel="stylesheet" href="kit/kagit.css?v=4aad95183a67">
+  <link rel="stylesheet" href="style.css?v=cff238db6e4f">
+</head>
+<body>
+  <main class="defter" id="defter">
+    <a class="defterde-donus" href="/" aria-label="Defterde oyunlarının içindekiler sayfasına dön">← İçindekiler</a>
+    <section class="sayfa" id="sayfa"></section>
+  </main>
+  <p id="duyuru" class="gizli" aria-live="polite"></p>
+  <svg id="bekleme" class="bekleme" viewBox="0 0 120 36" role="status" aria-label="Kalem açılıyor" hidden></svg>
+  <button id="ses-dugmesi" class="ses-dugmesi" type="button" aria-label="Sesi kapat"><svg viewBox="0 0 40 40" aria-hidden="true"></svg></button>
+  <noscript><p class="uyari">Kağıt Hangar JavaScript ister.</p></noscript>
+
+  <!-- Sabit sürüm. Kit klasik betiktir (window.Kit), uygulama ES modülüdür. -->
+  <script src="https://cdn.jsdelivr.net/npm/roughjs@4.6.6/bundled/rough.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lz-string@1.5.0/libs/lz-string.min.js"></script>
+  <script src="kit/kalem.js?v=83e849e8af54"></script>
+  <script src="kit/ses.js?v=e9ddc6d6036a"></script>
+  <script type="importmap">{
+  "imports": {
+    "./app.js": "./app.js?v=a72ab5dc902b",
+    "./depo.js": "./depo.js?v=ccd04c41736c",
+    "./engine/akis.js": "./engine/akis.js?v=a6939c7ed7dd",
+    "./engine/atis.js": "./engine/atis.js?v=3b030f110bcc",
+    "./engine/baski.js": "./engine/baski.js?v=b8ccb06c5984",
+    "./engine/duello.js": "./engine/duello.js?v=190aae986a7a",
+    "./engine/elle.js": "./engine/elle.js?v=1af15996620f",
+    "./engine/fold.js": "./engine/fold.js?v=f263997ea4be",
+    "./engine/geom.js": "./engine/geom.js?v=2d62d5f77659",
+    "./engine/hangar.js": "./engine/hangar.js?v=2f72f313d709",
+    "./engine/kamera2d.js": "./engine/kamera2d.js?v=7b27072aafec",
+    "./engine/murekkep.js": "./engine/murekkep.js?v=535ef4bf6370",
+    "./engine/not.js": "./engine/not.js?v=781ffc4f2658",
+    "./engine/physics.js": "./engine/physics.js?v=9d35b847d7fc",
+    "./engine/pilot.js": "./engine/pilot.js?v=339bcf2e6e58",
+    "./engine/poz.js": "./engine/poz.js?v=7d4ff7cfc0da",
+    "./engine/sahneler.js": "./engine/sahneler.js?v=2e76ee580d2a",
+    "./engine/tasarim.js": "./engine/tasarim.js?v=ad7238986d12",
+    "./isimler.js": "./isimler.js?v=aa1f7aea8b3b",
+    "./rota.js": "./rota.js?v=36aad97d65d3",
+    "./ui/adlandir.js": "./ui/adlandir.js?v=086d869dfede",
+    "./ui/atac.js": "./ui/atac.js?v=bf0c972e3b44",
+    "./ui/atolye.js": "./ui/atolye.js?v=79215e37bdae",
+    "./ui/duello.js": "./ui/duello.js?v=e477e1fd42c7",
+    "./ui/duelloDurum.js": "./ui/duelloDurum.js?v=2be0d3fcc006",
+    "./ui/el.js": "./ui/el.js?v=d372e264f884",
+    "./ui/fis.js": "./ui/fis.js?v=13c7556b5b00",
+    "./ui/hangar.js": "./ui/hangar.js?v=17e609d6f566",
+    "./ui/isaretler.js": "./ui/isaretler.js?v=88dab3cc79ac",
+    "./ui/isimYazisi.js": "./ui/isimYazisi.js?v=9aa393a27088",
+    "./ui/kagitCiz.js": "./ui/kagitCiz.js?v=1d1af0f745a7",
+    "./ui/kart.js": "./ui/kart.js?v=c593a535fb49",
+    "./ui/katalog.js": "./ui/katalog.js?v=ebcd4f8f6a56",
+    "./ui/katlamaOynat.js": "./ui/katlamaOynat.js?v=1f5a8202690a",
+    "./ui/masa.js": "./ui/masa.js?v=d0734bcf7283",
+    "./ui/nasil.js": "./ui/nasil.js?v=4a1cd9ce3a5c",
+    "./ui/notAl.js": "./ui/notAl.js?v=e52dbf7b32d7",
+    "./ui/notla.js": "./ui/notla.js?v=76768c8090c3",
+    "./ui/pilot.js": "./ui/pilot.js?v=2ad76bbfeea8",
+    "./ui/renkler.js": "./ui/renkler.js?v=624f9a1abdd8",
+    "./ui/sahne.js": "./ui/sahne.js?v=fc6e4eb301a9",
+    "./ui/sayfa.js": "./ui/sayfa.js?v=d644ccec0be8",
+    "./ui/sekmeler.js": "./ui/sekmeler.js?v=b6c7f95dae4e",
+    "./ui/sesler.js": "./ui/sesler.js?v=adc8060be4f8",
+    "./ui/sozluk.js": "./ui/sozluk.js?v=bdceb1432f79",
+    "./ui/stil.js": "./ui/stil.js?v=0caf6553e51a",
+    "./ui/tasarimYukle.js": "./ui/tasarimYukle.js?v=bb3aa1379e89",
+    "./ui/uc.js": "./ui/uc.js?v=b9a4c5e4e9a8",
+    "./ui/ucakCanvas.js": "./ui/ucakCanvas.js?v=48775ed47314",
+    "./ui/ucakCiz.js": "./ui/ucakCiz.js?v=71cc42cadaca",
+    "./ui/ucakFisi.js": "./ui/ucakFisi.js?v=81910532b44f",
+    "./ui/yazdir.js": "./ui/yazdir.js?v=f152348a894f"
+  }
+}</script>
+  <script type="module" src="app.js?v=a72ab5dc902b"></script>
+</body>
+</html>

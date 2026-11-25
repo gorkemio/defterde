@@ -1,0 +1,27 @@
+{
+  "id": "yarasa",
+  "ad": "Yarasa",
+  "orijinalAd": "Underside Plane",
+  "zorluk": 2,
+  "tur": "suzulme",
+  "surum": 2,
+  "kaynak": "foldnfly.com Underside Plane",
+  "kagit": {"en":1.41422,"boy":1},
+  "karakter": {"hiz":3,"suzulme":9,"denge":6,"akrobasi":3},
+  "aciklama": "Gövdesi minicik, kanadı kocaman bir uçan kanat. Yavaşça daireler çizerek süzülür.",
+  "beklenen": {"poligon":54,"kutu":[0.232,0.625,0.8231,1],"enKalin":36},
+  "ucusGorunumu": null,
+  "adimlar": [
+    {"tip":"vadi","cizgi":[[0.70711,0],[0.70711,1]],"katman":"hepsi","tut":[1.41422,0.5],"ac":true,"metin":"Kağıdı yatay tut, dikine ikiye katla ve aç."},
+    {"tip":"vadi","cizgi":[[0,0.5],[1.41422,0.5]],"katman":"hepsi","tut":[0.70711,0],"ac":true,"metin":"Enine de ikiye katla ve aç."},
+    {"tip":"vadi","cizgi":[[0,0.25],[1.41422,0.25]],"katman":"hepsi","tut":[0.70711,0],"metin":"Üst kenarı ortadaki kırışığa indir."},
+    {"tip":"vadi","cizgi":[[0,0.5],[1.41422,0.5]],"katman":"hepsi","tut":[0.70711,0.25],"metin":"Bir kez daha, ortadaki kırışıktan aşağı katla."},
+    {"tip":"vadi","cizgi":{"nokta":[1.41422,0.5],"hedef":[1.16422,0.75]},"katman":"hepsi","ayna":true,"metin":"Üst köşeleri şeridin alt çizgisine indir."},
+    {"tip":"vadi","cizgi":[[0.70711,0.5],[0,0.75]],"katman":"hepsi","tut":[0.25,0.5],"ayna":true,"metin":"Ortadan kenara çapraz katla; yanlar sivri bir tepe oluştursun."},
+    {"tip":"vadi","cizgi":[[0,0.625],[1.41422,0.625]],"katman":"hepsi","tut":[0.70711,0.5],"metin":"Tepeyi şeridin alt çizgisine indir."},
+    {"tip":"dag","cizgi":[[0.70711,0],[0.70711,1]],"katman":"hepsi","tut":[1.41422,1],"metin":"Ortadan arkaya ikiye katla; katlar dışarıda kalsın."},
+    {"tip":"vadi","cizgi":[[0.59111,0],[0.59111,1]],"katman":"ust","tut":[0,1],"kanat":"sol","poz":90,"metin":"Kanadı dışa katla; gövde 2,5 cm kalsın."},
+    {"tip":"cevir","metin":"Uçağı ters çevir."},
+    {"tip":"vadi","cizgi":[[0.82311,0],[0.82311,1]],"katman":"ust","tut":[1.41422,1],"kanat":"sag","poz":90,"metin":"Öbür kanadı da aynı hizada katla."}
+  ]
+}

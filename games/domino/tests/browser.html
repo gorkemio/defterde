@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Domino — yerleşim ve tarayıcı doğrulaması</title>
+<link rel="icon" href="../assets/favicon.svg"><link rel="stylesheet" href="../kit/kagit.css">
+<link rel="stylesheet" href="../kit/kursunkalem.css"><link rel="stylesheet" href="../style.css">
+<style>
+body{display:block;padding:24px;max-width:1400px;margin:auto}h1{font-size:38px}
+.lab-controls{display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin:20px 0}
+select{font:inherit;min-height:44px;background:#fbf9f2;color:#1b2a5e;border:1px solid #888278}
+.lab-board{position:relative;background-color:#fbf9f2;background-image:linear-gradient(to right,rgba(86,140,214,.2) 1px,transparent 1px),linear-gradient(to bottom,rgba(86,140,214,.2) 1px,transparent 1px);background-size:24px 24px;margin:auto}
+.lab-window{overflow:auto;max-width:100%}.lab-origin{position:absolute}.lab-tip{position:absolute;margin:-12px 0 0 -35px;width:70px;text-align:center;font-size:17px}
+pre{white-space:pre-wrap;font:13px/1.5 monospace;padding:16px;background:#fbf9f2}
+</style>
+<script defer src="../assets/vendor/rough-4.6.6.js"></script><script defer src="../kit/kalem.js"></script>
+<script defer src="../kit/malzeme.js"></script><script defer src="../kit/kursunkalem.js"></script>
+<script defer src="../draw.js"></script><script defer src="../board.js"></script><script defer src="../match.js"></script>
+<script defer src="../view.js"></script><script defer src="../layout.js"></script><script defer src="../ai.js"></script>
+<script defer src="browser.js"></script></head>
+<body><h1 class="baslik">Zincirin geometri provası</h1>
+<p>Bu sayfa yalnız doğrulama içindir. 28 taşlık kurgu, gerçek oyunun bitiş kuralını değiştirmez.</p>
+<div class="lab-controls"><label>Kurgu <select id="fixture"><option value="3">3 taş</option><option value="10">10 taş</option><option value="20">20 taş</option><option value="28" selected>28 taş · yedi çift</option><option value="right">28 taş · tek kolda dönüşler</option></select></label><span id="geometry-report"></span></div>
+<div class="lab-window"><div class="lab-board" id="lab-board"><div class="lab-origin" id="lab-origin"></div></div></div>
+<h2>Tarayıcı hesaplama raporu</h2><pre id="browser-report">600 ms hesaplama ve iptal denetleniyor…</pre>
+</body></html>

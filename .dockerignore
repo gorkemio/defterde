@@ -1,0 +1,14 @@
+.git
+node_modules
+.env
+.env.*
+!.env.example
+.DS_Store
+.imports
+dist
+build
+var
+test-results
+playwright-report
+docs/gorseller
+.github

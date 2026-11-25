@@ -1,0 +1,44 @@
+/* kit/dolmakalem.css — "dolma kalem" malzemesinin basılı/CSS tarafı. Yalnız html[data-malzeme="dolmakalem"] altında
+   geçerlidir (Kit.malzeme.sec('dolmakalem') bu özniteliği koyar); başka oyunlarda hiçbir kuralı eşleşmez.
+   Kâğıt (kareler, marj, gren, masa, gölge) kit/kagit.css'ten aynen gelir; burada yalnız mürekkep, yazı ve imleç var.
+   Patrick Hand @font-face'i kagit.css'tedir. Marck Script'te "→" yok: başlıklarda kullanılmaz. */
+
+@font-face {
+  font-family: 'Marck Script';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../assets/fonts/MarckScript-Regular.ttf') format('truetype');
+}
+
+html[data-malzeme="dolmakalem"] {
+  --murekkep-mavisiyah: #1b2a5e;
+  --murekkep-kirmizi: #b3261e;
+  --murekkep-yesil: #1f6e43;
+  --murekkep-mor: #5b2a86;
+  --mavi: var(--murekkep-mavisiyah);      /* eski adları kullanan kit kuralları mürekkebe bağlanır */
+  --kirmizi: var(--murekkep-kirmizi);
+  --kursun: #6e6e6e;
+  /* Dolma kalem imleci: ucu (3,29) noktasında; yarık uç, ince gövde, koyu kapak */
+  --imlec-dolma-mavisiyah: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath d='M3 29 L5 22 Q7 19 10 20 Q12 23 9.5 25 Z' fill='%231b2a5e'/%3E%3Cpath d='M3 29 L7.2 22.6' stroke='%23fbf9f2' stroke-width='.7'/%3E%3Cpath d='M9 20.5 L22 7.5 L25.5 11 L12.5 24 Z' fill='%23fbf9f2' stroke='%231b2a5e' stroke-width='1.3' stroke-linejoin='round'/%3E%3Cpath d='M22 7.5 L25 4.5 Q26.5 3 28 4.5 Q29.5 6 28 7.5 L25.5 11 Z' fill='%231b2a5e'/%3E%3C/svg%3E") 3 29, crosshair;
+  --imlec-dolma-kirmizi: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath d='M3 29 L5 22 Q7 19 10 20 Q12 23 9.5 25 Z' fill='%23b3261e'/%3E%3Cpath d='M3 29 L7.2 22.6' stroke='%23fbf9f2' stroke-width='.7'/%3E%3Cpath d='M9 20.5 L22 7.5 L25.5 11 L12.5 24 Z' fill='%23fbf9f2' stroke='%23b3261e' stroke-width='1.3' stroke-linejoin='round'/%3E%3Cpath d='M22 7.5 L25 4.5 Q26.5 3 28 4.5 Q29.5 6 28 7.5 L25.5 11 Z' fill='%23b3261e'/%3E%3C/svg%3E") 3 29, crosshair;
+  --imlec-dolma-yesil: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath d='M3 29 L5 22 Q7 19 10 20 Q12 23 9.5 25 Z' fill='%231f6e43'/%3E%3Cpath d='M3 29 L7.2 22.6' stroke='%23fbf9f2' stroke-width='.7'/%3E%3Cpath d='M9 20.5 L22 7.5 L25.5 11 L12.5 24 Z' fill='%23fbf9f2' stroke='%231f6e43' stroke-width='1.3' stroke-linejoin='round'/%3E%3Cpath d='M22 7.5 L25 4.5 Q26.5 3 28 4.5 Q29.5 6 28 7.5 L25.5 11 Z' fill='%231f6e43'/%3E%3C/svg%3E") 3 29, crosshair;
+  --imlec-dolma-mor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath d='M3 29 L5 22 Q7 19 10 20 Q12 23 9.5 25 Z' fill='%235b2a86'/%3E%3Cpath d='M3 29 L7.2 22.6' stroke='%23fbf9f2' stroke-width='.7'/%3E%3Cpath d='M9 20.5 L22 7.5 L25.5 11 L12.5 24 Z' fill='%23fbf9f2' stroke='%235b2a86' stroke-width='1.3' stroke-linejoin='round'/%3E%3Cpath d='M22 7.5 L25 4.5 Q26.5 3 28 4.5 Q29.5 6 28 7.5 L25.5 11 Z' fill='%235b2a86'/%3E%3C/svg%3E") 3 29, crosshair;
+  --kalem-imlec: var(--imlec-dolma-mavisiyah);
+}
+
+html[data-malzeme="dolmakalem"] body { color: var(--murekkep-mavisiyah); }
+html[data-malzeme="dolmakalem"] .baslik,
+html[data-malzeme="dolmakalem"] svg text.baslik { font-family: 'Marck Script', 'Patrick Hand', cursive; }
+
+/* Mürekkep şeridi tıklamayı yutmasın */
+html[data-malzeme="dolmakalem"] .murekkep { pointer-events: none; }
+
+/* Komutlar kutu değil: altı mürekkeple çizili sözcük (Kit.kalem.dugmeAltiCiz). */
+html[data-malzeme="dolmakalem"] .dugme {
+  padding: .15em .3em .45em;
+  color: var(--murekkep-mavisiyah);
+}
+html[data-malzeme="dolmakalem"] .dugme:active { transform: none; }
+html[data-malzeme="dolmakalem"] .dugme[disabled] { color: var(--kursun); cursor: default; }
+html[data-malzeme="dolmakalem"] .dugme[disabled] .cerceve { opacity: .35; }

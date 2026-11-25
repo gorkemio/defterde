@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#b6a58a">
+  <title>Adam Asmaca</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23f9f5ea'/%3E%3Cpath d='M7 27 H22 M12 27 V6 H22 V10' fill='none' stroke='%231f3b9b' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='22' cy='14' r='3.4' fill='none' stroke='%231f3b9b' stroke-width='2.2'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="kit/kagit.css?v=556272b28114">
+  <link rel="stylesheet" href="style.css?v=0a63f9aece34">
+</head>
+<body>
+  <noscript><p class="uyari">Bu defteri açmak için JavaScript gerekiyor.</p></noscript>
+
+  <p class="gizli" id="duyuru" role="status" aria-live="polite"></p>
+
+  <main class="defter" id="defter">
+    <a class="defterde-donus" href="/" aria-label="Defterde oyunlarının içindekiler sayfasına dön">← İçindekiler</a>
+
+    <!-- İçindekiler: başlık, kahraman çizimi, mod / kategori / zorluk, rozetler, Başla. Listeleri ui.js doldurur. -->
+    <section class="sayfa ic" id="s-ic" aria-label="İçindekiler">
+      <svg class="k ust" id="ic-ust" role="img" aria-label="Adam Asmaca: kelimeyi bul, adamı kurtar"></svg>
+      <svg class="k" id="ic-kahraman" viewBox="0 0 150 220" aria-hidden="true"></svg>
+
+      <h2 class="k ic-ad" id="ic-ad-mod">Mod</h2>
+      <ul class="k ic-liste ic-mod" id="ic-mod"></ul>
+      <h2 class="k ic-ad" id="ic-ad-kat">Kategori <span class="ic-not" id="ic-not-kategori"></span></h2>
+      <ul class="k ic-liste ic-kat" id="ic-kat"></ul>
+      <h2 class="k ic-ad" id="ic-ad-zor">Zorluk <span class="ic-not" id="ic-not-zorluk"></span></h2>
+      <ul class="k ic-liste ic-zor" id="ic-zor"></ul>
+      <h2 class="k ic-ad" id="ic-ad-rozet">Rozetler</h2>
+      <svg class="k" id="ic-rozet" role="img" aria-label="Rozetler"></svg>
+
+      <button class="k dugme" id="basla" type="button"><span class="yazi">Başla</span></button>
+      <svg class="k" id="ic-cetele" aria-hidden="true"></svg>
+      <p class="k ic-istatistik" id="ic-ist"></p>
+      <p class="k kaynak">Tanımlar: TDK Güncel Türkçe Sözlük</p>
+
+      <button class="k ses-dugme" id="ses-ic" type="button" aria-pressed="false" aria-label="Sesi kapat"><svg class="ikon" viewBox="0 0 40 40" aria-hidden="true"></svg></button>
+      <div class="susler" aria-hidden="true">
+        <svg class="k susle gunes" data-sus="gunes" viewBox="0 0 100 100"></svg>
+        <svg class="k susle yildiz" data-sus="yildiz" viewBox="0 0 40 40"></svg>
+        <svg class="k susle kalp" data-sus="kalp" viewBox="0 0 80 80"></svg>
+      </div>
+    </section>
+
+    <!-- Kart sayfası: Okul modunun adımları, günün sonucu, maraton özeti. İçeriği kart.js kurar. -->
+    <section class="sayfa kart" id="s-kart" aria-label="Kart" hidden>
+      <svg class="k ust" id="kart-ust" aria-hidden="true"></svg>
+      <svg class="k" id="kart-simge" viewBox="0 0 40 40" aria-hidden="true"></svg>
+      <div class="k" id="kart-icerik"></div>
+      <button class="k ses-dugme" id="ses-kart" type="button" aria-pressed="false" aria-label="Sesi kapat"><svg class="ikon" viewBox="0 0 40 40" aria-hidden="true"></svg></button>
+      <div class="susler" aria-hidden="true">
+        <svg class="k susle gunes" data-sus="gunes" viewBox="0 0 100 100"></svg>
+        <svg class="k susle kalp" data-sus="kalp" viewBox="0 0 80 80"></svg>
+      </div>
+    </section>
+
+    <!-- Oyun sayfası: üstte başlık bandı; sol marjda alfabe (telefonda altta klavye), sağda kelime, darağacı ve sonuç -->
+    <section class="sayfa oyun" id="s-oyun" aria-label="Oyun sayfası" hidden>
+
+      <button class="k geri" id="geri" type="button" aria-label="İçindekiler"><svg class="ok" viewBox="0 0 30 20" aria-hidden="true"></svg><span>içindekiler</span></button>
+      <svg class="k ust" id="ust" aria-hidden="true"></svg>
+
+      <div class="k" id="alfabe" role="group" aria-label="Harfler"></div>
+      <svg class="k" id="hoca" viewBox="0 0 120 140" aria-hidden="true"></svg>
+      <svg class="k" id="okul-cetele" role="img" aria-label="Okul çeteleleri" hidden></svg>
+      <svg class="k" id="rozetler" role="img" aria-label="Rozetler"></svg>
+      <svg class="k" id="cetele" aria-hidden="true"></svg>
+
+      <svg class="k" id="etiket" aria-hidden="true"></svg>
+      <svg class="k" id="kelime" role="img" aria-label="Kelime"></svg>
+      <p class="k not" id="not-kalan" aria-hidden="true"></p>
+      <svg class="k" id="daragaci" viewBox="0 0 150 220" aria-hidden="true"></svg>
+
+      <!-- İpuçları: her biri bir çizgiye mal olur; kalan çizgi 1 ise kapalı -->
+      <div class="k" id="ipuclari">
+        <button class="dugme ipucu" id="ip-harf" type="button"><span class="yazi">Bir harf aç</span></button>
+        <button class="dugme ipucu" id="ip-anlam" type="button"><span class="yazi">Anlamını göster</span></button>
+        <p class="not ip-not" aria-hidden="true">her ipucu bir çizgi</p>
+      </div>
+      <div class="k not" id="rozet-not" aria-live="polite"></div>
+
+      <div class="k" id="sonuc">
+        <p class="s-baslik" id="s-baslik"></p>
+        <p class="s-anlam" id="s-anlam"></p>
+      </div>
+      <button class="k dugme" id="sonraki" type="button" hidden><span class="yazi">Sonraki kelime</span></button>
+
+      <button class="k ses-dugme" id="ses-oyun" type="button" aria-pressed="false" aria-label="Sesi kapat"><svg class="ikon" viewBox="0 0 40 40" aria-hidden="true"></svg></button>
+      <p class="k kaynak" id="kaynak">Tanımlar: TDK Güncel Türkçe Sözlük</p>
+      <p class="k sayfa-no" id="sayfa-no" aria-hidden="true"></p>
+
+      <div class="susler" aria-hidden="true">
+        <svg class="k susle gunes" data-sus="gunes" viewBox="0 0 100 100"></svg>
+        <svg class="k susle kalp" data-sus="kalp" viewBox="0 0 80 80"></svg>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Yerel sabit sürümler; klasik betik file:// altında da çalışır, dış sunucu gerekmez -->
+  <script src="assets/vendor/rough-4.6.6.js?v=6853af861953"></script>
+  <script src="kit/kalem.js?v=ff14550b371c"></script>
+  <script src="kit/karakter.js?v=3a8922fb8fc3"></script>
+  <script src="kit/ses.js?v=e9ddc6d6036a"></script>
+  <script src="sesler.js?v=1f6e279ea56e"></script>
+  <script src="config.js?v=b34fd8f74247"></script>
+  <script src="data/sozluk.js?v=449f97f5c1ff"></script>
+  <script src="data/kategoriler.js?v=c5b1e8a51409"></script>
+  <script src="data/atasozleri.js?v=bb0f5e88e579"></script>
+  <script src="data/gunluk.js?v=ccd4ef4c93ed"></script>
+  <script src="tr.js?v=ba7cb3a1ddc8"></script>
+  <script src="game.js?v=26b7b02989dd"></script>
+  <script src="secici.js?v=6c2dee5faf1f"></script>
+  <script src="hileci.js?v=a74a6b728f4c"></script>
+  <script src="modlar.js?v=4ad3440508a2"></script>
+  <script src="layout.js?v=4593b0af95bd"></script>
+  <script src="draw.js?v=3f0e9bac31c0"></script>
+  <script src="kart.js?v=c34bc2678454"></script>
+  <script src="ui.js?v=09a793d3bee1"></script>
+</body>
+</html>

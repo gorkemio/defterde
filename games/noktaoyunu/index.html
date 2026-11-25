@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="tr" data-malzeme="kursunkalem" data-boya="kuruboya" data-kagit="noktali">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#b6a58a">
+  <title>Nokta Oyunu</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%23f9f5ea'/%3E%3Cpath d='M9 9.5 L23 9 L22.6 23 L9.4 23.2 Z' fill='%232e8b57' fill-opacity='.62'/%3E%3Cpath d='M8 8 H24 M24 8 V24 M8 8 V24' stroke='%234a4a4a' stroke-width='1.3' fill='none' stroke-linecap='round'/%3E%3Cg fill='%234a4a4a'%3E%3Ccircle cx='8' cy='8' r='1.8'/%3E%3Ccircle cx='24' cy='8' r='1.8'/%3E%3Ccircle cx='8' cy='24' r='1.8'/%3E%3Ccircle cx='24' cy='24' r='1.8'/%3E%3C/g%3E%3C/svg%3E">
+  <link rel="stylesheet" href="kit/kagit.css?v=74683cd6e084">
+  <link rel="stylesheet" href="kit/kursunkalem.css?v=0c38673ebda2">
+  <link rel="stylesheet" href="kit/kuruboya.css?v=9305fb99ac37">
+  <link rel="stylesheet" href="style.css?v=c4b31f9c5c0f">
+</head>
+<body>
+  <noscript><p class="uyari">Bu defteri açmak için JavaScript gerekiyor.</p></noscript>
+  <p class="gizli" id="duyuru" role="status" aria-live="polite"></p>
+  <p class="gizli" id="tahta-yardim">Ok tuşlarıyla çizgiler arasında gez, Enter ya da boşlukla çiz. Ctrl+Z geri alır.</p>
+
+  <main class="defter" id="defter">
+    <a class="defterde-donus" href="/">← İçindekiler</a>
+    <section class="sayfa" id="sayfa" aria-label="Nokta Oyunu sayfası">
+      <svg class="katman" id="kagit" aria-hidden="true"></svg>
+      <div class="tahta-alan" id="tahta-alan" tabindex="0" role="application" aria-roledescription="nokta tahtası" aria-label="Tahta" aria-describedby="tahta-yardim"></div>
+
+      <nav class="komutlar" id="komutlar" aria-label="Komutlar">
+        <button class="dugme sozcuk bulmaca-komut" id="sonraki" type="button" hidden><span class="yazi">sonraki bulmaca</span></button>
+        <button class="dugme sozcuk bulmaca-komut" id="tekrar" type="button" hidden><span class="yazi">tekrar</span></button>
+        <button class="dugme sozcuk" id="yeni-sayfa" type="button"><span class="yazi">Yeni sayfa</span></button>
+        <button class="dugme sozcuk" id="geri-al" type="button"><span class="yazi">Geri al</span></button>
+        <button class="dugme sozcuk" id="ipucu" type="button"><span class="yazi">İpucu</span></button>
+        <button class="dugme sozcuk" id="tehlike" type="button" aria-pressed="false"><span class="yazi">Tehlike</span></button>
+        <button class="dugme sozcuk" id="zincirler" type="button" aria-pressed="false"><span class="yazi">Zincirler</span></button>
+        <button class="dugme sozcuk" id="nasil" type="button" aria-expanded="false" aria-controls="nasil-not"><span class="yazi">Nasıl oynanır?</span></button>
+        <button class="dugme sozcuk" id="ses" type="button" aria-pressed="true"><span class="yazi">Ses</span></button>
+        <button class="dugme sozcuk" id="ayarlar-ac" type="button" aria-expanded="false" aria-controls="ayarlar"><span class="yazi">Ayarlar</span></button>
+      </nav>
+
+      <!-- İzle: iki bilgisayar oynarken komutların yerinde kenar notu -->
+      <section class="aciklama" id="aciklama" aria-live="polite" hidden>
+        <p class="aciklama-metin" id="aciklama-metin"></p>
+        <p class="not-komut">
+          <button class="dugme sozcuk" id="devam" type="button" hidden><span class="yazi">devam</span></button>
+          <button class="dugme sozcuk" id="izle-bitir" type="button"><span class="yazi">bitir</span></button>
+        </p>
+      </section>
+
+      <section class="not" id="nasil-not" aria-labelledby="nasil-baslik" hidden>
+        <h2 class="gizli" id="nasil-baslik">Nasıl oynanır?</h2>
+        <p>Sırayla iki komşu nokta arasına bir çizgi çekersin.</p>
+        <p>Bir kutunun dördüncü kenarını çeken kutuyu alır, baş harfini yazar ve bir daha oynar.</p>
+        <p>Çizgiler bitince kutusu çok olan kazanır.</p>
+        <p class="not-komut">
+          <button class="dugme sozcuk" id="izle" type="button"><span class="yazi">izle</span></button>
+          <button class="dugme sozcuk" id="nasil-kapat" type="button"><span class="yazi">kapat</span></button>
+        </p>
+      </section>
+
+      <section class="not ayarlar" id="ayarlar" aria-labelledby="ayarlar-baslik" hidden>
+        <h2 class="gizli" id="ayarlar-baslik">Ayarlar</h2>
+        <p class="ayar-grup"><span class="ayar-ad">rakip:</span>
+          <button class="ayar" type="button" data-ayar="mod" data-deger="bilgisayar"><span class="yazi">bilgisayar</span></button><span class="ara">·</span>
+          <button class="ayar" type="button" data-ayar="mod" data-deger="ikiKisi"><span class="yazi">iki kişi</span></button><span class="ara">·</span>
+          <button class="ayar" type="button" data-ayar="mod" data-deger="bulmaca"><span class="yazi">bulmaca</span></button></p>
+        <p class="ayar-grup bulmaca-bilgi" data-mod="bulmaca" id="bulmaca-bilgi"></p>
+        <p class="ayar-grup" data-mod="bilgisayar"><span class="ayar-ad">zorluk:</span>
+          <button class="ayar" type="button" data-ayar="zorluk" data-deger="kolay"><span class="yazi">kolay</span></button><span class="ara">·</span>
+          <button class="ayar" type="button" data-ayar="zorluk" data-deger="orta"><span class="yazi">orta</span></button><span class="ara">·</span>
+          <button class="ayar" type="button" data-ayar="zorluk" data-deger="zor"><span class="yazi">zor</span></button></p>
+        <p class="ayar-grup" data-mod="bilgisayar ikiKisi"><span class="ayar-ad">tahta:</span>
+          <button class="ayar" type="button" data-ayar="boyut" data-deger="4x4" aria-label="4'e 4 nokta"><span class="yazi">4×4</span></button><span class="ara">·</span>
+          <button class="ayar" type="button" data-ayar="boyut" data-deger="5x5" aria-label="5'e 5 nokta"><span class="yazi">5×5</span></button><span class="ara">·</span>
+          <button class="ayar" type="button" data-ayar="boyut" data-deger="6x6" aria-label="6'ya 6 nokta"><span class="yazi">6×6</span></button><span class="ara">·</span>
+          <button class="ayar" type="button" data-ayar="boyut" data-deger="7x7" aria-label="7'ye 7 nokta"><span class="yazi">7×7</span></button><span class="ara">·</span>
+          <button class="ayar" type="button" data-ayar="boyut" data-deger="6x8" aria-label="6'ya 8 nokta"><span class="yazi">6×8</span></button></p>
+        <p class="ayar-grup"><span class="ayar-ad">harfler:</span>
+          <label class="harf-kutu"><span class="harf-ad" id="harf-ad-0">sen</span> <span class="harf-giris-kap"><input class="harf-giris" id="harf-0" maxlength="1" autocomplete="off" autocapitalize="characters" spellcheck="false"></span></label>
+          <label class="harf-kutu"><span class="harf-ad" id="harf-ad-1">bilgisayar</span> <span class="harf-giris-kap"><input class="harf-giris" id="harf-1" maxlength="1" autocomplete="off" autocapitalize="characters" spellcheck="false"></span></label></p>
+        <p class="ayar-grup"><span class="ayar-ad">boya:</span>
+          <button class="ayar" type="button" data-ayar="palet" data-deger="yesil-turuncu"><span class="yazi"><span class="renk-1">yeşil</span> – <span class="renk-2">turuncu</span></span></button><span class="ara">·</span>
+          <button class="ayar" type="button" data-ayar="palet" data-deger="mor-sari"><span class="yazi"><span class="renk-mor">mor</span> – <span class="renk-sari">sarı</span></span></button></p>
+        <p class="yeni-not" id="yeni-not" role="status" aria-live="polite" hidden></p>
+        <p class="not-komut"><button class="dugme sozcuk" id="ayarlar-kapat" type="button"><span class="yazi">kapat</span></button></p>
+      </section>
+    </section>
+  </main>
+
+  <!-- Yerel sabit sürüm; klasik betik file:// altında da çalışır. kit/karakter.js bu oyunda yüklenmez. -->
+  <script src="assets/vendor/rough-4.6.6.js?v=6853af861953"></script>
+  <script src="kit/kalem.js?v=152f04155388"></script>
+  <script src="kit/ses.js?v=c92bc678c362"></script>
+  <script src="kit/malzeme.js?v=7f1b2fbadc51"></script>
+  <script src="kit/kursunkalem.js?v=8a368d63ea29"></script>
+  <script src="kit/kuruboya.js?v=bf4992cf6a24"></script>
+  <script src="config.js?v=2810c69dd846"></script>
+  <script src="board.js?v=6831a6e8973a"></script>
+  <script src="chains.js?v=3594e19d457f"></script>
+  <script src="ai.js?v=415701f0d9a5"></script>
+  <script src="bulmacalar.js?v=d8f33f799c47"></script>
+  <script src="layout.js?v=8e8a5c0fcaf0"></script>
+  <script src="draw.js?v=4296823a9e5c"></script>
+  <script src="ui.js?v=2343dbd8a2cb"></script>
+</body>
+</html>

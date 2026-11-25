@@ -1,0 +1,1401 @@
+[
+  {
+    "id": "kedi",
+    "name": "Kedi",
+    "category": "kara-hayvanlari",
+    "categoryName": "Kara hayvanları",
+    "difficulty": "kolay",
+    "tags": [
+      "hayvan",
+      "kulak",
+      "kuyruk"
+    ],
+    "reviewStatus": "pending",
+    "solutions": [
+      [
+        {
+          "pieceId": "large-a",
+          "x": 0.47140452079103173,
+          "y": 1.4142135623730951,
+          "rotation": 3,
+          "flipped": false
+        },
+        {
+          "pieceId": "large-b",
+          "x": 1.4142135623730951,
+          "y": 2.3570226039551585,
+          "rotation": 1,
+          "flipped": false
+        },
+        {
+          "pieceId": "medium",
+          "x": -0.47140452079103173,
+          "y": 2.3570226039551585,
+          "rotation": 4,
+          "flipped": false
+        },
+        {
+          "pieceId": "small-a",
+          "x": -0.47140452079103173,
+          "y": -1.4142135623730951,
+          "rotation": 3,
+          "flipped": false
+        },
+        {
+          "pieceId": "small-b",
+          "x": 0.47140452079103173,
+          "y": -1.4142135623730951,
+          "rotation": 7,
+          "flipped": false
+        },
+        {
+          "pieceId": "square",
+          "x": 0,
+          "y": -0.7071067811865476,
+          "rotation": 1,
+          "flipped": false
+        },
+        {
+          "pieceId": "parallelogram",
+          "x": 3.181980515339464,
+          "y": 1.767766952966369,
+          "rotation": 3,
+          "flipped": true
+        }
+      ]
+    ],
+    "source": {
+      "kind": "original",
+      "note": "Defterde için kanonik yedi parçayla elle kurulmuş yerleşim; mockup piksellerinden türetilmedi. İsimsiz içerik onayı bekliyor."
+    }
+  },
+  {
+    "id": "tavsan",
+    "name": "Tavşan",
+    "category": "kara-hayvanlari",
+    "categoryName": "Kara hayvanları",
+    "difficulty": "orta",
+    "tags": [
+      "uzun kulak",
+      "oturan",
+      "hayvan"
+    ],
+    "reviewStatus": "pending",
+    "solutions": [
+      [
+        {
+          "pieceId": "large-a",
+          "x": -0.6666666666666666,
+          "y": 1.3333333333333333,
+          "rotation": 4,
+          "flipped": false
+        },
+        {
+          "pieceId": "large-b",
+          "x": 0.6666666666666666,
+          "y": 1.3333333333333333,
+          "rotation": 6,
+          "flipped": false
+        },
+        {
+          "pieceId": "medium",
+          "x": 0.6666666666666666,
+          "y": 0,
+          "rotation": 7,
+          "flipped": false
+        },
+        {
+          "pieceId": "small-a",
+          "x": 2.3333333333333335,
+          "y": -1.6666666666666667,
+          "rotation": 0,
+          "flipped": false
+        },
+        {
+          "pieceId": "small-b",
+          "x": 2.3333333333333335,
+          "y": 1.6666666666666667,
+          "rotation": 6,
+          "flipped": false
+        },
+        {
+          "pieceId": "square",
+          "x": 1.5,
+          "y": -0.5,
+          "rotation": 0,
+          "flipped": false
+        },
+        {
+          "pieceId": "parallelogram",
+          "x": 1.5,
+          "y": -2,
+          "rotation": 2,
+          "flipped": false
+        }
+      ]
+    ],
+    "source": {
+      "kind": "original",
+      "note": "Konuya göre elle kurulmuş özgün yerleşim: Uzun iki kulak, oturan üçgen gövde ve ileri uzanan ayak. İsimsiz içerik onayı bekliyor."
+    }
+  },
+  {
+    "id": "kugu",
+    "name": "Kuğu",
+    "category": "kuslar",
+    "categoryName": "Kuşlar",
+    "difficulty": "orta",
+    "tags": [
+      "kuş",
+      "uzun boyun",
+      "kanat"
+    ],
+    "reviewStatus": "pending",
+    "solutions": [
+      [
+        {
+          "pieceId": "large-a",
+          "x": 1.3333333333333333,
+          "y": 0.6666666666666666,
+          "rotation": 2,
+          "flipped": false
+        },
+        {
+          "pieceId": "large-b",
+          "x": 2.6666666666666665,
+          "y": 0.6666666666666666,
+          "rotation": 0,
+          "flipped": false
+        },
+        {
+          "pieceId": "medium",
+          "x": 1,
+          "y": -0.3333333333333333,
+          "rotation": 1,
+          "flipped": false
+        },
+        {
+          "pieceId": "small-a",
+          "x": 2.6666666666666665,
+          "y": -2.6666666666666665,
+          "rotation": 2,
+          "flipped": false
+        },
+        {
+          "pieceId": "small-b",
+          "x": -0.3333333333333333,
+          "y": -0.3333333333333333,
+          "rotation": 4,
+          "flipped": false
+        },
+        {
+          "pieceId": "square",
+          "x": 3.5,
+          "y": -2.5,
+          "rotation": 0,
+          "flipped": false
+        },
+        {
+          "pieceId": "parallelogram",
+          "x": 3.5,
+          "y": -1,
+          "rotation": 2,
+          "flipped": false
+        }
+      ]
+    ],
+    "source": {
+      "kind": "original",
+      "note": "Uzun kıvrık boyun, sola bakan gaga, kanat ve su üstündeki gövde için elle kurulmuş özgün yerleşim. İsimsiz kabul bekliyor."
+    }
+  },
+  {
+    "id": "penguen",
+    "name": "Penguen",
+    "category": "kuslar",
+    "categoryName": "Kuşlar",
+    "difficulty": "orta",
+    "tags": [
+      "kuş",
+      "gaga",
+      "kanat"
+    ],
+    "reviewStatus": "pending",
+    "solutions": [
+      [
+        {
+          "pieceId": "large-a",
+          "x": 0.6666666666666666,
+          "y": 0.6666666666666666,
+          "rotation": 0,
+          "flipped": false
+        },
+        {
+          "pieceId": "large-b",
+          "x": 1.3333333333333333,
+          "y": 1.3333333333333333,
+          "rotation": 4,
+          "flipped": false
+        },
+        {
+          "pieceId": "medium",
+          "x": 1,
+          "y": -0.3333333333333333,
+          "rotation": 1,
+          "flipped": false
+        },
+        {
+          "pieceId": "small-a",
+          "x": 1.8333333333333333,
+          "y": -1.1666666666666667,
+          "rotation": 0,
+          "flipped": false
+        },
+        {
+          "pieceId": "small-b",
+          "x": -0.3333333333333333,
+          "y": 2.6666666666666665,
+          "rotation": 4,
+          "flipped": false
+        },
+        {
+          "pieceId": "square",
+          "x": 1,
+          "y": -1.5,
+          "rotation": 0,
+          "flipped": false
+        },
+        {
+          "pieceId": "parallelogram",
+          "x": -0.5,
+          "y": 1,
+          "rotation": 2,
+          "flipped": false
+        }
+      ]
+    ],
+    "source": {
+      "kind": "original",
+      "note": "Konuya göre elle kurulmuş özgün yerleşim: Dik gövde, küçük baş ve gaga; yana açılan kanat ve ayak. İsimsiz içerik onayı bekliyor."
+    }
+  },
+  {
+    "id": "balik",
+    "name": "Balık",
+    "category": "deniz-canlilari",
+    "categoryName": "Deniz canlıları",
+    "difficulty": "kolay",
+    "tags": [
+      "deniz",
+      "hayvan",
+      "yüzgeç"
+    ],
+    "reviewStatus": "pending",
+    "solutions": [
+      [
+        {
+          "pieceId": "large-a",
+          "x": 0.6666666666666666,
+          "y": 0.6666666666666666,
+          "rotation": 0,
+          "flipped": false
+        },
+        {
+          "pieceId": "large-b",
+          "x": 1.3333333333333333,
+          "y": 1.3333333333333333,
+          "rotation": 4,
+          "flipped": false
+        },
+        {
+          "pieceId": "medium",
+          "x": 2.3333333333333335,
+          "y": 1,
+          "rotation": 3,
+          "flipped": false
+        },
+        {
+          "pieceId": "small-a",
+          "x": -1.6666666666666667,
+          "y": 1.1666666666666667,
+          "rotation": 6,
+          "flipped": false
+        },
+        {
+          "pieceId": "small-b",
+          "x": -1.6666666666666667,
+          "y": 1.8333333333333333,
+          "rotation": 0,
+          "flipped": false
+        },
+        {
+          "pieceId": "square",
+          "x": -0.5,
+          "y": 1,
+          "rotation": 0,
+          "flipped": false
+        },
+        {
+          "pieceId": "parallelogram",
+          "x": -1.5,
+          "y": 0.5,
+          "rotation": 2,
+          "flipped": true
+        }
+      ]
+    ],
+    "source": {
+      "kind": "original",
+      "note": "Defterde için kanonik yedi parçayla elle kurulmuş yerleşim; mockup piksellerinden türetilmedi. İsimsiz içerik onayı bekliyor."
+    }
+  },
+  {
+    "id": "deniz-kaplumbagasi",
+    "name": "Deniz kaplumbağası",
+    "category": "deniz-canlilari",
+    "categoryName": "Deniz canlıları",
+    "difficulty": "zor",
+    "tags": [
+      "deniz",
+      "kaplumbağa",
+      "yüzgeç"
+    ],
+    "reviewStatus": "pending",
+    "solutions": [
+      [
+        {
+          "pieceId": "large-a",
+          "x": -0.47140452079103173,
+          "y": 0,
+          "rotation": 7,
+          "flipped": false
+        },
+        {
+          "pieceId": "large-b",
+          "x": 0.47140452079103173,
+          "y": 0,
+          "rotation": 3,
+          "flipped": false
+        },
+        {
+          "pieceId": "medium",
+          "x": -0.9428090415820635,
+          "y": -0.9428090415820635,
+          "rotation": 0,
+          "flipped": false
+        },
+        {
+          "pieceId": "small-a",
+          "x": -1.0404401145198807,
+          "y": 1.040440114519881,
+          "rotation": 2,
+          "flipped": false
+        },
+        {
+          "pieceId": "small-b",
+          "x": 1.0404401145198807,
+          "y": 1.040440114519881,
+          "rotation": 0,
+          "flipped": false
+        },
+        {
+          "pieceId": "square",
+          "x": 0,
+          "y": -1.914213562373095,
+          "rotation": 0,
+          "flipped": false
+        },
+        {
+          "pieceId": "parallelogram",
+          "x": 1.0606601717798214,
+          "y": -1.0606601717798214,
+          "rotation": 1,
+          "flipped": false
+        }
+      ]
+    ],
+    "source": {
+      "kind": "original",
+      "note": "Konuya göre elle kurulmuş özgün yerleşim: Baklava kabuk, küçük öndeki baş ve gövdeden yana açılan dört yüzgeç. İsimsiz içerik onayı bekliyor."
+    }
+  },
+  {
+    "id": "kosan",
+    "name": "Koşan",
+    "category": "insanlar",
+    "categoryName": "İnsanlar ve hareket",
+    "difficulty": "orta",
+    "tags": [
+      "insan",
+      "hareket",
+      "koşucu"
+    ],
+    "reviewStatus": "pending",
+    "solutions": [
+      [
+        {
+          "pieceId": "large-a",
+          "x": 1.3333333333333333,
+          "y": 1.6666666666666667,
+          "rotation": 2,
+          "flipped": false
+        },
+        {
+          "pieceId": "large-b",
+          "x": 2.6666666666666665,
+          "y": 0.3333333333333333,
+          "rotation": 6,
+          "flipped": false
+        },
+        {
+          "pieceId": "medium",
+          "x": 4.333333333333333,
+          "y": 2,
+          "rotation": 3,
+          "flipped": false
+        },
+        {
+          "pieceId": "small-a",
+          "x": 1.6666666666666667,
+          "y": -0.3333333333333333,
+          "rotation": 4,
+          "flipped": false
+        },
+        {
+          "pieceId": "small-b",
+          "x": -0.6666666666666666,
+          "y": 0.3333333333333333,
+          "rotation": 0,
+          "flipped": false
+        },
+        {
+          "pieceId": "square",
+          "x": 1,
+          "y": -0.7071067811865476,
+          "rotation": 1,
+          "flipped": false
+        },
+        {
+          "pieceId": "parallelogram",
+          "x": 1,
+          "y": 0.5,
+          "rotation": 0,
+          "flipped": false
+        }
+      ]
+    ],
+    "source": {
+      "kind": "original",
+      "note": "Elmas baş, öne uzanan kol ve iki farklı yönde bükülen bacaklar için elle kurulmuş özgün koşucu. İsimsiz kabul bekliyor."
+    }
+  },
+  {
+    "id": "oturan",
+    "name": "Oturan",
+    "category": "insanlar",
+    "categoryName": "İnsanlar ve hareket",
+    "difficulty": "orta",
+    "tags": [
+      "insan",
+      "oturma",
+      "diz"
+    ],
+    "reviewStatus": "pending",
+    "solutions": [
+      [
+        {
+          "pieceId": "large-a",
+          "x": 0.6666666666666666,
+          "y": 0.3333333333333333,
+          "rotation": 6,
+          "flipped": false
+        },
+        {
+          "pieceId": "large-b",
+          "x": 1.3333333333333333,
+          "y": 1.6666666666666667,
+          "rotation": 2,
+          "flipped": false
+        },
+        {
+          "pieceId": "medium",
+          "x": -0.3333333333333333,
+          "y": 0,
+          "rotation": 7,
+          "flipped": false
+        },
+        {
+          "pieceId": "small-a",
+          "x": -1.3333333333333333,
+          "y": 0.3333333333333333,
+          "rotation": 2,
+          "flipped": false
+        },
+        {
+          "pieceId": "small-b",
+          "x": 4.333333333333333,
+          "y": 3.6666666666666665,
+          "rotation": 6,
+          "flipped": false
+        },
+        {
+          "pieceId": "square",
+          "x": 0.5,
+          "y": -1.5,
+          "rotation": 0,
+          "flipped": false
+        },
+        {
+          "pieceId": "parallelogram",
+          "x": 3,
+          "y": 3.5,
+          "rotation": 0,
+          "flipped": false
+        }
+      ]
+    ],
+    "source": {
+      "kind": "original",
+      "note": "Konuya göre elle kurulmuş özgün yerleşim: Dik baş, bükülü gövde, öne uzanan iki parça bacak ve ayak. İsimsiz içerik onayı bekliyor."
+    }
+  },
+  {
+    "id": "yelkenli",
+    "name": "Yelkenli",
+    "category": "tasitlar",
+    "categoryName": "Taşıtlar",
+    "difficulty": "kolay",
+    "tags": [
+      "tekne",
+      "deniz",
+      "yelken"
+    ],
+    "reviewStatus": "pending",
+    "solutions": [
+      [
+        {
+          "pieceId": "large-a",
+          "x": 0.8333333333333334,
+          "y": 1.3333333333333333,
+          "rotation": 4,
+          "flipped": false
+        },
+        {
+          "pieceId": "large-b",
+          "x": 2.1666666666666665,
+          "y": 1.3333333333333333,
+          "rotation": 6,
+          "flipped": false
+        },
+        {
+          "pieceId": "medium",
+          "x": 3,
+          "y": 2.3333333333333335,
+          "rotation": 5,
+          "flipped": false
+        },
+        {
+          "pieceId": "small-a",
+          "x": 1.3333333333333333,
+          "y": 2.6666666666666665,
+          "rotation": 6,
+          "flipped": false
+        },
+        {
+          "pieceId": "small-b",
+          "x": -0.3333333333333333,
+          "y": 2.3333333333333335,
+          "rotation": 2,
+          "flipped": false
+        },
+        {
+          "pieceId": "square",
+          "x": 0.5,
+          "y": 2.5,
+          "rotation": 0,
+          "flipped": false
+        },
+        {
+          "pieceId": "parallelogram",
+          "x": 2,
+          "y": 2.5,
+          "rotation": 0,
+          "flipped": false
+        }
+      ]
+    ],
+    "source": {
+      "kind": "original",
+      "note": "Defterde için kanonik yedi parçayla elle kurulmuş yerleşim; mockup piksellerinden türetilmedi. İsimsiz içerik onayı bekliyor."
+    }
+  },
+  {
+    "id": "roket",
+    "name": "Roket",
+    "category": "tasitlar",
+    "categoryName": "Taşıtlar",
+    "difficulty": "kolay",
+    "tags": [
+      "uzay",
+      "taşıt",
+      "kanat"
+    ],
+    "reviewStatus": "pending",
+    "solutions": [
+      [
+        {
+          "pieceId": "large-a",
+          "x": 0.6666666666666666,
+          "y": 0.6666666666666666,
+          "rotation": 0,
+          "flipped": false
+        },
+        {
+          "pieceId": "large-b",
+          "x": 1.3333333333333333,
+          "y": 1.3333333333333333,
+          "rotation": 4,
+          "flipped": false
+        },
+        {
+          "pieceId": "medium",
+          "x": 1,
+          "y": -0.3333333333333333,
+          "rotation": 1,
+          "flipped": false
+        },
+        {
+          "pieceId": "small-a",
+          "x": -0.3333333333333333,
+          "y": 2.6666666666666665,
+          "rotation": 4,
+          "flipped": false
+        },
+        {
+          "pieceId": "small-b",
+          "x": 2.3333333333333335,
+          "y": 2.6666666666666665,
+          "rotation": 6,
+          "flipped": false
+        },
+        {
+          "pieceId": "square",
+          "x": 1,
+          "y": 2.5,
+          "rotation": 0,
+          "flipped": false
+        },
+        {
+          "pieceId": "parallelogram",
+          "x": 1,
+          "y": 3.5,
+          "rotation": 0,
+          "flipped": false
+        }
+      ]
+    ],
+    "source": {
+      "kind": "original",
+      "note": "Konuya göre elle kurulmuş özgün yerleşim: Sivri burun, dik gövde, iki yan kanat ve alt alev. İsimsiz içerik onayı bekliyor."
+    }
+  },
+  {
+    "id": "ev",
+    "name": "Ev",
+    "category": "yapilar",
+    "categoryName": "Yapılar",
+    "difficulty": "kolay",
+    "tags": [
+      "yapı",
+      "çatı",
+      "yuva"
+    ],
+    "reviewStatus": "pending",
+    "solutions": [
+      [
+        {
+          "pieceId": "large-a",
+          "x": 1.3333333333333333,
+          "y": 1.3333333333333333,
+          "rotation": 4,
+          "flipped": false
+        },
+        {
+          "pieceId": "large-b",
+          "x": 2.6666666666666665,
+          "y": 1.3333333333333333,
+          "rotation": 6,
+          "flipped": false
+        },
+        {
+          "pieceId": "medium",
+          "x": 2,
+          "y": 2.3333333333333335,
+          "rotation": 5,
+          "flipped": false
+        },
+        {
+          "pieceId": "small-a",
+          "x": 1.3333333333333333,
+          "y": 2.6666666666666665,
+          "rotation": 6,
+          "flipped": false
+        },
+        {
+          "pieceId": "small-b",
+          "x": 2.6666666666666665,
+          "y": 3.6666666666666665,
+          "rotation": 4,
+          "flipped": false
+        },
+        {
+          "pieceId": "square",
+          "x": 1.5,
+          "y": 3.5,
+          "rotation": 0,
+          "flipped": false
+        },
+        {
+          "pieceId": "parallelogram",
+          "x": 2.5,
+          "y": 3,
+          "rotation": 2,
+          "flipped": false
+        }
+      ]
+    ],
+    "source": {
+      "kind": "original",
+      "note": "Defterde için kanonik yedi parçayla elle kurulmuş yerleşim; mockup piksellerinden türetilmedi. İsimsiz içerik onayı bekliyor."
+    }
+  },
+  {
+    "id": "pagoda",
+    "name": "Pagoda",
+    "category": "yapilar",
+    "categoryName": "Yapılar",
+    "difficulty": "zor",
+    "tags": [
+      "yapı",
+      "katlı çatı",
+      "kule"
+    ],
+    "reviewStatus": "pending",
+    "solutions": [
+      [
+        {
+          "pieceId": "large-a",
+          "x": 1.3333333333333333,
+          "y": 1.3333333333333333,
+          "rotation": 4,
+          "flipped": false
+        },
+        {
+          "pieceId": "large-b",
+          "x": 2.6666666666666665,
+          "y": 1.3333333333333333,
+          "rotation": 6,
+          "flipped": false
+        },
+        {
+          "pieceId": "medium",
+          "x": 2,
+          "y": -0.3333333333333333,
+          "rotation": 1,
+          "flipped": false
+        },
+        {
+          "pieceId": "small-a",
+          "x": 1.6666666666666667,
+          "y": -2.3333333333333335,
+          "rotation": 4,
+          "flipped": false
+        },
+        {
+          "pieceId": "small-b",
+          "x": 2.3333333333333335,
+          "y": -2.3333333333333335,
+          "rotation": 6,
+          "flipped": false
+        },
+        {
+          "pieceId": "square",
+          "x": 2,
+          "y": -1.5,
+          "rotation": 0,
+          "flipped": false
+        },
+        {
+          "pieceId": "parallelogram",
+          "x": 2,
+          "y": 2.5,
+          "rotation": 0,
+          "flipped": false
+        }
+      ]
+    ],
+    "source": {
+      "kind": "original",
+      "note": "Konuya göre elle kurulmuş özgün yerleşim: Üç kademeli çatı, aradaki gövde ve alt kaide. İsimsiz içerik onayı bekliyor."
+    }
+  },
+  {
+    "id": "sezlong",
+    "name": "Şezlong",
+    "category": "ev-esyalari",
+    "categoryName": "Ev eşyaları",
+    "difficulty": "orta",
+    "tags": [
+      "koltuk",
+      "oturma",
+      "uzun sandalye"
+    ],
+    "reviewStatus": "pending",
+    "solutions": [
+      [
+        {
+          "pieceId": "large-a",
+          "x": 0.6666666666666666,
+          "y": 0.6666666666666666,
+          "rotation": 0,
+          "flipped": false
+        },
+        {
+          "pieceId": "large-b",
+          "x": 3.3333333333333335,
+          "y": 0.6666666666666666,
+          "rotation": 2,
+          "flipped": false
+        },
+        {
+          "pieceId": "medium",
+          "x": -0.3333333333333333,
+          "y": -1,
+          "rotation": 7,
+          "flipped": false
+        },
+        {
+          "pieceId": "small-a",
+          "x": 0.3333333333333333,
+          "y": 2.6666666666666665,
+          "rotation": 6,
+          "flipped": false
+        },
+        {
+          "pieceId": "small-b",
+          "x": 3.6666666666666665,
+          "y": 2.6666666666666665,
+          "rotation": 4,
+          "flipped": false
+        },
+        {
+          "pieceId": "square",
+          "x": 0.5,
+          "y": -1.5,
+          "rotation": 0,
+          "flipped": false
+        },
+        {
+          "pieceId": "parallelogram",
+          "x": 1,
+          "y": -0.5,
+          "rotation": 0,
+          "flipped": false
+        }
+      ]
+    ],
+    "source": {
+      "kind": "original",
+      "note": "Konuya göre elle kurulmuş özgün yerleşim: Yükselen eğik sırt, uzun oturak ve iki yere basan ayak. İsimsiz içerik onayı bekliyor."
+    }
+  },
+  {
+    "id": "lamba",
+    "name": "Lamba",
+    "category": "ev-esyalari",
+    "categoryName": "Ev eşyaları",
+    "difficulty": "orta",
+    "tags": [
+      "ışık",
+      "abajur",
+      "eşya"
+    ],
+    "reviewStatus": "pending",
+    "solutions": [
+      [
+        {
+          "pieceId": "large-a",
+          "x": -0.6666666666666666,
+          "y": -0.6666666666666666,
+          "rotation": 4,
+          "flipped": false
+        },
+        {
+          "pieceId": "large-b",
+          "x": 0.6666666666666666,
+          "y": -0.6666666666666666,
+          "rotation": 6,
+          "flipped": false
+        },
+        {
+          "pieceId": "medium",
+          "x": 0.5,
+          "y": 3.6666666666666665,
+          "rotation": 1,
+          "flipped": false
+        },
+        {
+          "pieceId": "small-a",
+          "x": 0.16666666666666666,
+          "y": 4.333333333333333,
+          "rotation": 2,
+          "flipped": false
+        },
+        {
+          "pieceId": "small-b",
+          "x": 0.8333333333333334,
+          "y": 4.333333333333333,
+          "rotation": 0,
+          "flipped": false
+        },
+        {
+          "pieceId": "square",
+          "x": 0,
+          "y": 0.5,
+          "rotation": 0,
+          "flipped": false
+        },
+        {
+          "pieceId": "parallelogram",
+          "x": 0,
+          "y": 2,
+          "rotation": 2,
+          "flipped": true
+        }
+      ]
+    ],
+    "source": {
+      "kind": "original",
+      "note": "Konuya göre elle kurulmuş özgün yerleşim: Geniş üçgen abajur, dar kıvrılan ayak ve baklava taban. İsimsiz içerik onayı bekliyor."
+    }
+  },
+  {
+    "id": "cizme",
+    "name": "Çizme",
+    "category": "nesneler",
+    "categoryName": "Günlük nesneler",
+    "difficulty": "kolay",
+    "tags": [
+      "ayakkabı",
+      "giyim",
+      "ayak"
+    ],
+    "reviewStatus": "pending",
+    "solutions": [
+      [
+        {
+          "pieceId": "large-a",
+          "x": 0.6666666666666666,
+          "y": 0.6666666666666666,
+          "rotation": 0,
+          "flipped": false
+        },
+        {
+          "pieceId": "large-b",
+          "x": 1.3333333333333333,
+          "y": 1.3333333333333333,
+          "rotation": 4,
+          "flipped": false
+        },
+        {
+          "pieceId": "medium",
+          "x": 2,
+          "y": 2.3333333333333335,
+          "rotation": 5,
+          "flipped": false
+        },
+        {
+          "pieceId": "small-a",
+          "x": 0.3333333333333333,
+          "y": 2.6666666666666665,
+          "rotation": 6,
+          "flipped": false
+        },
+        {
+          "pieceId": "small-b",
+          "x": 2.6666666666666665,
+          "y": 2.6666666666666665,
+          "rotation": 4,
+          "flipped": false
+        },
+        {
+          "pieceId": "square",
+          "x": 3.5,
+          "y": 2.5,
+          "rotation": 0,
+          "flipped": false
+        },
+        {
+          "pieceId": "parallelogram",
+          "x": 1,
+          "y": 2.5,
+          "rotation": 0,
+          "flipped": false
+        }
+      ]
+    ],
+    "source": {
+      "kind": "original",
+      "note": "Konuya göre elle kurulmuş özgün yerleşim: Dik uzun konç ve sağa uzanan düz taban; yedi parçalı kesintisiz dış hat. İsimsiz içerik onayı bekliyor."
+    }
+  },
+  {
+    "id": "silindir-sapka",
+    "name": "Silindir şapka",
+    "category": "nesneler",
+    "categoryName": "Günlük nesneler",
+    "difficulty": "kolay",
+    "tags": [
+      "şapka",
+      "giyim",
+      "sihirbaz"
+    ],
+    "reviewStatus": "pending",
+    "solutions": [
+      [
+        {
+          "pieceId": "large-a",
+          "x": 1.6666666666666667,
+          "y": 0.6666666666666666,
+          "rotation": 0,
+          "flipped": false
+        },
+        {
+          "pieceId": "large-b",
+          "x": 2.3333333333333335,
+          "y": 1.3333333333333333,
+          "rotation": 4,
+          "flipped": false
+        },
+        {
+          "pieceId": "medium",
+          "x": 2,
+          "y": 2.3333333333333335,
+          "rotation": 5,
+          "flipped": false
+        },
+        {
+          "pieceId": "small-a",
+          "x": 0.3333333333333333,
+          "y": 2.6666666666666665,
+          "rotation": 6,
+          "flipped": false
+        },
+        {
+          "pieceId": "small-b",
+          "x": 2.6666666666666665,
+          "y": 2.6666666666666665,
+          "rotation": 4,
+          "flipped": false
+        },
+        {
+          "pieceId": "square",
+          "x": 3.5,
+          "y": 2.5,
+          "rotation": 0,
+          "flipped": false
+        },
+        {
+          "pieceId": "parallelogram",
+          "x": 1,
+          "y": 2.5,
+          "rotation": 0,
+          "flipped": false
+        }
+      ]
+    ],
+    "source": {
+      "kind": "original",
+      "note": "Konuya göre elle kurulmuş özgün yerleşim: Ortada yüksek taç ve iki yana uzanan yatay kenar. İsimsiz içerik onayı bekliyor."
+    }
+  },
+  {
+    "id": "cam-agaci",
+    "name": "Çam ağacı",
+    "category": "doga",
+    "categoryName": "Doğa",
+    "difficulty": "orta",
+    "tags": [
+      "ağaç",
+      "çam",
+      "orman"
+    ],
+    "reviewStatus": "pending",
+    "solutions": [
+      [
+        {
+          "pieceId": "large-a",
+          "x": -0.6666666666666666,
+          "y": 2.747546895706428,
+          "rotation": 4,
+          "flipped": false
+        },
+        {
+          "pieceId": "large-b",
+          "x": 0.6666666666666666,
+          "y": 2.747546895706428,
+          "rotation": 6,
+          "flipped": false
+        },
+        {
+          "pieceId": "medium",
+          "x": 0,
+          "y": -0.3333333333333333,
+          "rotation": 1,
+          "flipped": false
+        },
+        {
+          "pieceId": "small-a",
+          "x": 0,
+          "y": 0.47140452079103173,
+          "rotation": 1,
+          "flipped": false
+        },
+        {
+          "pieceId": "small-b",
+          "x": 0.7071067811865476,
+          "y": 1.1785113019775793,
+          "rotation": 1,
+          "flipped": false
+        },
+        {
+          "pieceId": "square",
+          "x": 0,
+          "y": 3.914213562373095,
+          "rotation": 0,
+          "flipped": false
+        },
+        {
+          "pieceId": "parallelogram",
+          "x": -0.35355339059327384,
+          "y": 1.0606601717798214,
+          "rotation": 3,
+          "flipped": false
+        }
+      ]
+    ],
+    "source": {
+      "kind": "original",
+      "note": "Konuya göre elle kurulmuş özgün yerleşim: Üçe doğru genişleyen üç yaprak katı ve kısa kare gövde. İsimsiz içerik onayı bekliyor."
+    }
+  },
+  {
+    "id": "kelebek",
+    "name": "Kelebek",
+    "category": "doga",
+    "categoryName": "Doğa",
+    "difficulty": "orta",
+    "tags": [
+      "böcek",
+      "kanat",
+      "doğa"
+    ],
+    "reviewStatus": "pending",
+    "solutions": [
+      [
+        {
+          "pieceId": "large-a",
+          "x": -1.3333333333333333,
+          "y": -0.6666666666666666,
+          "rotation": 6,
+          "flipped": false
+        },
+        {
+          "pieceId": "large-b",
+          "x": 2.3333333333333335,
+          "y": -0.6666666666666666,
+          "rotation": 4,
+          "flipped": false
+        },
+        {
+          "pieceId": "medium",
+          "x": -1,
+          "y": 0.3333333333333333,
+          "rotation": 5,
+          "flipped": false
+        },
+        {
+          "pieceId": "small-a",
+          "x": 1.6666666666666667,
+          "y": 0.3333333333333333,
+          "rotation": 2,
+          "flipped": false
+        },
+        {
+          "pieceId": "small-b",
+          "x": 2.3333333333333335,
+          "y": 0.3333333333333333,
+          "rotation": 0,
+          "flipped": false
+        },
+        {
+          "pieceId": "square",
+          "x": 0,
+          "y": -1.7071067811865475,
+          "rotation": 1,
+          "flipped": false
+        },
+        {
+          "pieceId": "parallelogram",
+          "x": 0.5,
+          "y": 0,
+          "rotation": 2,
+          "flipped": true
+        }
+      ]
+    ],
+    "source": {
+      "kind": "original",
+      "note": "Konuya göre elle kurulmuş özgün yerleşim: İki büyük üst kanat, iki küçük alt kanat, dar gövde ve baş. İsimsiz içerik onayı bekliyor."
+    }
+  },
+  {
+    "id": "kare",
+    "name": "Kare",
+    "category": "geometri",
+    "categoryName": "Geometrik şekiller",
+    "difficulty": "kolay",
+    "tags": [
+      "dörtgen",
+      "geometri"
+    ],
+    "reviewStatus": "pending",
+    "solutions": [
+      [
+        {
+          "pieceId": "large-a",
+          "x": 1.414213562373095,
+          "y": 0.4714045207910316,
+          "rotation": 5,
+          "flipped": false
+        },
+        {
+          "pieceId": "large-b",
+          "x": 0.4714045207910316,
+          "y": 1.414213562373095,
+          "rotation": 3,
+          "flipped": false
+        },
+        {
+          "pieceId": "medium",
+          "x": 2.357022603955158,
+          "y": 2.357022603955158,
+          "rotation": 4,
+          "flipped": false
+        },
+        {
+          "pieceId": "small-a",
+          "x": 1.8856180831641265,
+          "y": 1.414213562373095,
+          "rotation": 7,
+          "flipped": false
+        },
+        {
+          "pieceId": "small-b",
+          "x": 0.7071067811865475,
+          "y": 2.5927248643506737,
+          "rotation": 1,
+          "flipped": false
+        },
+        {
+          "pieceId": "square",
+          "x": 1.414213562373095,
+          "y": 2.1213203435596424,
+          "rotation": 1,
+          "flipped": false
+        },
+        {
+          "pieceId": "parallelogram",
+          "x": 2.474873734152916,
+          "y": 1.0606601717798212,
+          "rotation": 3,
+          "flipped": true
+        }
+      ]
+    ],
+    "source": {
+      "kind": "original",
+      "note": "Defterde için kanonik yedi parçayla elle kurulmuş yerleşim; mockup piksellerinden türetilmedi. İsimsiz içerik onayı bekliyor."
+    }
+  },
+  {
+    "id": "dikdortgen",
+    "name": "Dikdörtgen",
+    "category": "geometri",
+    "categoryName": "Geometrik şekiller",
+    "difficulty": "kolay",
+    "tags": [
+      "dörtgen",
+      "uzun",
+      "geometri"
+    ],
+    "reviewStatus": "pending",
+    "solutions": [
+      [
+        {
+          "pieceId": "large-a",
+          "x": 2.6666666666666665,
+          "y": 0.6666666666666666,
+          "rotation": 0,
+          "flipped": false
+        },
+        {
+          "pieceId": "large-b",
+          "x": 3.3333333333333335,
+          "y": 1.3333333333333333,
+          "rotation": 4,
+          "flipped": false
+        },
+        {
+          "pieceId": "medium",
+          "x": 1,
+          "y": 0.3333333333333333,
+          "rotation": 5,
+          "flipped": false
+        },
+        {
+          "pieceId": "small-a",
+          "x": 0.3333333333333333,
+          "y": 0.6666666666666666,
+          "rotation": 6,
+          "flipped": false
+        },
+        {
+          "pieceId": "small-b",
+          "x": 1.6666666666666667,
+          "y": 1.6666666666666667,
+          "rotation": 4,
+          "flipped": false
+        },
+        {
+          "pieceId": "square",
+          "x": 0.5,
+          "y": 1.5,
+          "rotation": 0,
+          "flipped": false
+        },
+        {
+          "pieceId": "parallelogram",
+          "x": 1.5,
+          "y": 1,
+          "rotation": 2,
+          "flipped": false
+        }
+      ]
+    ],
+    "source": {
+      "kind": "original",
+      "note": "Defterde için kanonik yedi parçayla elle kurulmuş yerleşim; mockup piksellerinden türetilmedi. İsimsiz içerik onayı bekliyor."
+    }
+  }
+]

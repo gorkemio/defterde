@@ -1,0 +1,75 @@
+/* kit/kecelikalem.css — "keçeli kalem" malzemesinin basılı/CSS tarafı. Yalnız html[data-malzeme="kecelikalem"] altında
+   geçerlidir (Kit.malzeme.sec('kecelikalem') bu özniteliği koyar); başka oyunlarda hiçbir kuralı eşleşmez.
+   Kâğıt (kareler, marj, gren) kit/kagit.css'ten aynen gelir. Patrick Hand @font-face'i de oradadır. */
+
+@font-face {
+  font-family: 'Caveat Brush';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../assets/fonts/CaveatBrush-Regular.ttf') format('truetype');
+}
+
+html[data-malzeme="kecelikalem"] {
+  --siyah: #1c1c1c;
+  --keceli-mavi: #1d5bd6;
+  --keceli-kirmizi: #d6362b;
+  --yesil: #1e9e5a;
+  --turuncu: #f08a1e;
+  --cim: #4e9a5c;
+  --not-sari: #fff3a3;                 /* yapışkan not */
+  --not-sari-koyu: #f6e27a;
+  --bant: rgba(255, 255, 255, .5);     /* yarı saydam bant */
+  --mavi: var(--siyah);                /* eski adları kullanan kit kuralları keçeli değerlere bağlanır */
+  --kirmizi: var(--keceli-kirmizi);
+  --kursun: #7a7a7a;
+  /* Keçeli kalem imleci: ucu (3,29) noktasında; kesik uç, kalın gövde, siyah kapak */
+  --kalem-imlec: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath d='M3 29 L4.5 23.5 L8.5 27.5 Z' fill='%231c1c1c'/%3E%3Cpath d='M4.5 23.5 L7 21 L11 25 L8.5 27.5 Z' fill='%23fbf9f2' stroke='%231c1c1c' stroke-width='1.3' stroke-linejoin='round'/%3E%3Cpath d='M7 21 L20 8 L24 12 L11 25 Z' fill='%23fbf9f2' stroke='%231c1c1c' stroke-width='1.5' stroke-linejoin='round'/%3E%3Cpath d='M20 8 L24.5 3.5 Q26 2 27.5 3.5 L28.5 4.5 Q30 6 28.5 7.5 L24 12 Z' fill='%231c1c1c'/%3E%3C/svg%3E") 3 29, crosshair;
+}
+
+html[data-malzeme="kecelikalem"] body {
+  font-family: 'Patrick Hand', 'Segoe Print', 'Bradley Hand', cursive;
+  color: var(--siyah);
+  /* Ahşap masa, sol üstten lamba ışığı, kenarlarda karanlık (kursunkalem.css ile aynı masa) */
+  background:
+    radial-gradient(ellipse at 50% 40%, rgba(255, 255, 255, .22), transparent 70%),
+    url("gren.png"),
+    #b6a58a;
+}
+
+/* Eski defter kâğıdı: biraz sıcak, kareler soluk mavi-gri, marj solmuş kırmızı; kenarlara doğru hafif sararma */
+html[data-malzeme="kecelikalem"] {
+  --kagit: #fbf9f2;
+  --izgara: rgba(86, 140, 214, .32);
+  --marj: rgba(214, 64, 64, .6);
+  --sayfa-golgesi:
+    inset 0 1px 2px rgba(255, 255, 255, .8),
+    0 1px 1px rgba(40, 24, 10, .25),
+    14px 26px 44px -10px rgba(30, 18, 6, .55);
+}
+html[data-malzeme="kecelikalem"] .sayfa { box-shadow: var(--sayfa-golgesi); }
+/* Altta duran birkaç yaprak: defter */
+html[data-malzeme="kecelikalem"] .defter { position: relative; }
+html[data-malzeme="kecelikalem"] .defter::before,
+html[data-malzeme="kecelikalem"] .defter::after {
+  content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background: #f7f4eb; box-shadow: 0 1px 2px rgba(40, 24, 10, .3), 6px 12px 22px -8px rgba(30, 18, 6, .4);
+}
+html[data-malzeme="kecelikalem"] .defter::before { transform: translate(5px, 4px) rotate(.7deg); }
+html[data-malzeme="kecelikalem"] .defter::after { transform: translate(-3px, 7px) rotate(-.5deg); background: #efebdf; }
+@media (prefers-reduced-motion: no-preference) {
+  html[data-malzeme="kecelikalem"] .defter { animation: kc-gelis .5s ease-out both; }
+}
+@keyframes kc-gelis { from { opacity: 0; translate: 0 10px; } to { opacity: 1; translate: 0 0; } }
+html[data-malzeme="kecelikalem"] svg text { font-family: 'Patrick Hand', 'Segoe Print', 'Bradley Hand', cursive; }
+html[data-malzeme="kecelikalem"] .baslik,
+html[data-malzeme="kecelikalem"] svg text.baslik { font-family: 'Caveat Brush', 'Patrick Hand', cursive; }
+
+/* Komutlar kutu değil: altı keçeliyle çizili sözcük (Kit.kalem.dugmeAltiCiz). */
+html[data-malzeme="kecelikalem"] .dugme {
+  padding: .15em .3em .45em;
+  color: var(--siyah);
+}
+html[data-malzeme="kecelikalem"] .dugme:active { transform: none; }
+html[data-malzeme="kecelikalem"] .dugme[disabled] { color: var(--kursun); cursor: default; }
+html[data-malzeme="kecelikalem"] .dugme[disabled] .cerceve { opacity: .35; }

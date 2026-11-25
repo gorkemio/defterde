@@ -1,0 +1,1537 @@
+{
+  "date": "2026-10-21T01:05:11.421Z",
+  "machine": "darwin arm64 Apple M4 Pro",
+  "count": 60,
+  "categories": {
+    "kolay": {
+      "count": 20,
+      "layouts": 10
+    },
+    "orta": {
+      "count": 20,
+      "layouts": 20
+    },
+    "zor": {
+      "count": 20,
+      "layouts": 20
+    }
+  },
+  "puzzles": [
+    {
+      "id": "kolay-01",
+      "size": "5×5",
+      "white": 10,
+      "level": 1,
+      "lowerLevels": [],
+      "traceSteps": 19,
+      "usage": {
+        "combination": 5,
+        "single": 3,
+        "remainder": 7,
+        "given": 4
+      },
+      "score": 1.9,
+      "signature": "931cd4cad66121bee5754bd897ac90fc1b35eefad6c0aa91ced5ce092424c089",
+      "layout": "dad944cbea015e79b19099813134c9976a6abf8e05a6a2ef695b1563977290bf",
+      "exact": {
+        "nodes": 1,
+        "propagations": 24,
+        "elapsedMs": 0.5546249999999979
+      }
+    },
+    {
+      "id": "kolay-02",
+      "size": "5×5",
+      "white": 10,
+      "level": 1,
+      "lowerLevels": [],
+      "traceSteps": 20,
+      "usage": {
+        "combination": 7,
+        "single": 3,
+        "given": 3,
+        "remainder": 7
+      },
+      "score": 2,
+      "signature": "19350914c6bf12e482c9e256cc44d25082489b178ee456953a36c487baa1d879",
+      "layout": "dad944cbea015e79b19099813134c9976a6abf8e05a6a2ef695b1563977290bf",
+      "exact": {
+        "nodes": 1,
+        "propagations": 24,
+        "elapsedMs": 0.11870800000000159
+      }
+    },
+    {
+      "id": "kolay-03",
+      "size": "5×5",
+      "white": 10,
+      "level": 1,
+      "lowerLevels": [],
+      "traceSteps": 20,
+      "usage": {
+        "combination": 7,
+        "single": 4,
+        "remainder": 6,
+        "given": 3
+      },
+      "score": 2,
+      "signature": "4d620fa60a61c91eb0819d3e8c016096e05f197d7d2bce4f0f9538075b32a166",
+      "layout": "dad944cbea015e79b19099813134c9976a6abf8e05a6a2ef695b1563977290bf",
+      "exact": {
+        "nodes": 1,
+        "propagations": 24,
+        "elapsedMs": 0.12533399999999872
+      }
+    },
+    {
+      "id": "kolay-04",
+      "size": "5×5",
+      "white": 10,
+      "level": 1,
+      "lowerLevels": [],
+      "traceSteps": 20,
+      "usage": {
+        "combination": 5,
+        "single": 4,
+        "remainder": 6,
+        "given": 5
+      },
+      "score": 2,
+      "signature": "9cc0a112a8ac9bbe6adc0ed097d9d77e87797c8788660c0fa0c81f195efd44ed",
+      "layout": "fbc162b557f78fc9528f7685faa3ed82af65203ed1309fb9e8285019d04a8ced",
+      "exact": {
+        "nodes": 1,
+        "propagations": 21,
+        "elapsedMs": 0.1597919999999995
+      }
+    },
+    {
+      "id": "kolay-05",
+      "size": "5×5",
+      "white": 10,
+      "level": 1,
+      "lowerLevels": [],
+      "traceSteps": 20,
+      "usage": {
+        "combination": 7,
+        "single": 4,
+        "remainder": 6,
+        "given": 3
+      },
+      "score": 2,
+      "signature": "dea265fce94c084684a7fe1e419bf8b9ba865f58f957f6b8aa38c24a5622322a",
+      "layout": "dad944cbea015e79b19099813134c9976a6abf8e05a6a2ef695b1563977290bf",
+      "exact": {
+        "nodes": 1,
+        "propagations": 24,
+        "elapsedMs": 0.11445799999999906
+      }
+    },
+    {
+      "id": "kolay-06",
+      "size": "5×5",
+      "white": 10,
+      "level": 1,
+      "lowerLevels": [],
+      "traceSteps": 20,
+      "usage": {
+        "combination": 6,
+        "single": 4,
+        "given": 4,
+        "remainder": 6
+      },
+      "score": 2,
+      "signature": "7c5daf333bd73337805725619ce0724170f9789701b6f2b128378860be744123",
+      "layout": "7296651a71a78079762132e92539a7651339c90d10bba2c349b693e6275b62cb",
+      "exact": {
+        "nodes": 1,
+        "propagations": 21,
+        "elapsedMs": 0.10299999999999798
+      }
+    },
+    {
+      "id": "kolay-07",
+      "size": "5×5",
+      "white": 11,
+      "level": 1,
+      "lowerLevels": [],
+      "traceSteps": 22,
+      "usage": {
+        "combination": 7,
+        "single": 4,
+        "given": 4,
+        "remainder": 7
+      },
+      "score": 2,
+      "signature": "5ce1e371ac102e3496e97abc83b1879c3d5e628198bf710a385f51b58d247567",
+      "layout": "6809b7706d0f08ef5f79e28a9363533ac03b4e679d326cd17af2fbf249cb5b38",
+      "exact": {
+        "nodes": 1,
+        "propagations": 32,
+        "elapsedMs": 0.25870800000000216
+      }
+    },
+    {
+      "id": "kolay-08",
+      "size": "6×6",
+      "white": 14,
+      "level": 1,
+      "lowerLevels": [],
+      "traceSteps": 29,
+      "usage": {
+        "combination": 7,
+        "single": 6,
+        "given": 8,
+        "remainder": 8
+      },
+      "score": 2.0714285714285716,
+      "signature": "fb0ef7cb59ef913085a09823e1f9979ffe86afb204306327110650b71fd35634",
+      "layout": "bf8448bd8181eb3dd87c5d0e71e21bc616b0bbcc7a768adbc7fd64fc9fc0587b",
+      "exact": {
+        "nodes": 1,
+        "propagations": 36,
+        "elapsedMs": 0.14733300000000327
+      }
+    },
+    {
+      "id": "kolay-09",
+      "size": "5×5",
+      "white": 11,
+      "level": 1,
+      "lowerLevels": [],
+      "traceSteps": 23,
+      "usage": {
+        "combination": 7,
+        "single": 4,
+        "remainder": 7,
+        "given": 5
+      },
+      "score": 2.090909090909091,
+      "signature": "9b0069a7baa02bfca3a982cbc53a6ba170d68c4b1920645d2c76c5022041e41b",
+      "layout": "6809b7706d0f08ef5f79e28a9363533ac03b4e679d326cd17af2fbf249cb5b38",
+      "exact": {
+        "nodes": 1,
+        "propagations": 24,
+        "elapsedMs": 0.09041599999999761
+      }
+    },
+    {
+      "id": "kolay-10",
+      "size": "5×5",
+      "white": 11,
+      "level": 1,
+      "lowerLevels": [],
+      "traceSteps": 23,
+      "usage": {
+        "combination": 6,
+        "single": 4,
+        "remainder": 7,
+        "given": 6
+      },
+      "score": 2.090909090909091,
+      "signature": "c2de3ebe3b6bf69f2b6ed8d50c9519f1be1232681fab61dec2c3e7153c8e1c50",
+      "layout": "b036593ca50b3ca3c9a5aa22aaf79ee351d2fdec20f9806a1bb5dc2f77f9afd3",
+      "exact": {
+        "nodes": 1,
+        "propagations": 24,
+        "elapsedMs": 0.10779200000000344
+      }
+    },
+    {
+      "id": "kolay-11",
+      "size": "5×5",
+      "white": 10,
+      "level": 1,
+      "lowerLevels": [],
+      "traceSteps": 21,
+      "usage": {
+        "combination": 7,
+        "single": 4,
+        "given": 4,
+        "remainder": 6
+      },
+      "score": 2.1,
+      "signature": "6319938654ef588b59bb576d0a2d6ef391142091d4ce895e89df846373e78227",
+      "layout": "7296651a71a78079762132e92539a7651339c90d10bba2c349b693e6275b62cb",
+      "exact": {
+        "nodes": 1,
+        "propagations": 21,
+        "elapsedMs": 0.10070800000000446
+      }
+    },
+    {
+      "id": "kolay-12",
+      "size": "6×6",
+      "white": 15,
+      "level": 1,
+      "lowerLevels": [],
+      "traceSteps": 32,
+      "usage": {
+        "combination": 9,
+        "single": 6,
+        "remainder": 9,
+        "given": 8
+      },
+      "score": 2.1333333333333333,
+      "signature": "9fbc4cc50dcca8bbebc2239dd862a6f840396c826c7f28ce27fc5fa3e21b734a",
+      "layout": "2c9ad4476046f1d9a755eb50b1a101529cf7ac1c20211a7933db458251aa1a8f",
+      "exact": {
+        "nodes": 1,
+        "propagations": 40,
+        "elapsedMs": 0.25687500000000085
+      }
+    },
+    {
+      "id": "kolay-13",
+      "size": "7×7",
+      "white": 16,
+      "level": 1,
+      "lowerLevels": [],
+      "traceSteps": 35,
+      "usage": {
+        "combination": 9,
+        "single": 7,
+        "remainder": 9,
+        "given": 10
+      },
+      "score": 2.1875,
+      "signature": "7548d5703162a9bc1271c1d2175f6e6cfa545af4b60ff74cde19a6316dbf282f",
+      "layout": "f91dc7f7443dd51b567d130384eb8bd8e729d1fad8474a846a6686919646a890",
+      "exact": {
+        "nodes": 1,
+        "propagations": 40,
+        "elapsedMs": 0.12895799999999724
+      }
+    },
+    {
+      "id": "kolay-14",
+      "size": "6×6",
+      "white": 13,
+      "level": 1,
+      "lowerLevels": [],
+      "traceSteps": 29,
+      "usage": {
+        "combination": 8,
+        "single": 7,
+        "remainder": 6,
+        "given": 8
+      },
+      "score": 2.230769230769231,
+      "signature": "cc69635a8e5942f15fb4732b272136020abbf9469bd8a3ce09af93c52797957e",
+      "layout": "6b1721fba558e8685dd65a24e4a0177e0b49654b25b24bed5bee13775eb946ee",
+      "exact": {
+        "nodes": 1,
+        "propagations": 36,
+        "elapsedMs": 0.12041700000000333
+      }
+    },
+    {
+      "id": "kolay-15",
+      "size": "5×5",
+      "white": 12,
+      "level": 1,
+      "lowerLevels": [],
+      "traceSteps": 27,
+      "usage": {
+        "combination": 8,
+        "single": 5,
+        "remainder": 7,
+        "given": 7
+      },
+      "score": 2.25,
+      "signature": "f5be53dfdc7ac9c204fd10a32ad641db84951ffb4d5ef4005ba34b7fa08be624",
+      "layout": "08e8bae02fffb28341c698265679a534a421bd5019a2ac459fb23c1de38ffae4",
+      "exact": {
+        "nodes": 1,
+        "propagations": 32,
+        "elapsedMs": 0.12395800000000179
+      }
+    },
+    {
+      "id": "kolay-16",
+      "size": "5×5",
+      "white": 12,
+      "level": 1,
+      "lowerLevels": [],
+      "traceSteps": 27,
+      "usage": {
+        "combination": 9,
+        "single": 5,
+        "remainder": 7,
+        "given": 6
+      },
+      "score": 2.25,
+      "signature": "417d42e4b0bc033d798626e2255c9add5adf6a2e2293e5514ee61e100a363100",
+      "layout": "08e8bae02fffb28341c698265679a534a421bd5019a2ac459fb23c1de38ffae4",
+      "exact": {
+        "nodes": 1,
+        "propagations": 32,
+        "elapsedMs": 0.1755420000000001
+      }
+    },
+    {
+      "id": "kolay-17",
+      "size": "5×5",
+      "white": 11,
+      "level": 1,
+      "lowerLevels": [],
+      "traceSteps": 25,
+      "usage": {
+        "combination": 8,
+        "single": 5,
+        "remainder": 6,
+        "given": 6
+      },
+      "score": 2.272727272727273,
+      "signature": "ba5ed142597e72819eed0f5bb4f74a3e77fc58f6766109e1c144b0e5ab5a294f",
+      "layout": "6809b7706d0f08ef5f79e28a9363533ac03b4e679d326cd17af2fbf249cb5b38",
+      "exact": {
+        "nodes": 1,
+        "propagations": 32,
+        "elapsedMs": 0.08104099999999903
+      }
+    },
+    {
+      "id": "kolay-18",
+      "size": "5×5",
+      "white": 11,
+      "level": 1,
+      "lowerLevels": [],
+      "traceSteps": 25,
+      "usage": {
+        "combination": 8,
+        "single": 6,
+        "given": 6,
+        "remainder": 5
+      },
+      "score": 2.272727272727273,
+      "signature": "99ce8562067dd8b3bf175bab65de8149b55c5d190c15a0dbd472ed9b59863171",
+      "layout": "6809b7706d0f08ef5f79e28a9363533ac03b4e679d326cd17af2fbf249cb5b38",
+      "exact": {
+        "nodes": 1,
+        "propagations": 24,
+        "elapsedMs": 0.07237500000000097
+      }
+    },
+    {
+      "id": "kolay-19",
+      "size": "6×6",
+      "white": 13,
+      "level": 1,
+      "lowerLevels": [],
+      "traceSteps": 30,
+      "usage": {
+        "combination": 9,
+        "single": 7,
+        "remainder": 6,
+        "given": 8
+      },
+      "score": 2.3076923076923075,
+      "signature": "fe221bf39de27d63aadf6f143743fa54867ee014d2ad3eed40472e05c3e9b8e2",
+      "layout": "6b1721fba558e8685dd65a24e4a0177e0b49654b25b24bed5bee13775eb946ee",
+      "exact": {
+        "nodes": 1,
+        "propagations": 36,
+        "elapsedMs": 0.15050000000000097
+      }
+    },
+    {
+      "id": "kolay-20",
+      "size": "6×6",
+      "white": 13,
+      "level": 1,
+      "lowerLevels": [],
+      "traceSteps": 30,
+      "usage": {
+        "combination": 9,
+        "single": 7,
+        "remainder": 6,
+        "given": 8
+      },
+      "score": 2.3076923076923075,
+      "signature": "3be1655a0c14a759f53fe10810e100c4474df004e9483d41807943270ff7f253",
+      "layout": "6b1721fba558e8685dd65a24e4a0177e0b49654b25b24bed5bee13775eb946ee",
+      "exact": {
+        "nodes": 1,
+        "propagations": 36,
+        "elapsedMs": 0.10537500000000222
+      }
+    },
+    {
+      "id": "orta-01",
+      "size": "7×7",
+      "white": 18,
+      "level": 2,
+      "lowerLevels": [
+        "stuck"
+      ],
+      "traceSteps": 42,
+      "usage": {
+        "combination": 12,
+        "filtered": 1,
+        "single": 7,
+        "remainder": 11,
+        "given": 11
+      },
+      "score": 2.4444444444444446,
+      "signature": "9acedcb3daf6a2098e0052533ed0efc114d336fad2ab6c873f2f864326756612",
+      "layout": "0c908b8fcdb50d037719046290fe253d0d7aa8a8a365fd371098816f85ee7afb",
+      "exact": {
+        "nodes": 1,
+        "propagations": 60,
+        "elapsedMs": 0.17637500000000017
+      }
+    },
+    {
+      "id": "orta-02",
+      "size": "7×7",
+      "white": 24,
+      "level": 2,
+      "lowerLevels": [
+        "stuck"
+      ],
+      "traceSteps": 57,
+      "usage": {
+        "combination": 12,
+        "filtered": 1,
+        "single": 13,
+        "remainder": 11,
+        "given": 20
+      },
+      "score": 2.4583333333333335,
+      "signature": "6b5d01daa52ac4af4c3ae739a5f0a64e316edea5bf4ab8d65f7e88bf59a7a115",
+      "layout": "62ae0139c274a927dc9a8c1bf47694b1f65719e184d28ba58310db90966cc8f1",
+      "exact": {
+        "nodes": 1,
+        "propagations": 60,
+        "elapsedMs": 0.34437499999999943
+      }
+    },
+    {
+      "id": "orta-03",
+      "size": "7×7",
+      "white": 19,
+      "level": 2,
+      "lowerLevels": [
+        "stuck"
+      ],
+      "traceSteps": 44,
+      "usage": {
+        "combination": 12,
+        "hidden": 1,
+        "single": 8,
+        "given": 11,
+        "filtered": 1,
+        "remainder": 11
+      },
+      "score": 2.526315789473684,
+      "signature": "a0684fe894671b57183d3740acedeeea434c1792be10462b66d81a90bfd10e1d",
+      "layout": "757246a3a1335a974f9bcb1a37fa95f645697ea13bbf52a16fb7a36a81f7ff93",
+      "exact": {
+        "nodes": 1,
+        "propagations": 60,
+        "elapsedMs": 0.2096249999999955
+      }
+    },
+    {
+      "id": "orta-04",
+      "size": "7×7",
+      "white": 19,
+      "level": 2,
+      "lowerLevels": [
+        "stuck"
+      ],
+      "traceSteps": 44,
+      "usage": {
+        "combination": 11,
+        "hidden": 1,
+        "single": 8,
+        "given": 12,
+        "filtered": 1,
+        "remainder": 11
+      },
+      "score": 2.526315789473684,
+      "signature": "ec45326a3911a190428adcc5ddf237392c8b489a5072edb705b4d0637d5ca087",
+      "layout": "3d5e6b4f715651ee3ae1866d1f26cf4206c0c81b950253399dc2c75cdba86057",
+      "exact": {
+        "nodes": 1,
+        "propagations": 60,
+        "elapsedMs": 0.17070799999999764
+      }
+    },
+    {
+      "id": "orta-05",
+      "size": "7×7",
+      "white": 22,
+      "level": 2,
+      "lowerLevels": [
+        "stuck"
+      ],
+      "traceSteps": 52,
+      "usage": {
+        "combination": 13,
+        "single": 9,
+        "remainder": 13,
+        "given": 15,
+        "filtered": 1,
+        "hidden": 1
+      },
+      "score": 2.5454545454545454,
+      "signature": "c7a1237efab51cf63b7018739f647054fbbc5ce2f39d152921b52ee5c0e04ec1",
+      "layout": "0e602c656ab1008064e448accf5e79c620ef0b4df47b225dab93428016a2612e",
+      "exact": {
+        "nodes": 1,
+        "propagations": 70,
+        "elapsedMs": 0.45283299999999826
+      }
+    },
+    {
+      "id": "orta-06",
+      "size": "7×7",
+      "white": 21,
+      "level": 2,
+      "lowerLevels": [
+        "stuck"
+      ],
+      "traceSteps": 50,
+      "usage": {
+        "combination": 12,
+        "filtered": 2,
+        "single": 11,
+        "remainder": 10,
+        "given": 15
+      },
+      "score": 2.5714285714285716,
+      "signature": "b6962ec4fbca79ff46d48af8da0eaa00dc6d5418cb35c271e8844b77d657e7af",
+      "layout": "19bb300c41e03e793951472d877bd2d8b4df8da0173ceb0a0fb9f3073e671795",
+      "exact": {
+        "nodes": 1,
+        "propagations": 78,
+        "elapsedMs": 0.25183300000000486
+      }
+    },
+    {
+      "id": "orta-07",
+      "size": "8×8",
+      "white": 22,
+      "level": 2,
+      "lowerLevels": [
+        "stuck"
+      ],
+      "traceSteps": 51,
+      "usage": {
+        "combination": 13,
+        "filtered": 2,
+        "single": 11,
+        "remainder": 11,
+        "given": 13,
+        "hidden": 1
+      },
+      "score": 2.590909090909091,
+      "signature": "75ba7175e79afd9b4c85eba5c89b49ed8803eaa3c26af4d4ce7c46f8921dbb05",
+      "layout": "e227407d7c93c8528581e0708685d1c262904db1a3686a80b0e8cddd358e07f2",
+      "exact": {
+        "nodes": 1,
+        "propagations": 65,
+        "elapsedMs": 0.2909579999999963
+      }
+    },
+    {
+      "id": "orta-08",
+      "size": "8×8",
+      "white": 22,
+      "level": 2,
+      "lowerLevels": [
+        "stuck"
+      ],
+      "traceSteps": 51,
+      "usage": {
+        "combination": 11,
+        "single": 11,
+        "remainder": 11,
+        "given": 14,
+        "hidden": 3,
+        "filtered": 1
+      },
+      "score": 2.6818181818181817,
+      "signature": "78a41adc9f4e2578e2574ec5b7b9264aef7f9f2386ae421c6c7976bbc1785853",
+      "layout": "4928e293cb052911e6fbde1fe8ac3a16b416c30b4cbecae69f19ee0253473e22",
+      "exact": {
+        "nodes": 1,
+        "propagations": 60,
+        "elapsedMs": 0.33174999999999955
+      }
+    },
+    {
+      "id": "orta-09",
+      "size": "7×7",
+      "white": 19,
+      "level": 2,
+      "lowerLevels": [
+        "stuck"
+      ],
+      "traceSteps": 44,
+      "usage": {
+        "combination": 12,
+        "hidden": 3,
+        "single": 8,
+        "given": 9,
+        "remainder": 11,
+        "filtered": 1
+      },
+      "score": 2.736842105263158,
+      "signature": "1c0ab6bd4692b5aaf4bcdc342d55e196590d054a2e84b2cfc0f2b38e7fe03645",
+      "layout": "08e8237ef6929407ce4e737abe12991707140a89130494b99b3d87e8f327c407",
+      "exact": {
+        "nodes": 1,
+        "propagations": 60,
+        "elapsedMs": 0.22520799999999497
+      }
+    },
+    {
+      "id": "orta-10",
+      "size": "7×7",
+      "white": 21,
+      "level": 2,
+      "lowerLevels": [
+        "stuck"
+      ],
+      "traceSteps": 48,
+      "usage": {
+        "combination": 12,
+        "hidden": 5,
+        "single": 11,
+        "given": 10,
+        "remainder": 10
+      },
+      "score": 2.761904761904762,
+      "signature": "ac53ccd139c8ccedeae6d959b6fa8443328210809f0498ec54d42c9a9b25e77b",
+      "layout": "6595a50afa6d7b5a8ae458e552f5001d8b9a6e36c651deda34ac0d491bb9cb27",
+      "exact": {
+        "nodes": 1,
+        "propagations": 60,
+        "elapsedMs": 0.21554199999999923
+      }
+    },
+    {
+      "id": "orta-11",
+      "size": "7×7",
+      "white": 19,
+      "level": 2,
+      "lowerLevels": [
+        "stuck"
+      ],
+      "traceSteps": 47,
+      "usage": {
+        "combination": 11,
+        "single": 10,
+        "given": 14,
+        "remainder": 9,
+        "filtered": 3
+      },
+      "score": 2.789473684210526,
+      "signature": "c42610498efcb318f91f3796afbb671abba299a58555d00a931fe97274ade0fd",
+      "layout": "b6e3950db959b2e073a567f064272c0f26b5b92eff194627cf6218ae24954f3d",
+      "exact": {
+        "nodes": 1,
+        "propagations": 60,
+        "elapsedMs": 0.1997920000000022
+      }
+    },
+    {
+      "id": "orta-12",
+      "size": "7×7",
+      "white": 18,
+      "level": 2,
+      "lowerLevels": [
+        "stuck"
+      ],
+      "traceSteps": 45,
+      "usage": {
+        "combination": 11,
+        "filtered": 3,
+        "single": 10,
+        "given": 13,
+        "remainder": 8
+      },
+      "score": 2.8333333333333335,
+      "signature": "7f6dafc269ec33fc99025e0ddee7408b8dff0007020fa3c6ddd455d3cc585fc1",
+      "layout": "1220e2bdea5941776a3e9f54e74fb098db68350128061f6a76cb78ca6e76470b",
+      "exact": {
+        "nodes": 1,
+        "propagations": 66,
+        "elapsedMs": 0.27520799999999923
+      }
+    },
+    {
+      "id": "orta-13",
+      "size": "7×7",
+      "white": 19,
+      "level": 2,
+      "lowerLevels": [
+        "stuck"
+      ],
+      "traceSteps": 46,
+      "usage": {
+        "combination": 10,
+        "filtered": 4,
+        "single": 9,
+        "remainder": 10,
+        "given": 13
+      },
+      "score": 2.8421052631578947,
+      "signature": "972abf9770dc582544c29b6303f35f98cf8ecc807c7cbf413aea0fc4551d8313",
+      "layout": "129f15dd0c5baf8d0a9e08c2fc6ba36af941d303c52aae1313a4efd1d927eeaa",
+      "exact": {
+        "nodes": 1,
+        "propagations": 55,
+        "elapsedMs": 0.2563329999999979
+      }
+    },
+    {
+      "id": "orta-14",
+      "size": "7×7",
+      "white": 16,
+      "level": 2,
+      "lowerLevels": [
+        "stuck"
+      ],
+      "traceSteps": 37,
+      "usage": {
+        "combination": 11,
+        "hidden": 5,
+        "single": 6,
+        "given": 5,
+        "remainder": 10
+      },
+      "score": 2.9375,
+      "signature": "db8e08aa4ee1bf7727d1fafb8803715d1a640044d0223e3df1f26534fdc9b36a",
+      "layout": "562827065f136f63923839ff7663de25417752e43cd0eb71002f42270195142a",
+      "exact": {
+        "nodes": 1,
+        "propagations": 44,
+        "elapsedMs": 0.14779199999999548
+      }
+    },
+    {
+      "id": "orta-15",
+      "size": "7×7",
+      "white": 18,
+      "level": 2,
+      "lowerLevels": [
+        "stuck"
+      ],
+      "traceSteps": 43,
+      "usage": {
+        "combination": 12,
+        "single": 8,
+        "remainder": 10,
+        "given": 8,
+        "filtered": 3,
+        "hidden": 2
+      },
+      "score": 2.9444444444444446,
+      "signature": "6cd0773e1517c0fc504b9b25e6015eea445c4e29371c9cf4103d763c22968664",
+      "layout": "135da3179202c552a3e5b3bb7a5084d35f6e396f3e581b13203a1eda380ed1c1",
+      "exact": {
+        "nodes": 1,
+        "propagations": 48,
+        "elapsedMs": 0.15875000000000483
+      }
+    },
+    {
+      "id": "orta-16",
+      "size": "7×7",
+      "white": 21,
+      "level": 2,
+      "lowerLevels": [
+        "stuck"
+      ],
+      "traceSteps": 51,
+      "usage": {
+        "combination": 12,
+        "hidden": 5,
+        "single": 10,
+        "given": 12,
+        "filtered": 1,
+        "remainder": 11
+      },
+      "score": 3,
+      "signature": "c92937839b052b249a2bd25d9d9f039cedb37ff7c35068b81213b31de425fbc7",
+      "layout": "afc0586b4423f507bbfde4c4e39faafee16e11ab1d614968b392c96ba554895f",
+      "exact": {
+        "nodes": 1,
+        "propagations": 72,
+        "elapsedMs": 0.2480420000000052
+      }
+    },
+    {
+      "id": "orta-17",
+      "size": "7×7",
+      "white": 17,
+      "level": 2,
+      "lowerLevels": [
+        "stuck"
+      ],
+      "traceSteps": 44,
+      "usage": {
+        "combination": 13,
+        "filtered": 3,
+        "single": 8,
+        "remainder": 9,
+        "given": 10,
+        "hidden": 1
+      },
+      "score": 3.0588235294117645,
+      "signature": "8201da2167c3fbb9925bd5d25f1ef1428879078ab54d0a768fa64dae3d658db1",
+      "layout": "9c91e1b78900c0f9405cbea0a859b460ad6c04f7667a51751510d6013b872494",
+      "exact": {
+        "nodes": 1,
+        "propagations": 77,
+        "elapsedMs": 0.4353750000000076
+      }
+    },
+    {
+      "id": "orta-18",
+      "size": "7×7",
+      "white": 21,
+      "level": 2,
+      "lowerLevels": [
+        "stuck"
+      ],
+      "traceSteps": 53,
+      "usage": {
+        "combination": 12,
+        "filtered": 2,
+        "single": 10,
+        "remainder": 11,
+        "given": 13,
+        "hidden": 5
+      },
+      "score": 3.1904761904761907,
+      "signature": "3a48d9f2e0af493e0788ee661185a39c219ee320fd3ec786d7231dfefd146e2f",
+      "layout": "42a86ff7ab7ae7fb1b1b518b0cd3f79d89e81ca6354644a115b6982ff86df868",
+      "exact": {
+        "nodes": 1,
+        "propagations": 84,
+        "elapsedMs": 0.32524999999999693
+      }
+    },
+    {
+      "id": "orta-19",
+      "size": "7×7",
+      "white": 15,
+      "level": 2,
+      "lowerLevels": [
+        "stuck"
+      ],
+      "traceSteps": 38,
+      "usage": {
+        "combination": 10,
+        "hidden": 4,
+        "single": 9,
+        "given": 8,
+        "filtered": 1,
+        "remainder": 6
+      },
+      "score": 3.2,
+      "signature": "0b558ac785eba607afe64f7e0d9fc78cb02d21c4c7d960484bffdd629aa0841d",
+      "layout": "2f36bb90c571a8a1787839a094c267eb4825a743c959ccda3fea1feab44ff318",
+      "exact": {
+        "nodes": 1,
+        "propagations": 54,
+        "elapsedMs": 0.37716700000000003
+      }
+    },
+    {
+      "id": "orta-20",
+      "size": "7×7",
+      "white": 22,
+      "level": 2,
+      "lowerLevels": [
+        "stuck"
+      ],
+      "traceSteps": 57,
+      "usage": {
+        "combination": 11,
+        "filtered": 7,
+        "hidden": 5,
+        "single": 10,
+        "given": 12,
+        "remainder": 12
+      },
+      "score": 3.6818181818181817,
+      "signature": "6961194e90dd5bb4b0b23d2249cf7a6d1b0790a5668b4256fb90b97c0c4b04e3",
+      "layout": "9c533731e5fd9be86c925d549c68d8437e6652df1da670809194a8c6c3fa5397",
+      "exact": {
+        "nodes": 1,
+        "propagations": 91,
+        "elapsedMs": 0.3543340000000086
+      }
+    },
+    {
+      "id": "zor-01",
+      "size": "11×11",
+      "white": 32,
+      "level": 3,
+      "lowerLevels": [
+        "stuck",
+        "stuck"
+      ],
+      "traceSteps": 74,
+      "usage": {
+        "combination": 20,
+        "subset": 1,
+        "support": 1,
+        "hidden": 1,
+        "single": 13,
+        "given": 18,
+        "remainder": 19,
+        "filtered": 1
+      },
+      "score": 2.65625,
+      "signature": "4b822ee10d6b27121b29afd165da805a724e43c7a16756d94d2f2ed6681dac1a",
+      "layout": "3160c209e87b76905462c2faf7f8c6001439af96751abd99bbeb6137fc0948b9",
+      "exact": {
+        "nodes": 1,
+        "propagations": 160,
+        "elapsedMs": 0.4407499999999942
+      }
+    },
+    {
+      "id": "zor-02",
+      "size": "11×11",
+      "white": 30,
+      "level": 3,
+      "lowerLevels": [
+        "stuck",
+        "stuck"
+      ],
+      "traceSteps": 67,
+      "usage": {
+        "combination": 18,
+        "hidden": 3,
+        "single": 12,
+        "given": 14,
+        "remainder": 18,
+        "filtered": 1,
+        "support": 1
+      },
+      "score": 2.6666666666666665,
+      "signature": "864522da6256e6e4747476e9aa1b733cc7cfe60c7ae211ba334a181deb64eb08",
+      "layout": "9a8976ac768ac293048b9ce48eed19dc9272ca78a1f3af0b3b4212820ac70fee",
+      "exact": {
+        "nodes": 1,
+        "propagations": 160,
+        "elapsedMs": 0.4562920000000048
+      }
+    },
+    {
+      "id": "zor-03",
+      "size": "10×10",
+      "white": 29,
+      "level": 3,
+      "lowerLevels": [
+        "stuck",
+        "stuck"
+      ],
+      "traceSteps": 70,
+      "usage": {
+        "combination": 18,
+        "single": 12,
+        "remainder": 17,
+        "given": 18,
+        "filtered": 3,
+        "support": 1,
+        "hidden": 1
+      },
+      "score": 2.8620689655172415,
+      "signature": "7505ff93ebb27ab12e0dc9287c2a90bc16d456f3def66c1cee7e57df440b73a9",
+      "layout": "a3106379e9ba933a2f5d71ecaf17eca5239e682d37e6e038cb369376403cd77c",
+      "exact": {
+        "nodes": 1,
+        "propagations": 180,
+        "elapsedMs": 0.5738330000000076
+      }
+    },
+    {
+      "id": "zor-04",
+      "size": "10×10",
+      "white": 27,
+      "level": 3,
+      "lowerLevels": [
+        "stuck",
+        "stuck"
+      ],
+      "traceSteps": 64,
+      "usage": {
+        "combination": 15,
+        "single": 10,
+        "remainder": 17,
+        "given": 16,
+        "filtered": 5,
+        "support": 1
+      },
+      "score": 2.925925925925926,
+      "signature": "d417c3fa53d0154a61bb1be3bd26483e1af2c8c3efd096f87c09b8efeb41df8c",
+      "layout": "6ee5151e157f3c36c68f901b61796cc6826c09a2ead5a56155b1fe1eeda82671",
+      "exact": {
+        "nodes": 1,
+        "propagations": 216,
+        "elapsedMs": 0.7892499999999956
+      }
+    },
+    {
+      "id": "zor-05",
+      "size": "10×10",
+      "white": 28,
+      "level": 3,
+      "lowerLevels": [
+        "stuck",
+        "stuck"
+      ],
+      "traceSteps": 67,
+      "usage": {
+        "combination": 18,
+        "filtered": 2,
+        "hidden": 3,
+        "single": 12,
+        "remainder": 16,
+        "given": 15,
+        "support": 1
+      },
+      "score": 2.9285714285714284,
+      "signature": "f57e0b9f77c0310bb99a11b3538635eca37c897f60e29cff011ee2433ea565fe",
+      "layout": "4c7f5128349c21cdcdf83e176cae081d02851bf9e120da5dcbf59f2eb0e95f31",
+      "exact": {
+        "nodes": 1,
+        "propagations": 162,
+        "elapsedMs": 0.43558299999999406
+      }
+    },
+    {
+      "id": "zor-06",
+      "size": "10×10",
+      "white": 26,
+      "level": 3,
+      "lowerLevels": [
+        "stuck",
+        "stuck"
+      ],
+      "traceSteps": 59,
+      "usage": {
+        "combination": 16,
+        "single": 10,
+        "remainder": 16,
+        "given": 12,
+        "hidden": 1,
+        "filtered": 1,
+        "support": 3
+      },
+      "score": 3,
+      "signature": "e887302d5a52cf10f63c5b9a9704f0571d0b4a31aef82ed8f95f452df49885d3",
+      "layout": "68092df6e0378e3920acb6b304bfa71cd9f62f09346b803d774f606b7928ac01",
+      "exact": {
+        "nodes": 1,
+        "propagations": 144,
+        "elapsedMs": 0.3486249999999984
+      }
+    },
+    {
+      "id": "zor-07",
+      "size": "10×10",
+      "white": 27,
+      "level": 3,
+      "lowerLevels": [
+        "stuck",
+        "stuck"
+      ],
+      "traceSteps": 64,
+      "usage": {
+        "combination": 17,
+        "filtered": 3,
+        "single": 11,
+        "remainder": 16,
+        "given": 14,
+        "support": 2,
+        "hidden": 1
+      },
+      "score": 3.037037037037037,
+      "signature": "a713d64aa3cdf6bf3664d52a92786e5bb5bd1f5a6d123eb4aaf12880155b5c33",
+      "layout": "61384443c5c7ca262aca702e3c2c93d5dabb80221fa58454910e71703172f28c",
+      "exact": {
+        "nodes": 1,
+        "propagations": 126,
+        "elapsedMs": 0.6865000000000094
+      }
+    },
+    {
+      "id": "zor-08",
+      "size": "11×11",
+      "white": 29,
+      "level": 3,
+      "lowerLevels": [
+        "stuck",
+        "stuck"
+      ],
+      "traceSteps": 72,
+      "usage": {
+        "combination": 23,
+        "hidden": 2,
+        "single": 10,
+        "given": 13,
+        "subset": 1,
+        "filtered": 3,
+        "remainder": 19,
+        "support": 1
+      },
+      "score": 3.0689655172413794,
+      "signature": "5fad171a7f6f19224d2d803534fc13dbf3fbf9ccba255dfe5ba42ec367380b0c",
+      "layout": "cbad872d22976757fab7c0129c682c8a33d2babecf5009e1f12918ce05516fb3",
+      "exact": {
+        "nodes": 1,
+        "propagations": 140,
+        "elapsedMs": 0.457374999999999
+      }
+    },
+    {
+      "id": "zor-09",
+      "size": "9×9",
+      "white": 24,
+      "level": 3,
+      "lowerLevels": [
+        "stuck",
+        "stuck"
+      ],
+      "traceSteps": 60,
+      "usage": {
+        "combination": 17,
+        "single": 9,
+        "remainder": 15,
+        "given": 13,
+        "filtered": 4,
+        "support": 1,
+        "hidden": 1
+      },
+      "score": 3.125,
+      "signature": "9efb8fe4aaecd73381596eae487d73803580faff74d3568fb1cdfd7e5e4d745e",
+      "layout": "0ac32836a04405d035306b99b7bb8c7d075434597a79ab4744ed16de3a820ee7",
+      "exact": {
+        "nodes": 1,
+        "propagations": 128,
+        "elapsedMs": 0.40099999999999625
+      }
+    },
+    {
+      "id": "zor-10",
+      "size": "10×10",
+      "white": 27,
+      "level": 3,
+      "lowerLevels": [
+        "stuck",
+        "stuck"
+      ],
+      "traceSteps": 64,
+      "usage": {
+        "combination": 18,
+        "hidden": 4,
+        "single": 10,
+        "given": 10,
+        "filtered": 3,
+        "remainder": 17,
+        "support": 2
+      },
+      "score": 3.259259259259259,
+      "signature": "7f8042aed9c3f59ef7560b1bdf978a2b0e8b4cd4751415a6afacedccb7b0699d",
+      "layout": "4f9a44d7fb8841fbc25be1fe418229600b897174662d9a2e53451c5c4953b5b9",
+      "exact": {
+        "nodes": 1,
+        "propagations": 198,
+        "elapsedMs": 0.7563339999999954
+      }
+    },
+    {
+      "id": "zor-11",
+      "size": "11×11",
+      "white": 31,
+      "level": 3,
+      "lowerLevels": [
+        "stuck",
+        "stuck"
+      ],
+      "traceSteps": 76,
+      "usage": {
+        "combination": 21,
+        "single": 13,
+        "given": 14,
+        "remainder": 18,
+        "filtered": 5,
+        "hidden": 2,
+        "subset": 1,
+        "support": 2
+      },
+      "score": 3.2903225806451615,
+      "signature": "3d22bf2c492794c8b4935e7587524deabdc2cb8931772718edbe3fad7eb4bf87",
+      "layout": "a9ce39508d5adbc126f2446dc8599a2b02e4cabfd7cfbdc554ed3e5568f72ad4",
+      "exact": {
+        "nodes": 1,
+        "propagations": 100,
+        "elapsedMs": 0.47170900000000415
+      }
+    },
+    {
+      "id": "zor-12",
+      "size": "11×11",
+      "white": 30,
+      "level": 3,
+      "lowerLevels": [
+        "stuck",
+        "stuck"
+      ],
+      "traceSteps": 73,
+      "usage": {
+        "combination": 22,
+        "single": 12,
+        "remainder": 18,
+        "given": 14,
+        "subset": 1,
+        "support": 4,
+        "hidden": 2
+      },
+      "score": 3.3,
+      "signature": "75bd8765cf753bf6dde550b73e72b89319658a02527da851d8156a7f8669fe46",
+      "layout": "3d5d9d04c0e801d11ee0578b0c959d55bb9b49f83b71345b990c0dda9e163a89",
+      "exact": {
+        "nodes": 1,
+        "propagations": 140,
+        "elapsedMs": 0.46904200000000174
+      }
+    },
+    {
+      "id": "zor-13",
+      "size": "11×11",
+      "white": 30,
+      "level": 3,
+      "lowerLevels": [
+        "stuck",
+        "stuck"
+      ],
+      "traceSteps": 78,
+      "usage": {
+        "combination": 25,
+        "single": 12,
+        "remainder": 18,
+        "given": 15,
+        "filtered": 1,
+        "hidden": 3,
+        "support": 4
+      },
+      "score": 3.533333333333333,
+      "signature": "a1cc52a687b03212595adcc4c76b4ee0aba7a61fd8d746891d9014c311ef91c8",
+      "layout": "0322e78f0ed1a66bca1675c41f72e5b66664e0cbaeb382796fde30e4c64e8c62",
+      "exact": {
+        "nodes": 1,
+        "propagations": 200,
+        "elapsedMs": 0.732208
+      }
+    },
+    {
+      "id": "zor-14",
+      "size": "9×9",
+      "white": 24,
+      "level": 3,
+      "lowerLevels": [
+        "stuck",
+        "stuck"
+      ],
+      "traceSteps": 61,
+      "usage": {
+        "combination": 18,
+        "filtered": 4,
+        "support": 2,
+        "single": 11,
+        "given": 10,
+        "remainder": 13,
+        "hidden": 3
+      },
+      "score": 3.5416666666666665,
+      "signature": "718516dca3228a7b97c9ecc10f78435401e78bb446b2fc999288e0b6efc82225",
+      "layout": "53c3a55b07b111f5d6faa52eedd0a030e44e838f2640a8fccc7f2bc9936abd4f",
+      "exact": {
+        "nodes": 1,
+        "propagations": 112,
+        "elapsedMs": 0.36404199999999776
+      }
+    },
+    {
+      "id": "zor-15",
+      "size": "9×9",
+      "white": 23,
+      "level": 3,
+      "lowerLevels": [
+        "stuck",
+        "stuck"
+      ],
+      "traceSteps": 58,
+      "usage": {
+        "combination": 15,
+        "filtered": 5,
+        "single": 9,
+        "remainder": 14,
+        "given": 10,
+        "subset": 1,
+        "support": 2,
+        "hidden": 2
+      },
+      "score": 3.652173913043478,
+      "signature": "aa701f0ab6120a807351222d60495a58f92e26a2030f46f3040e7d4d20c4a401",
+      "layout": "32ec248ddf048e16a33ab7f164ca4e695244b8f8e71532d3409c380d564b2459",
+      "exact": {
+        "nodes": 1,
+        "propagations": 112,
+        "elapsedMs": 0.33345799999999315
+      }
+    },
+    {
+      "id": "zor-16",
+      "size": "10×10",
+      "white": 28,
+      "level": 3,
+      "lowerLevels": [
+        "stuck",
+        "stuck"
+      ],
+      "traceSteps": 70,
+      "usage": {
+        "combination": 15,
+        "filtered": 4,
+        "hidden": 5,
+        "single": 14,
+        "given": 13,
+        "remainder": 14,
+        "subset": 2,
+        "support": 3
+      },
+      "score": 3.8214285714285716,
+      "signature": "0f39969720d4322a9b8aadafe61521df2eb5b8d3b262d91b1854e8acb998c2ee",
+      "layout": "e6960a0074552b7bd32be3af42c08a5e4648f465fcaa490abf9435c766890cd1",
+      "exact": {
+        "nodes": 1,
+        "propagations": 144,
+        "elapsedMs": 0.45991599999999266
+      }
+    },
+    {
+      "id": "zor-17",
+      "size": "10×10",
+      "white": 26,
+      "level": 3,
+      "lowerLevels": [
+        "stuck",
+        "stuck"
+      ],
+      "traceSteps": 69,
+      "usage": {
+        "combination": 20,
+        "filtered": 4,
+        "single": 11,
+        "given": 14,
+        "remainder": 15,
+        "support": 5
+      },
+      "score": 3.923076923076923,
+      "signature": "e258b86ab8916cceb4c7cddc60c62e512828c1be9415903adf0e918c67dbcf0c",
+      "layout": "79c6c6fb42788020c650019821e24fed230a53ea91d29054462644d6c37084cd",
+      "exact": {
+        "nodes": 1,
+        "propagations": 126,
+        "elapsedMs": 0.33233300000000554
+      }
+    },
+    {
+      "id": "zor-18",
+      "size": "9×9",
+      "white": 23,
+      "level": 3,
+      "lowerLevels": [
+        "stuck",
+        "stuck"
+      ],
+      "traceSteps": 61,
+      "usage": {
+        "combination": 18,
+        "filtered": 3,
+        "single": 9,
+        "remainder": 14,
+        "given": 11,
+        "hidden": 2,
+        "support": 4
+      },
+      "score": 3.9565217391304346,
+      "signature": "4e0260c16df7d2e60ed0bc94fb1e2598d13bf7272a4169b74b5b46320ec04ecd",
+      "layout": "b92e2e03f4296a15738295e520da57baa55d608a206ea052152fdfe145f4ba30",
+      "exact": {
+        "nodes": 1,
+        "propagations": 96,
+        "elapsedMs": 0.34208299999998815
+      }
+    },
+    {
+      "id": "zor-19",
+      "size": "11×11",
+      "white": 30,
+      "level": 3,
+      "lowerLevels": [
+        "stuck",
+        "stuck"
+      ],
+      "traceSteps": 79,
+      "usage": {
+        "combination": 22,
+        "subset": 1,
+        "filtered": 6,
+        "single": 12,
+        "remainder": 18,
+        "given": 14,
+        "support": 6
+      },
+      "score": 4.1,
+      "signature": "a6731490f31bbfffe0728d65f32a07e164ec88db151451a2bacfc3ab643b8b79",
+      "layout": "f2ac2a768023682faf3723b926ec795a6d28f74567305c49f49353184e2ed58b",
+      "exact": {
+        "nodes": 1,
+        "propagations": 180,
+        "elapsedMs": 0.5745840000000015
+      }
+    },
+    {
+      "id": "zor-20",
+      "size": "11×11",
+      "white": 30,
+      "level": 3,
+      "lowerLevels": [
+        "stuck",
+        "stuck"
+      ],
+      "traceSteps": 78,
+      "usage": {
+        "combination": 21,
+        "filtered": 3,
+        "single": 12,
+        "remainder": 18,
+        "given": 13,
+        "support": 10,
+        "hidden": 1
+      },
+      "score": 4.533333333333333,
+      "signature": "ff8aa52daceb2632d835f86d0ed5a31ef76bb6a9a8d5b8094f309f6b43533865",
+      "layout": "031dfa3d6ec44294a38bfe1fe68fbc45e186916977825f4f48cc22676f04c1f2",
+      "exact": {
+        "nodes": 1,
+        "propagations": 180,
+        "elapsedMs": 0.517792
+      }
+    }
+  ],
+  "passed": true
+}

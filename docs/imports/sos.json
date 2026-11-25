@@ -1,0 +1,81 @@
+{
+  "slug": "sos",
+  "source": "../sos",
+  "commit": "8e513f3ed6db5ca238d5db64e41225c9ca89a124",
+  "status": "",
+  "importedAt": "2026-10-19T12:01:08.834Z",
+  "files": {
+    ".gitignore": "231ba0bea53609e6898cb5642b3ee18d0d680f30ecbed5f808d9db5c3a70901e",
+    "ai.js": "62e74dc98cb28d59913060825bf4205f089a1073ef3a5b6463cf1077e94416c2",
+    "assets/DEPENDENCIES.md": "15e7c767dec639a0f1c182b87ab27466fe012121238962a8a55e90aa3c3b2714",
+    "assets/README.md": "8670e1ca738297ef2048e31474e1f868ab23d33409a0296d0c192adffb687393",
+    "assets/fonts/PatrickHand-OFL.txt": "377f4f9c19e935228552478eb68cc2ed82910988a60ba60e2ac73b09f32d02d1",
+    "assets/fonts/PatrickHand-v25.ttf": "8a384204c8ab3e9ed82954d46d8110a66fb5d7acf8f6b64c6f3980c1d0c01993",
+    "assets/varliklar.js": "45d94fdb6fd06b3d69ce92af10b7f2f201a10ac8f061c5c0f7037c0c1614211c",
+    "assets/vendor/rough-4.6.6.js": "6853af8619532f3939b156cd16824d2e14f31e71d3df306ad5558eeafacab194",
+    "assets/vendor/rough-LICENSE": "dca9a392272606ac748ac0976a2a1133f14eef841c27beaa51a844d53c56a09d",
+    "board.js": "964afa6b9c277fec613db55b72b3231d973ee82c4dfe99ab2245d144fa649ba3",
+    "config.js": "59264271fb5c644812ed5666b2291c0b59152df62f72f5dfb5f7d9e888dbb189",
+    "draw.js": "78623960a4d610fd36bc6e281223b25fe2ad65be9e73e90298b5174541bcba9a",
+    "game.js": "800beeeaba35b29273d5f6b875c846761868e386a29b80757fce8fb929a5d10e",
+    "index.html": "d63d5d3331259cdf28b9881e2d96397cebc40947ad26d178c680a678516e08c7",
+    "kit/README.md": "c9a9789eb7e10915889cbaa6ebe723b292d615f3bf004eedfb965b4391a04d5d",
+    "kit/gren.png": "454bfa9e1918b3d24f8d86651333f73f17a2e6b1d11e51e0e618bb7e1a3d5bf5",
+    "kit/kagit.css": "556272b28114cbf410f5310bdd5cfe19facfd3b0d651af5d9d8b4ba2f1e00c57",
+    "kit/kalem.js": "ff14550b371cbe3b7d3129c864a02bcec01196c9b272078ebea7ee29981a01ef",
+    "kit/karakter.js": "3a8922fb8fc369bce443495dee8d84c5297c8721a6f43887f1b712a12d851ea1",
+    "kit/ses.js": "e9ddc6d6036a841296eb406c305f56298e2f137a74f39fbffad7636b308a1ca6",
+    "layout.js": "d3270d7c531c3efa45be27abfaaeecb509068119d7afd6d02d2de5a6eef2914e",
+    "package-lock.json": "71b36c12f366fb3145d9086a7f37382836d55557ae6f7e4d26bd02e09be0a554",
+    "package.json": "9bbf73dbeb031680edd06976965033e94eefe2309d816f333edd63c31060bea1",
+    "playwright.config.js": "ad8c9ac71ce81724a307c2f198614c453d7748f5beebae99a1e0cb10f3ffa53e",
+    "session.js": "6ddf4aa98d5a6e6e7b57a9e637677d341963196d9b3315531ebdac4a01f41074",
+    "style.css": "633a2647cee6a926683faeb7050740e034459dd2e9a80a6a17bae8040c5c27f0",
+    "surum.sh": "6d9975dad1fcefd7fcf06ad683b5374f1a3bbf81717e7675910a314f99178b14",
+    "test/ai-async.test.js": "2dd31446f10ef2706ded09f98ccc58c6ab1626c9607281e3e5e24fc2928be797",
+    "test/ai.test.js": "d4b2ecc6903afb9dc70105d00e39353dacd8490420d714112bf766a556f42b0a",
+    "test/browser/game.spec.js": "547dbba7534f79a561a0ed98c97ebb3a8770b0c2f1e5ac24cffb403b833851fc",
+    "test/browser/resilience.spec.js": "86284dc739d6d5a0f9a6cc847f5aeb882e14fd77a73e3f20cc5596e042a9ae90",
+    "test/game.test.js": "bfb979994e6a8a2ff697277c4226ddc827e9cb228a07f6d27d219db6c6d9a71c",
+    "test/layout.test.js": "891e39ca9d2bab8929b226afba4c025ce91aeccac3c29178128a5afe291fb9b9",
+    "test/session.test.js": "8cc2307709a0208492b68417370116da76093e6c2167ffe4edfc20ce9e74d67f",
+    "ui.js": "212ec89f8062d8ad68a13c9be341c0eb365c80f960e669d9177c6664682a4fda"
+  },
+  "runtime": {
+    "ai.js": "62e74dc98cb28d59913060825bf4205f089a1073ef3a5b6463cf1077e94416c2",
+    "assets/fonts/PatrickHand-OFL.txt": "377f4f9c19e935228552478eb68cc2ed82910988a60ba60e2ac73b09f32d02d1",
+    "assets/fonts/PatrickHand-v25.ttf": "8a384204c8ab3e9ed82954d46d8110a66fb5d7acf8f6b64c6f3980c1d0c01993",
+    "assets/varliklar.js": "45d94fdb6fd06b3d69ce92af10b7f2f201a10ac8f061c5c0f7037c0c1614211c",
+    "assets/vendor/rough-4.6.6.js": "6853af8619532f3939b156cd16824d2e14f31e71d3df306ad5558eeafacab194",
+    "assets/vendor/rough-LICENSE": "dca9a392272606ac748ac0976a2a1133f14eef841c27beaa51a844d53c56a09d",
+    "board.js": "964afa6b9c277fec613db55b72b3231d973ee82c4dfe99ab2245d144fa649ba3",
+    "config.js": "59264271fb5c644812ed5666b2291c0b59152df62f72f5dfb5f7d9e888dbb189",
+    "draw.js": "78623960a4d610fd36bc6e281223b25fe2ad65be9e73e90298b5174541bcba9a",
+    "game.js": "800beeeaba35b29273d5f6b875c846761868e386a29b80757fce8fb929a5d10e",
+    "index.html": "d63d5d3331259cdf28b9881e2d96397cebc40947ad26d178c680a678516e08c7",
+    "kit/gren.png": "454bfa9e1918b3d24f8d86651333f73f17a2e6b1d11e51e0e618bb7e1a3d5bf5",
+    "kit/kagit.css": "556272b28114cbf410f5310bdd5cfe19facfd3b0d651af5d9d8b4ba2f1e00c57",
+    "kit/kalem.js": "ff14550b371cbe3b7d3129c864a02bcec01196c9b272078ebea7ee29981a01ef",
+    "kit/karakter.js": "3a8922fb8fc369bce443495dee8d84c5297c8721a6f43887f1b712a12d851ea1",
+    "kit/ses.js": "e9ddc6d6036a841296eb406c305f56298e2f137a74f39fbffad7636b308a1ca6",
+    "layout.js": "d3270d7c531c3efa45be27abfaaeecb509068119d7afd6d02d2de5a6eef2914e",
+    "session.js": "6ddf4aa98d5a6e6e7b57a9e637677d341963196d9b3315531ebdac4a01f41074",
+    "style.css": "633a2647cee6a926683faeb7050740e034459dd2e9a80a6a17bae8040c5c27f0",
+    "ui.js": "212ec89f8062d8ad68a13c9be341c0eb365c80f960e669d9177c6664682a4fda"
+  },
+  "localChanges": [
+    {
+      "file": "index.html",
+      "reason": "Mevcut ← İçindekiler bağlantısı ve varsa yön uyarısındaki dönüş korundu; yerel CSS/script URL’leri içerik hash’iyle sürümlenir. Son kullanıcı kararı: Amiral Battı ile aynı açık #fbf9f2 kâğıt, okunaklı mavi kareler ve açık masa korunur; sarı kenar karartması kaldırılır. Tek sayfalılarda iki arka yaprak ve tek dış gölge, Amiral Battı’da katmansız çift sayfa. Yalnız görünüm renkleri değişir; kurallar/kayıtlar aynı kalır."
+    },
+    {
+      "file": "style.css",
+      "reason": "Mevcut İçindekiler bağlantısı ve 44 px hedef/48 px yerleşim payı korundu. Önceki platform yaprakları tekrar eklenmez; kaynak yaprakları kullanılır, baskıda gizlenir. Son kullanıcı kararı: Amiral Battı ile aynı açık #fbf9f2 kâğıt, okunaklı mavi kareler ve açık masa korunur; sarı kenar karartması kaldırılır. Tek sayfalılarda iki arka yaprak ve tek dış gölge, Amiral Battı’da katmansız çift sayfa. Yalnız görünüm renkleri değişir; kurallar/kayıtlar aynı kalır."
+    },
+    {
+      "file": "draw.js",
+      "reason": "Son kullanıcı kararı: Amiral Battı ile aynı açık #fbf9f2 kâğıt, okunaklı mavi kareler ve açık masa korunur; sarı kenar karartması kaldırılır. Tek sayfalılarda iki arka yaprak ve tek dış gölge, Amiral Battı’da katmansız çift sayfa. Yalnız görünüm renkleri değişir; kurallar/kayıtlar aynı kalır."
+    }
+  ],
+  "recordedAt": "2026-11-25T18:28:43.133Z"
+}

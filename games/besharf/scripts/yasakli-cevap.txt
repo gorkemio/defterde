@@ -1,0 +1,144 @@
+# scripts/yasakli-cevap.txt — KONU SÜZGECİ: bu kelimeler (ve "önek*" türevleri) CEVAP olamaz; tahmin olarak kalabilirler.
+# Ölçüt (brief): hakaret, cinsellik, şiddet, hastalık, ölüm ya da dinî veya siyasi yük. Aile oyunu: alkol, uyuşturucu,
+# kumar ve tiksindirici beden sözleri de çıkar. İlk süzme Claude (21 Ekim 2026); kullanıcı örneklerden kontrol eder.
+# Değişince: node scripts/kelimeler.mjs
+
+# ---- hakaret ve aşağılama
+aptal
+salak
+ahmak
+herif
+alçak
+zenci
+sapık
+kaçık
+ucube
+ödlek
+ukala
+züppe
+bunak
+hıyar
+arsız
+cahil
+sefil
+rezil
+ırkçı
+bücür
+kanka      # argo
+kıyak      # argo
+harbi      # argo
+gıcık      # argo
+lanet
+
+# ---- cinsellik
+seks*
+porno*
+sperm*
+penis*
+fuhuş*
+taciz*
+azgın
+flört*
+külot
+kasık
+rahim
+üreme
+hadım
+boklu
+
+# ---- şiddet, silah, suç
+silah*
+katil*
+ceset*
+bomba*
+mermi*
+tüfek*
+dayak
+darbe
+savaş*
+terör*
+infaz*
+işgal*
+isyan*
+fişek*
+barut*
+mayın*
+enkaz*
+tokat
+tekme
+yıkım
+zulüm
+tetik
+kazık
+fidye*
+rehin*
+zehir*
+kanlı
+küfür
+mafya*
+haçlı
+
+# ---- ölüm ("öl*" yazılmaz: ölçü, ölçek, ölçüt masum)
+ölmek
+ölmüş
+ölmez
+ölüm*
+ölü
+vefat*
+mezar*
+tabut*
+kabir*
+şehit*
+yetim*
+öksüz*
+zombi*
+
+# ---- hastalık, engellilik, tiksindirici beden sözleri
+hasta*
+kuduz*
+astım*
+tümör*
+nezle*
+sıtma*
+virüs*
+kramp*
+ishal*
+sakat*
+sağır*
+topal*
+sidik*
+dışkı*
+idrar*
+kusma*
+sümük*
+salya*
+
+# ---- alkol, uyuşturucu, kumar
+alkol*
+ayyaş*
+votka*
+viski*
+şarap*
+likör*
+eroin*
+esrar*
+afyon*
+kumar*
+
+# ---- dinî yük
+tanrı*
+allah*
+günah*
+iblis*
+rahip*
+papaz*
+haham*
+kafir*
+helal*
+ilahi*
+tövbe*
+şükür*
+keşiş*
+şaman*
+azize*
+mason*

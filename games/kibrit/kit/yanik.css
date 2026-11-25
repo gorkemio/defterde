@@ -1,0 +1,4 @@
+/* kit/yanik.css — kâğıt yanıkları (Kit.yanik): kömür kenarı ve is katmanı, alttaki yaprağın kavrulması. Tıklanmaz.
+   Sayfaların altında duran kavrulma için sayfalar z-index: 1 (oyunun CSS'i), alt-yanik z-index: 0. */
+svg.sayfa-yanik { position: absolute; left: 0; top: 0; pointer-events: none; overflow: visible; z-index: 2; }
+svg.alt-yanik { position: absolute; left: 0; top: 0; pointer-events: none; overflow: visible; z-index: 0; }

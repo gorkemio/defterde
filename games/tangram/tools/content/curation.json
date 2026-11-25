@@ -1,0 +1,6102 @@
+[
+  {
+    "source": "Ca",
+    "label": "Ca.001",
+    "sourceLine": 11047,
+    "name": "Köpek",
+    "category": "kara-hayvanlari",
+    "turn": 0,
+    "maxShift": 0.015153990331987308,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "parallelogram",
+        "x": -0.001455024921302341,
+        "y": -0.003448773080679632,
+        "rotation": 5,
+        "flipped": true
+      },
+      {
+        "pieceId": "large-a",
+        "x": 1.7258718135251856,
+        "y": 1.0167712841792609,
+        "rotation": 0,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": 1.7258718135251856,
+        "y": 2.016771284179261,
+        "rotation": 4,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": 3.3925384801918526,
+        "y": 0.6834379508459274,
+        "rotation": 4,
+        "flipped": false
+      },
+      {
+        "pieceId": "square",
+        "x": 3.5592051468585186,
+        "y": 1.8501046175125941,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": 4.53060966764955,
+        "y": 0.14782347251672792,
+        "rotation": 0,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": 5.1400853758982805,
+        "y": 0.34308561839236296,
+        "rotation": 4,
+        "flipped": false
+      }
+    ]
+  },
+  {
+    "source": "Guineu",
+    "label": "Guineu.001",
+    "sourceLine": 17053,
+    "name": "Tilki",
+    "category": "kara-hayvanlari",
+    "turn": 0,
+    "maxShift": 0.00017200476611947639,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "square",
+        "x": 0.000019313101680195072,
+        "y": -0.000019121530799186833,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": 1.8333526464350134,
+        "y": -1.166685788197466,
+        "rotation": 0,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": 5.649723201849687,
+        "y": -3.8217197535738254,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": 2.5000193131016806,
+        "y": -1.8333524548641325,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": 5.1666859797683475,
+        "y": -3.1666857881974657,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": 3.833352646435014,
+        "y": -1.833352454864133,
+        "rotation": 2,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": 0.5000193131016802,
+        "y": -1.0000191215307992,
+        "rotation": 4,
+        "flipped": true
+      }
+    ]
+  },
+  {
+    "source": "Cavall",
+    "label": "Cavall.014",
+    "sourceLine": 12430,
+    "name": "At",
+    "category": "kara-hayvanlari",
+    "turn": 0,
+    "maxShift": 0.0000029882435196271945,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "square",
+        "x": 0.0000012693783695669847,
+        "y": 2.4660731011555784e-7,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": -1.4546524075146061,
+        "y": 1.7475471423137385,
+        "rotation": 2,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": -0.4546524075146062,
+        "y": 1.7475471423137385,
+        "rotation": 2,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": 0.9428103109604331,
+        "y": -0.23570201378820577,
+        "rotation": 2,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": -0.7071055118081776,
+        "y": 0.9428092881893735,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": -2.0404388451415114,
+        "y": 0.6666669132739768,
+        "rotation": 0,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": -3.207105511808178,
+        "y": 1.0000002466073101,
+        "rotation": 6,
+        "flipped": false
+      }
+    ]
+  },
+  {
+    "source": "Camell",
+    "label": "Camell.005",
+    "sourceLine": 11608,
+    "name": "Deve",
+    "category": "kara-hayvanlari",
+    "turn": 0,
+    "maxShift": 0.000005819491506711456,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "square",
+        "x": 2.46305418622754e-7,
+        "y": 0.0000038477977335695635,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": -1.2071065348811292,
+        "y": -0.7356984125977823,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": 3.207107027491966,
+        "y": -1.7356984125977823,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": 0.5000002463054187,
+        "y": -0.8333294855355999,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": 1.1666669129720855,
+        "y": 0.16667051446440015,
+        "rotation": 0,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": -1.1666664203612482,
+        "y": 0.16667051446440034,
+        "rotation": 2,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": 2.5000002463054187,
+        "y": -0.9999961522022666,
+        "rotation": 4,
+        "flipped": true
+      }
+    ]
+  },
+  {
+    "source": "Cangur",
+    "label": "Cangur.006",
+    "sourceLine": 11674,
+    "name": "Kanguru",
+    "category": "kara-hayvanlari",
+    "turn": 0,
+    "maxShift": 0.000009436606046986698,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "square",
+        "x": 0.000006321839080385891,
+        "y": 0.0000021456341219259297,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": -0.16666034482758607,
+        "y": 2.1666688123007884,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": -2.028589157369888,
+        "y": 5.500002145634122,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": -2.971398198951951,
+        "y": 2.9714066664251537,
+        "rotation": 2,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": -1.166660344827586,
+        "y": 1.8333354789674554,
+        "rotation": 4,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": -1.8333270114942528,
+        "y": 3.1666688123007884,
+        "rotation": 0,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": -1.9999936781609193,
+        "y": 4.500002145634122,
+        "rotation": 6,
+        "flipped": false
+      }
+    ]
+  },
+  {
+    "source": "Esquirol",
+    "label": "Esquirol.012",
+    "sourceLine": 13723,
+    "name": "Sincap",
+    "category": "kara-hayvanlari",
+    "turn": 0,
+    "maxShift": 0.000006072294685958113,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "square",
+        "x": -0.0000015278785136537988,
+        "y": 0.000001051446524075668,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": -0.4546552047714895,
+        "y": 2.0808812804862864,
+        "rotation": 4,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": -2.8284286526247038,
+        "y": 3.1785123534241033,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": -1.1213218714381565,
+        "y": 1.747547947152953,
+        "rotation": 5,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": -1.4546552047714898,
+        "y": 2.747547947152953,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": -0.7071083090650611,
+        "y": 0.9428100930285874,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": 0.7071052533080339,
+        "y": -0.49999894855347593,
+        "rotation": 4,
+        "flipped": false
+      }
+    ]
+  },
+  {
+    "source": "Elefant",
+    "label": "Elefant.001",
+    "sourceLine": 13369,
+    "name": "Fil",
+    "category": "kara-hayvanlari",
+    "turn": 0,
+    "maxShift": 0.009936578924884061,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "small-a",
+        "x": -0.00792620104626741,
+        "y": -0.004313543993643942,
+        "rotation": 4,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": -1.3412595343796014,
+        "y": 0.995686456006356,
+        "rotation": 2,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": -1.6745928677129343,
+        "y": -0.0043135439936439895,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "square",
+        "x": -2.674592867712935,
+        "y": -0.3780869918468584,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": -3.1459973885039667,
+        "y": -1.0851937730334063,
+        "rotation": 3,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": -3.881699648899483,
+        "y": -0.37808699184685857,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": -2.910295128108451,
+        "y": 1.0361265705262368,
+        "rotation": 3,
+        "flipped": false
+      }
+    ]
+  },
+  {
+    "source": "Cervol",
+    "label": "Cervol.001",
+    "sourceLine": 12559,
+    "name": "Geyik",
+    "category": "kara-hayvanlari",
+    "turn": 0,
+    "maxShift": 0.000007793185659421556,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "square",
+        "x": 0.000003850544524151646,
+        "y": 0.0000025039541447581726,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": -5.540436263975358,
+        "y": -0.8737709438990695,
+        "rotation": 2,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": -4.126222701602262,
+        "y": -0.8737709438990695,
+        "rotation": 2,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": -2.499996149455476,
+        "y": 1.1666691706208114,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": -1.1666628161221424,
+        "y": 1.1666691706208114,
+        "rotation": 2,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": -3.8333294827888094,
+        "y": 1.1666691706208114,
+        "rotation": 0,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": -4.853549540048751,
+        "y": 0.14644911336087102,
+        "rotation": 7,
+        "flipped": false
+      }
+    ]
+  },
+  {
+    "source": "Girafa",
+    "label": "Girafa.010",
+    "sourceLine": 17032,
+    "name": "Zürafa",
+    "category": "kara-hayvanlari",
+    "turn": 0,
+    "maxShift": 0.0000043182409728133706,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "square",
+        "x": -3.7815133467694985e-7,
+        "y": -0.0000037269389772875877,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": -1.3856184613154616,
+        "y": 1.9142098354341182,
+        "rotation": 3,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": -0.44280941973339816,
+        "y": 1.9142098354341184,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": -1.5000003781513347,
+        "y": -1.8333370602723107,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": -0.91421394052443,
+        "y": 0.9714007938520545,
+        "rotation": 5,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": -0.9142139405244301,
+        "y": 2.8570188770161815,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": -0.5000003781513347,
+        "y": -1.0000037269389772,
+        "rotation": 4,
+        "flipped": false
+      }
+    ]
+  },
+  {
+    "source": "Os",
+    "label": "Os.010",
+    "sourceLine": 18397,
+    "name": "Ayı",
+    "category": "kara-hayvanlari",
+    "turn": 0,
+    "maxShift": 0.000007329962567756955,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "square",
+        "x": -1.2544666246327066e-7,
+        "y": 3.445860731022668e-7,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": 2.2475467702597665,
+        "y": 0.16666701125274042,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": 2.5808801035930995,
+        "y": -0.16666632208059365,
+        "rotation": 2,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": 2.442808916135401,
+        "y": -0.9714041762049587,
+        "rotation": 4,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": 1.4999998745533376,
+        "y": -1.4428086969959903,
+        "rotation": 5,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": 0.16666654122000416,
+        "y": -1.1666663220805935,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": 3.414213436926433,
+        "y": -0.914213217787022,
+        "rotation": 6,
+        "flipped": true
+      }
+    ]
+  },
+  {
+    "source": "Anec",
+    "label": "Anec.028",
+    "sourceLine": 253,
+    "name": "Ördek",
+    "category": "kuslar",
+    "turn": 0,
+    "maxShift": 0.00001004696593565032,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "square",
+        "x": 7.016687622738127e-7,
+        "y": 0.000002441381759220147,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": -0.8333326316645709,
+        "y": 0.16666910804842597,
+        "rotation": 4,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": 4.978343649183564,
+        "y": 2.207109222568307,
+        "rotation": 3,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": 4.271236867997017,
+        "y": 1.971406962172791,
+        "rotation": 2,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": 1.9142142640418576,
+        "y": 1.971406962172791,
+        "rotation": 5,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": 3.3284278264149534,
+        "y": 2.442811482963822,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": 0.5000007016687623,
+        "y": 1.0000024413817592,
+        "rotation": 4,
+        "flipped": false
+      }
+    ]
+  },
+  {
+    "source": "Gall",
+    "label": "Gall.017",
+    "sourceLine": 16750,
+    "name": "Horoz",
+    "category": "kuslar",
+    "turn": 0,
+    "maxShift": 0.000008015614997908343,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "square",
+        "x": -0.0000011811792015718314,
+        "y": -3.995218715238331e-7,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": 1.6617592769003222,
+        "y": 2.833332933811462,
+        "rotation": 0,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": 2.6617592769003227,
+        "y": 1.1666662671447952,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": -0.5000011811792017,
+        "y": -0.833333732855205,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": 0.9142123811938938,
+        "y": 0.9714041212691603,
+        "rotation": 5,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": 1.6617592769003227,
+        "y": 1.8333329338114621,
+        "rotation": 4,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": 3.328425943566989,
+        "y": 0.9999996004781285,
+        "rotation": 4,
+        "flipped": false
+      }
+    ]
+  },
+  {
+    "source": "Colom",
+    "label": "Colom.013",
+    "sourceLine": 12724,
+    "name": "Güvercin",
+    "category": "kuslar",
+    "turn": 0,
+    "maxShift": 0.000009382496176568673,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "square",
+        "x": -0.0000013459865963681338,
+        "y": 0.0000015437554703653092,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": 0.5808788830531657,
+        "y": 2.5808817727952325,
+        "rotation": 4,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": 0.8333319873467367,
+        "y": 0.1666682104221371,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": -0.5000013459865965,
+        "y": -0.833331789577863,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": 0.9142122163864989,
+        "y": 0.971406064546502,
+        "rotation": 5,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": 2.3284257787595943,
+        "y": 1.4428105853375337,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": 1.4999986540134036,
+        "y": 0.0000015437554703653092,
+        "rotation": 4,
+        "flipped": false
+      }
+    ]
+  },
+  {
+    "source": "Aguila",
+    "label": "Aguila.004",
+    "sourceLine": 106,
+    "name": "Kartal",
+    "category": "kuslar",
+    "turn": 0,
+    "maxShift": 0.009506709453913121,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "square",
+        "x": -0.0011306984389468932,
+        "y": -0.001643959570824608,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": 0.16553596822771985,
+        "y": 0.8316893737625087,
+        "rotation": 2,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": -1.9153442608120421,
+        "y": 2.7981876859663974,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": -0.9725352192299787,
+        "y": -0.030239438779792877,
+        "rotation": 2,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": -2.5820109274787084,
+        "y": 0.8316893737625091,
+        "rotation": 4,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": -1.4439397400210103,
+        "y": 0.9125696028022705,
+        "rotation": 3,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": -2.9760044325918633,
+        "y": 1.8519094310224495,
+        "rotation": 7,
+        "flipped": false
+      }
+    ]
+  },
+  {
+    "source": "Pelican",
+    "label": "Pelican.002",
+    "sourceLine": 18958,
+    "name": "Pelikan",
+    "category": "kuslar",
+    "turn": 0,
+    "maxShift": 0.014390277176272285,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "large-a",
+        "x": -0.013852813852813632,
+        "y": 0.003896103896104136,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": 0.6528138528138527,
+        "y": -0.6627705627705628,
+        "rotation": 2,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": 1.6528138528138527,
+        "y": 0.0038961038961040223,
+        "rotation": 0,
+        "flipped": false
+      },
+      {
+        "pieceId": "square",
+        "x": 1.8194805194805195,
+        "y": -0.8294372294372293,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": 2.31948051948052,
+        "y": -1.6627705627705625,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": 1.8194805194805195,
+        "y": -2.329437229437229,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": 2.986147186147186,
+        "y": -0.996103896103896,
+        "rotation": 2,
+        "flipped": false
+      }
+    ]
+  },
+  {
+    "source": "Flamenc",
+    "label": "Flamenc.001",
+    "sourceLine": 16456,
+    "name": "Flamingo",
+    "category": "kuslar",
+    "turn": 0,
+    "maxShift": 0.0000070351118644373075,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "square",
+        "x": 0.0000032865171482329634,
+        "y": -0.0000062098244768232005,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": 0.9595631719972676,
+        "y": 4.66666045684219,
+        "rotation": 4,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": 0.8214919845395691,
+        "y": 3.999993790175523,
+        "rotation": 3,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": -0.4714012342738835,
+        "y": -1.178517511802056,
+        "rotation": 4,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": -0.04043682800273271,
+        "y": 1.3333271235088566,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": 0.6262298386639341,
+        "y": 2.6666604568421897,
+        "rotation": 2,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": 0.35355667711042205,
+        "y": -1.060666381604298,
+        "rotation": 5,
+        "flipped": false
+      }
+    ]
+  },
+  {
+    "source": "Oca",
+    "label": "Oca.019",
+    "sourceLine": 18202,
+    "name": "Kaz",
+    "category": "kuslar",
+    "turn": 0,
+    "maxShift": 0.00000899650071750867,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "square",
+        "x": -0.0000024544566495234593,
+        "y": -0.000007577730115154022,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": -0.6393968636506233,
+        "y": 1.6939313464092445,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": -0.16666912112331633,
+        "y": 0.8333257556032182,
+        "rotation": 0,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": 0.2642952851478347,
+        "y": -4.149923400498727,
+        "rotation": 0,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": -0.16666912112331617,
+        "y": -1.1666742443967817,
+        "rotation": 4,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": -1.1666691211233162,
+        "y": 0.16665908893655135,
+        "rotation": 2,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": 0.14644415495007673,
+        "y": -2.853560968323389,
+        "rotation": 7,
+        "flipped": true
+      }
+    ]
+  },
+  {
+    "source": "Lloro",
+    "label": "Lloro.001",
+    "sourceLine": 17539,
+    "name": "Papağan",
+    "category": "kuslar",
+    "turn": 0,
+    "maxShift": 0.000007743934991236678,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "square",
+        "x": -2.30025940081559e-7,
+        "y": -8.039335400766389e-7,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": 1.8334784098208035,
+        "y": 4.535533101999197,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": -0.3737736778791544,
+        "y": 0.6666658627331267,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": 0.99999976997406,
+        "y": 0.37377264391967413,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": 1.6954072223631054,
+        "y": 1.373772643919674,
+        "rotation": 2,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": 1.8334784098208035,
+        "y": 3.1213195396261026,
+        "rotation": 3,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": 0.8620738890297717,
+        "y": 1.7071059772530073,
+        "rotation": 6,
+        "flipped": true
+      }
+    ]
+  },
+  {
+    "source": "Estruc",
+    "label": "Estruc.011",
+    "sourceLine": 13834,
+    "name": "Deve kuşu",
+    "category": "kuslar",
+    "turn": 0,
+    "maxShift": 0.01739178319810683,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "parallelogram",
+        "x": 0.005942073141906321,
+        "y": -0.00211812115842128,
+        "rotation": 7,
+        "flipped": true
+      },
+      {
+        "pieceId": "small-a",
+        "x": -0.014277984118034147,
+        "y": -1.0223381784183618,
+        "rotation": 0,
+        "flipped": false
+      },
+      {
+        "pieceId": "square",
+        "x": 0.15238868254863253,
+        "y": -1.855671511751695,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": 1.0666022449217278,
+        "y": -2.8270760325427267,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": -0.3476113174513675,
+        "y": -3.298480553333759,
+        "rotation": 5,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": -1.4284915464911294,
+        "y": -4.436551740791458,
+        "rotation": 0,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": -0.7618248798244626,
+        "y": -5.103218407458125,
+        "rotation": 1,
+        "flipped": false
+      }
+    ]
+  },
+  {
+    "source": "Corb",
+    "label": "Corb.001",
+    "sourceLine": 12988,
+    "name": "Karga",
+    "category": "kuslar",
+    "turn": 0,
+    "maxShift": 0.010109551616468882,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "square",
+        "x": 0.009077662462916171,
+        "y": 0.004449615499727063,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": -3.031362452056965,
+        "y": -0.15731084257979688,
+        "rotation": 4,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": -2.078522815759874,
+        "y": -1.9148883330012527,
+        "rotation": 3,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": -1.6980291187236312,
+        "y": 0.8426891574202031,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": -1.364695785390298,
+        "y": -1.4906441759131304,
+        "rotation": 4,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": -2.031362452056965,
+        "y": -0.15731084257979688,
+        "rotation": 0,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": -0.3444757281303576,
+        "y": -1.763317337466642,
+        "rotation": 5,
+        "flipped": false
+      }
+    ]
+  },
+  {
+    "source": "Tauro",
+    "label": "Tauro.011",
+    "sourceLine": 21460,
+    "name": "Köpekbalığı",
+    "category": "deniz-canlilari",
+    "turn": 0,
+    "maxShift": 0.000007305266036919971,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "square",
+        "x": -5.582319042154846e-7,
+        "y": 0.0000020580387357638234,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": 0.8333327751014291,
+        "y": -0.8333312752945975,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": 2.207106222954643,
+        "y": 0.7357043184342518,
+        "rotation": 5,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": 2.4999994417680957,
+        "y": 0.1666687247054025,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": -2.1666672248985708,
+        "y": -1.1666646086279309,
+        "rotation": 4,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": 1.1666661084347625,
+        "y": 0.1666687247054024,
+        "rotation": 0,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": -1.0000005582319043,
+        "y": -0.49999794196126424,
+        "rotation": 6,
+        "flipped": true
+      }
+    ]
+  },
+  {
+    "source": "Balena",
+    "label": "Balena.007",
+    "sourceLine": 10690,
+    "name": "Balina",
+    "category": "deniz-canlilari",
+    "turn": 0,
+    "maxShift": 0.000003159586437586115,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "square",
+        "x": 0.0000028735632182234796,
+        "y": -1.6420361250871605e-7,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": -0.8333304597701149,
+        "y": -0.1666668308702792,
+        "rotation": 2,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": 0.16666954022988512,
+        "y": -1.1666668308702792,
+        "rotation": 2,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": -2.833330459770115,
+        "y": -0.5000001642036125,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": -1.8333304597701152,
+        "y": -0.16666683087027914,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": 1.166669540229885,
+        "y": -0.8333334975369459,
+        "rotation": 0,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": -1.4999971264367817,
+        "y": -1.0000001642036125,
+        "rotation": 4,
+        "flipped": false
+      }
+    ]
+  },
+  {
+    "source": "Foca",
+    "label": "Foca.015",
+    "sourceLine": 16666,
+    "name": "Fok",
+    "category": "deniz-canlilari",
+    "turn": 0,
+    "maxShift": 0.000004227219874999637,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "square",
+        "x": 0.0000015956425874264286,
+        "y": -0.0000017152937787386299,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": -0.8333317376907459,
+        "y": 0.166664951372888,
+        "rotation": 4,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": 0.16666826230925416,
+        "y": 0.8333316180395546,
+        "rotation": 2,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": 4.385619678806715,
+        "y": 2.7998299302434435,
+        "rotation": 0,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": 1.1666682623092541,
+        "y": 1.5808785137459829,
+        "rotation": 0,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": 2.5000015956425874,
+        "y": 1.8570208886613797,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": 0.1464482050493137,
+        "y": 1.853551675299495,
+        "rotation": 5,
+        "flipped": false
+      }
+    ]
+  },
+  {
+    "source": "Cavallet.de.mar",
+    "label": "Cavallet.de.mar.001",
+    "sourceLine": 12553,
+    "name": "Denizatı",
+    "category": "deniz-canlilari",
+    "turn": 0,
+    "maxShift": 0.00000803596012732906,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "square",
+        "x": -0.000007715426779403633,
+        "y": -0.0000022469634575764196,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": -0.3737811632799937,
+        "y": -0.6666689136301243,
+        "rotation": 0,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": 0.9595521700533395,
+        "y": 2.333331086369876,
+        "rotation": 2,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": -0.6499235381953904,
+        "y": -1.9428112885455209,
+        "rotation": 0,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": -0.040447829946660255,
+        "y": 1.3333310863698762,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": -1.7879947256530888,
+        "y": -1.6666689136301243,
+        "rotation": 4,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": -0.06066788720660076,
+        "y": -1.3535556375567313,
+        "rotation": 7,
+        "flipped": false
+      }
+    ]
+  },
+  {
+    "source": "Llagosta",
+    "label": "Llagosta.007",
+    "sourceLine": 17440,
+    "name": "Istakoz",
+    "category": "deniz-canlilari",
+    "turn": 0,
+    "maxShift": 0.012379466565067056,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "large-a",
+        "x": -0.004707793588143917,
+        "y": -0.001275510795660707,
+        "rotation": 5,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": -0.3582611841814179,
+        "y": -0.8262334221799665,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": -0.7522546892945727,
+        "y": -1.8060133649200263,
+        "rotation": 0,
+        "flipped": false
+      },
+      {
+        "pieceId": "square",
+        "x": -1.918921355961239,
+        "y": -0.9726800315866923,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": -2.7522546892945727,
+        "y": -1.139346698253359,
+        "rotation": 2,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": -3.085588022627906,
+        "y": -1.8060133649200256,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": -3.4189213559612397,
+        "y": -3.1393466982533598,
+        "rotation": 5,
+        "flipped": false
+      }
+    ]
+  },
+  {
+    "source": "Marxaire",
+    "label": "Marxaire.I",
+    "sourceLine": 17596,
+    "name": "Yürüyen",
+    "category": "insanlar",
+    "turn": 0,
+    "maxShift": 0.02682643098890285,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "square",
+        "x": -0.002883946167537129,
+        "y": -0.002883946167537129,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": 0.7887098833204333,
+        "y": 1.7982470886951671,
+        "rotation": 3,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": -0.15409915826163018,
+        "y": 1.563636363636364,
+        "rotation": 2,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": 0.629591878578465,
+        "y": 3.8429831766012628,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": 0.2504953094065381,
+        "y": 5.113802430197946,
+        "rotation": 5,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": -0.10305808118673655,
+        "y": 5.9387603415822525,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": 1.3366986597650128,
+        "y": 5.5636363636363635,
+        "rotation": 3,
+        "flipped": false
+      }
+    ]
+  },
+  {
+    "source": "Ballarina",
+    "label": "Ballarina.019",
+    "sourceLine": 10840,
+    "name": "Balerin",
+    "category": "insanlar",
+    "turn": 0,
+    "maxShift": 0.008700095655360035,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "small-a",
+        "x": -0.0007996630405170564,
+        "y": 0.0007996630405170564,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": -0.3985750373284591,
+        "y": -1.6731180861628219,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": -0.674717412243856,
+        "y": -3.006451419496155,
+        "rotation": 0,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": -1.8127885997015543,
+        "y": -2.1445226069538537,
+        "rotation": 4,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": -2.872727272727273,
+        "y": -1.437415825767306,
+        "rotation": 5,
+        "flipped": false
+      },
+      {
+        "pieceId": "square",
+        "x": 0.709090909090909,
+        "y": -4.173118086162821,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": -1.6949374695037962,
+        "y": -4.147991820315738,
+        "rotation": 5,
+        "flipped": false
+      }
+    ]
+  },
+  {
+    "source": "Futbolista",
+    "label": "Futbolista.002",
+    "sourceLine": 16699,
+    "name": "Topa vuran",
+    "category": "insanlar",
+    "turn": 0,
+    "maxShift": 0.01318551714167302,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "large-a",
+        "x": 0.0003879892104698378,
+        "y": 0.0050939428083474824,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": -2.4138255731626255,
+        "y": 0.14316513026604602,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": -1.493885282765633,
+        "y": 0.9479029843904112,
+        "rotation": 5,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": -3.6152056263252756,
+        "y": 0.7122007239948952,
+        "rotation": 5,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": -2.0602721825693515,
+        "y": -0.8770549269938944,
+        "rotation": 5,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": -2.649527833558141,
+        "y": -1.8181818181818183,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "square",
+        "x": -0.20403512719307865,
+        "y": -1.440398763556715,
+        "rotation": 7,
+        "flipped": false
+      }
+    ]
+  },
+  {
+    "source": "Ioga",
+    "label": "Ioga.003",
+    "sourceLine": 17221,
+    "name": "Yoga yapan",
+    "category": "insanlar",
+    "turn": 0,
+    "maxShift": 0.0033107105495306277,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "square",
+        "x": 0.0003911840168390158,
+        "y": 0.00038979033843294366,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": 2.8288183087630294,
+        "y": -2.592335074012242,
+        "rotation": 5,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": 1.8860092671809658,
+        "y": -0.7067169908481147,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": -0.5538548189835674,
+        "y": -0.6238755086387396,
+        "rotation": 0,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": 1.1789024859944184,
+        "y": -1.4138237720346625,
+        "rotation": 3,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": 1.4146047463899343,
+        "y": 0.23609205073394862,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": 1.7681581369832078,
+        "y": -2.474483943814484,
+        "rotation": 5,
+        "flipped": true
+      }
+    ]
+  },
+  {
+    "source": "Karate",
+    "label": "Karate.001",
+    "sourceLine": 17269,
+    "name": "Karate yapan",
+    "category": "insanlar",
+    "turn": 0,
+    "maxShift": 0.025883076577971554,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "square",
+        "x": 0,
+        "y": 0.025883076577971554,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": 1.5800376768583235,
+        "y": 1.0258830765779714,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": 2.4937052021911152,
+        "y": 3.7118788423196243,
+        "rotation": 2,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": 0.2871444580448712,
+        "y": 1.6757988993465824,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": -0.10337983370639892,
+        "y": 2.8138700868042807,
+        "rotation": 0,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": 1.4128249731513536,
+        "y": 2.907140988195259,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": 0.8157399372538394,
+        "y": 1.232989857764519,
+        "rotation": 4,
+        "flipped": false
+      }
+    ]
+  },
+  {
+    "source": "Patinador",
+    "label": "Patinador.VI",
+    "sourceLine": 18733,
+    "name": "Paten kayan",
+    "category": "insanlar",
+    "turn": 0,
+    "maxShift": 0.010557734124022528,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "square",
+        "x": -0.0007635902574295299,
+        "y": 0.0007635902574295301,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": -0.2298440759330296,
+        "y": 1.4215989273504404,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": -0.2298440759330297,
+        "y": 2.364407968932504,
+        "rotation": 5,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": -0.5833974665263035,
+        "y": 3.660770401107842,
+        "rotation": 5,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": -1.408355377910609,
+        "y": 3.542919270910084,
+        "rotation": 4,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": -2.507814253289718,
+        "y": 3.837640292164828,
+        "rotation": 0,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": -0.603617523786244,
+        "y": 4.680990458367782,
+        "rotation": 6,
+        "flipped": false
+      }
+    ]
+  },
+  {
+    "source": "Nedador",
+    "label": "Nedador.001",
+    "sourceLine": 18103,
+    "name": "Yüzen",
+    "category": "insanlar",
+    "turn": 0,
+    "maxShift": 0.007915049191854087,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "small-a",
+        "x": -0.0037930340734677634,
+        "y": -0.0026626817161375126,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": -1.3775664819266822,
+        "y": -0.4336270879872882,
+        "rotation": 4,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": -0.7692331485933488,
+        "y": -2.041960421320622,
+        "rotation": 0,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": -2.7108998152600154,
+        "y": -0.43362708798728833,
+        "rotation": 5,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": -4.125113377633111,
+        "y": -0.23836494211165352,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": -5.32793624805569,
+        "y": -0.685457894457686,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "square",
+        "x": -4.267276076275868,
+        "y": -1.746118066237507,
+        "rotation": 7,
+        "flipped": false
+      }
+    ]
+  },
+  {
+    "source": "Capfico",
+    "label": "Capfico.001",
+    "sourceLine": 11713,
+    "name": "Suyun içine atlayan",
+    "category": "insanlar",
+    "turn": 0,
+    "maxShift": 0.000007523230510444561,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "square",
+        "x": -6.531917546530919e-8,
+        "y": -0.0000035251859794626445,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": 2.373773382534039,
+        "y": -3.1617677584093653,
+        "rotation": 4,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": 2.373773382534039,
+        "y": -2.4951010917426983,
+        "rotation": 2,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": 1.0404400492007053,
+        "y": 0.9999964748140207,
+        "rotation": 3,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": 2.1785112366584043,
+        "y": -1.4142208627029365,
+        "rotation": 3,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": 1.2357021950763405,
+        "y": -0.4142170875590748,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": 3.2071067158673725,
+        "y": -3.828434425076032,
+        "rotation": 6,
+        "flipped": false
+      }
+    ]
+  },
+  {
+    "source": "Lector",
+    "label": "Lector.004",
+    "sourceLine": 17410,
+    "name": "Kitap okuyan",
+    "category": "insanlar",
+    "turn": 0,
+    "maxShift": 0.006098260646265035,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "square",
+        "x": 0.004312121456417063,
+        "y": 0.004312121456417063,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": -1.869635139044761,
+        "y": 1.5853661631441427,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": -0.8005266727036506,
+        "y": 6.678018154882556,
+        "rotation": 4,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": -0.26015943079603077,
+        "y": 1.4472949756864442,
+        "rotation": 4,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": -0.45542157667166566,
+        "y": 2.5853661631441422,
+        "rotation": 2,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": -0.7315639515870623,
+        "y": 3.9186994964774757,
+        "rotation": 3,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": -0.5763191437566948,
+        "y": 5.413370511415719,
+        "rotation": 7,
+        "flipped": true
+      }
+    ]
+  },
+  {
+    "source": "Salutacio",
+    "label": "Salutacio.002",
+    "sourceLine": 20803,
+    "name": "Selam veren",
+    "category": "insanlar",
+    "turn": 0,
+    "maxShift": 0.01249425947156866,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "large-a",
+        "x": -0.0030303030303030784,
+        "y": 7.222504509617093e-17,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": -0.0030303030303029683,
+        "y": -1,
+        "rotation": 2,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": -0.0030303030303030828,
+        "y": -2,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": -1.0030303030303032,
+        "y": -2.333333333333333,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": 1.3303030303030303,
+        "y": -1.8333333333333333,
+        "rotation": 4,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": 1.9969696969696973,
+        "y": -1,
+        "rotation": 2,
+        "flipped": false
+      },
+      {
+        "pieceId": "square",
+        "x": 1.8303030303030303,
+        "y": -2.833333333333333,
+        "rotation": 6,
+        "flipped": false
+      }
+    ]
+  },
+  {
+    "source": "Avio",
+    "label": "Avio.005",
+    "sourceLine": 10633,
+    "name": "Uçak",
+    "category": "tasitlar",
+    "turn": 0,
+    "maxShift": 0.0000062645273043583846,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "square",
+        "x": 0.000002135854527480307,
+        "y": -1.2544666220507564e-7,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": 1.6617625939340508,
+        "y": 0.1666665412200044,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": 1.6213224794141703,
+        "y": 2.1499156973219486,
+        "rotation": 5,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": 0.9546558127475031,
+        "y": 2.6213202181129804,
+        "rotation": 3,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": 2.328429260600718,
+        "y": 1.442808916135401,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": 0.9142156982276227,
+        "y": 0.9714043953443696,
+        "rotation": 5,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": 3.3284292606007178,
+        "y": 0.9999998745533377,
+        "rotation": 4,
+        "flipped": false
+      }
+    ]
+  },
+  {
+    "source": "Helicopter",
+    "label": "Helicopter.002",
+    "sourceLine": 17092,
+    "name": "Helikopter",
+    "category": "tasitlar",
+    "turn": 0,
+    "maxShift": 0.005222038921372879,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "large-a",
+        "x": -0.003287982648182825,
+        "y": 0.0020751733284619135,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": -0.0032879826481828685,
+        "y": 0.9448842149105259,
+        "rotation": 5,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": -1.4175015450212785,
+        "y": 0.9448842149105257,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": -2.124608326207826,
+        "y": 0.7091819545150099,
+        "rotation": 5,
+        "flipped": false
+      },
+      {
+        "pieceId": "square",
+        "x": -3.1781256426852593,
+        "y": 0.11278344822383198,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": -1.0032879826481829,
+        "y": -1.2740672015869348,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": 1.0573721891316386,
+        "y": -1.294287258846875,
+        "rotation": 7,
+        "flipped": false
+      }
+    ]
+  },
+  {
+    "source": "Vaixell",
+    "label": "Vaixell.026",
+    "sourceLine": 22561,
+    "name": "Vapur",
+    "category": "tasitlar",
+    "turn": 0,
+    "maxShift": 0.016920544096339467,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "large-a",
+        "x": 0.00038780962856856506,
+        "y": 0.0026291834026225514,
+        "rotation": 5,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": 1.414601372001664,
+        "y": 0.474033704193654,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": 2.8288149343747593,
+        "y": 0.27877155831801914,
+        "rotation": 5,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": 2.6545454545454543,
+        "y": -0.2902640354108301,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": 3.8894751061545807,
+        "y": 0.5918848343914119,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": 4.243028496747854,
+        "y": 0.0026291834026221823,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "square",
+        "x": 0.9146013720016639,
+        "y": -0.9687753373884094,
+        "rotation": 6,
+        "flipped": false
+      }
+    ]
+  },
+  {
+    "source": "Xalupa",
+    "label": "Xalupa.005",
+    "sourceLine": 23074,
+    "name": "Kayık",
+    "category": "tasitlar",
+    "turn": 0,
+    "maxShift": 0.006291272269661961,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "square",
+        "x": -0.004448601284168854,
+        "y": -0.004448601284168854,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": -1.7576774823782375,
+        "y": 2.5995481413805863,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": -1.0505707011916898,
+        "y": 1.8924413601940389,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": 0.2771727392152032,
+        "y": 1.0877035060696734,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": -2.4647842635647854,
+        "y": 1.8924413601940386,
+        "rotation": 5,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": 0.3636428611814054,
+        "y": 1.8924413601940386,
+        "rotation": 5,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": -0.6970173105984163,
+        "y": 2.4816970111828285,
+        "rotation": 5,
+        "flipped": true
+      }
+    ]
+  },
+  {
+    "source": "Submari",
+    "label": "Submari.003",
+    "sourceLine": 21373,
+    "name": "Denizaltı",
+    "category": "tasitlar",
+    "turn": 0,
+    "maxShift": 0.000007410358814499713,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "square",
+        "x": 0.000005923554542773183,
+        "y": 0.0000010044492042103327,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": -0.7071008576320047,
+        "y": 0.471405525240236,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": -4.006932503169227,
+        "y": 0.000001004449204210335,
+        "rotation": 3,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": -3.5355279823781953,
+        "y": -0.6666656622174622,
+        "rotation": 5,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": -1.4142076388185523,
+        "y": -0.23570125594631147,
+        "rotation": 5,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": -2.8284212011916474,
+        "y": 0.23570326484471998,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": -4.596188154158017,
+        "y": 0.3535543950424785,
+        "rotation": 7,
+        "flipped": true
+      }
+    ]
+  },
+  {
+    "source": "Cotxe",
+    "label": "Cotxe.003",
+    "sourceLine": 13069,
+    "name": "Araba",
+    "category": "tasitlar",
+    "turn": 0,
+    "maxShift": 0.000006570196723876844,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "square",
+        "x": -8.210180623563825e-7,
+        "y": 4.105090311330101e-7,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": 0.8333325123152708,
+        "y": 0.16666707717569798,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": 3.833332512315271,
+        "y": 0.16666707717569798,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": 1.1666658456486043,
+        "y": -0.49999958949096884,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": 2.833332512315271,
+        "y": -0.1666662561576354,
+        "rotation": 4,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": 2.166665845648604,
+        "y": -0.8333329228243023,
+        "rotation": 0,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": 3.9999991789819376,
+        "y": -0.49999958949096873,
+        "rotation": 6,
+        "flipped": true
+      }
+    ]
+  },
+  {
+    "source": "Locomotora",
+    "label": "Locomotora.001",
+    "sourceLine": 17548,
+    "name": "Lokomotif",
+    "category": "tasitlar",
+    "turn": 0,
+    "maxShift": 0.000007642660613265396,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "square",
+        "x": 0.000006877324194934582,
+        "y": -8.011867506415414e-7,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": -2.207099903862353,
+        "y": 2.1499150215818608,
+        "rotation": 5,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": -0.7928863414892576,
+        "y": 2.1499150215818608,
+        "rotation": 5,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": 0.028602356533163033,
+        "y": 1.4428082403953129,
+        "rotation": 4,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": -2.247540018382234,
+        "y": 1.2475460945196784,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": -0.9142066850489003,
+        "y": 0.9714037196042814,
+        "rotation": 5,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": 0.9748806114771114,
+        "y": 2.267766151779618,
+        "rotation": 5,
+        "flipped": true
+      }
+    ]
+  },
+  {
+    "source": "Carrossa",
+    "label": "Carrossa.001",
+    "sourceLine": 11902,
+    "name": "At arabası",
+    "category": "tasitlar",
+    "turn": 0,
+    "maxShift": 0.0173743201200575,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "large-a",
+        "x": 0.003956861948465476,
+        "y": -0.013592693613684478,
+        "rotation": 4,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": -0.6627098047182015,
+        "y": -0.6802593602803514,
+        "rotation": 0,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": 0.0454545454545453,
+        "y": -1.6802593602803515,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": -0.9545454545454547,
+        "y": -1.846926026947018,
+        "rotation": 4,
+        "flipped": true
+      },
+      {
+        "pieceId": "small-a",
+        "x": 0.8290385050636946,
+        "y": 0.9660635173954515,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": 0.8290385050636946,
+        "y": 1.4374680381864833,
+        "rotation": 5,
+        "flipped": false
+      },
+      {
+        "pieceId": "square",
+        "x": -1.5265967946303804,
+        "y": 1.1629604309940171,
+        "rotation": 7,
+        "flipped": false
+      }
+    ]
+  },
+  {
+    "source": "Trineu",
+    "label": "Trineu.001",
+    "sourceLine": 22417,
+    "name": "Kızak",
+    "category": "tasitlar",
+    "turn": 0,
+    "maxShift": 0.00000920904656918317,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "square",
+        "x": 4.904678301015603e-7,
+        "y": -0.000005005765282129924,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": -0.7071062907187176,
+        "y": -0.47140952655631385,
+        "rotation": 5,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": 0.3333338238011634,
+        "y": -1.7879920159915916,
+        "rotation": 0,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": -0.4714040303232016,
+        "y": -1.1785163077428613,
+        "rotation": 4,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": 2.8284276152140206,
+        "y": 0.2356972546302335,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": 4.2426411775871165,
+        "y": -0.23570726616079796,
+        "rotation": 5,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": 1.0606606622476515,
+        "y": 0.35354838482799167,
+        "rotation": 7,
+        "flipped": false
+      }
+    ]
+  },
+  {
+    "source": "Cotxe.bebe",
+    "label": "Cotxe.bebe.003",
+    "sourceLine": 13078,
+    "name": "Bebek arabası",
+    "category": "tasitlar",
+    "turn": 0,
+    "maxShift": 0.014635236012608842,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "square",
+        "x": -1.201762246790279e-19,
+        "y": -0.003061634339159184,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": 1.8793172413793102,
+        "y": 0.23264062605635683,
+        "rotation": 5,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": 1.8793172413793102,
+        "y": -0.23876389473467513,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": 0.005466796452489974,
+        "y": -1.6529774571077702,
+        "rotation": 0,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": 1.6958227337409821,
+        "y": -2.04350174885904,
+        "rotation": 2,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": 0.9482758380345536,
+        "y": -1.1815729363167387,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": -0.11238433374526764,
+        "y": -2.4779353684920755,
+        "rotation": 5,
+        "flipped": true
+      }
+    ]
+  },
+  {
+    "source": "Castell",
+    "label": "Castell.029",
+    "sourceLine": 12346,
+    "name": "Kale",
+    "category": "yapilar",
+    "turn": 0,
+    "maxShift": 0.000006383253070740189,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "square",
+        "x": -0.0000014778325120764014,
+        "y": -0.0000043346130997853615,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": 1.3333318555008211,
+        "y": -0.9595642200932187,
+        "rotation": 0,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": -1.3333348111658454,
+        "y": -0.9595642200932191,
+        "rotation": 2,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": -2.0000014778325124,
+        "y": -1.6262308867598854,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": 1.3333318555008213,
+        "y": 0.04043577990678112,
+        "rotation": 4,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": -1.3333348111658454,
+        "y": 0.04043577990678112,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": -1.0000014778325124,
+        "y": -1.7928975534265523,
+        "rotation": 4,
+        "flipped": false
+      }
+    ]
+  },
+  {
+    "source": "Pont",
+    "label": "Pont.024",
+    "sourceLine": 19852,
+    "name": "Köprü",
+    "category": "yapilar",
+    "turn": 0,
+    "maxShift": 0.000004272450519039142,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "square",
+        "x": -0.000001477832512284177,
+        "y": 4.1050903121231423e-7,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": -1.8333348111658456,
+        "y": 0.16666707717569795,
+        "rotation": 4,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": 1.833331855500821,
+        "y": 0.16666707717569795,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": 0.4999985221674878,
+        "y": -0.8333329228243022,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": 1.8333318555008211,
+        "y": -0.8333329228243022,
+        "rotation": 2,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": -1.8333348111658456,
+        "y": -0.8333329228243022,
+        "rotation": 0,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": -0.5000014778325123,
+        "y": -0.9999995894909688,
+        "rotation": 4,
+        "flipped": true
+      }
+    ]
+  },
+  {
+    "source": "Torre",
+    "label": "Torre.001",
+    "sourceLine": 21556,
+    "name": "Kule",
+    "category": "yapilar",
+    "turn": 0,
+    "maxShift": 0.01743546798029555,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "square",
+        "x": 0,
+        "y": -0.01743546798029555,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": 0.3668781609195402,
+        "y": -0.850768801313629,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": -0.29978850574712634,
+        "y": -0.850768801313629,
+        "rotation": 4,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": -0.4937310344827585,
+        "y": 3.1492311986863712,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": -0.31797385057471256,
+        "y": 1.815897865353038,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": 0.3486928160919543,
+        "y": 1.149231198686371,
+        "rotation": 2,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": 0.5062689655172413,
+        "y": 2.9825645320197043,
+        "rotation": 4,
+        "flipped": false
+      }
+    ]
+  },
+  {
+    "source": "Far",
+    "label": "Far.008",
+    "sourceLine": 13984,
+    "name": "Deniz feneri",
+    "category": "yapilar",
+    "turn": 0,
+    "maxShift": 0.000007860207470299508,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "square",
+        "x": -0.0000027563569257914247,
+        "y": -5.048353307097097e-7,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": -0.7071095375434735,
+        "y": 1.8856175783287963,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": -0.23570501675244174,
+        "y": 1.4142130575377645,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": -0.9428117979389892,
+        "y": 2.592724359515344,
+        "rotation": 0,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": -0.4714072771479574,
+        "y": 3.5355334010974078,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": -1.4142163187300212,
+        "y": 4.4783424426794705,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": -1.7677697093232947,
+        "y": 3.1819800105041334,
+        "rotation": 7,
+        "flipped": true
+      }
+    ]
+  },
+  {
+    "source": "Moli.holandes",
+    "label": "Moli.holandes.001",
+    "sourceLine": 17965,
+    "name": "Yel değirmeni",
+    "category": "yapilar",
+    "turn": 0,
+    "maxShift": 0.032214429475191465,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "large-a",
+        "x": -0.019527760621099628,
+        "y": -0.02562100762142495,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": -1.080187932400921,
+        "y": -0.6148766586102146,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": 0.2161744997744161,
+        "y": -1.6755368303900358,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": 1.1589835413564797,
+        "y": -0.7327277888079724,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": 0.9232812809609638,
+        "y": -2.382643611576584,
+        "rotation": 3,
+        "flipped": false
+      },
+      {
+        "pieceId": "square",
+        "x": -0.7266345418076474,
+        "y": -2.3826436115765834,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": -0.7266345418076473,
+        "y": -1.2041323095990042,
+        "rotation": 1,
+        "flipped": false
+      }
+    ]
+  },
+  {
+    "source": "Fabrica",
+    "label": "Fabrica.007",
+    "sourceLine": 13897,
+    "name": "Fabrika",
+    "category": "yapilar",
+    "turn": 0,
+    "maxShift": 0.00000495340244050916,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "square",
+        "x": -0.0000012315270935099713,
+        "y": -0.000001871558912830865,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": -1.333334564860427,
+        "y": 1.040438242960968,
+        "rotation": 2,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": -0.6666678981937603,
+        "y": 1.040438242960968,
+        "rotation": 0,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": -1.0000012315270936,
+        "y": 0.37377157629430136,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": -2.333334564860427,
+        "y": 1.0404382429609682,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": 0.3333321018062398,
+        "y": 1.0404382429609682,
+        "rotation": 4,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": -2.5000012315270936,
+        "y": -0.29289509037236516,
+        "rotation": 6,
+        "flipped": true
+      }
+    ]
+  },
+  {
+    "source": "Tenda",
+    "label": "Tenda.002",
+    "sourceLine": 21472,
+    "name": "Çadır",
+    "category": "yapilar",
+    "turn": 0,
+    "maxShift": 0.000009230886846641948,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "square",
+        "x": 7.389162560870042e-7,
+        "y": -8.210180624365034e-7,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": 1.166667405582923,
+        "y": -0.16666748768472917,
+        "rotation": 2,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": 0.8333340722495893,
+        "y": 1.1666658456486043,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": 0.5000007389162562,
+        "y": -0.8333341543513958,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": -1.1666659277504106,
+        "y": 0.833332512315271,
+        "rotation": 4,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": 2.1666674055829227,
+        "y": 0.8333325123152711,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": 1.0000007389162562,
+        "y": 0.4999991789819376,
+        "rotation": 6,
+        "flipped": true
+      }
+    ]
+  },
+  {
+    "source": "Edifici",
+    "label": "Edifici.003",
+    "sourceLine": 13333,
+    "name": "Saat kulesi",
+    "category": "yapilar",
+    "turn": 0,
+    "maxShift": 0.01619855041195592,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "large-a",
+        "x": -0.0031180850966197288,
+        "y": 0.0073824978623479405,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": 0.663548581570047,
+        "y": -0.659284168804319,
+        "rotation": 2,
+        "flipped": false
+      },
+      {
+        "pieceId": "square",
+        "x": 0.34545454545454546,
+        "y": -1.8259508354709855,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": 0.32727272727272716,
+        "y": -2.561653095866501,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": 1.8016197690277456,
+        "y": 0.20264464373798277,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": 2.3908754200165356,
+        "y": -0.3866110072508068,
+        "rotation": 5,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": 1.8016197690277456,
+        "y": -0.740164397844081,
+        "rotation": 7,
+        "flipped": false
+      }
+    ]
+  },
+  {
+    "source": "Esglesia",
+    "label": "Esglesia.001",
+    "sourceLine": 13519,
+    "name": "Kilise",
+    "category": "yapilar",
+    "turn": 0,
+    "maxShift": 0.000007757029872193246,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "square",
+        "x": 6.046254415391157e-7,
+        "y": 0.000007041527807006071,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": -0.16666606204122514,
+        "y": 0.8333403748611404,
+        "rotation": 0,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": 0.16666727129210818,
+        "y": 1.1666737081944738,
+        "rotation": 4,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": 2.0285960838344095,
+        "y": -0.9713974792632244,
+        "rotation": 4,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": 1.1666672712921082,
+        "y": 0.16667370819447397,
+        "rotation": 0,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": 1.8333339379587748,
+        "y": 0.8333403748611409,
+        "rotation": 4,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": 0.7322336516590725,
+        "y": -0.8535463490654664,
+        "rotation": 7,
+        "flipped": false
+      }
+    ]
+  },
+  {
+    "source": "Font",
+    "label": "Font.001",
+    "sourceLine": 16687,
+    "name": "Çeşme",
+    "category": "yapilar",
+    "turn": 0,
+    "maxShift": 0.012731049497759162,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "small-a",
+        "x": 0.001984127904361389,
+        "y": 0.003935614869003931,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": 1.4161976902774567,
+        "y": 0.00393561486900393,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": 0.04242424242424245,
+        "y": -1.0936954580688136,
+        "rotation": 2,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": 1.3757575757575755,
+        "y": -1.0936954580688136,
+        "rotation": 0,
+        "flipped": false
+      },
+      {
+        "pieceId": "square",
+        "x": 0.6666666666666667,
+        "y": -2.26036212473548,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": 1.1666666666666667,
+        "y": -3.26036212473548,
+        "rotation": 4,
+        "flipped": true
+      },
+      {
+        "pieceId": "medium",
+        "x": 0.1666666666666666,
+        "y": -3.427028791402147,
+        "rotation": 5,
+        "flipped": false
+      }
+    ]
+  },
+  {
+    "source": "Quiosc",
+    "label": "Quiosc.007",
+    "sourceLine": 20650,
+    "name": "Büfe",
+    "category": "yapilar",
+    "turn": 0,
+    "maxShift": 0.014252313738764554,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "square",
+        "x": -0.00875040807405517,
+        "y": -0.011249835796387738,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": 1.5721298209657064,
+        "y": 1.8220834975369455,
+        "rotation": 2,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": 0.238796487632373,
+        "y": 2.1554168308702786,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": 0.9626541127169765,
+        "y": -0.039845315005355944,
+        "rotation": 0,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": 0.6909086206896551,
+        "y": -0.9826543565874196,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": 1.2387964876323734,
+        "y": 0.8220834975369458,
+        "rotation": 4,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": 0.9054631542990397,
+        "y": 1.9887501642036125,
+        "rotation": 4,
+        "flipped": false
+      }
+    ]
+  },
+  {
+    "source": "Portal",
+    "label": "Portal.003",
+    "sourceLine": 19987,
+    "name": "Kemerli kapı",
+    "category": "yapilar",
+    "turn": 0,
+    "maxShift": 0.000004665007635140063,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "square",
+        "x": -0.000004594954359565565,
+        "y": 6.980162988217284e-7,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": 0.707102186232188,
+        "y": 0.4714052188073305,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": -0.47140911574539135,
+        "y": 0.7071074792028464,
+        "rotation": 3,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": -1.1785158969319391,
+        "y": 0.9428097395983621,
+        "rotation": 4,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": 1.3333287383789738,
+        "y": -0.04043941650358212,
+        "rotation": 2,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": -1.3333379282876932,
+        "y": -0.040439416503582314,
+        "rotation": 0,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": 1.0606555768254617,
+        "y": 1.0606608697961202,
+        "rotation": 5,
+        "flipped": true
+      }
+    ]
+  },
+  {
+    "source": "Taula",
+    "label": "Taula.003",
+    "sourceLine": 21415,
+    "name": "Masa",
+    "category": "ev-esyalari",
+    "turn": 0,
+    "maxShift": 0.000003368962314946067,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "square",
+        "x": -0.0000033661740558857606,
+        "y": 1.3703760435868373e-7,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": -1.7475502618804843,
+        "y": 1.3737735848908186,
+        "rotation": 4,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": 2.080876862865706,
+        "y": 1.3737735848908188,
+        "rotation": 4,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": -2.0808835952138174,
+        "y": 0.707106918224153,
+        "rotation": 3,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": -1.414216928547151,
+        "y": -0.23570212335791133,
+        "rotation": 5,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": 1.4142101961990394,
+        "y": -0.23570212335791121,
+        "rotation": 5,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": 1.9142101961990394,
+        "y": 0.7071069182241522,
+        "rotation": 6,
+        "flipped": false
+      }
+    ]
+  },
+  {
+    "source": "Cadira",
+    "label": "Cadira.004",
+    "sourceLine": 11341,
+    "name": "Sandalye",
+    "category": "ev-esyalari",
+    "turn": 0,
+    "maxShift": 0.000006480857635532799,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "square",
+        "x": 9.986537331371396e-7,
+        "y": -0.000005290525759867056,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": 1.8333343319870665,
+        "y": 0.16666137614090687,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": -0.914212563719362,
+        "y": -3.8570278944809187,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": 0.028596477862701235,
+        "y": -2.4428143321078233,
+        "rotation": 2,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": 0.16666766532039975,
+        "y": -1.1666719571924264,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": 1.8333343319870665,
+        "y": -0.8333386238590933,
+        "rotation": 2,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": -0.5606591731260884,
+        "y": -3.267772243492129,
+        "rotation": 5,
+        "flipped": true
+      }
+    ]
+  },
+  {
+    "source": "Llit",
+    "label": "Llit.001",
+    "sourceLine": 17533,
+    "name": "Yatak",
+    "category": "ev-esyalari",
+    "turn": 0,
+    "maxShift": 0.000008552663432261717,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "square",
+        "x": -0.000005397348675285505,
+        "y": 3.4458607313212236e-7,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": 0.16666126931799136,
+        "y": -0.8333329887472601,
+        "rotation": 4,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": -3.6617658554281993,
+        "y": -1.5808798844536887,
+        "rotation": 2,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": -0.9714099181397071,
+        "y": 0.028595823795041345,
+        "rotation": 4,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": -1.9142189597217707,
+        "y": -0.44280869699599007,
+        "rotation": 5,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": -3.247552293055104,
+        "y": -0.16666632208059332,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": -0.000005397348675285503,
+        "y": -1.4999996554139268,
+        "rotation": 6,
+        "flipped": false
+      }
+    ]
+  },
+  {
+    "source": "Espelma",
+    "label": "Espelma.021",
+    "sourceLine": 13630,
+    "name": "Mum",
+    "category": "ev-esyalari",
+    "turn": 0,
+    "maxShift": 0.00000597156820221104,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "square",
+        "x": 4.0776224140243866e-7,
+        "y": -0.0000024093557225283396,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": 0.23570266815775726,
+        "y": 4.242638277763564,
+        "rotation": 3,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": 4.077622413728232e-7,
+        "y": 1.1785088926218568,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": -0.23570185263327453,
+        "y": 1.8856156738084047,
+        "rotation": 0,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": 4.077622413173058e-7,
+        "y": 5.892554100532174,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": 0.23570266815775714,
+        "y": 2.8284247153904682,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": -0.3535529828310325,
+        "y": 3.8890848871702897,
+        "rotation": 5,
+        "flipped": false
+      }
+    ]
+  },
+  {
+    "source": "Gerro",
+    "label": "Gerro.014",
+    "sourceLine": 16945,
+    "name": "Vazo",
+    "category": "ev-esyalari",
+    "turn": 0,
+    "maxShift": 0.000004127809142268803,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "square",
+        "x": 0.000001642036124731177,
+        "y": 4.324833504206127e-7,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": 0.16666830870279198,
+        "y": -0.8333329008499827,
+        "rotation": 4,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": -3.166665024630542,
+        "y": 0.16666709915001734,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": -0.8333316912972081,
+        "y": 0.5000004324833506,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": -1.4999983579638752,
+        "y": 1.442809474065414,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": -1.8333316912972089,
+        "y": 0.16666709915001723,
+        "rotation": 0,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": -2.9999983579638756,
+        "y": -0.49999956751664937,
+        "rotation": 6,
+        "flipped": true
+      }
+    ]
+  },
+  {
+    "source": "Cossiol",
+    "label": "Cossiol.001",
+    "sourceLine": 13060,
+    "name": "Saksı",
+    "category": "ev-esyalari",
+    "turn": 0,
+    "maxShift": 0.02325203290388862,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "medium",
+        "x": -1.0350608144490041e-17,
+        "y": 0.002597402597402832,
+        "rotation": 5,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": -1,
+        "y": 0.16926406926406948,
+        "rotation": 4,
+        "flipped": false
+      },
+      {
+        "pieceId": "square",
+        "x": -2.0363636363636366,
+        "y": -0.8307359307359306,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": -0.8696969696969697,
+        "y": -1.6640692640692638,
+        "rotation": 0,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": 1.1303030303030304,
+        "y": -0.6640692640692638,
+        "rotation": 4,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": -0.2030303030303029,
+        "y": -0.9974025974025972,
+        "rotation": 4,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": 0.796969696969697,
+        "y": -0.9974025974025973,
+        "rotation": 0,
+        "flipped": false
+      }
+    ]
+  },
+  {
+    "source": "Cafetera",
+    "label": "Cafetera.025",
+    "sourceLine": 11434,
+    "name": "Kahvedanlık",
+    "category": "ev-esyalari",
+    "turn": 0,
+    "maxShift": 0.000007792036843095167,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "square",
+        "x": -8.863372376604709e-7,
+        "y": -3.2840722490917367e-7,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": 2.3737725615159766,
+        "y": -0.6666669950738916,
+        "rotation": 2,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": 1.0404392281826431,
+        "y": -0.6666669950738916,
+        "rotation": 0,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": 1.7071058948493096,
+        "y": -0.3333336617405583,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": 2.0404392281826436,
+        "y": 1.3333330049261083,
+        "rotation": 4,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": 1.3737725615159766,
+        "y": 0.6666663382594418,
+        "rotation": 0,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": 3.2071058948493096,
+        "y": -3.2840722488982595e-7,
+        "rotation": 6,
+        "flipped": false
+      }
+    ]
+  },
+  {
+    "source": "Copa",
+    "label": "Copa.036",
+    "sourceLine": 12982,
+    "name": "Kadeh",
+    "category": "ev-esyalari",
+    "turn": 0,
+    "maxShift": 0.000004466821185161095,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "square",
+        "x": 0.0000014778325123055583,
+        "y": 0.0000018883415435120763,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": 0.16666814449917905,
+        "y": -0.8333314449917898,
+        "rotation": 4,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": -1.1666651888341546,
+        "y": 0.1666685550082103,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": -0.4999985221674877,
+        "y": 1.1666685550082103,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": -1.1666651888341544,
+        "y": -1.83333144499179,
+        "rotation": 2,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": 0.166668144499179,
+        "y": -1.83333144499179,
+        "rotation": 0,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": -0.9999985221674877,
+        "y": -0.4999981116584565,
+        "rotation": 6,
+        "flipped": true
+      }
+    ]
+  },
+  {
+    "source": "Olla",
+    "label": "Olla.005",
+    "sourceLine": 18310,
+    "name": "Tencere",
+    "category": "ev-esyalari",
+    "turn": 0,
+    "maxShift": 0.000007459625441776433,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "square",
+        "x": -0.000005577731135987418,
+        "y": 0.0000049532743822884225,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": 0.47139894305989555,
+        "y": -0.7071018279121652,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": -1.4142191401042312,
+        "y": 0.23570721366989825,
+        "rotation": 5,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": -1.6499214004997471,
+        "y": -0.47139956751664946,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": -0.7071123589176835,
+        "y": -0.9428040883076809,
+        "rotation": 5,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": -0.7071123589176838,
+        "y": 0.9428139948564456,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": 0.7071012034554117,
+        "y": -1.914208609098713,
+        "rotation": 4,
+        "flipped": true
+      }
+    ]
+  },
+  {
+    "source": "Planxa",
+    "label": "Planxa.005",
+    "sourceLine": 19711,
+    "name": "Ütü",
+    "category": "ev-esyalari",
+    "turn": 0,
+    "maxShift": 0.000006835738709019848,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "square",
+        "x": 0.00000210533794672133,
+        "y": -0.0000014692902511960686,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": 2.0808823343777094,
+        "y": -0.3737749171434655,
+        "rotation": 2,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": 2.1213224488975904,
+        "y": 0.4714030515007805,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": 0.47140662612897843,
+        "y": 1.6499143534783598,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": 1.4142156677110422,
+        "y": 1.1785098326873282,
+        "rotation": 5,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": 2.8284292300841374,
+        "y": 1.6499143534783598,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": 1.060662277117769,
+        "y": -0.353554859883525,
+        "rotation": 5,
+        "flipped": true
+      }
+    ]
+  },
+  {
+    "source": "Bressol",
+    "label": "Bressol.001",
+    "sourceLine": 11017,
+    "name": "Beşik",
+    "category": "ev-esyalari",
+    "turn": 0,
+    "maxShift": 0.000008669241477419133,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "square",
+        "x": 0.0000033628234835899898,
+        "y": 0.0000020284278294581283,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": 0.47140788361451536,
+        "y": -0.7071047527587182,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": -0.4714011579675481,
+        "y": 0.7071088096143769,
+        "rotation": 3,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": -1.885614720340644,
+        "y": 1.6499178511964407,
+        "rotation": 4,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": -0.0808768662162787,
+        "y": 1.454655705320806,
+        "rotation": 4,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": -2.8284237619227066,
+        "y": 1.178513330405408,
+        "rotation": 5,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": -1.0606568089563377,
+        "y": 1.0606622002076507,
+        "rotation": 7,
+        "flipped": true
+      }
+    ]
+  },
+  {
+    "source": "Telefon",
+    "label": "Telefon.001",
+    "sourceLine": 21463,
+    "name": "Telefon",
+    "category": "ev-esyalari",
+    "turn": 0,
+    "maxShift": 0.012391272796047308,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "large-a",
+        "x": 0.0005668936869602473,
+        "y": -0.004181271008583262,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": 0.0005668936869602848,
+        "y": -1.8897993541727098,
+        "rotation": 5,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": 1.0814471227267228,
+        "y": -1.6945372082970749,
+        "rotation": 4,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": -1.413646668686135,
+        "y": -1.6945372082970744,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": 1.9147804560600556,
+        "y": -1.3612038749637418,
+        "rotation": 6,
+        "flipped": true
+      },
+      {
+        "pieceId": "small-b",
+        "x": 1.748113789393389,
+        "y": -0.6945372082970749,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "square",
+        "x": -1.9136466686861355,
+        "y": -0.8612038749637412,
+        "rotation": 6,
+        "flipped": false
+      }
+    ]
+  },
+  {
+    "source": "Corona",
+    "label": "Corona.005",
+    "sourceLine": 13006,
+    "name": "Taç",
+    "category": "nesneler",
+    "turn": 0,
+    "maxShift": 0.000006702243557514079,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "square",
+        "x": -5.849682355619606e-19,
+        "y": -0.0000022988505748286076,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": 0.16666666666666674,
+        "y": -0.8333356321839082,
+        "rotation": 4,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": -1.1666666666666667,
+        "y": 0.16666436781609192,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": -0.5000000000000001,
+        "y": 0.8333310344827585,
+        "rotation": 5,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": -1.8333333333333335,
+        "y": 0.8333310344827589,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": 0.8333333333333334,
+        "y": 0.8333310344827589,
+        "rotation": 4,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": -1,
+        "y": -0.5000022988505748,
+        "rotation": 6,
+        "flipped": true
+      }
+    ]
+  },
+  {
+    "source": "Clau",
+    "label": "Clau.002",
+    "sourceLine": 12658,
+    "name": "Anahtar",
+    "category": "nesneler",
+    "turn": 0,
+    "maxShift": 0.000007818131202344167,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "square",
+        "x": -9.214417244288796e-7,
+        "y": 0.00000254820467464537,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": -0.16666758810839116,
+        "y": 0.8333358815380079,
+        "rotation": 0,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": 0.9714035993493073,
+        "y": 0.9142161105777697,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": 0.9714035993493073,
+        "y": -0.02859293100429362,
+        "rotation": 0,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": 4.035532984491014,
+        "y": -0.26429519139980967,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": 4.035532984491014,
+        "y": 0.6785138501822543,
+        "rotation": 5,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": 2.267766031524644,
+        "y": -0.14644406120205156,
+        "rotation": 7,
+        "flipped": false
+      }
+    ]
+  },
+  {
+    "source": "Martell",
+    "label": "Martell.003",
+    "sourceLine": 17590,
+    "name": "Çekiç",
+    "category": "nesneler",
+    "turn": 0,
+    "maxShift": 0.003405284037574411,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "square",
+        "x": -6.742731491487334e-7,
+        "y": -0.0013682439873985274,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": 0.1666659923935176,
+        "y": -3.9964620354002562,
+        "rotation": 2,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": 0.16666599239351754,
+        "y": -0.8347015773207318,
+        "rotation": 4,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": 0.9662148656186176,
+        "y": -5.272604410315653,
+        "rotation": 2,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": 0.023405824036554227,
+        "y": -4.8011998895246215,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": -0.028596153482117248,
+        "y": -2.915581806360494,
+        "rotation": 3,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": -6.742731491477179e-7,
+        "y": -1.5013682439873985,
+        "rotation": 6,
+        "flipped": false
+      }
+    ]
+  },
+  {
+    "source": "Botella",
+    "label": "Botella.001",
+    "sourceLine": 11011,
+    "name": "Şişe",
+    "category": "nesneler",
+    "turn": 0,
+    "maxShift": 0.01547762315322024,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "large-a",
+        "x": 0.0034709336308836763,
+        "y": -0.0028267382671220724,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": 1.064131105410705,
+        "y": -0.5920823892559115,
+        "rotation": 5,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": 0.23917319402639944,
+        "y": -1.652742561035733,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": -1.1750403683466955,
+        "y": -0.23852899866263783,
+        "rotation": 3,
+        "flipped": false
+      },
+      {
+        "pieceId": "square",
+        "x": -0.703635847555664,
+        "y": -0.9456357798491855,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": -0.4679335871601481,
+        "y": -2.359849342222281,
+        "rotation": 3,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": 0.0034709336308836303,
+        "y": -3.026516008888948,
+        "rotation": 5,
+        "flipped": false
+      }
+    ]
+  },
+  {
+    "source": "Paraigua",
+    "label": "Paraigua.001",
+    "sourceLine": 18514,
+    "name": "Şemsiye",
+    "category": "nesneler",
+    "turn": 7,
+    "maxShift": 0.000010267758760471908,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "square",
+        "x": 0.0000066063736971107595,
+        "y": 0.000005488008841404756,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": 0.8333399397070306,
+        "y": 0.16667215467550822,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": -2.247540289332732,
+        "y": 0.16667215467550833,
+        "rotation": 4,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": -1.4428024352083666,
+        "y": -0.02858999120012673,
+        "rotation": 0,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": -1.442802435208366,
+        "y": 2.328432612755032,
+        "rotation": 3,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": -0.9713979144173346,
+        "y": 0.9142190503819365,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": -2.914206955999398,
+        "y": 0.000005488008841370018,
+        "rotation": 4,
+        "flipped": true
+      }
+    ]
+  },
+  {
+    "source": "Camiseta",
+    "label": "Camiseta.002",
+    "sourceLine": 11647,
+    "name": "Tişört",
+    "category": "nesneler",
+    "turn": 0,
+    "maxShift": 0.000007394220072345402,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "square",
+        "x": -0.000005525844018792002,
+        "y": 0.0000013383500091547948,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": -1.178516827821598,
+        "y": 0.0000013383500091541915,
+        "rotation": 3,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": 0.47139899494701276,
+        "y": 0.7071081195365568,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": -0.7071123070305665,
+        "y": 0.6666680050166759,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": -1.0404456403639,
+        "y": 1.6666680050166758,
+        "rotation": 0,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": -0.373778973697233,
+        "y": 2.333334671683343,
+        "rotation": 4,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": -1.7677724788103877,
+        "y": 0.35355472894328277,
+        "rotation": 7,
+        "flipped": true
+      }
+    ]
+  },
+  {
+    "source": "Corbata",
+    "label": "Corbata.001",
+    "sourceLine": 12991,
+    "name": "Kravat",
+    "category": "nesneler",
+    "turn": 0,
+    "maxShift": 0.000007962042646598409,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "square",
+        "x": 2.545457882807688e-7,
+        "y": 0.000005408969385959598,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": 0.2357025149413044,
+        "y": -4.2426352781499,
+        "rotation": 3,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": 0.4714047753368202,
+        "y": -0.7071013722171614,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": 2.545457884473055e-7,
+        "y": -5.6164087260031135,
+        "rotation": 5,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": -0.23570200584972728,
+        "y": -1.414208153403709,
+        "rotation": 3,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": 0.23570251494130418,
+        "y": -2.8284217157768055,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": -0.35355313604748534,
+        "y": -3.889081887556626,
+        "rotation": 7,
+        "flipped": true
+      }
+    ]
+  },
+  {
+    "source": "Baldufa",
+    "label": "Baldufa.001",
+    "sourceLine": 10669,
+    "name": "Topaç",
+    "category": "nesneler",
+    "turn": 0,
+    "maxShift": 0.011642044068059576,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "large-a",
+        "x": 0.006060606060606084,
+        "y": -0.006060606060606101,
+        "rotation": 2,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": 1.3393939393939394,
+        "y": -0.006060606060606098,
+        "rotation": 0,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": 1.792121212121212,
+        "y": -1.0060606060606059,
+        "rotation": 4,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": 1.1254545454545455,
+        "y": -1.1727272727272728,
+        "rotation": 4,
+        "flipped": true
+      },
+      {
+        "pieceId": "medium",
+        "x": 0.12545454545454557,
+        "y": -1.3393939393939394,
+        "rotation": 5,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": -0.5412121212121213,
+        "y": -1.0060606060606059,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "square",
+        "x": 0.6254545454545455,
+        "y": -2.172727272727273,
+        "rotation": 6,
+        "flipped": false
+      }
+    ]
+  },
+  {
+    "source": "Pala",
+    "label": "Pala.001",
+    "sourceLine": 18490,
+    "name": "Kürek",
+    "category": "nesneler",
+    "turn": 0,
+    "maxShift": 0.01390050476912038,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "medium",
+        "x": -0.006542467903085084,
+        "y": -0.006542467903085085,
+        "rotation": 4,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": -0.9493515094851485,
+        "y": -0.4779469886941167,
+        "rotation": 5,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": -0.9493515094851486,
+        "y": -1.4207560302761804,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "square",
+        "x": -1.9736480449013336,
+        "y": -2.0463753176286064,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": -2.4450525656923654,
+        "y": -2.7534820988151547,
+        "rotation": 3,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": -3.034308216681155,
+        "y": -3.1070354894084278,
+        "rotation": 5,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": -3.6235638676699446,
+        "y": -3.460588880001701,
+        "rotation": 7,
+        "flipped": false
+      }
+    ]
+  },
+  {
+    "source": "Estel",
+    "label": "Estel.006",
+    "sourceLine": 13759,
+    "name": "Uçurtma",
+    "category": "nesneler",
+    "turn": 0,
+    "maxShift": 0.006051585085053772,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "square",
+        "x": -0.0036346965563511823,
+        "y": 0.0020392900243448794,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": 0.2320675638391647,
+        "y": 2.5636379310344823,
+        "rotation": 3,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": -0.2393369569518672,
+        "y": 2.0020392900243453,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": -0.37740814440956544,
+        "y": 1.002039290024345,
+        "rotation": 3,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": 0.21731745967602087,
+        "y": -3.783946980467053,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": 0.21731745967602079,
+        "y": -2.841137938884989,
+        "rotation": 5,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": 0.34991869403692244,
+        "y": -1.0586208817554765,
+        "rotation": 5,
+        "flipped": false
+      }
+    ]
+  },
+  {
+    "source": "Arbre",
+    "label": "Arbre.004",
+    "sourceLine": 418,
+    "name": "Yapraklı ağaç",
+    "category": "doga",
+    "turn": 0,
+    "maxShift": 0.006495512170447305,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "square",
+        "x": 3.057761698256822e-18,
+        "y": -0.006484017917573248,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": -0.7033464363589615,
+        "y": -2.6849953198951524,
+        "rotation": 5,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": 0.7108671260141338,
+        "y": -2.6849953198951524,
+        "rotation": 5,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": -0.5,
+        "y": -1.1731506845842399,
+        "rotation": 5,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": 0.0037603448275859426,
+        "y": -3.3921021010817003,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": 0.003760344827586091,
+        "y": -1.977888538708605,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": 0.5,
+        "y": -1.0064840179175731,
+        "rotation": 4,
+        "flipped": true
+      }
+    ]
+  },
+  {
+    "source": "Bolet",
+    "label": "Bolet.001",
+    "sourceLine": 11005,
+    "name": "Mantar",
+    "category": "doga",
+    "turn": 4,
+    "maxShift": 0.006189104159130322,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "large-a",
+        "x": 0.006172842369123726,
+        "y": 0.0004483607682605942,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "square",
+        "x": 1.4203864047422192,
+        "y": -0.23525389962725507,
+        "rotation": 3,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": 2.1274931859287673,
+        "y": -0.7066584204182872,
+        "rotation": 5,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": 2.363195446324283,
+        "y": 0.00044836076826075804,
+        "rotation": 4,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": 3.070302227510831,
+        "y": -0.23525389962725515,
+        "rotation": 3,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": 1.6545454545454543,
+        "y": -1.442360680813803,
+        "rotation": 0,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": 4.248813529488411,
+        "y": 0.0004483607682605953,
+        "rotation": 1,
+        "flipped": false
+      }
+    ]
+  },
+  {
+    "source": "Muntanyes",
+    "label": "Muntanyes.012",
+    "sourceLine": 18049,
+    "name": "Dağ",
+    "category": "doga",
+    "turn": 0,
+    "maxShift": 0.0000057974017707256625,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "square",
+        "x": -0.000004829035284752253,
+        "y": 2.301265706256974e-7,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": -4.121325172594928,
+        "y": -0.5285952490823979,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": -2.535538734968023,
+        "y": -0.5285952490823979,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": -2.8284319537814757,
+        "y": 0.04044034464645146,
+        "rotation": 5,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": -5.24264551615457,
+        "y": 0.2357024905220862,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": -1.4142183914083801,
+        "y": 0.2357024905220863,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": -3.8284319537814757,
+        "y": 0.2071070113131181,
+        "rotation": 4,
+        "flipped": false
+      }
+    ]
+  },
+  {
+    "source": "Flor",
+    "label": "Flor.004",
+    "sourceLine": 16582,
+    "name": "Çiçek",
+    "category": "doga",
+    "turn": 0,
+    "maxShift": 0.000004532162374873482,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "square",
+        "x": -0.0000018685285133420835,
+        "y": 0.0000015318145867892093,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": 0.6666647981381535,
+        "y": 0.373774979667801,
+        "rotation": 4,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": 0.33333146480481995,
+        "y": 1.0404416463344677,
+        "rotation": 0,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": -0.12132291488561342,
+        "y": 3.9093081828030822,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": 0.5285936106804549,
+        "y": 2.1213218753742296,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": -0.6499183940945814,
+        "y": 2.8284279537633203,
+        "rotation": 3,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": -0.5000018685285132,
+        "y": 0.7071083130011344,
+        "rotation": 6,
+        "flipped": true
+      }
+    ]
+  },
+  {
+    "source": "Caragol",
+    "label": "Caragol.003",
+    "sourceLine": 11887,
+    "name": "Salyangoz",
+    "category": "doga",
+    "turn": 0,
+    "maxShift": 0.004749277866374569,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "square",
+        "x": -0.0000029693486586217207,
+        "y": -0.000795665085008845,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": -0.3502931034482758,
+        "y": -1.2079024462715566,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": 0.8333303639846746,
+        "y": -1.1674623317516755,
+        "rotation": 0,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": 4.499997030651341,
+        "y": -0.16746233175167557,
+        "rotation": 5,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": 1.8333303639846747,
+        "y": -0.16746233175167546,
+        "rotation": 4,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": 3.166663697318008,
+        "y": -0.16746233175167546,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": 5.499997030651341,
+        "y": -0.0007956650850087973,
+        "rotation": 4,
+        "flipped": true
+      }
+    ]
+  },
+  {
+    "source": "Abella",
+    "label": "Abella.001",
+    "sourceLine": 55,
+    "name": "Arı",
+    "category": "doga",
+    "turn": 0,
+    "maxShift": 0.03417683049030694,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "medium",
+        "x": 0.024166668599159193,
+        "y": -0.024166668599159193,
+        "rotation": 0,
+        "flipped": false
+      },
+      {
+        "pieceId": "square",
+        "x": 1.315156926268891,
+        "y": -0.8544967544890701,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": 1.6687103168621649,
+        "y": -1.9151569262688912,
+        "rotation": 5,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": 3.436477269828534,
+        "y": -2.490909090909091,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": -0.09905663610420402,
+        "y": -2.6363636363636367,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": 1.3606060606060608,
+        "y": -3.3091504313820463,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": 1.6939393939393939,
+        "y": -3.6424837647153794,
+        "rotation": 2,
+        "flipped": false
+      }
+    ]
+  },
+  {
+    "source": "Aranya",
+    "label": "Aranya.002",
+    "sourceLine": 388,
+    "name": "Örümcek",
+    "category": "doga",
+    "turn": 0,
+    "maxShift": 0.020141035314140805,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "large-a",
+        "x": 0.003610512237781615,
+        "y": 0.0027786369920426075,
+        "rotation": 5,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": 2.8320376369839724,
+        "y": 0.0027786369920425958,
+        "rotation": 5,
+        "flipped": false
+      },
+      {
+        "pieceId": "square",
+        "x": 1.417824074610877,
+        "y": 0.2384808973875583,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": 1.4727272727272729,
+        "y": -0.8019592171323227,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": -1.05704965954204,
+        "y": 0.592034287980832,
+        "rotation": 5,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": 4.010548938961552,
+        "y": 0.23848089738755834,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": 3.7748466785660373,
+        "y": 0.9455876785741064,
+        "rotation": 3,
+        "flipped": false
+      }
+    ]
+  },
+  {
+    "source": "Libelula",
+    "label": "Libelula.002",
+    "sourceLine": 17419,
+    "name": "Yusufçuk",
+    "category": "doga",
+    "turn": 0,
+    "maxShift": 0.000007869736642529433,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "square",
+        "x": 0.000003893889379396373,
+        "y": -0.0000021225982217022242,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": -0.4714006269016523,
+        "y": 1.189862068965517,
+        "rotation": 3,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": -1.4142096684837158,
+        "y": 3.0641272625434848,
+        "rotation": 5,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": -1.1785074080881999,
+        "y": 2.357020481356937,
+        "rotation": 4,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": -1.3737695539638348,
+        "y": -1.3333354559315551,
+        "rotation": 2,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": -2.0404362206305016,
+        "y": 0.6666645440684449,
+        "rotation": 0,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": -1.0606562778904418,
+        "y": 1.0606580491815996,
+        "rotation": 7,
+        "flipped": true
+      }
+    ]
+  },
+  {
+    "source": "Poma",
+    "label": "Poma.005",
+    "sourceLine": 19774,
+    "name": "Elma",
+    "category": "doga",
+    "turn": 0,
+    "maxShift": 0.005430150763206308,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "large-a",
+        "x": -0.00022045865604037319,
+        "y": -0.0016302494172606365,
+        "rotation": 5,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": -0.943029500238104,
+        "y": -0.9444392909993246,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": -1.6501362814246519,
+        "y": -1.1801415513948406,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": -0.0002204586560403539,
+        "y": -1.4158438117903565,
+        "rotation": 5,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": 0.7068863225305075,
+        "y": -0.7087370306038087,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "square",
+        "x": 1.4139931037170557,
+        "y": -1.1801415513948408,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": 0.418181818181818,
+        "y": -2.3872483325813882,
+        "rotation": 4,
+        "flipped": true
+      }
+    ]
+  },
+  {
+    "source": "Flama",
+    "label": "Flama.001",
+    "sourceLine": 16444,
+    "name": "Alev",
+    "category": "doga",
+    "turn": 0,
+    "maxShift": 0.000008462860479499889,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "square",
+        "x": -0.0000014778325123194695,
+        "y": 0.0000024630541872108135,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": -0.8333348111658456,
+        "y": -0.16666420361247955,
+        "rotation": 2,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": 0.8333318555008211,
+        "y": 0.166669129720854,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": -1.5000014778325124,
+        "y": 0.16666912972085388,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": -1.8333348111658458,
+        "y": 1.1666691297208538,
+        "rotation": 0,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": 0.8333318555008211,
+        "y": 1.1666691297208538,
+        "rotation": 2,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": -1.0000014778325124,
+        "y": -1.4999975369458127,
+        "rotation": 6,
+        "flipped": true
+      }
+    ]
+  },
+  {
+    "source": "Triangle",
+    "label": "Triangle.001",
+    "sourceLine": 22081,
+    "name": "Büyük üçgen",
+    "category": "geometri",
+    "turn": 0,
+    "maxShift": 0.000008010138338877611,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "square",
+        "x": -0.00000799378800333375,
+        "y": -5.115364754486106e-7,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": 0.47139652700302836,
+        "y": -0.7071072927230231,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": -0.707114774974551,
+        "y": 0.4714040092545562,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": 0.23569426660751236,
+        "y": 0.9428085300455878,
+        "rotation": 4,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": 1.178503308189576,
+        "y": -5.115364752809646e-7,
+        "rotation": 3,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": 2.1213123497716393,
+        "y": 0.9428085300455876,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": -1.0606681655678247,
+        "y": 1.0606596602433458,
+        "rotation": 7,
+        "flipped": false
+      }
+    ]
+  },
+  {
+    "source": "Trapezi",
+    "label": "Trapezi.001",
+    "sourceLine": 22054,
+    "name": "Yamuk",
+    "category": "geometri",
+    "turn": 0,
+    "maxShift": 0.000005834429558419658,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "square",
+        "x": 8.210180622964134e-8,
+        "y": 8.2101806232616e-7,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": 0.8333334154351396,
+        "y": 0.16666748768472905,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": -0.16666658456486022,
+        "y": 0.8333341543513957,
+        "rotation": 0,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": 0.5000000821018062,
+        "y": 1.1666674876847292,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": 3.1666667487684728,
+        "y": 0.8333341543513956,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": 1.8333334154351395,
+        "y": 0.16666748768472894,
+        "rotation": 2,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": 1.5000000821018062,
+        "y": 1.0000008210180624,
+        "rotation": 4,
+        "flipped": false
+      }
+    ]
+  },
+  {
+    "source": "Hexagon",
+    "label": "Hexagon.002",
+    "sourceLine": 17101,
+    "name": "Altıgen",
+    "category": "geometri",
+    "turn": 0,
+    "maxShift": 0.0000036096794641974154,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "square",
+        "x": -0.000002298850574716598,
+        "y": 4.92610837340449e-7,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": -0.1666689655172414,
+        "y": 0.8333338259441706,
+        "rotation": 0,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": 0.8333310344827587,
+        "y": 0.16666715927750408,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": -2.8333356321839083,
+        "y": 0.5000004926108378,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": -1.1666689655172413,
+        "y": 0.16666715927750397,
+        "rotation": 2,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": -1.8333356321839078,
+        "y": 0.8333338259441708,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": 0.49999770114942527,
+        "y": 1.0000004926108372,
+        "rotation": 4,
+        "flipped": true
+      }
+    ]
+  },
+  {
+    "source": "Fletxa",
+    "label": "Fletxa.005",
+    "sourceLine": 16501,
+    "name": "Ok",
+    "category": "geometri",
+    "turn": 0,
+    "maxShift": 0.000006922404433219647,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "square",
+        "x": -0.0000018883415436839988,
+        "y": -4.758006410876059e-17,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": -2.16666855500821,
+        "y": 0.8333333333333333,
+        "rotation": 0,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": -0.16666855500821035,
+        "y": -0.8333333333333334,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": -1.16666855500821,
+        "y": 1.5000000000000002,
+        "rotation": 3,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": -1.1666685550082103,
+        "y": -0.16666666666666669,
+        "rotation": 4,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": -0.16666855500820987,
+        "y": 1.1666666666666665,
+        "rotation": 2,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": 0.9999981116584563,
+        "y": 0.49999999999999994,
+        "rotation": 6,
+        "flipped": true
+      }
+    ]
+  },
+  {
+    "source": "Escala",
+    "label": "Escala.001",
+    "sourceLine": 13420,
+    "name": "Basamak",
+    "category": "geometri",
+    "turn": 0,
+    "maxShift": 0.028456412865011733,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "large-a",
+        "x": -0.0034632034632039368,
+        "y": -0.006493506493506172,
+        "rotation": 0,
+        "flipped": false
+      },
+      {
+        "pieceId": "square",
+        "x": 0.8298701298701294,
+        "y": -1.1731601731601728,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": 1.8298701298701296,
+        "y": -1.6731601731601728,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": 1.663203463203463,
+        "y": -2.3398268398268396,
+        "rotation": 0,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": 3.663203463203464,
+        "y": -4.0064935064935066,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": 2.9965367965367964,
+        "y": -3.006493506493506,
+        "rotation": 0,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": 4.32987012987013,
+        "y": -4.33982683982684,
+        "rotation": 5,
+        "flipped": false
+      }
+    ]
+  },
+  {
+    "source": "L",
+    "label": "L.009",
+    "sourceLine": 17299,
+    "name": "L",
+    "category": "geometri",
+    "turn": 0,
+    "maxShift": 0.000006933918291303242,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "square",
+        "x": 0.0000013465903788362614,
+        "y": 0.0000061356611485522516,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": 0.8333346799237121,
+        "y": 0.16667280232781534,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": 2.1666680132570457,
+        "y": -0.1666605310055179,
+        "rotation": 2,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": -0.028594132618589403,
+        "y": -3.4428029059209146,
+        "rotation": 0,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": 0.16666801325704547,
+        "y": -1.1666605310055178,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": 0.44281038817244217,
+        "y": -2.499993864338851,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": 1.5000013465903788,
+        "y": 0.0000061356611485522516,
+        "rotation": 4,
+        "flipped": false
+      }
+    ]
+  },
+  {
+    "source": "T",
+    "label": "T.002",
+    "sourceLine": 21388,
+    "name": "T",
+    "category": "geometri",
+    "turn": 0,
+    "maxShift": 0.009206290801817469,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "square",
+        "x": 7.190578692524655e-17,
+        "y": 0.005195566502463056,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": 0.16666666666666682,
+        "y": -0.8281377668308703,
+        "rotation": 4,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": -0.16666666666666693,
+        "y": -2.1614711001642033,
+        "rotation": 0,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": -0.05758218390804609,
+        "y": -2.8281377668308703,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": -1.3909155172413796,
+        "y": -2.8281377668308707,
+        "rotation": 0,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": 1.2757511494252873,
+        "y": -2.8281377668308707,
+        "rotation": 2,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": 6.864198245993818e-17,
+        "y": -1.494804433497537,
+        "rotation": 6,
+        "flipped": false
+      }
+    ]
+  },
+  {
+    "source": "Cor",
+    "label": "Cor.001",
+    "sourceLine": 12985,
+    "name": "Kalp",
+    "category": "geometri",
+    "turn": 0,
+    "maxShift": 0.012731983696842319,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "large-a",
+        "x": 0.0008658008658008924,
+        "y": -0.003030303030303171,
+        "rotation": 2,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": 1.334199134199134,
+        "y": -0.0030303030303031613,
+        "rotation": 0,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": -0.3324675324675326,
+        "y": -1.0030303030303032,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "square",
+        "x": 1.1675324675324676,
+        "y": -1.1696969696969697,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": 0.16753246753246753,
+        "y": -1.6696969696969695,
+        "rotation": 6,
+        "flipped": true
+      },
+      {
+        "pieceId": "small-a",
+        "x": 2.000865800865801,
+        "y": -1.0030303030303032,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": 1.3341991341991346,
+        "y": -2.003030303030303,
+        "rotation": 4,
+        "flipped": false
+      }
+    ]
+  },
+  {
+    "source": "Llamp",
+    "label": "Llamp.001",
+    "sourceLine": 17458,
+    "name": "Zikzak",
+    "category": "geometri",
+    "turn": 0,
+    "maxShift": 0.009415233273365157,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "medium",
+        "x": 0,
+        "y": 0.003911564231464491,
+        "rotation": 5,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": 0.4378146546858177,
+        "y": -0.8294217691018688,
+        "rotation": 4,
+        "flipped": true
+      },
+      {
+        "pieceId": "small-a",
+        "x": 1.1044813213524844,
+        "y": -1.662755102435202,
+        "rotation": 4,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": 1.1044813213524842,
+        "y": -2.6627551024352023,
+        "rotation": 0,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": 2.7711479880191514,
+        "y": -2.996088435768536,
+        "rotation": 4,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": 2.673516915081334,
+        "y": -4.036528550288416,
+        "rotation": 3,
+        "flipped": false
+      },
+      {
+        "pieceId": "square",
+        "x": 3.144921435872366,
+        "y": -4.743635331474965,
+        "rotation": 7,
+        "flipped": false
+      }
+    ]
+  },
+  {
+    "source": "Rombes",
+    "label": "Rombes.001",
+    "sourceLine": 20764,
+    "name": "İki eşkenar dörtgen",
+    "category": "geometri",
+    "turn": 0,
+    "maxShift": 0.05747059469789646,
+    "adaptation": null,
+    "solution": [
+      {
+        "pieceId": "square",
+        "x": 0.00000550082101825003,
+        "y": -0.01149515339758762,
+        "rotation": 6,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": 0.16667216748768499,
+        "y": -0.8448284867309209,
+        "rotation": 4,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": 0.1666721674876849,
+        "y": 0.8218381799357457,
+        "rotation": 2,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": -1.1666611658456487,
+        "y": 0.4885048466024124,
+        "rotation": 3,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-a",
+        "x": -1.971399019970014,
+        "y": -0.00042068965517239043,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": 0.97141002161205,
+        "y": 0.0742912842293173,
+        "rotation": 3,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": -0.9999944991789818,
+        "y": -0.5114951533975877,
+        "rotation": 6,
+        "flipped": true
+      }
+    ]
+  },
+  {
+    "source": "Delfi",
+    "label": "Delfi.001",
+    "sourceLine": 13156,
+    "name": "Yunus",
+    "category": "deniz-canlilari",
+    "turn": 0,
+    "maxShift": 0.02035319037950076,
+    "adaptation": "Kaynakta 120° olan kuyruk üçgeni 0° yönüne alındı; gövdenin uç köşesine bağlandı. Bütün parçalar standart ölçüde korundu.",
+    "solution": [
+      {
+        "pieceId": "large-a",
+        "x": 0.004629631776843464,
+        "y": 0.0032819690685631656,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "large-b",
+        "x": 1.4188431941499386,
+        "y": -0.4681225517224681,
+        "rotation": 5,
+        "flipped": false
+      },
+      {
+        "pieceId": "square",
+        "x": 2.833056756523034,
+        "y": -0.23242029132695252,
+        "rotation": 7,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-a",
+        "x": 2.125949975336486,
+        "y": 0.23898422946407913,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "small-b",
+        "x": 3.540163537709582,
+        "y": 0.23898422946407913,
+        "rotation": 1,
+        "flipped": false
+      },
+      {
+        "pieceId": "medium",
+        "x": -1.8809884513872837,
+        "y": 1.4174955314416586,
+        "rotation": 4,
+        "flipped": false
+      },
+      {
+        "pieceId": "parallelogram",
+        "x": 0.8181818181818183,
+        "y": -1.2930804631067736,
+        "rotation": 5,
+        "flipped": true
+      }
+    ]
+  }
+]

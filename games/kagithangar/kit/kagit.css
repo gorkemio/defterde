@@ -1,0 +1,128 @@
+/* kit/kagit.css — Kareli defter kağıdı. Hangi oyun olduğunu bilmez (amiralbatti/style.css'ten çıkarıldı).
+   Ölçü birimi --sq = bir defter karesi (JS tam sayı px olarak ayarlar, ~5 mm).
+   Kalemle çizilen her şey rough.js ile SVG'de; burada yalnız BASILI şeyler var (kareler, marj, gren, gölge).
+   Çizgi için CSS border yok. Sayfanın boyutu ve içindeki yerleşim oyunun kendi style.css'indedir:
+     .sayfa { width: calc(var(--sq) * 24); height: calc(var(--sq) * 31); --marj-x: calc(var(--sq) * 4); } */
+
+:root {
+  --sq: 19px;
+  --kagit: #fbf9f2;
+  --mavi: #1f3b9b;
+  --kirmizi: #c62828;
+  --kursun: #7a7a7a;
+  --izgara: rgba(86, 140, 214, .32);
+  --marj: rgba(214, 64, 64, .6);
+  --masa: #b6a58a;
+  /* Tükenmez kalem imleçleri: ucu (3,29) noktasında. Oyun --kalem-imlec'i sıradaki kaleme çevirebilir. */
+  --imlec-mavi: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath d='M3 29 L7 20 L24 3 Q27 1 29 3 Q31 5 29 8 L12 25 Z' fill='%23fbf9f2' stroke='%231f3b9b' stroke-width='1.8' stroke-linejoin='round'/%3E%3Cpath d='M3 29 L7 20 L12 25 Z' fill='%231f3b9b'/%3E%3Cpath d='M21 6 L26 11' stroke='%231f3b9b' stroke-width='1.4'/%3E%3C/svg%3E") 3 29, crosshair;
+  --imlec-kirmizi: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath d='M3 29 L7 20 L24 3 Q27 1 29 3 Q31 5 29 8 L12 25 Z' fill='%23fbf9f2' stroke='%23c62828' stroke-width='1.8' stroke-linejoin='round'/%3E%3Cpath d='M3 29 L7 20 L12 25 Z' fill='%23c62828'/%3E%3Cpath d='M21 6 L26 11' stroke='%23c62828' stroke-width='1.4'/%3E%3C/svg%3E") 3 29, crosshair;
+  --kalem-imlec: var(--imlec-mavi);
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  min-height: 100dvh;
+  /* viewport-fit=cover: çentik ve ana ekran çubuğu altına içerik girmesin (Kit.kalem.alan bu boşlukları düşer) */
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  display: grid;
+  place-items: center;
+  overflow-x: hidden;
+  font-family: 'Patrick Hand', 'Segoe Print', 'Bradley Hand', cursive;
+  color: var(--mavi);
+  background:
+    radial-gradient(ellipse at 50% 40%, rgba(255, 255, 255, .22), transparent 70%),
+    url("gren.png"),   /* kağıt greni: hazır PNG (canlı feTurbulence her boyamada pahalıydı) */
+    var(--masa);
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.uyari {
+  max-width: 28em;
+  margin: 2em auto;
+  padding: 1em;
+  font-size: 1.4rem;
+  color: var(--kirmizi);
+  background: var(--kagit);
+  transform: rotate(-1deg);
+}
+
+/* ---------- defter ve sayfa ---------- */
+
+.defter {
+  margin: calc(var(--sq) * 1.2) 0;
+  transform: rotate(-.6deg);
+  /* Defter tek katman olarak çizilir, eğimi sonradan GPU uygular. Aksi halde Safari, üstteki yazı her
+     değiştiğinde yalnız o bölgeyi eğik uzayda yeniden boyuyor ve basılı mavi kareler kayıyor gibi görünüyordu. */
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.sayfa {
+  --marj-x: calc(var(--sq) * 4);
+  position: relative;
+  background-color: var(--kagit);
+  background-image:
+    linear-gradient(to right,
+      transparent calc(var(--marj-x) - 1px), var(--marj) calc(var(--marj-x) - 1px),
+      var(--marj) calc(var(--marj-x) + 1px), transparent calc(var(--marj-x) + 1px)),
+    linear-gradient(to right, var(--izgara) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--izgara) 1px, transparent 1px),
+    url("gren.png");
+  background-size: 100% 100%, var(--sq) var(--sq), var(--sq) var(--sq), 256px 256px;
+  box-shadow:
+    1px 1px 0 #ece7d8, 2px 2px 0 #ddd6c3, 3px 3px 0 #ece7d8, 4px 4px 0 #cfc7b2,
+    6px 10px 16px rgba(50, 35, 15, .35);
+}
+
+svg text { font-family: 'Patrick Hand', 'Segoe Print', 'Bradley Hand', cursive; }
+svg path { stroke-linecap: round; stroke-linejoin: round; }
+
+/* ---------- düğmeler: çerçeve rough.js ile arkada çizilir ---------- */
+
+.dugme {
+  position: relative;
+  padding: calc(var(--sq) * .5) calc(var(--sq) * 1);
+  margin: 0;
+  border: 0;
+  background: transparent;
+  color: var(--mavi);
+  font: inherit;
+  font-size: calc(var(--sq) * 1.05);
+  line-height: 1;
+  cursor: pointer;
+  touch-action: manipulation;
+  outline: none;
+}
+.dugme:nth-child(odd)  { transform: rotate(-1.2deg); }
+.dugme:nth-child(even) { transform: rotate(.9deg); }
+.dugme:active { transform: translateY(1px) rotate(0deg); }
+.dugme[disabled] { color: var(--kursun); cursor: default; }
+.dugme .yazi { position: relative; display: block; }
+.cerceve { position: absolute; left: 0; top: 0; overflow: visible; pointer-events: none; }
+/* klavye odağı: kurşun kalemle çizilen çerçeve (Kit.kalem.odakCiz); düz CSS outline kullanılmaz */
+.odak { position: absolute; left: 0; top: 0; overflow: visible; pointer-events: none; }
+
+/* ---------- el yazısı harfleri (Kit.kalem.harfle ile) ---------- */
+
+.kelime { display: inline-block; white-space: nowrap; }
+.harf   { display: inline-block; }
+
+/* ---------- köşe karalamaları (oyuna karışmaz) ---------- */
+
+.susler { position: absolute; inset: 0; pointer-events: none; }
+.susle  { position: absolute; overflow: visible; pointer-events: none; }
+
+[hidden] { display: none !important; }
+.gizli { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+@media (prefers-reduced-motion: reduce) {
+  .dugme:active { transform: none; }
+}

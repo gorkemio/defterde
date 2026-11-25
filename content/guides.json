@@ -1,0 +1,238 @@
+{
+  "amiralbatti": {
+    "intro": "Kendi donanmanı yerleştir; bilgisayarın gizli gemilerini bulup batır.",
+    "rules": [
+      "Gemileri kendi tahtana yerleştir. Gemiler birbirinin üzerine gelemez.",
+      "Yerleştirme sırasında gemiyi döndürebilir, hazır olduğunda savaşı başlatabilirsin.",
+      "Rakip tahtada bir kare seçerek ateş et. İsabetleri izleyerek geminin kalan karelerini bul.",
+      "Rakibin bütün gemilerini ilk batıran kazanır."
+    ],
+    "controls": "Gemilere ve karelere dokun veya fareyle seç. Yerleştirme ekranındaki döndürme ve hazır olma kontrollerini kullan. Tablet ve telefonda kontroller tahtaya göre yer değiştirir.",
+    "paper": "İki kareli tahta çiz. Gemilerini gizle; koordinat söyleyerek sırayla atış yap."
+  },
+  "alankapmaca": {
+    "intro": "Zarlardan çıkan iki sayıyla bir dikdörtgen oluştur, çarpımını hesapla ve alanı kap.",
+    "rules": [
+      "Bilgisayara karşı veya aynı cihazda iki kişi oynamayı seç.",
+      "Zarları at. Gelen sayılar dikdörtgeninin kenarlarını belirler.",
+      "Zarların çarpımını ekrandaki sayı tuşlarıyla gir. Doğru cevaptan sonra boş bir alanda dikdörtgeninin yerini seç.",
+      "Dikdörtgenini yerleştir ve sırayı rakibine ver. Tahtadaki boşlukları ve toplam alanı takip et."
+    ],
+    "controls": "Zar düğmesi, tahta üzerindeki alan seçimi ve ekrandaki sayı tuşlarını kullan. Yön ve yerleşim kontrolleri ekran boyutuna uyarlanır.",
+    "paper": "İki zar, iki renk kalem ve kareli defter yeter. Gelen kenarlarla dikdörtgen çiz, içine çarpımı yaz."
+  },
+  "kagitfutbolu": {
+    "intro": "Topu çizgiler boyunca ilerlet, sekmelerden yararlan ve karşı kaleye ulaş.",
+    "rules": [
+      "Bilgisayara karşı veya aynı cihazda iki kişi oyna.",
+      "Topu komşu bir noktaya taşı. Daha önce kullanılan çizgiden yeniden geçemezsin.",
+      "Daha önce çizgiyle buluşmuş noktalara ve saha kenarına geldiğinde sekerek devam edebilirsin.",
+      "Karşı kaleye ulaşarak gol at. Hamlelerini açık yolları koruyacak şekilde seç."
+    ],
+    "controls": "Ekrandaki yön düğmeleriyle hamle yap. Ayarlardan oyun tercihlerini düzenle. Telefon çevrilince saha yönü uyarlanır; oyun sıfırlanmaz.",
+    "paper": "Noktalı bir saha ve iki kale çiz. Topun geçtiği her kenarı kalemle işaretle."
+  },
+  "sos": {
+    "intro": "Tahtaya S ve O yaz, yatay, dikey veya çapraz SOS dizileri tamamla.",
+    "rules": [
+      "S veya O harfini seç, boş bir kareye yerleştir.",
+      "Tamamladığın her SOS puan getirir. Tek hamlede birden fazla SOS yapabilirsin.",
+      "Fazladan tur seçeneği açıksa SOS yapan oyuncu yeniden oynar.",
+      "Tahta dolunca daha çok puanı olan kazanır. Bilgisayara karşı veya aynı cihazda iki kişi oynayabilirsin."
+    ],
+    "controls": "S/O düğmeleri ve tahta kareleriyle oyna. Klavyede oklarla seçimi taşı, S/O ile harfi seç, Enter ile yerleştir. Kayıt desteklendiğinde yenileme sonrasında tahta, sıra ve geçmiş geri gelir.",
+    "paper": "Bir kareli tahta çiz. İki renk kalemle SOS dizilerini işaretle ve kenara çetele tut."
+  },
+  "kagithangar": {
+    "intro": "Bir tasarım seç, kâğıdı katla, uçağına ad ver ve ilk uçuşuna çık.",
+    "rules": [
+      "Katalogdan bir uçak modeli seç; katlama adımlarını takip et.",
+      "Uçağını adlandır, boyasını seç ve uçuşa hazırla.",
+      "Uçuş ekranındaki atış kontrollerini kullan. Farklı atışları deneyerek uçuşunu geliştir.",
+      "Uçaklarını hangarda sakla; günlük uçuşu veya aynı cihazdaki düelloyu dene."
+    ],
+    "controls": "Katlama ve uçuş ekranlarındaki yönergeleri izle. Hangar, paylaşım ve yazdırma seçenekleri oyunun kendi menülerinde. Paylaşım bağlantısını açan kişi bağlantıdaki uçak bilgisini görebilir.",
+    "paper": "Oyunun baskı görünümünden yararlanarak aynı modeli gerçek kâğıttan katlayabilirsin."
+  },
+  "adamasmaca": {
+    "intro": "Türkçe harfleri deneyerek gizli kelimeyi çizim tamamlanmadan bul.",
+    "rules": [
+      "Tek kişilik, Okul, Hileci Hoca, Günün Kelimesi veya Maraton modunu seç.",
+      "Bir harf dene. Doğru harfler açılır; yanlışlar çizime bir çizgi ekler.",
+      "İpuçlarının da bir çizgiye mal olduğunu unutma. Kelimeyi hakların bitmeden tamamla.",
+      "Okul modunda arkadaşın gizli kelimeyi girer. Günün Kelimesi günde bir denemedir ve kayıtlı ilerleme yenilemede korunur."
+    ],
+    "controls": "Ekrandaki Türkçe klavyeyi veya fiziksel klavyeyi kullan: i → İ, ı → I. Esc içindekilere döner. Rozetler ve istatistikler bu tarayıcıda tutulur.",
+    "paper": "Bir kelime seç, harf sayısı kadar boşluk çiz. Arkadaşının doğru ve yanlış tahminlerini ayrı ayrı işaretle."
+  },
+  "kagitrallisi": {
+    "intro": "Kareli pistte hızını ve yönünü hesapla, virajları dön ve bitiş çizgisine ulaş.",
+    "rules": [
+      "Bilgisayara karşı, tek başına, günün pistinde veya aynı cihazda 2–4 kişi oyna.",
+      "Hızın önceki hamleden taşınır. Her hamlede yatay ve dikey hızını en çok bir kare değiştirerek aday noktalardan birini seç.",
+      "Yolun pistin dışına çıkarsa çarparsın. Varsayılan okul kuralında hızın sıfırlanır ve bir tur beklersin; sert kuralda elenirsin.",
+      "Kontrol noktalarını sırayla geçip seçilen tur sayısını tamamla. Tek yarış veya üç pistlik seri seçebilirsin."
+    ],
+    "controls": "Aday noktalara dokun veya fareyle seç. Klavyede oklarla aday seçimini taşı, Enter ile onayla; 1–9 tuşları da dokuz adaya karşılık gelir. Ctrl/Cmd+Z ile geri al; yarış modunda geri alma kapalıdır. Ses düğmesiyle sesi, Ayarlar menüsüyle yarış kurallarını değiştir.",
+    "paper": "Kareli kâğıda kapalı bir pist çiz. Arabanı bir noktayla işaretle; her turda önceki hız vektörünü taşı ve ucunu yatay/dikey en fazla bir kare değiştir."
+  },
+  "dokuztas": {
+    "intro": "Dokurcun adıyla da bilinen Dokuz Taş’ta üçlü bir sıra kur, rakibinin taşlarını azalt.",
+    "rules": [
+      "Her oyuncunun dokuz taşı vardır. Sırayla boş noktalara birer taş yerleştirin.",
+      "Aynı çizgide üç taşını hizalayarak değirmen kurduğunda rakibin bir taşını alırsın. Değirmen dışındaki taşları seç; rakibin bütün taşları değirmendeyse birini alabilirsin.",
+      "Eldeki taşlar bitince kendi taşını çizgi boyunca komşu boş noktaya kaydır. Üç taşın kalırsa, uçma ayarı açıkken herhangi bir boş noktaya gidebilirsin.",
+      "Rakibini iki taşa düşürürsen veya hiç hamle yapamayacak duruma getirirsen kazanırsın. Tekrarlanan konumlar ve uzun süre taş alınmaması beraberlikle sonuçlanabilir."
+    ],
+    "controls": "Boş noktaya dokunarak taş koy. Hareket aşamasında önce taşını, sonra hedef noktayı seç veya sürükle. Geri al ve İpucu yardım eder. Ayarlar’dan kolay, orta veya zor bilgisayarı ya da aynı cihazda iki kişiyi; çakıl veya fasulye taşlarını seçebilirsin. Ses isteğe bağlıdır.",
+    "paper": "İç içe üç kare çiz ve kenar ortalarını birleştir. İki farklı renkten dokuzar taş, fasulye veya düğmeyle aynı kuralları oyna."
+  },
+  "xox": {
+    "intro": "Kareli defterde X ve O’larla beşli sıra kur. Klasik üçlü XOX’tan daha geniş bir tahtada birkaç hamle sonrasını düşün.",
+    "rules": [
+      "X başlar; sırayla boş bir kareye kendi işaretini yerleştir.",
+      "Yatay, dikey veya çapraz beş ya da daha fazla işareti kesintisiz sıralayan kazanır.",
+      "Rakibin açık üçlü ve dörtlülerini kapat; iki ayrı kazanma tehdidi oluşturmaya çalış.",
+      "15×15 tahta veya sınırsız sayfa seçebilirsin. Tek oyun ya da üç galibiyetlik seri oynanabilir."
+    ],
+    "controls": "Kareye dokun veya tıkla. Ok tuşlarıyla gezip Enter ile işaret koy. Geri al, İpucu ve Tehditler yardımcı olur. Sayfanın altından bilgisayar/iki kişi, zorluk ve tahta boyutunu seç. Telefonda iki dokunuşlu hamleyi açabilirsin.",
+    "paper": "Kareli deftere sırayla X ve O yazın. Yatay, dikey veya çapraz beşliyi ilk tamamlayan kazansın."
+  },
+  "noktaoyunu": {
+    "intro": "İki komşu nokta arasına çizgi çek, kutuyu tamamla ve kuru boyayla kendi rengine boya.",
+    "rules": [
+      "Sırayla yatay veya dikey iki komşu noktayı bir çizgiyle birleştir.",
+      "Bir kutunun dördüncü kenarını çizdiğinde kutu senin olur ve bir hamle daha yaparsın.",
+      "Birbirine bağlı kutular zincir oluşturur. Rakibine uzun bir zincir bırakmadan hamlelerini planla.",
+      "Bütün çizgiler çizilince en çok kutuyu alan kazanır. İstersen hazır yirmi bulmacayı çöz."
+    ],
+    "controls": "İki noktanın arasına dokun veya tıkla. Tahtada ok tuşlarıyla gezip Enter ya da boşlukla çiz; Ctrl+Z ile geri al. Ayarlar’dan rakip, zorluk, boyut ve bulmaca modunu seç. İpucu, Tehlike ve Zincirler konumu anlamana yardımcı olur.",
+    "paper": "Kâğıda eşit aralıklı bir nokta örgüsü çiz. İki farklı kalemle oynayın; kapanan kutuya baş harfinizi yazın."
+  },
+  "sayibulma": {
+    "intro": "Gizli sayıyı tahmin et; her satırdaki artı ve eksilerle olasılıkları daralt.",
+    "rules": [
+      "Varsayılan oyunda ilk hanesi sıfır olmayan dört haneli bir sayı aranır. Rakamlar tekrar edebilir; örneğin 5755. Ayarlar’dan farklı rakamları seçebilirsin.",
+      "Artı (+), doğru yerdeki doğru rakamı; eksi (−), sayıda bulunan ama yeri yanlış rakamı gösterir.",
+      "Bütün haneleri doğru yerde bulana kadar tahminlerini alt alta yaz. Rakam çizelgesine not alarak adayları ele.",
+      "Sen bul, O bulsun, Yarış, İki kişi ve Günün sayısı modları vardır. Ayarlar’dan 3–5 hane, ilk hanede sıfır ve tekrarlı rakam seçeneklerini değiştirebilirsin. Günün sayısı her zaman rakamları farklı dört haneli bir sayıdır."
+    ],
+    "controls": "Klavyeden veya ekrandaki rakam tuşlarından sayını gir, Tahmin düğmesiyle gönder. O bulsun modunda bilgisayarın tahminine artı/eksi cevabı verebilirsin. İki kişilik oyunda cihazı sırayla kullan; cevapları cihazın hesaplamasını veya kendiniz vermeyi seç.",
+    "paper": "Biriniz gizli bir sayı yazsın. Diğeri tahminlerini sıralasın; her tahminin yanına doğru yerler için artı, yanlış yerler için eksi sayısını not edin."
+  },
+  "turkdamasi": {
+    "intro": "Mavi ve kırmızı kuru boya taşlarla Türk Daması oyna. Kolay, orta veya zor bilgisayarı ya da aynı cihazda iki kişiyi seç.",
+    "rules": [
+      "Her oyuncu 16 taşla başlar; ilk hamle mavinindir. Normal taş bir kare ileri veya yana gider, geri ve çapraz gidemez.",
+      "Alabileceğin taş varsa almalısın. Birden fazla yol varsa bütün taşların arasından en çok taş alan tam yolu seç; eşitlikte dama önceliği yoktur.",
+      "Alma zincirinde aynı taşla devam et. Son sıraya ulaşan normal taş, bitişik almalarını tamamladıktan sonra tur sonunda dama olur.",
+      "Dama dört dik yönde uzun adımlar atabilir. Her atlayışta tek rakip taşın üzerinden geçer; zincirde son yönünün tam tersine dönemez.",
+      "Rakibin taşı veya yasal hamlesi kalmazsa kazanırsın. İki tarafta birer taş kalması, aynı konumun aynı sırayla üçüncü kez oluşması veya kabul edilen teklif beraberliktir."
+    ],
+    "controls": "Önce taşına, sonra hedef kareye dokun. Ok tuşlarıyla gez, Enter veya boşlukla seç. Geri al, İpucu ve Nasıl oynanır yardımcı olur; açılır kurallar penceresinde dört örneği izleyebilirsin. Alttaki oyun modu yazısına dokunarak Ayarlar’ı aç; mod, renk, zorluk ve beraberlik teklifi buradadır. Yalnız tercihler saklanır; sayfa yenilendiğinde yeni oyun başlar.",
+    "paper": "8×8 tahta çiz. İki renkten 16’şar taşı kendi tarafındaki ikinci ve üçüncü sıralara diz; ilk ve son sıra boş kalsın. Dama olan taşı bir işaretle ayır."
+  },
+  "kibrit": {
+    "intro": "Defterin üzerindeki yanlış eşitliği kibrit çöpleriyle düzelt. Bilgisayara karşı maç yap, kendi hızında çöz veya aynı cihazda bir arkadaşınla oyna.",
+    "rules": [
+      "Her bulmacanın talimatını izle: bir ya da iki çöpü taşı, kutudan bir çöp ekle veya bir çöpü kutuya kaldır. İşlem sonunda eşitliğin iki tarafı aynı değerde olmalı.",
+      "Rakamlar ve işaretler sayfanın altındaki örneklere uymalı. Bir çöpü taşımak, onu bir yuvadan alıp boş bir yuvaya bırakmaktır.",
+      "Maçta aynı bulmacayı önce çözen turu alır. Ayarlar’dan 3, 5 veya 7 tur ile Kolay, Orta, Zor veya Usta seviyesini seçebilirsin.",
+      "Hepsini Bul’da 75 saniye içinde farklı çözümleri ara. Boz ve Düzelt’te sırayla eşitliği bozup düzelt; Kitaplar’da yüzer bulmacalık bölümleri çöz, Sonsuz’da seviyene uygun bulmacalarla ilerle.",
+      "Günün bulmacası herkese aynıdır; sonucunu paylaşabilirsin. İki kişi modunda aynı cihazı sırayla kullanabilir veya uygun geniş ekranda karşılıklı yarışabilirsin."
+    ],
+    "controls": "Bir çöpe dokunup boş yuvaya dokun veya sürükleyip bırak. Klavyede Tab ile gezin, Enter ile çöpü alıp bırak, Escape ile vazgeç; Ctrl+Z geri alır. Geri al, Baştan, İpucu ve Pes et düğmelerini kullanabilirsin. Modlar ve Ayarlar alttadır; ses simgesi sesi açıp kapatır. Tercihler, kitap ilerlemesi ve günlük sonuçlar bu tarayıcıda saklanır; devam eden maç yenilemede yeniden başlar.",
+    "paper": "Kâğıda çubuklardan oluşan yanlış bir eşitlik çiz. Bir çubuğu silip başka yere çizerek doğru yapmayı dene. Gerçek kibrit kullanmak yerine kalemle veya güvenli sayma çubuklarıyla oyna."
+  },
+  "labirent": {
+    "intro": "Siyah sayfalı eskiz defterinde girişten çıkışa simli jel kalemle yol çiz. Günün labirentini çöz, dört defterde ilerle veya silgiden kaç.",
+    "rules": [
+      "Yolu girişten başlat; duvarları aşmadan çıkışa ulaş. Fareyle ya da tek parmakla çiz, klavyede ok tuşlarını kullan. Geri dönmek çizdiğin yolu geri sarar.",
+      "Günün modunda aynı gün aynı labirent açılır. Bölümler modunda dikdörtgen, daire, altıgen ve dokuma defterlerinin her birinde kolaydan zora 20 seviye bulunur.",
+      "Serbest modda tür, boy ve labirent karakterini seç. Kodunu veya bağlantısını paylaşarak aynı labirenti başka bir cihazda açabilirsin.",
+      "İpucu sonraki yolu gösterir ve süreye 10 saniye ekler. Çözümü gösterdiğin koşu en iyi süre olarak kaydedilmez.",
+      "Hayalet menüsünden bilgisayarın üç zorluğundan birini veya kendi en iyi koşunu seç. Rakip ilk çizginle başlar.",
+      "Sonsuz modda aşağı ilerle ve giderek hızlanan silgiden uzak kal. Ayarlardan kalem rengi, UV ışığı, iz bırakma ve azaltılmış hareketi seçebilirsin."
+    ],
+    "paper": "Yazdır komutuyla labirenti açık kâğıda uygun biçimde çıkar. Bir kalemle girişten çıkışa yolunu bul; istersen aynı labirenti arkadaşınla ayrı kâğıtlarda süre tutarak çöz.",
+    "controls": "Telefonda iki parmakla yakınlaştır ve kaydır. Fare tekerleği yakınlaştırır; boşluk tuşunu tutup sürüklemek sayfayı kaydırır. Dokuma labirentte yollar köprülerle birbirinin altından geçebilir. Geçitlerin yönünü izle. Süreler, bölüm ilerlemesi ve ayarlar bu tarayıcıda saklanır. Hesap veya kurulum gerekmez."
+  },
+  "kakuro": {
+    "intro": "Kareli defterde toplamları çöz. Kolay, orta ve zor seviyelerde yirmişer bulmaca seni bekliyor; her biri boş başlar ve tek çözümlüdür.",
+    "rules": [
+      "Beyaz karelere 1’den 9’a birer rakam yaz.",
+      "Koyu karenin sağ üstündeki toplam sağa, sol altındaki toplam aşağıya aittir. Arada koyu kare bulunmayan beyaz kareler bir toplam grubu oluşturur.",
+      "Her gruptaki rakamların toplamı ipucuna eşit olmalı; aynı grupta hiçbir rakam tekrarlanamaz. Yatay ve dikey koşulları birlikte sağla.",
+      "Not al ile aday rakamları işaretle. İpucu, olasılıkları neden elediğini adım adım anlatır; kesin rakamı Uygula ile yazabilirsin. Bir hücreyi aç ayrı bir yardımdır.",
+      "Bulmacalar menüsünden zorluk ve bölüm seç. Yardımlı ve yardımsız tamamlamalar ayrı tutulur; geri almak yardım sayısını azaltmaz."
+    ],
+    "controls": "Bir kare seçip ekrandaki rakamlara dokun veya klavyede 1–9 kullan. N not modunu açar; Delete/Backspace siler, Ctrl/⌘+Z geri alır. Oklarla gezin, Yatay/Dikey ile toplam grubunu seç. Büyük tahtaları kendi alanında kaydır. İlerleme ve tercihler bu tarayıcıda saklanır; liste, öğretici, duraklatma ve gizli sekmede süre durur.",
+    "paper": "Koyu ve beyaz karelerden bir tahta çiz; koyu karelere sağa ve aşağı toplamlarını yaz. Beyaz kareleri kalemle doldur, adayları küçük rakamlarla not et. Aynı toplam grubunda rakamları tekrarlama."
+  },
+  "tangram": {
+    "intro": "Aynı yedi tangram parçasıyla 120 silueti tamamla. Şekilleri keşfet veya kendi bulmacanı tasarla.",
+    "rules": [
+      "İki büyük, bir orta ve iki küçük üçgen, bir kare ve bir paralelkenardan oluşan yedi parçayı kullan.",
+      "Parçalar silueti boşluk bırakmadan kaplamalı; içleri üst üste gelmemelidir. Alternatif doğru çözümler kabul edilir.",
+      "Fareyle parçaya tıkla, taşı ve tekrar tıklayıp bırak. Sürüklemek veya telefonda seçip boş noktaya dokunmak da mümkündür.",
+      "Parça elindeyken sağ tık, tekerlek veya döndürme düğmeleriyle 45 derece çevir. Paralelkenarı ters çevirebilirsin.",
+      "İpucu ve iç sınırlar yardımcı olur. Çözüm önizlemesi kendi düzenini korur ve tek başına tamamlanma sayılmaz.",
+      "Kendi şeklini yap bölümünde yedi parçayı birbirine dokunacak ve çakışmayacak biçimde yerleştir; ad verip kaydet."
+    ],
+    "paper": "Kare bir kâğıdı klasik yedi tangram parçasına ayır. Parçaları kesip ekrandaki silueti aynı yedi parçayla oluşturmaya çalış.",
+    "controls": "1–7 ile seç; oklarla taşı, Shift + oklarla ince ayarla. Q/E döndürür, F paralelkenarı çevirir, Enter hizalar, Delete parçayı alta alır; Ctrl/Cmd + Z geri alır. Escape eldeki taşımayı iptal eder. Favoriler, ilerleme ve kişisel şekiller bu tarayıcıda saklanır."
+  },
+  "domino": {
+    "intro": "Kareli defterde çekmeli domino. Bilgisayara karşı üç zorlukta veya aynı cihazda iki kişi oyna; tek el, 50 ya da 100 puanlık maç seç.",
+    "paper": "Bir çift-altılı domino takımıyla her oyuncuya yedi taş dağıt. Kalanları kapalı havuz yap; aynı kurallarla eşleşen uçları birleştir ve el sonu puanlarını deftere yaz.",
+    "controls": "Alttaki mod yazısı ayarları açar. Yeni maç hemen yeniden dağıtır. Geri al yalnız seçimi temizler; oynanan taş geri dönmez. İpucu yaklaşık bir hamle önerir, sen onaylarsın. Sırala elini bir kez sıralar. Ok tuşları, Home ve End elde gezinir; Enter veya boşluk seçer, Escape seçimi temizler. Tahta ve el ayrı kaydırılır; uç bağlantıları zincirin iki ucuna götürür. Ayarlar ve ses tercihi saklanır; sayfayı yenilemek maçı sıfırlar.",
+    "rules": [
+      "Oyun hatırlanan ayarlarla hemen başlar. Alttaki mod yazısına dokunarak rakibi, zorluğu, maç hedefini ve oyuncu adlarını değiştir.",
+      "Her oyuncu yedi taş alır. Dağıtılan ellerdeki en büyük çift açar; çift yoksa toplamı en yüksek taş başlar.",
+      "Altı çizili uygun taşı seç, zincirin eşleşen ucunu belirle ve Oyna ile onayla. Yalnız bir uç uygunsa kendiliğinden seçilir. Sıfır yalnız sıfırla eşleşir.",
+      "Hamlen yoksa Taş çek. İlk uygun taş gelince çekiş durur; taşı kendin oynarsın. Havuz boşsa pas geçilir.",
+      "Elini ilk bitiren, rakibinin kalan noktalarını alır. İki ardışık pas eli kilitler; noktası az olan farkı kazanır. Eşit toplamda puan verilmez.",
+      "İki kişilik oyunda sıra değişince eller kapanır. Cihazı sıradaki oyuncuya ver; Hazırım ile yalnız kendi elini aç."
+    ]
+  },
+  "mangala": {
+    "intro": "Kendi sırandaki taşları dağıt, rakibinin kuyularından taş kazan ve hazineni doldur.",
+    "rules": [
+      "İki sırada altışar kuyu vardır; oyun her kuyuda dört taşla başlar. Kendi sırandaki dolu bir kuyuyu seç.",
+      "Birden fazla taş varsa ilkini seçtiğin kuyuya bırak, kalanları sırayla dağıt. Tek taş varsa onu bir sonraki konuma taşı. Kendi hazinene taş bırakır, rakibin hazinesini atlarsın.",
+      "Son taş kendi hazinene düşerse ve set bitmediyse yeniden oynarsın. Bu oyunda tek taşın doğrudan hazineye düşmesi de ek hamle verir.",
+      "Son taş rakip kuyusundaki taş sayısını çift yaparsa o kuyudaki tüm taşları hazinene al. Son taş kendi boş kuyuna düşerse, karşı kuyu doluysa iki kuyunun taşlarını birlikte al.",
+      "Kuyularını ilk boşaltan, karşı sırada kalan taşları da toplar. Hazinesinde daha çok taş bulunan seti kazanır; 24–24 beraberliktir. Kale kuralı kullanılmaz.",
+      "Alttaki oyun bilgisine dokunarak bilgisayarın üç zorluk seviyesinden birini veya aynı cihazda iki kişiyi, tek set veya beş setlik maçı seç. İlk başlayan kurayla belirlenir."
+    ],
+    "controls": "Kuyulara dokun veya ok tuşlarıyla dolaşıp Enter ya da boşluk tuşuyla oyna. Geri al bilgisayarın takip eden hamlelerini de geri alır. İpucu bir kuyu önerir. Nasıl oynanır bölümündeki dört örnek maçını değiştirmez. Ses başlangıçta kapalıdır. Ayarlar bu tarayıcıda saklanır; yarım kalan oyun saklanmaz.",
+    "paper": "İki sıra altışar kuyu ve iki hazine çiz. Her kuyuya dört küçük taş veya boncuk koy; toplam 48 taşı aynı kurallarla dağıtarak iki kişi oyna."
+  },
+  "nonogram": {
+    "intro": "Kareli defterde sayılara bakarak saklı resmi bul. Sekiz defterde 167 resim, günün karalaması ve yeni desenler üreten Kilim Defteri seni bekliyor.",
+    "rules": [
+      "Her satırın solundaki ve her sütunun üstündeki sayılar, o çizgide art arda kaç kare karalanacağını sırayla gösterir.",
+      "İki sayı grubunun arasında en az bir boş kare bırak. Örneğin 2 1, iki bitişik kareden sonra en az bir boşluk ve bir dolu kare demektir.",
+      "Dolu kareleri karala; kesin boş karelere çarpı koy. Satır ve sütunları birlikte değerlendir. Bütün ipuçları sağlanınca saklı resim ortaya çıkar ve kuru boyayla boyanır.",
+      "Klasik modda Kontrol et yanlışları gösterir. Rahat modda yanlış işaret hemen silinir. Üç Silgi modunda üç hata hakkın vardır.",
+      "İpucu bir sonraki mantık adımını açıklar. Nasıl oynanır bölümündeki İzle ile çözümü adım adım takip edebilirsin.",
+      "Günün karalaması Türkiye saatine göre değişir. Kilim Defteri yeni desenler üretir; Kendi resmini yap ile çizdiğin bulmacayı bağlantıyla paylaşabilirsin."
+    ],
+    "controls": "Dokunarak karala, çarpı koy veya temizle; basılı tutarak çarpı koy. Sürüklemek tek satır veya sütunda işaretler. İki parmakla yakınlaştır ve kaydır. Klavyede oklarla gezin, boşlukla karala, X ile çarpı koy, Delete ile sil; Ctrl/⌘+Z geri alır. İlerleme, albüm ve ayarlar bu tarayıcıda saklanır. Çocuk modu küçük bulmacalar ve Rahat modu kullanır.",
+    "paper": "Yazdır bölümünden bulmacayı, cevap anahtarını veya sınıf setini A4 kâğıda çıkar. Sayılara uyan kareleri kurşun kalemle karala; ortaya çıkan resmi kuru boyayla renklendir."
+  },
+  "besharf": {
+    "intro": "Daktilonun başına geç: beş harfli Türkçe kelimeyi altı tahminde bul.",
+    "rules": [
+      "Beş harfli bir kelime yaz ve Enter ile gönder. Listede bulunmayan kelimeler tahmin hakkını tüketmez.",
+      "Doğru yerdeki harfin kutusu mor kopya kalemiyle taranır. Kelimede başka yerde bulunan harf çember içine alınır; bulunmayan harfin üstü çizilir.",
+      "Bir harf birden çok kez yazıldıysa yalnız cevapta bulunduğu kadar işaretlenir. I ve İ farklı harflerdir.",
+      "Günün kelimesi herkes için aynıdır ve Türkiye saatiyle gece yarısında değişir. Günlük tahminlerin yenileyince korunur; istatistik ve seri yalnız bu modda tutulur.",
+      "Serbest bölümünde rastgele kelime oyna, arkadaşına kelime bağlantısı gönder veya aynı cihazda iki kişi sırayla kelime belirleyip bul.",
+      "Düelloda bilgisayarla aynı kelimeyi sırayla tahmin et. Üç ya da beş kelimelik maç ve üç zorluk seviyesi vardır.",
+      "Zor modda bulduğun doğru yerleri koru ve kelimede olduğu bilinen harfleri kullan. Oyun sonunda Analiz bölümünden adayları ve önerileri incele."
+    ],
+    "controls": "Ekrandaki daktilo tuşlarını ya da fiziksel klavyeyi kullan. Enter tahmini gönderir, Backspace harfi siler. Ayarlar bölümünden Türkçe Q, F veya alfabe düzenini, zor modu ve sesleri seç. Paylaş sonucu kelimeyi açıklamadan kopyalar. Kayıtlar bu tarayıcıda tutulur.",
+    "paper": "Bir kişi beş harfli bir kelimeyi gizlice seçsin. Diğeri altı satırlı, beş kutulu bir ızgaraya tahminlerini yazsın. Doğru yeri tara, başka yerdeki harfi çemberle, olmayan harfin üstünü çiz."
+  }
+}

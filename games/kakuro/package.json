@@ -1,0 +1,13 @@
+{
+  "name": "kakuro-defterde",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Kakuro — Defterde, çevrimdışı Türkçe Kakuro",
+  "scripts": {
+    "check": "node tools/check.cjs",
+    "test": "node --test test/*.test.cjs",
+    "generate": "node tools/generate.cjs",
+    "verify:content": "node tools/verify-content.cjs",
+    "preview": "node tools/serve.cjs"
+  }
+}

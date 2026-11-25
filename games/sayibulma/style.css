@@ -1,0 +1,171 @@
+/* Sayı Bulma yerleşimi. Ölçüler draw.js'in yerlesim()'inden: --satir (satır aralığı, px), --W / --H (sayfa, px).
+   Kâğıt kit/kagit.css + kit/cizgili.css'ten, kalem kit/kirmizimavi.css'ten. Süs yok. */
+:root { --W: 540px; --H: 900px; --tuslar-h: 0px; }
+body {
+  display: flex; flex-direction: column; justify-content: safe center; align-items: center;
+  overflow-x: hidden; padding-bottom: calc(env(safe-area-inset-bottom) + var(--tuslar-h));
+}
+.defter { flex: none; margin: 28px 0 22px; transform: rotate(-.6deg); }
+body[data-duzen="dar"] .defter { margin: 20px 0 14px; transform: rotate(-.35deg); }
+
+.sayfa { width: var(--W); height: var(--H); }
+.katman { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
+
+/* Komutlar: altı kalemle çizili sözcükler; her biri bir defter satırına oturur. Dokunma alanı ::after ile büyür. */
+.komutlar {
+  position: absolute; display: flex; flex-wrap: wrap; align-items: flex-end;
+  column-gap: calc(var(--satir) * .5); row-gap: 0;
+  left: var(--kx); top: var(--ky); width: var(--kw);
+}
+.sozcuk {
+  height: var(--satir); display: inline-flex; align-items: flex-end;
+  padding: 0 .2em calc(var(--satir) * .1); margin: 0;
+  font-size: calc(var(--satir) * .5); line-height: 1; white-space: nowrap;
+}
+.sozcuk::after { content: ''; position: absolute; inset: -6px -4px; }
+.sozcuk .yazi { position: relative; }
+.tahmin-dugme { position: absolute; left: var(--tx); top: var(--ty); }
+
+/* Rakam çizelgesi: kalemle yazılmış rakamların üstünde görünmez düğmeler */
+.cizelge { position: absolute; left: 0; top: 0; }
+.cizelge button {
+  position: absolute; padding: 0; margin: 0; border: 0; background: transparent; cursor: pointer; touch-action: manipulation;
+}
+
+button:focus { outline: none; }
+button:focus-visible { outline: 1px dashed var(--km-mavi); outline-offset: 2px; }
+@media (forced-colors: active) { button:focus-visible { outline-color: CanvasText; } }
+
+/* Tuş takımı: ekranın altına sabit kâğıt şerit (yalnız dokunmatik/dar ekran) */
+.tuslar { display: none; }
+body[data-tuslar="acik"] .tuslar {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 30;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px 6px;
+  padding: 10px max(12px, env(safe-area-inset-right)) calc(8px + env(safe-area-inset-bottom)) max(12px, env(safe-area-inset-left));
+  background: url("kit/gren.png"), var(--kagit);
+  box-shadow: 0 -1px 1px rgba(40, 24, 10, .2), 0 -10px 24px -10px rgba(30, 18, 6, .45);
+}
+.tus {
+  position: relative; height: 48px; padding: 0; margin: 0; border: 0; background: transparent;
+  color: var(--km-mavi); font: inherit; font-size: 19px; touch-action: manipulation; cursor: pointer;
+}
+.tus svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
+.tus[aria-disabled="true"] svg, .tus[aria-disabled="true"] .yazi { opacity: .28; }
+.tus .yazi { position: relative; }
+
+/* Giriş: ipucu görünürken kutuların üstünde görünmez "kabul et" düğmesi; "tahmin" eksikken soluk */
+.giris-alan { position: absolute; left: var(--gx); top: var(--gy); width: var(--gw); height: var(--satir); padding: 0; border: 0; background: transparent; cursor: pointer; }
+.tahmin-dugme[disabled] { cursor: default; }
+.ipucu-not { position: absolute; left: var(--px); top: var(--py); color: var(--km-kirmizi) !important; }
+.isaret { position: absolute; left: 0; top: 0; overflow: visible; pointer-events: none; }
+
+/* Notlar: sayfanın boş satırlarına kalemle yazılmış gibi; her satır bir defter satırına oturur */
+.not {
+  position: absolute; left: var(--nx); top: var(--ny); width: var(--nw);
+  margin: 0; font-size: calc(var(--satir) * .48); line-height: var(--satir); color: var(--km-mavi);
+}
+.not p { margin: 0; padding-top: calc(var(--satir) * .2); min-height: var(--satir); }
+.not b { color: var(--km-kirmizi); font-weight: normal; }
+.ayar-grup { display: flex; flex-wrap: wrap; align-items: flex-end; column-gap: .1em; }
+.ayar-grup, .not-komut { padding-top: 0 !important; }
+.ayar-ad { margin-right: .4em; color: var(--km-kursun); align-self: flex-end; padding-bottom: calc(var(--satir) * .1); }
+.ara { color: var(--km-kursun); align-self: flex-end; padding-bottom: calc(var(--satir) * .1); }
+.ayar {
+  position: relative; display: inline-flex; align-items: flex-end; height: var(--satir); padding: 0 .2em calc(var(--satir) * .1);
+  margin: 0; border: 0; background: transparent; color: var(--km-kursun); font: inherit; cursor: pointer; touch-action: manipulation;
+}
+.ayar[aria-pressed="true"] { color: var(--km-mavi); }
+.ayar[aria-disabled="true"] { opacity: .4; cursor: default; }
+.ayar .yazi { position: relative; }
+.ayar .cerceve { position: absolute; left: 0; top: 0; overflow: visible; pointer-events: none; }
+.ayar-aciklama { color: var(--km-kirmizi); font-size: .9em; }
+.not-komut { display: flex; gap: calc(var(--satir) * .6); }
+.not .sozcuk { font-size: calc(var(--satir) * .5); position: relative; }
+/* Örnek satır: kalemle rakamlar + açıklama; açıklama sığmazsa bir alt defter satırına geçer */
+.ornek-satir { display: flex; flex-wrap: wrap; align-items: flex-end; column-gap: .6em; padding-top: 0 !important; }
+.ornek-satir > svg, .ornek-satir > .aciklama { height: var(--satir); }
+.ornek { height: var(--satir); overflow: visible; flex: none; }
+.aciklama { display: flex; align-items: flex-end; color: var(--km-kursun); font-size: .85em; line-height: 1; padding-bottom: calc(var(--satir) * .14); white-space: nowrap; }
+
+/* O bulsun */
+.basla-not { position: absolute; left: var(--bx); top: var(--by); width: var(--nw); font-size: calc(var(--satir) * .48); line-height: var(--satir); color: var(--km-kursun); }
+.basla-not p { margin: 0; padding-top: calc(var(--satir) * .2); min-height: var(--satir); }
+.basla-not .not-komut { padding-top: 0; flex-wrap: wrap; row-gap: 0; }
+.basla-not .sozcuk { font-size: calc(var(--satir) * .5); position: relative; }
+.sayac { position: absolute; padding: 0; margin: 0; border: 0; background: transparent; cursor: pointer; touch-action: manipulation; }
+.sayac::after { content: ''; position: absolute; inset: -6px -3px; }
+.cevapla { position: absolute; left: var(--cx); top: var(--cy); }
+.cevaplar { position: absolute; left: 0; top: 0; }
+.cevaplar button { position: absolute; padding: 0; margin: 0; border: 0; background: transparent; cursor: pointer; }
+
+/* İki kişi: sayfanın üstüne kapatılan boş yaprak ("telefonu arkadaşına ver") */
+.devir {
+  position: absolute; inset: 0; z-index: 12; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: calc(var(--satir) * .4); padding: 0 calc(var(--satir) * 1.2); text-align: center;
+  background-color: var(--kagit);
+  background-image: repeating-linear-gradient(to bottom, var(--cizgi) 0 1px, transparent 1px var(--satir)), url("kit/gren.png");
+  background-size: 100% 100%, 256px 256px;
+  font-size: calc(var(--satir) * .6); line-height: 1.3; color: var(--km-mavi);
+  box-shadow: 0 2px 6px rgba(40, 24, 10, .25);
+}
+.devir p { margin: 0; }
+.devir .sozcuk { font-size: calc(var(--satir) * .6); position: relative; }
+
+/* Yeni sayfa: yırtılıp kalkan eski sayfanın kopyası */
+.sayfa.yirtilan { position: absolute; left: 0; top: 0; z-index: 20; pointer-events: none; transform-origin: 60% 0; will-change: transform; }
+
+/* Kalemle dokunulan yerlerde iki uçlu kalem imleci (kit/kirmizimavi.css) */
+#cizelge button, .giris-alan, .sayac, .cevaplar button { cursor: var(--kalem-imlec); }
+
+/* Telefonda tuş takımı sayfanın altını örter: odağa ve "görünür alana getir"e onun boyu kadar pay bırakılır */
+html { scroll-padding-bottom: calc(var(--tuslar-h) + 8px); }
+
+/* Geniş ekranda tuş takımı: sayfanın altında tek sıra (1 … 9, 0, sil, tahmin) */
+@media (min-width: 600px) {
+  body[data-tuslar="acik"] .tuslar {
+    left: 50%; right: auto; width: min(calc(var(--W) + 24px), 100vw); transform: translateX(-50%);
+    grid-template-columns: repeat(12, 1fr); gap: 0 2px; padding: 4px 10px calc(4px + env(safe-area-inset-bottom));
+    border-radius: 2px 2px 0 0;
+  }
+  .tus { height: 46px; }
+  .tus[data-tus="0"] { order: 1; }
+  .tus[data-tus="sil"] { order: 2; }
+  .tus[data-tus="tahmin"] { order: 3; }
+}
+
+/* Defterde platform kopyası: kaynağa dokunmadan ana sayfaya dönüş. */
+body { position: relative; padding-top: calc(48px + env(safe-area-inset-top, 0px)); }
+main { position: relative; }
+.defterde-donus {
+  position: absolute; bottom: 100%; left: 8px;
+  display: inline-flex; align-items: center; min-height: 44px; padding: 0 8px;
+  color: #393732; font-family: inherit; font-size: 18px; line-height: 1.4;
+  background: none; border: 0; text-decoration: none; white-space: nowrap; touch-action: manipulation;
+}
+.defterde-donus:hover, .defterde-donus:active { color: #182e7c; text-decoration: underline; text-underline-offset: 3px; }
+.defterde-donus:focus-visible { outline: 2px dashed #182e7c; outline-offset: -2px; }
+.defterde-donus-dialog { position: static; }
+:root:has(:fullscreen) .defterde-donus, :root:fullscreen .defterde-donus, body.tam-ekran .defterde-donus { display: none; }
+:root:has(:fullscreen) body, :root:fullscreen body, body.tam-ekran { padding-top: env(safe-area-inset-top, 0px); }
+@media print { .defterde-donus { display: none !important; } body { padding-top: 0; } }
+
+
+/* Platform kopyası: oyunların kalemleri ve noktalı/çizgili sayfası korunur. */
+html:root { --kagit: #fbf9f2; }
+html:root main.defter { position: relative; isolation: isolate; }
+html:root main.defter::before, html:root main.defter::after {
+  content: ''; position: absolute; inset: 0; pointer-events: none; border-radius: 0;
+  background: url("kit/gren.png") #f7f4eb;
+}
+html:root main.defter::before {
+  z-index: -2; background-color: #efebdf; transform: translate(4px, 6px);
+  box-shadow: 16px 28px 40px -6px rgba(58, 36, 16, .44);
+}
+html:root main.defter::after { z-index: -1; transform: translate(2px, 3px); box-shadow: none; }
+html:root .sayfa { box-shadow: inset 0 1px 2px rgba(255, 255, 255, .85); }
+@media (max-width: 600px), (max-height: 500px) {
+  html:root main.defter { transform: none; }
+  html:root main.defter::before { transform: translate(2px, 3px); }
+  html:root main.defter::after { transform: translate(1px, 1.5px); }
+}
+@media print { main.defter::before, main.defter::after { display: none !important; } }

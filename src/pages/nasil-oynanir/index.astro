@@ -1,0 +1,33 @@
+---
+import Sheet from '../../components/Sheet.astro';
+import { registry } from '../../lib/catalog';
+---
+
+<Sheet
+  title="Nasıl oynanır?"
+  description="Defter oyunlarının kısa kuralları, kontrolleri ve kâğıtta oynama fikirleri."
+>
+  <section class="prose">
+    <p class="eyebrow">Defterin ilk sayfası</p>
+    <h1>Nasıl oynanır?</h1>
+    <p>Kısa bir kural hatırlatması. Sonra kalem sende.</p>
+    <ul class="guide-list">
+      {registry.map((g) => (
+        <li>
+          <a href={`/nasil-oynanir/${g.slug}/`}>
+            <img
+              src={`/assets/drawings/${g.slug}.svg`}
+              width="80"
+              height="60"
+              alt=""
+            />
+            <span>
+              <strong>{g.title}</strong>
+              <span>{g.description}</span>
+            </span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
+</Sheet>

@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#b6a58a">
+  <title>SOS</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23fbf9f2'/%3E%3Cpath d='M21 8 C18 4,9 5,10 11 C11 16,22 15,22 21 C22 27,12 28,9 23' fill='none' stroke='%231f3b9b' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="kit/kagit.css?v=556272b28114">
+  <link rel="stylesheet" href="style.css?v=633a2647cee6">
+</head>
+<body>
+  <noscript><p class="uyari">Bu defteri açmak için JavaScript gerekiyor.</p></noscript>
+
+  <p class="gizli" id="duyuru" role="status" aria-live="polite"></p>
+  <p class="gizli" id="tahta-yardim">Ok tuşlarıyla gez, Enter ya da boşlukla seçili harfi yaz. S ve O tuşları harf seçer.</p>
+  <aside class="ekran-notu" id="ekran-notu" hidden>
+    <span id="ekran-aciklama"></span>
+    <button type="button" class="dugme" id="yatay-oyna">Tam ekran / yatay oyna</button>
+  </aside>
+
+  <main class="defter" id="defter">
+    <a class="defterde-donus" href="/" aria-label="Defterde oyunlarının içindekiler sayfasına dön">← İçindekiler</a>
+    <section class="sayfa" id="sayfa" aria-label="SOS sayfası">
+
+      <!-- Sol marj: iki oyuncunun çeteleleri -->
+      <svg class="marj" id="marj" aria-hidden="true"></svg>
+
+      <!-- Üst: başlık, durum, tarih ve harf seçici -->
+      <div class="ust-bant">
+        <svg class="ust" id="ust" aria-hidden="true"></svg>
+        <div class="secici" role="group" aria-label="Harf seç">
+          <button type="button" class="harf-dugme" id="harf-s" data-harf="S" aria-pressed="true" aria-label="S harfi"><svg viewBox="0 0 60 70" aria-hidden="true"></svg></button>
+          <button type="button" class="harf-dugme" id="harf-o" data-harf="O" aria-pressed="false" aria-label="O harfi"><svg viewBox="0 0 60 70" aria-hidden="true"></svg></button>
+        </div>
+      </div>
+
+      <!-- Tahta -->
+      <div class="skor" id="skor" aria-label="Skor">
+        <span class="mavi"><span id="ad-mavi">ben</span> <strong id="puan-mavi">0</strong></span>
+        <span class="kirmizi"><span id="ad-kirmizi">rakip</span> <strong id="puan-kirmizi">0</strong></span>
+      </div>
+      <div class="tahta-kutu" id="tahta-kutu">
+        <svg class="tahta" id="tahta" aria-hidden="true"></svg>
+        <div class="hucreler" id="hucreler" role="grid" aria-label="SOS tahtası" aria-describedby="tahta-yardim"></div>
+      </div>
+
+      <!-- Alt: düğmeler ve ayar notları -->
+      <div class="alt-bant">
+        <div class="dugmeler">
+          <button class="dugme" id="geri-al" type="button"><span class="yazi">Geri al</span></button>
+          <button class="dugme" id="yeni-sayfa" type="button"><span class="yazi">Yeni sayfa</span></button>
+          <button class="ses-dugme" id="ses-dugme" type="button" aria-pressed="false" aria-label="Sessiz"><svg class="ikon" viewBox="0 0 40 40" aria-hidden="true"></svg></button>
+        </div>
+        <div class="ayarlar" id="ayarlar">
+          <p class="satir anahtarlar">
+            <span class="ayar-ad">zorluk:</span>
+            <button class="ayar" type="button" data-ayar="zorluk" data-deger="kolay" aria-pressed="false">kolay</button>
+            <button class="ayar" type="button" data-ayar="zorluk" data-deger="orta" aria-pressed="false">orta</button>
+            <button class="ayar" type="button" data-ayar="zorluk" data-deger="zor" aria-pressed="false">zor</button>
+          </p>
+          <p class="satir">
+            <button class="ayar" type="button" data-ayar="ipucu" role="switch" aria-checked="false"><svg class="kutucuk" viewBox="0 0 20 20" aria-hidden="true"></svg>ipucu</button>
+            <button class="ayar" type="button" data-ayar="fazlaTur" role="switch" aria-checked="false"><svg class="kutucuk" viewBox="0 0 20 20" aria-hidden="true"></svg>fazla tur</button>
+            <button class="ayar" type="button" data-ayar="ikiKisi" role="switch" aria-checked="false"><svg class="kutucuk" viewBox="0 0 20 20" aria-hidden="true"></svg>iki kişilik</button>
+          </p>
+          <p class="yeni-not" id="yeni-not" role="status" aria-live="polite" aria-atomic="true" hidden></p>
+        </div>
+      </div>
+
+      <!-- Köşedeki rakip karakter -->
+      <svg class="karakter" id="karakter" viewBox="0 0 120 140" aria-hidden="true"></svg>
+
+      <div class="susler" aria-hidden="true">
+        <svg class="susle gunes" data-sus="gunes" viewBox="0 0 100 100"></svg>
+        <svg class="susle yildiz" data-sus="yildiz" viewBox="0 0 40 40"></svg>
+        <svg class="susle kalp" data-sus="kalp" viewBox="0 0 80 80"></svg>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- Yerel sabit sürüm; klasik betik file:// altında da çalışır. -->
+  <script src="assets/vendor/rough-4.6.6.js?v=6853af861953"></script>
+  <script src="kit/kalem.js?v=ff14550b371c"></script>
+  <script src="kit/karakter.js?v=3a8922fb8fc3"></script>
+  <script src="kit/ses.js?v=e9ddc6d6036a"></script>
+  <script src="config.js?v=59264271fb5c"></script>
+  <script src="assets/varliklar.js?v=45d94fdb6fd0"></script>
+  <script src="game.js?v=800beeeaba35"></script>
+  <script src="session.js?v=6ddf4aa98d5a"></script>
+  <script src="ai.js?v=62e74dc98cb2"></script>
+  <script src="draw.js?v=78623960a4d6"></script>
+  <script src="layout.js?v=d3270d7c531c"></script>
+  <script src="board.js?v=964afa6b9c27"></script>
+  <script src="ui.js?v=212ec89f8062"></script>
+</body>
+</html>

@@ -1,0 +1,228 @@
+---
+import Sheet from '../components/Sheet.astro';
+const repoUrl =
+  import.meta.env.PUBLIC_REPO_URL || 'https://github.com/gorkemio/defterde';
+---
+
+<Sheet
+  title="Kaynaklar ve lisanslar"
+  description="Defterde oyunlarının font, çizim, ses ve kelime verisi kaynakları."
+>
+  <article class="prose">
+    <h1>Kaynaklar ve lisanslar</h1>
+    <p>
+      Oyunların kendi kaynak künyeleri ve lisans dosyaları korunur. Aşağıdaki
+      liste platformda kullanılan ortak malzemeleri ve oyunlara özel atıfları
+      bir araya getirir.
+    </p>
+    <h2>Kaynak kodu</h2>
+    <p>
+      Platformun ve oyunların kodu <a href={repoUrl}>GitHub'da</a> açık
+      kaynaktır ve MIT lisansıyla paylaşılır. Aşağıda adı geçen yazı tipleri,
+      kütüphaneler, Tangram bulmaca verisi (GPL-2.0 veya sonrası), kelime
+      sıklığı verisi (CC BY-SA 4.0) ve sözlük tanımları MIT kapsamında değildir;
+      kendi lisanslarıyla kullanılır.
+    </p>
+    <h2>Kalem ve kâğıt</h2>
+    <ul>
+      <li>
+        Patrick Hand — Patrick Wagesreiter. Yerel font, Türkçe karakterleriyle
+        korunur.{' '}
+        <a href="/assets/licenses/PatrickHand-OFL.txt">
+          SIL Open Font License 1.1
+        </a>
+        .
+      </li>
+      <li>
+        Rough.js — Preet Shihn. Platformun küçük çizimleri build sırasında sabit
+        tohumlarla üretilir.{' '}
+        <a href="/assets/licenses/rough-MIT.txt">MIT lisansı</a>.
+      </li>
+      <li>
+        Kâğıt dokusu ve oyun çizimleri mevcut oyun projelerinden korunmuştur.
+      </li>
+      <li>
+        Kağıt Hangar'ın kullandığı lz-string — Pieroxy, MIT lisanslı sıkıştırma
+        kütüphanesi.{' '}
+        <a href="https://github.com/pieroxy/lz-string/blob/master/LICENSE">
+          Lisans kaynağı
+        </a>
+        .
+      </li>
+    </ul>
+    <h2>Amiral Battı, Alan Kapmaca, SOS ve Kağıt Hangar</h2>
+    <p>
+      Bu oyunlar yukarıdaki ortak kalem ve kâğıt malzemelerini kullanır. Amiral
+      Battı, Kağıt Futbolu ve Kağıt Hangar el yazısı fontunu Google Fonts
+      üzerinden yükler; ayrıntı <a href="/gizlilik/">gizlilik sayfasında</a>.
+    </p>
+    <h2>Kağıt Rallisi</h2>
+    <p>
+      Oyunun Patrick Hand ve Caveat Brush yazı tipleri ile Rough.js dosyaları
+      yerel olarak, kendi lisanslarıyla korunur.
+      <a href="/assets/licenses/CaveatBrush-OFL.txt">
+        Caveat Brush — SIL OFL 1.1
+      </a>{' '}
+      ·
+      <a href="/assets/licenses/kagitrallisi-kaynaklar.txt">
+        Korunan bağımlılık künyesi
+      </a>
+      .
+    </p>
+    <h2>Dokuz Taş</h2>
+    <p>
+      Kurşun kalem yazıları Kalam (Indian Type Foundry) ile çizilir. Patrick
+      Hand ve Rough.js dosyaları da kendi lisanslarıyla yerel olarak korunur.
+      <a href="/assets/licenses/Kalam-OFL.txt">Kalam — SIL OFL 1.1</a> ·
+      <a href="/assets/licenses/dokuztas-kaynaklar.txt">
+        Korunan bağımlılık künyesi
+      </a>
+      .
+    </p>
+    <h2>5’li XOX, Nokta Oyunu ve Sayı Bulma</h2>
+    <p>
+      5’li XOX’un dolma kalem başlıklarında Marck Script; Nokta Oyunu ve Sayı
+      Bulma’nın kurşun kalem yazılarında Kalam kullanılır. Patrick Hand,
+      Rough.js ve font lisansları oyunların yerel dosyalarında korunur.
+      <a href="/assets/licenses/MarckScript-OFL.txt">
+        Marck Script — SIL OFL 1.1
+      </a>{' '}
+      · <a href="/assets/licenses/Kalam-OFL.txt">Kalam — SIL OFL 1.1</a>
+    </p>
+    <p>
+      Korunan bağımlılık künyeleri:
+      <a href="/assets/licenses/xox-kaynaklar.txt">5’li XOX</a> ·
+      <a href="/assets/licenses/noktaoyunu-kaynaklar.txt">Nokta Oyunu</a> ·
+      <a href="/assets/licenses/sayibulma-kaynaklar.txt">Sayı Bulma</a>.
+    </p>
+    <h2>Türk Daması</h2>
+    <p>
+      Kalam, Patrick Hand ve Rough.js yerel dosyalar ve lisanslarıyla korunur.
+      Kural motoru TÜDAF Türk Daması kurallarına dayanır.
+      <a href="/assets/licenses/turkdamasi-kaynaklar.txt">
+        Korunan bağımlılık künyesi
+      </a>
+      ·{' '}
+      <a href="https://turkdamasi.org.tr/wp-content/uploads/2022/11/Turk_Damasi_Kurallari_Tudaf_v3.pdf">
+        TÜDAF kuralları
+      </a>
+      .
+    </p>
+    <h2>Kibrit Bulmacası</h2>
+    <p>
+      Kalam ve Patrick Hand yazıları, kutunun PT Serif ve Archivo Narrow
+      etiketleri ile Rough.js yerel dosyalar ve lisanslarıyla korunur.
+      <a href="/assets/licenses/kibrit-kaynaklar.txt">
+        Korunan bağımlılık künyesi
+      </a>
+      .
+    </p>
+    <h2>Labirent</h2>
+    <p>
+      Mynerve yazı tipi ve Türkçe ş düzeltmesi, Rough.js ve yerel siyah kâğıt
+      dokuları.
+      <a href="/assets/licenses/labirent-kaynaklar.txt">
+        Korunan bağımlılık künyesi
+      </a>
+      .
+    </p>
+    <h2>Kakuro</h2>
+    <p>
+      Patrick Hand ve Kalam yazı tipleri, Rough.js ve kâğıt dokusu yerel
+      dosyalar ve lisanslarıyla korunur.
+      <a href="/assets/licenses/kakuro-kaynaklar.txt">
+        Korunan bağımlılık künyesi
+      </a>
+      .
+    </p>
+    <h2>Tangram</h2>
+    <p>
+      Patrick Hand, Kalam, Rough.js ve polygon-clipping yerel dosyaları ve
+      lisanslarıyla korunur. 100 şekil Innocent De Marchi’nin Peces 5.2
+      verilerinden GPL-2.0-or-later ile uyarlanmıştır; 20 şekil özgündür.
+      <a href="/assets/licenses/tangram-kaynaklar.txt">Bağımlılık künyesi</a> ·
+      <a href="/oyunlar/tangram/assets/licenses/peces-GPL-2.0.txt">
+        İçerik lisansı
+      </a>{' '}
+      ·
+      <a href="/assets/licenses/tangram-content-source.zip">
+        İçerik kaynakları ve dönüştürme araçları
+      </a>
+    </p>
+    <h2>Domino</h2>
+    <p>
+      Kalam, Patrick Hand ve Marck Script yazıları, Rough.js ve yerel kâğıt
+      dokusu lisanslarıyla korunur.{' '}
+      <a href="/assets/licenses/domino-kaynaklar.txt">
+        Korunan bağımlılık künyesi
+      </a>
+      .
+    </p>
+    <h2>Mangala</h2>
+    <p>
+      Kalam, Patrick Hand, Marck Script ve Rough.js yerel dosyaları kendi
+      lisanslarıyla korunur.
+      <a href="/assets/licenses/mangala-kaynaklar.txt">
+        Korunan bağımlılık künyesi
+      </a>
+      .
+    </p>
+    <h2>Kare Karalamaca</h2>
+    <p>
+      Architects Daughter, Kalam, Patrick Hand ve Rough.js yerel dosyaları
+      lisanslarıyla korunur. Piksel resimleri özgündür.
+      <a href="/assets/licenses/nonogram-kaynaklar.txt">
+        Korunan bağımlılık künyesi
+      </a>
+      .
+    </p>
+    <h2>Beş Harf</h2>
+    <p>
+      Courier Prime ve Patrick Hand yazıları SIL OFL 1.1, Rough.js MIT
+      lisansıyla korunur. Tanımlar TDK Güncel Türkçe Sözlük, 12. baskıdan
+      alınmıştır. Kelime sıklığı Hermit Dave / FrequencyWords ve OpenSubtitles
+      2018 Türkçe verisinden türetilir (CC BY-SA 4.0).
+      <a href="/assets/licenses/besharf-kaynaklar.txt">Bağımlılık künyesi</a> ·
+      <a href="/assets/licenses/besharf-veriler.txt">
+        Veri kaynakları ve lisanslar
+      </a>
+      .
+    </p>
+    <h2>Kağıt Futbolu sesi</h2>
+    <p>
+      “Slow starting applause” — Stephan, Düsseldorf, Ren kıyısı, 26 Temmuz 2007
+      (PDSounds.org 331). Kamu malı ses kaydının 8–12. saniyeleri kullanılmış;
+      ses yumuşatılmış, düzeyi azaltılmış ve MP3'e çevrilmiştir.{' '}
+      <a href="https://commons.wikimedia.org/wiki/File:Slow_starting_applause.ogg">
+        Özgün kayıt
+      </a>{' '}
+      ·{' '}
+      <a href="/assets/licenses/kagitfutbolu-kaynaklar.txt">
+        Korunan oyun künyesi
+      </a>
+      .
+    </p>
+    <h2>Adam Asmaca verileri</h2>
+    <p>
+      Tanımlar: TDK Güncel Türkçe Sözlük, 12. baskı; ogun/guncel-turkce-sozluk
+      deposundaki sozluk/v12 verisi. Depo MIT lisanslıdır; sözlük içeriği TDK'ya
+      aittir.
+    </p>
+    <p>
+      Kelime sıklığı: Hermit Dave, FrequencyWords; OpenSubtitles 2018 Türkçe,
+      OPUS altyapısı. İçerik CC BY-SA 4.0; oyunda sıralama verisi türetilmiştir.
+      Üretilmiş verinin başlıklarındaki atıflar korunmuştur.{' '}
+      <a href="https://github.com/hermitdave/FrequencyWords">Kaynak depo</a> ·{' '}
+      <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
+      .
+    </p>
+    <p>
+      Kategori listeleri, atasözleri açıklamaları ve proje tanım düzeltmeleri
+      oyun projesine aittir.{' '}
+      <a href="/assets/licenses/adamasmaca-kaynaklar.txt">
+        Korunan veri ve lisans künyesi
+      </a>
+      .
+    </p>
+  </article>
+</Sheet>

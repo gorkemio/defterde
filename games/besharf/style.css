@@ -1,0 +1,193 @@
+/* style.css — Beş Harf yerleşimi: defter sayfası, daktilo kâğıdı, tuşlar, komut sözcükleri.
+   Ölçüler ui/sahne.js'ten CSS değişkenleriyle gelir (--sayfa-w, --kagit-w/-h, --tus-w/-h/-genis, --komut-h). */
+
+/* Kâğıt gölgesi ve yaprak payları ekran kenarından taşmasın; clip kaydırma kabı kurmaz (programla da kaymaz) */
+html, body { overflow-x: clip; }
+
+body {
+  font-family: var(--daktilo-yazi);
+  color: var(--serit-siyah);
+}
+body[data-duzen="dar"] { place-items: start center; }
+
+.defter {
+  margin: var(--dis-y, 20px) 0;
+  transform: rotate(-.35deg);
+}
+/* Telefonda sayfa tam genişlik (tuşlar en az 30 px): eğiklik ve alttaki yaprakların yana kayması yatay taşma yapmasın */
+body[data-duzen="dar"] .defter { transform: none; }
+html[data-malzeme="kopyakalemi"] body[data-duzen="dar"] .defter::before { transform: translate(0, 4px); }
+html[data-malzeme="kopyakalemi"] body[data-duzen="dar"] .defter::after { transform: translate(0, 7px); }
+
+.sayfa {
+  --marj: transparent;                 /* bu oyunda defterin kırmızı marj çizgisi yok (tuşların arasından geçiyordu) */
+  width: var(--sayfa-w, 380px);
+  padding: var(--ara, 8px) var(--sayfa-pad, 8px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--ara, 8px);                /* üst komutlar · kâğıt · tuşlar · alt komutlar arasında eşit boşluk */
+}
+
+/* ---------- komut sözcükleri: daktiloyla basılmış, altı kopya kalemiyle çizili ---------- */
+
+/* İki satır da kâğıdın genişliğinde; sözcükler kâğıdın kenarlarına hizalı, aralar eşit */
+.komutlar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  width: var(--kagit-w, 340px);
+  min-height: var(--komut-h, 44px);
+}
+.komutlar .dugme {
+  min-height: var(--komut-h, 44px);
+  padding-left: .25em;
+  padding-right: .25em;
+  font-size: 13px;
+  white-space: nowrap;
+}
+body[data-duzen="genis"] .komutlar .dugme { font-size: 15px; }
+.komutlar .dugme .yazi { line-height: 1; }
+
+/* ---------- daktilo kâğıdı ---------- */
+
+#kagit {
+  width: var(--kagit-w, 340px);
+  height: var(--kagit-h, 380px);
+  transform: rotate(.45deg);
+}
+.kagit-svg { display: block; overflow: visible; }
+
+/* Oyun sonu komutları kâğıdın dibine basılır (Yeni kelime, Sonraki kelime …) */
+#kagit > .kagit-komut {
+  position: absolute;
+  left: 0; right: 0;
+  bottom: 6px;
+  display: flex;
+  justify-content: center;
+  gap: 1.2em;
+}
+#kagit > .kagit-komut .dugme { font-size: 13px; min-height: 40px; }
+body[data-duzen="genis"] #kagit > .kagit-komut .dugme { font-size: 15px; }
+
+/* ---------- tuşlar ---------- */
+
+.klavye {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--tus-aralik, 2px);
+}
+.klavye-satir { display: flex; gap: var(--tus-aralik, 2px); }
+.klavye button.tus { width: var(--tus-w, 30px); height: var(--tus-h, 52px); }
+.klavye button.tus.genis { width: var(--tus-genis, 46px); }
+
+@media print {
+  body { background: none; }
+  .klavye, .komutlar { display: none; }
+}
+
+/* ---------- oyun sonu: tuşlar kalkar ---------- */
+
+.klavye.kalkiyor { opacity: 0; transform: translateY(8px); transition: opacity .2s, transform .2s; pointer-events: none; }
+
+/* ---------- not sayfası: kâğıdın ve tuşların yerini alır ---------- */
+
+.sayfa[data-gorunum="not"] > #kagit,
+.sayfa[data-gorunum="not"] > .klavye { display: none; }
+.not {
+  width: var(--kagit-w, 340px);
+  height: var(--alan-h, 560px);
+  transform: rotate(.45deg);
+}
+.not > .not-ic {
+  height: 100%;
+  padding: 26px 20px 16px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  font-size: 14px;
+  line-height: 1.5;
+}
+body[data-duzen="dar"] .not > .not-ic { font-size: 13px; padding: 24px 16px 14px; }
+/* Başlık satırı: solda "‹ geri", ortada başlık, sağda eşit boşluk (uzun başlık kendi sütununda kırılır) */
+.not-bas { display: grid; grid-template-columns: 4.6em 1fr 4.6em; align-items: center; min-height: 40px; margin: 0 0 14px; }
+.not .not-bas > .dugme { grid-column: 1; grid-row: 1; justify-self: start; margin-left: -.35em; min-height: 40px; font-size: 13px; }
+body[data-duzen="genis"] .not .not-bas > .dugme { font-size: 15px; }
+.not-baslik { grid-column: 2; grid-row: 1; margin: 0; font-size: 17px; font-weight: 400; letter-spacing: .12em; line-height: 1.3; text-align: center; }
+body[data-duzen="dar"] .not-baslik { font-size: 15px; letter-spacing: .08em; }
+.not-satir { margin: 0 0 8px; white-space: pre-wrap; }
+.not-komut { display: flex; justify-content: center; flex-wrap: wrap; gap: .4em 1.2em; margin: 14px 0 0; }
+.not .dugme { font-size: 14px; min-height: 40px; }
+.fis-tablo { margin: 0 0 6px; }
+.fis-sayi { white-space: pre; margin: 0 0 2px; }
+.fis-ara { margin: 16px 0 8px; }
+.fis-cubuklar { width: 100%; }
+.fis-cubuklar svg { display: block; overflow: visible; }
+.fis-geri { margin-top: 16px; text-align: center; }
+.fis-durum { min-height: 1.4em; margin-top: 8px; text-align: center; font-size: 12px; opacity: .8; }
+
+/* ---------- Analiz ---------- */
+
+.analiz-zincir { margin-bottom: 8px; }
+.analiz-adim { margin: 6px 0 0; white-space: pre; }
+.analiz-oneri { margin: 0; white-space: pre-wrap; font-size: .9em; opacity: .78; }
+.analiz-ozet { margin-top: 12px; text-align: center; }
+.analiz-ozet2 { text-align: center; }
+.analiz-not { margin-top: 10px; font-size: 11px; opacity: .62; }
+
+/* ---------- seçim satırları (düello, ayarlar) ---------- */
+
+.not-komut.secim { flex-wrap: wrap; align-items: center; justify-content: flex-start; gap: .2em .7em; margin: 0 0 10px; }
+.not-komut.secim > .secim-ad, .not-komut.secim > .secim-aciklama { margin: 0; }
+.secim-ad { min-width: 5.4em; }
+.not .dugme[aria-pressed="true"] { font-weight: 700; }
+.not .dugme { position: relative; }
+
+/* ---------- kelime girişi (arkadaş, iki kişi) ---------- */
+
+.giris-satir { display: flex; align-items: center; justify-content: center; gap: .6em; margin: 12px 0 4px; }
+.daktilo-giris {
+  width: 7.2em;
+  padding: 2px 4px 4px;
+  border: 0;
+  border-bottom: 1.5px dashed var(--kopya-acik, #958aa8);   /* basılı form çizgisi */
+  background: transparent;
+  color: var(--serit-siyah);
+  font: 22px/1.2 var(--daktilo-yazi);
+  letter-spacing: .32em;
+  text-align: center;
+  outline: none;
+}
+.daktilo-giris:focus { border-bottom-color: var(--kopya-canli, #6b3fb0); }
+.link-kutusu { font-size: 11px; word-break: break-all; opacity: .8; user-select: text; -webkit-user-select: text; }
+.secim-aciklama { font-size: 12px; opacity: .72; }
+.not-komut.secim .dugme { min-width: 0; }
+
+/* ---------- Nasıl oynanır, ses çiziği, azaltılmış hareket ---------- */
+
+.nasil-ornekler { margin: 6px 0 8px; }
+.nasil-ornekler svg { display: block; overflow: visible; }
+#k-ses > svg.ses-cizik { position: absolute; left: 0; top: 0; overflow: visible; pointer-events: none; }
+html[data-az-hareket] .defter { animation: none !important; }
+html[data-az-hareket] .klavye.kalkiyor,
+html[data-az-hareket] button.tus .tus-kapak, html[data-az-hareket] button.tus .tus-isaret, html[data-az-hareket] button.tus .tus-golge { transition: none; }
+
+.dugme > svg.secim { position: absolute; left: 0; top: 0; overflow: visible; pointer-events: none; }
+
+/* Defterde: Kit.kalem.alan subtracts the return-link space before sizing. */
+body { padding-top: calc(48px + env(safe-area-inset-top, 0px)); }
+.defter { position: relative; }
+.defterde-donus {
+  position: absolute; left: 16px; top: -48px;
+  display: inline-flex; align-items: center; min-height: 44px;
+  color: #555; font: 18px 'Patrick Hand', sans-serif;
+  text-decoration: none; white-space: nowrap;
+}
+.defterde-donus:hover { color: #1f3b9b; }
+.defterde-donus:focus-visible { outline: 2px dashed #1f3b9b; outline-offset: 2px; }
+@media (max-height: 640px) { body { align-items: start; } }
+@media print {
+  body { padding: 0; }
+  .defterde-donus { display: none !important; }
+}

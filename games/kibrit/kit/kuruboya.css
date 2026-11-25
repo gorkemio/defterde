@@ -1,0 +1,15 @@
+/* kit/kuruboya.css — "kuru boya" boya katmanının CSS tarafı. Yalnız html[data-boya="kuruboya"] altında geçerlidir
+   (Kit.kuruboya.kur() bu özniteliği koyar). Kalem malzemesinden bağımsızdır: çizgiler hangi kalemse o kalır.
+   Boya altındaki her şeyle çarpılır (multiply): kâğıdın rengi ve kalem çizgileri boyanın altından görünür. */
+
+html[data-boya="kuruboya"] {
+  --kuruboya-1: #2e8b57;
+  --kuruboya-2: #e8842a;
+  --kuruboya-tehlike: #c4452f;
+}
+html[data-boya="kuruboya"] .kuruboya,
+html[data-boya="kuruboya"] .kuruboya > g { mix-blend-mode: multiply; }
+html[data-boya="kuruboya"] .kuruboya-yazi { paint-order: stroke fill; stroke-linejoin: round; stroke-linecap: round; }
+@media (forced-colors: active) {
+  html[data-boya="kuruboya"] .kuruboya, html[data-boya="kuruboya"] .kuruboya > g { mix-blend-mode: normal; }
+}

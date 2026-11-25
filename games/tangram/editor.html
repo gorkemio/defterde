@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#b6a58a"><title>Şekil atölyesi · Tangram</title><link rel="icon" href="assets/favicon.svg"><link rel="stylesheet" href="kit/kagit.css?v=556272b28114"><link rel="stylesheet" href="style.css?v=78bd5996d429"><link rel="stylesheet" href="tools/tools.css?v=a0c1dce3424c">
+<script defer src="assets/vendor/rough-4.6.6.js?v=6853af861953"></script>
+<script defer src="assets/vendor/polygon-clipping-0.15.7.js?v=7f8619e84a86"></script>
+<script defer src="kit/kalem.js?v=2301a219cebb"></script>
+<script defer src="geometry.js?v=a341685d97f4"></script>
+<script defer src="board.js?v=1d01a66f029a"></script>
+<script defer src="validation.js?v=9cb87bfaeb05"></script>
+<script defer src="authoring.js?v=95226268e2f2"></script>
+<script defer src="puzzles/kara-hayvanlari.js?v=2b9e52dfef24"></script>
+<script defer src="puzzles/kuslar.js?v=cd5ceacec704"></script>
+<script defer src="puzzles/deniz-canlilari.js?v=3ba354989e7d"></script>
+<script defer src="puzzles/insanlar.js?v=8bdcd26a78cc"></script>
+<script defer src="puzzles/tasitlar.js?v=b9c392878732"></script>
+<script defer src="puzzles/yapilar.js?v=f35fb68567bf"></script>
+<script defer src="puzzles/ev-esyalari.js?v=ac6077ea491d"></script>
+<script defer src="puzzles/nesneler.js?v=a1b346d6609f"></script>
+<script defer src="puzzles/doga.js?v=e9561fe12899"></script>
+<script defer src="puzzles/geometri.js?v=c23ef1377f6a"></script>
+<script defer src="puzzles/catalog.js?v=4c38d5b40cf4"></script>
+<script defer src="draw.js?v=5763ff396384"></script>
+<script defer src="input.js?v=3ea18266fff5"></script>
+<script defer src="tools/editor.js?v=69f3c9c4d6d3"></script>
+</head><body><noscript>Bu sayfa JavaScript gerektirir.</noscript><main class="notebook"><div class="paper-back far" aria-hidden="true"></div><div class="paper-back near" aria-hidden="true"></div><div class="paper-surface" aria-hidden="true"></div><div class="sheet sayfa tools-sheet"><header class="sheet-header"><h1><span>Şekil atölyesi</span><svg class="title-line" aria-hidden="true"></svg></h1><span class="wordmark">defterde<svg aria-hidden="true"></svg></span></header><nav class="tool-nav" aria-label="Tangram sayfaları"><a href="index.html" class="word-button">Oyuna dön</a><a href="editor.html" class="word-button">Şekil atölyesi</a><a href="review.html" class="word-button">İsimsiz inceleme</a></nav>
+<p class="tool-intro">Aynı yedi parçayla yeni bir siluet kur. Temasları gör, konumları incelt, geçerli şekli dışa aktar.</p>
+<div class="load-row"><label>Başlangıç şekli<select id="load-puzzle"></select></label><button id="load" type="button" class="word-button">Şekli yükle</button><button id="new" type="button" class="word-button">Boş sayfa</button></div>
+<div class="workbench"><section aria-label="Parça çalışma alanı"><div class="scene-wrap"><svg id="editor-scene" class="scene" role="group" aria-label="Yedi parçanın düzenleme alanı"></svg></div><p id="editor-selection" class="selection-status" role="status"></p>
+<nav class="tool-actions" aria-label="Parça komutları"><button type="button" class="word-button" data-action="undo">Geri al</button><button type="button" class="word-button" data-action="left">Sola döndür</button><button type="button" class="word-button" data-action="right">Sağa döndür</button><button type="button" class="word-button" data-action="flip">Ters çevir</button><button type="button" class="word-button" data-action="align">Hizala</button><button type="button" class="word-button" data-action="tray">Alta al</button></nav>
+<form id="position-form" class="position-row"><label>X<input id="pose-x" type="number" step="any" required></label><label>Y<input id="pose-y" type="number" step="any" required></label><button class="word-button" type="submit">Konumu uygula</button><button id="fit" class="word-button" type="button">Şekle sığdır</button></form>
+<label class="check-label"><input id="contacts" type="checkbox" checked>Temas noktalarını göster</label><p id="geometry-status" role="status" class="geometry-status"></p><ul id="geometry-issues" class="issue-list"></ul>
+<details class="keyboard-help"><summary>Klavye ve koordinatlar</summary><p>1–7: seç · Oklar: taşı · Shift + ok: ince taşı · Q/E: döndür · F: çevir · Enter: hizala · Ctrl/Cmd + Z: geri al. Birim, küçük üçgenin dik kenarıdır. X sağa, Y aşağı artar. Tepsi parçaları dışa aktarılmaz.</p></details></section>
+<aside class="metadata-panel"><h2>Şeklin kaydı</h2><form id="metadata-form">
+<label>Türkçe ad<input id="name" maxlength="80" required></label><label>Kalıcı kimlik<input id="puzzle-id" maxlength="80" placeholder="ornegin-ucan-kus" pattern="[a-z0-9]+(-[a-z0-9]+)*" required></label><label>Kategori<select id="category"></select></label><label>Zorluk<select id="difficulty"><option value="kolay">Kolay</option><option value="orta">Orta</option><option value="zor">Zor</option></select></label><label>Etiketler <span>(virgülle ayır)</span><input id="tags" maxlength="200" required></label>
+<label>Kaynak<select id="source-kind"><option value="original">Özgün yerleşim</option><option value="external">Açık lisanslı kaynak</option></select></label><div id="external-source" hidden><label>Kaynak adresi<input id="source-url" type="url"></label><label>Üretici<input id="source-author"></label><label>Lisans<input id="source-license"></label></div><label>Tasarım / kaynak notu<textarea id="source-note" rows="3" maxlength="1000" required></textarea></label><label class="check-label" id="alternates-row" hidden><input id="keep-alternates" type="checkbox" checked>Diğer kayıtlı çözümleri koru</label>
+<button type="submit" class="word-button">Geçerli veriyi hazırla</button></form><p id="export-status" role="status"></p><svg id="editor-preview" class="editor-preview" role="img" aria-label="Aynı yerleşimden türetilen siluet"></svg></aside></div>
+<section class="data-section" aria-labelledby="data-title"><h2 id="data-title">Veriyi taşı</h2><p>JSON bu bilgisayarda okunur. Hazırlanan veri, geometri ve katalog kopya kontrolünden geçer; isim kabulü ayrıca gerekir.</p><label>Hazır JSON<textarea id="export-data" rows="5" readonly spellcheck="false"></textarea></label><button id="download" type="button" class="word-button" disabled>JSON indir</button><details><summary>JSON içe aktar</summary><label>Tek şeklin JSON kaydı<textarea id="import-data" rows="5" spellcheck="false"></textarea></label><button id="import" type="button" class="word-button">İçe aktar</button><p id="import-status" role="status"></p></details></section>
+<div id="touch-lens" class="touch-lens" hidden aria-hidden="true"><svg></svg></div>
+</div></main></body></html>

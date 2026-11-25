@@ -1,0 +1,20 @@
+# scripts/elle-cikar.txt — elle çıkarılan kelimeler. [cevap] bölümü cevap listesinden, [tahmin] bölümü tahmin listesinden
+# çıkarır (bölümsüz satır ikisinden de). "önek*" türevleri de kapsar. Bu dosya süzgeç kurallarını geçersiz kılar.
+# Değişince: node scripts/kelimeler.mjs
+
+[cevap]
+# Ağırlıklı olarak kişi ya da yer adı diye bilinen (sıklığı altyazılardaki adlardan gelen) madde başları
+murat
+kemal
+hakan
+begüm
+cemal
+erika
+burcu
+selim
+mesut
+tokyo
+# İngilizce ödünç, oyunda yadırganır
+light
+
+[tahmin]

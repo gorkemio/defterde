@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="tr" data-malzeme="kursunkalem">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#b6a58a">
+  <meta name="description" content="Kareli defterde bir Kakuro molası. Toplamları tamamla, rakamları keşfet.">
+  <title>Kakuro — Defterde</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="kit/kagit.css?v=556272b28114">
+  <link rel="stylesheet" href="style.css?v=af25a7534d78">
+  <script defer src="assets/vendor/rough-4.6.6.js?v=6853af861953"></script>
+  <script defer src="kit/kalem.js?v=ecbde10af5d8"></script>
+  <script defer src="kit/ses.js?v=c92bc678c362"></script>
+  <script defer src="kit/malzeme.js?v=7f1b2fbadc51"></script>
+  <script defer src="kit/kursunkalem.js?v=8a368d63ea29"></script>
+  <script defer src="kit/rakam.js?v=4d5e09e253e3"></script>
+  <script defer src="board.js?v=ad0247dccc65"></script>
+  <script defer src="solver.js?v=c32c5e10c5a8"></script>
+  <script defer src="logic.js?v=d7d2f1ebbf1e"></script>
+  <script defer src="game.js?v=b9d78e974bdf"></script>
+  <script defer src="storage.js?v=9045516d1670"></script>
+  <script defer src="puzzles.js?v=1a8e19255f8a"></script>
+  <script defer src="draw.js?v=c60702ec417d"></script>
+  <script defer src="view.js?v=74a0501cdf5a"></script>
+  <script defer src="ui.js?v=7a7042132a1d"></script>
+</head>
+<body>
+  <noscript><p class="uyari">Defteri açmak için tarayıcında JavaScript’i etkinleştir.</p></noscript>
+  <main class="notebook" aria-labelledby="title">
+    <a class="defterde-return defterde-donus" href="/">← İçindekiler</a>
+    <div class="paper-back far" aria-hidden="true"></div>
+    <div class="paper-back near" aria-hidden="true"></div>
+    <div class="paper-surface" aria-hidden="true"></div>
+    <div class="sheet">
+      <p class="margin-note">her grupta<br>1–9<br><span>tekrar yok</span></p>
+      <header class="heading">
+        <div class="title-block">
+          <h1 id="title">Kakuro<svg class="title-underline" data-stroke="title" aria-hidden="true"></svg></h1>
+          <p class="subtitle">Toplamları tamamla</p>
+        </div>
+      </header>
+      <section id="storage-conflict" class="storage-conflict" role="alert" hidden>
+        <p>Bu bulmaca başka sekmede güncellendi. O kaydı korumak için burada durduk; bu sekmedeki son değişiklikler kaydedilmedi.</p>
+        <button id="reload-latest" class="text-action" type="button">Son kaydı yükle</button>
+      </section>
+
+      <div class="play-layout" id="play-layout">
+        <section class="board-region" aria-label="Kakuro tahtası">
+          <div class="board-meta">
+            <span><span id="puzzle-number">01</span><span class="meta-dot" aria-hidden="true">·</span><span id="difficulty">Kolay</span></span>
+            <p class="progress"><span id="filled-count">0</span> / <span id="total-count">30</span> <span class="progress-unit">kare</span></p>
+            <button id="pause-button" class="timer-button" type="button" aria-label="Süreyi duraklat"><span id="timer" class="timer">00:00</span><span id="pause-label">Duraklat</span></button>
+          </div>
+          <p class="gizli" id="board-instructions">Ok tuşlarıyla kare seç, 1–9 ile yaz. N not modunu değiştirir. Delete veya Backspace siler; Control veya Command ve Z geri alır. Yatay ve Dikey düğmeleri toplam grubunu seçer.</p>
+          <div class="board-wrap">
+            <div class="board-viewport" id="board-viewport">
+              <div class="board" id="board" role="grid" aria-label="Kakuro tahtası" aria-describedby="board-instructions"></div>
+            </div>
+            <div class="pause-cover" id="pause-cover" hidden><p>Küçük bir mola.</p><button id="resume-button" class="text-action" type="button">Devam et</button></div>
+          </div>
+          <div class="group-details" aria-label="Seçili karenin toplamları">
+            <button class="group-button" id="across-button" type="button" aria-pressed="true">
+              <svg data-icon="right" aria-hidden="true"></svg><span>Yatay <strong id="across-total">6</strong></span>
+            </button>
+            <button class="group-button" id="down-button" type="button" aria-pressed="false">
+              <svg data-icon="down" aria-hidden="true"></svg><span>Dikey <strong id="down-total">34</strong></span>
+            </button>
+            <span class="scroll-cue" id="scroll-cue" hidden>Tahtayı kaydırabilirsin</span>
+          </div>
+        </section>
+
+        <aside class="margin-tools" aria-label="Sayılar ve araçlar">
+          <p class="number-label" id="number-label">Bir sayı seç:</p>
+          <div class="number-pad" aria-label="Sayılar">
+            <button class="number-key" type="button" data-digit="1" aria-label="1 yaz"><span>1</span></button>
+            <button class="number-key" type="button" data-digit="2" aria-label="2 yaz"><span>2</span></button>
+            <button class="number-key" type="button" data-digit="3" aria-label="3 yaz"><span>3</span></button>
+            <button class="number-key" type="button" data-digit="4" aria-label="4 yaz"><span>4</span></button>
+            <button class="number-key" type="button" data-digit="5" aria-label="5 yaz"><span>5</span></button>
+            <button class="number-key" type="button" data-digit="6" aria-label="6 yaz"><span>6</span></button>
+            <button class="number-key" type="button" data-digit="7" aria-label="7 yaz"><span>7</span></button>
+            <button class="number-key" type="button" data-digit="8" aria-label="8 yaz"><span>8</span></button>
+            <button class="number-key" type="button" data-digit="9" aria-label="9 yaz"><span>9</span></button>
+          </div>
+          <div class="primary-tools">
+            <div class="tool-row">
+              <button id="erase-button" class="word-button tool-button" type="button"><span class="yazi">Sil</span><svg data-stroke="underline" aria-hidden="true"></svg></button>
+              <button id="note-button" class="word-button tool-button" type="button" aria-pressed="false"><span class="yazi">Not al</span><svg data-stroke="underline" aria-hidden="true"></svg></button>
+            </div>
+            <div class="tool-row">
+              <button id="undo-button" class="word-button tool-button" type="button" disabled><span class="yazi">Geri al</span><svg data-stroke="underline" aria-hidden="true"></svg></button>
+              <button id="hint-button" class="word-button tool-button" type="button" aria-controls="hint-panel" aria-expanded="false"><span class="yazi">İpucu</span><svg data-stroke="underline" aria-hidden="true"></svg></button>
+            </div>
+          </div>
+          <div class="extra-tools"><button id="reveal-button" class="text-action secondary" type="button">Bir hücreyi aç</button><span id="help-count">0 yardım</span></div>
+        </aside>
+      </div>
+
+      <div id="game-feedback">
+        <p id="error-status" class="error-status" role="status" hidden></p>
+        <section id="hint-panel" class="hint-panel" aria-labelledby="hint-heading" hidden>
+          <div class="panel-heading"><h2 id="hint-heading" tabindex="-1">Birlikte bakalım</h2><button id="close-hint" class="text-action" type="button" aria-label="İpucunu kapat">Kapat</button></div>
+          <p id="hint-text" aria-live="polite"></p>
+          <details id="hint-details"><summary>Dayanak ve adaylar</summary><ul id="hint-evidence"></ul></details>
+          <div class="panel-actions"><button id="apply-hint" class="text-action" type="button" hidden>Uygula</button><button id="next-hint" class="text-action" type="button" hidden>Sonraki çıkarım</button></div>
+        </section>
+        <section id="completion" class="completion" aria-labelledby="completion-heading" hidden>
+          <h2 id="completion-heading" tabindex="-1">Bütün toplamlar yerli yerinde!</h2><p id="completion-text"></p>
+          <div class="panel-actions"><button id="next-completed" class="text-action" type="button">Yeni bulmaca</button><button id="replay-button" class="text-action" type="button">Yeniden oyna</button></div>
+        </section>
+      </div>
+
+      <section id="list-panel" class="list-panel" aria-labelledby="list-title" hidden>
+        <div class="panel-heading"><h2 id="list-title">Bir sayfa seç</h2><button id="close-list" class="text-action" type="button">Oyuna dön</button></div>
+        <label class="difficulty-choice" for="difficulty-select">Zorluk <select id="difficulty-select"><option value="kolay">Kolay</option><option value="orta">Orta</option><option value="zor">Zor</option></select></label>
+        <p id="list-summary"></p><ol id="puzzle-list" class="puzzle-list"></ol>
+        <div id="replay-confirm" class="replay-confirm" hidden><p id="replay-message"></p><div class="panel-actions"><button id="confirm-replay" class="text-action" type="button">Yeni deneme başlat</button><button id="cancel-replay" class="text-action" type="button">Vazgeç</button></div></div>
+      </section>
+      <footer class="page-footer">
+        <div class="puzzle-links">
+          <button id="new-button" class="word-button" type="button" aria-label="Yeni bulmaca"><span class="yazi">Yeni<span class="wide-label"> bulmaca</span></span><svg data-stroke="underline" aria-hidden="true"></svg></button>
+          <button id="list-button" class="word-button quieter" type="button" aria-controls="list-panel" aria-expanded="false"><span class="yazi">Bulmacalar</span><svg data-stroke="underline" aria-hidden="true"></svg></button>
+        </div>
+        <div class="help-links">
+          <button class="word-button" id="help-button" type="button" aria-label="Nasıl oynanır?" aria-expanded="false" aria-controls="help-panel"><span class="yazi">Nasıl oynanır?</span><svg data-stroke="underline" aria-hidden="true"></svg></button>
+          <button id="sound-button" class="word-button sound-button" type="button" aria-label="Ses açık; kapat" aria-pressed="true"><span class="yazi">Ses</span><svg data-stroke="underline" aria-hidden="true"></svg></button>
+        </div>
+      </footer>
+
+      <section class="help-panel" id="help-panel" aria-labelledby="help-title" hidden>
+        <div class="help-heading"><h2 id="help-title">Üç küçük kural</h2><button id="close-help" class="word-button" type="button"><span class="yazi">Kapat</span><svg data-stroke="underline" aria-hidden="true"></svg></button></div>
+        <ol>
+          <li>Beyaz karelere <strong>1’den 9’a</strong> birer rakam yaz.</li>
+          <li>Koyu karenin <strong>sağ üstündeki toplam sağa</strong>, <strong>sol altındaki toplam aşağıya</strong> aittir.</li>
+          <li>Bir toplam grubunda aynı rakamı tekrar kullanma. Örneğin iki karenin toplamı 4 ise 1 ve 3 olabilir; 2 ve 2 olamaz.</li>
+        </ol>
+        <p>Küçük rakamlar kalem notlarıdır. Bunlar, aklındaki olasılıkları hatırlamak içindir.</p>
+        <div class="tutorial-example">
+          <div class="tutorial-board-area"><div class="board-viewport" id="tutorial-viewport"><div class="board" id="tutorial-board" role="grid" aria-label="Bağımsız öğretici örneği"></div></div></div>
+          <div><h3>Birlikte deneyelim</h3><p id="tutorial-text" aria-live="polite"></p><div class="panel-actions"><button id="tutorial-next" class="text-action" type="button">Örneği başlat</button><button id="tutorial-reset" class="text-action secondary" type="button">Başa dön</button></div></div>
+        </div>
+        <p class="shortcuts">Klavye: 1–9 yaz · N not modu · Delete / Backspace sil · Ctrl / ⌘ + Z geri al · oklarla gezin.</p>
+        <p>Öğretici kendi küçük tahtasını kullanır. Oyunun ve süren burada bekler.</p>
+      </section>
+      <p id="storage-status" class="storage-status" role="status" hidden></p>
+    </div>
+  </main>
+
+  <p class="gizli" id="announcement" role="status" aria-live="polite" aria-atomic="true"></p>
+</body>
+</html>

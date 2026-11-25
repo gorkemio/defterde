@@ -1,0 +1,28 @@
+/* kit/daktilotusu.css — daktilo tuşu (Kit.daktilotusu). Yalnız button.tus altında eşleşir. */
+
+button.tus {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: transparent;            /* görünen harf svg'de; düğmenin metni ekran okuyucu içindir */
+  font: inherit;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
+button.tus > .tus-svg { position: absolute; left: 0; top: 0; overflow: visible; pointer-events: none; }
+button.tus .tus-harf { font-family: 'Courier Prime', 'Courier New', monospace; font-weight: 700; fill: #24211f; }
+button.tus .tus-kapak, button.tus .tus-isaret { transition: transform 60ms ease-out, opacity .25s; }
+button.tus .tus-golge { transition: transform 60ms ease-out, opacity 60ms; }
+button.tus.basili .tus-kapak, button.tus.basili .tus-isaret { transform: translateY(2px); }
+button.tus.basili .tus-golge { transform: translateY(-1.5px); opacity: .55; }
+button.tus.sonuk .tus-kapak { opacity: .5; }
+button.tus.sonuk .tus-kol { opacity: .35; }
+button.tus:focus-visible .tus-kapak { filter: drop-shadow(0 0 1.5px #6b3fb0); }
+
+@media (prefers-reduced-motion: reduce) {
+  button.tus .tus-kapak, button.tus .tus-isaret, button.tus .tus-golge { transition: none; }
+}

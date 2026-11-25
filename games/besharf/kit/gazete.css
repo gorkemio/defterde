@@ -1,0 +1,43 @@
+/* kit/gazete.css — gazete kupürü (Kit.gazete): matbaa yazıları ve kupür/bant/arka yüz kutuları.
+   Yalnız .kupur, .bant, .kupur-arka altında eşleşir; başka oyunlarda hiçbir kural değişmez.
+   Fontlar yerel (assets/fonts): PT Serif (metin), Archivo Narrow (başlık ve damga). */
+
+@font-face { font-family: 'PT Serif'; font-style: normal; font-weight: 400; font-display: swap;
+  src: url('../assets/fonts/PTSerif-Regular.ttf') format('truetype'); }
+@font-face { font-family: 'PT Serif'; font-style: normal; font-weight: 700; font-display: swap;
+  src: url('../assets/fonts/PTSerif-Bold.ttf') format('truetype'); }
+@font-face { font-family: 'Archivo Narrow'; font-style: normal; font-weight: 400 700; font-display: swap;
+  src: url('../assets/fonts/ArchivoNarrow-wght.ttf') format('truetype'); }
+
+.kupur {
+  --gazete-kagit: #ebe7dc;
+  --gazete-murekkep: #2b2722;
+  --gazete-sari: #d8cca8;
+  --gazete-silik: #6d6559;
+  position: relative;
+  color: var(--gazete-murekkep);
+  font-family: 'PT Serif', Georgia, 'Times New Roman', serif;
+  -webkit-font-smoothing: antialiased;
+}
+.kupur > .kupur-kagit { position: absolute; left: 0; top: 0; overflow: visible; pointer-events: none; z-index: 0; }
+/* içerik kâğıdın üstünde; :where ile özgüllük düşük tutulur (oyun kendi konumlamasını yapabilsin) */
+.kupur > :where(:not(.kupur-kagit):not(.bant):not(.damga):not(.kupur-arka)) { position: relative; z-index: 1; }
+.kupur .matbaa { font-family: 'Archivo Narrow', 'Arial Narrow', sans-serif; font-weight: 700; letter-spacing: .04em; }
+.kupur .matbaa-ince { font-family: 'Archivo Narrow', 'Arial Narrow', sans-serif; font-weight: 500; letter-spacing: .03em; }
+.kupur .cizgi-ust { border-top: 2px solid var(--gazete-murekkep); }
+.kupur .cizgi-alt { border-bottom: 1px solid var(--gazete-murekkep); }
+.kupur svg text { font-family: 'Archivo Narrow', 'Arial Narrow', sans-serif; }
+
+.bant { position: absolute; z-index: 4 !important; pointer-events: none; }
+.bant svg { display: block; overflow: visible; }
+
+/* Ters duran kupür: arka sayfanın silik, aynalı satırları */
+.kupur-arka {
+  position: absolute !important; inset: 10px 12px; overflow: hidden; pointer-events: none;
+  transform: scale(-1, 1); opacity: .2; filter: blur(.9px);
+  font-family: 'PT Serif', Georgia, serif; color: var(--gazete-murekkep);
+}
+.kupur-arka .arka-baslik { font-family: 'Archivo Narrow', 'Arial Narrow', sans-serif; font-weight: 700; font-size: 17px;
+  line-height: 1.1; margin-bottom: 6px; text-transform: uppercase; }
+.kupur-arka .arka-sutunlar { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.kupur-arka p { margin: 0; font-size: 8.5px; line-height: 1.32; white-space: nowrap; overflow: hidden; text-align: justify; }

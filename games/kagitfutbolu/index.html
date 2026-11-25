@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#b6a58a">
+  <title>Kağıt Futbolu</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23fbf9f2'/%3E%3Ccircle cx='16' cy='16' r='9' fill='none' stroke='%231f3b9b' stroke-width='2.4'/%3E%3Cpath d='M16 11 L20 14 L18.5 19 L13.5 19 L12 14 Z' fill='%231f3b9b'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="kit/kagit.css?v=b60e04237beb">
+  <link rel="stylesheet" href="defter.css?v=8c0b29ca3373">
+  <link rel="stylesheet" href="style.css?v=f0f375a890fd">
+</head>
+<body>
+  <noscript><p class="uyari">Bu defteri açmak için JavaScript gerekiyor.</p></noscript>
+
+  <p class="gizli" id="duyuru" role="status" aria-live="polite" aria-atomic="true"></p>
+  <p class="gizli" id="klavye-yardim">Hedef noktaya dokun veya yön düğmelerini kullan. Klavyede ok tuşları ve çaprazlar için Q, E, Z, C. Yönler ekrana göredir.</p>
+  <main class="defter" id="defter">
+    <a class="defterde-donus" href="/" aria-label="Defterde oyunlarının içindekiler sayfasına dön">← İçindekiler</a>
+    <section class="sayfa" id="sayfa" aria-label="Kağıt futbolu sayfası">
+      <header class="ust-bant">
+        <h1 class="gizli">Kağıt Futbolu</h1>
+        <svg class="ust" id="ust" aria-hidden="true"></svg>
+        <div class="sayfa-araclari">
+          <svg class="sayfa-no" id="sayfa-no" aria-hidden="true"></svg>
+          <button class="ses-dugme" id="ses-dugme" type="button" aria-pressed="false" aria-label="Sesi kapat"><svg class="ikon" viewBox="0 0 40 40" aria-hidden="true"></svg></button>
+        </div>
+      </header>
+      <div class="oyun-bilgisi">
+        <p id="durum-metni">Saha hazırlanıyor…</p>
+        <p id="skor" aria-label="Skor">
+          <span class="mavi">Mavi <b>0</b><svg class="sira-cizgisi" viewBox="0 0 80 6" preserveAspectRatio="none" aria-hidden="true"><path d="M2 4 Q22 1 41 3 T78 3"/></svg></span>
+          <span aria-hidden="true">–</span>
+          <span class="kirmizi">Kırmızı <b>0</b><svg class="sira-cizgisi" viewBox="0 0 80 6" preserveAspectRatio="none" aria-hidden="true"><path d="M2 4 Q22 1 41 3 T78 3"/></svg></span>
+        </p>
+      </div>
+      <div class="oyun-alani">
+        <div class="saha-alani">
+          <svg class="marj" id="marj" aria-hidden="true"></svg>
+          <svg class="saha" id="saha" role="group" tabindex="0" aria-label="Kağıt futbolu sahası" aria-describedby="klavye-yardim"></svg>
+        </div>
+        <div class="alt-bant">
+          <div class="eylemler">
+        <div class="simgeler">
+          <button class="simge" id="yeni-sayfa" type="button" data-simge="duduk"><svg class="ikon" viewBox="0 0 60 44" aria-hidden="true"></svg><span class="etiket">yeni sayfa</span></button>
+          <button class="simge" id="geri-al" type="button" data-simge="var" disabled><svg class="ikon" viewBox="0 0 60 44" aria-hidden="true"></svg><span class="etiket">geri al</span></button>
+          <button class="simge" id="yeniden-izle" type="button" data-simge="tekrar" hidden><svg class="ikon" viewBox="0 0 60 44" aria-hidden="true"></svg><span class="etiket">yeniden izle</span></button>
+          <button class="simge" id="taktik" type="button" data-simge="pano" aria-haspopup="dialog" aria-expanded="false" aria-controls="taktik-notu"><svg class="ikon" viewBox="0 0 60 44" aria-hidden="true"></svg><span class="etiket">ayarlar</span></button>
+        </div>
+        <button class="bilet" id="bilet" type="button" aria-label="Maç bileti: ayarları aç"><svg class="bilet-svg" viewBox="0 0 200 76" aria-hidden="true"></svg></button>
+          </div>
+          <div class="yonler" id="yonler" role="group" aria-label="Topu götüreceğin yön" hidden>
+            <button type="button" class="yon" data-dx="-1" data-dy="-1" style="grid-column:1;grid-row:1" aria-label="Sol üst" disabled><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M7 16 Q15 15 25 16 M18 9 L25 16 L18 23" transform="rotate(-135 16 16)"/></svg></button>
+            <button type="button" class="yon" data-dx="0" data-dy="-1" style="grid-column:2;grid-row:1" aria-label="Yukarı" disabled><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M7 16 Q15 15 25 16 M18 9 L25 16 L18 23" transform="rotate(-90 16 16)"/></svg></button>
+            <button type="button" class="yon" data-dx="1" data-dy="-1" style="grid-column:3;grid-row:1" aria-label="Sağ üst" disabled><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M7 16 Q15 15 25 16 M18 9 L25 16 L18 23" transform="rotate(-45 16 16)"/></svg></button>
+            <button type="button" class="yon" data-dx="-1" data-dy="0" style="grid-column:1;grid-row:2" aria-label="Sol" disabled><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M7 16 Q15 15 25 16 M18 9 L25 16 L18 23" transform="rotate(180 16 16)"/></svg></button>
+            <button type="button" class="yon" data-dx="1" data-dy="0" style="grid-column:3;grid-row:2" aria-label="Sağ" disabled><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M7 16 Q15 15 25 16 M18 9 L25 16 L18 23" transform="rotate(0 16 16)"/></svg></button>
+            <button type="button" class="yon" data-dx="-1" data-dy="1" style="grid-column:1;grid-row:3" aria-label="Sol alt" disabled><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M7 16 Q15 15 25 16 M18 9 L25 16 L18 23" transform="rotate(135 16 16)"/></svg></button>
+            <button type="button" class="yon" data-dx="0" data-dy="1" style="grid-column:2;grid-row:3" aria-label="Aşağı" disabled><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M7 16 Q15 15 25 16 M18 9 L25 16 L18 23" transform="rotate(90 16 16)"/></svg></button>
+            <button type="button" class="yon" data-dx="1" data-dy="1" style="grid-column:3;grid-row:3" aria-label="Sağ alt" disabled><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M7 16 Q15 15 25 16 M18 9 L25 16 L18 23" transform="rotate(45 16 16)"/></svg></button>
+            <span class="yon-orta" aria-hidden="true"><svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="7"/><path d="M16 12 L20 15 L18 20 L13 20 L12 15 Z"/></svg></span>
+          </div>
+          <svg class="karakter" id="karakter" viewBox="0 0 120 140" aria-hidden="true"></svg>
+        </div>
+      </div>
+      <div class="cevir-oneri" id="cevir-oneri" hidden><span>Yan çevirerek daha büyük sahada oyna.</span><button type="button" id="cevir-kapat" aria-label="Çevirme önerisini kapat">tamam</button></div>
+      <div class="susler" aria-hidden="true">
+        <svg class="susle kupa" data-sus="kupa" viewBox="0 0 100 100"></svg>
+        <svg class="susle bayrak" data-sus="bayrak" viewBox="0 0 60 60"></svg>
+      </div>
+    </section>
+  </main>
+      <dialog class="taktik-notu" id="taktik-notu" role="dialog" aria-modal="true" aria-labelledby="taktik-baslik">
+        <svg class="not-susu" aria-hidden="true"></svg>
+        <h2 class="not-baslik" id="taktik-baslik">Taktik notu</h2>
+        <p id="ayar-ozeti" class="ayar-ozeti"></p>
+        <div class="ayarlar" id="ayarlar">
+          <p class="satir"><span class="ayar-ad">rakip:</span> <button class="ayar" type="button" data-ayar="zorluk" data-deger="kolay" aria-pressed="false">kolay</button> <button class="ayar" type="button" data-ayar="zorluk" data-deger="orta" aria-pressed="false">orta</button> <button class="ayar" type="button" data-ayar="zorluk" data-deger="zor" aria-pressed="false">zor</button></p>
+          <p class="satir"><span class="ayar-ad">saha:</span> <button class="ayar" type="button" data-ayar="saha" data-deger="kucuk" aria-pressed="false">küçük</button> <button class="ayar" type="button" data-ayar="saha" data-deger="normal" aria-pressed="false">normal</button> <button class="ayar" type="button" data-ayar="saha" data-deger="uzun" aria-pressed="false">uzun</button></p>
+          <p class="satir"><button class="ayar" type="button" data-ayar="ikiKisi" role="switch" aria-checked="false"><svg class="kutucuk" viewBox="0 0 20 20" aria-hidden="true"></svg>iki kişilik</button> <button class="ayar" type="button" data-ayar="mac" role="switch" aria-checked="false"><svg class="kutucuk" viewBox="0 0 20 20" aria-hidden="true"></svg>maç (3 gol)</button></p>
+          <p class="satir"><button class="ayar" type="button" data-ayar="kesisme" role="switch" aria-checked="false"><svg class="kutucuk" viewBox="0 0 20 20" aria-hidden="true"></svg>kesişme</button> <button class="ayar" type="button" data-ayar="rakipBaslar" role="switch" aria-checked="false"><svg class="kutucuk" viewBox="0 0 20 20" aria-hidden="true"></svg>rakip başlar</button></p>
+          <p class="satir"><button class="ayar" type="button" data-ayar="evModu" role="switch" aria-checked="false"><svg class="kutucuk" viewBox="0 0 20 20" aria-hidden="true"></svg>ev modu (geri al)</button></p>
+          <p class="satir alt-baslik">kural notları</p>
+          <p class="satir"><button class="ayar" type="button" data-ayar="agizSeker" role="switch" aria-checked="false"><svg class="kutucuk" viewBox="0 0 20 20" aria-hidden="true"></svg>ağız ortası seker</button></p>
+          <p class="satir"><span class="ayar-ad">maçta sıkışma:</span> <button class="ayar" type="button" data-ayar="sikismaMac" data-deger="gol" aria-pressed="false">gol</button> <button class="ayar" type="button" data-ayar="sikismaMac" data-deger="tekrar" aria-pressed="false">tekrar</button> <button class="ayar" type="button" data-ayar="sikismaMac" data-deger="mac" aria-pressed="false">maç biter</button></p>
+          <p class="satir"><button class="ayar" type="button" data-ayar="surukle" role="switch" aria-checked="false"><svg class="kutucuk" viewBox="0 0 20 20" aria-hidden="true"></svg>telefonda sürükle</button></p>
+        </div>
+        <div class="gorunum-ayar"><label><input type="checkbox" id="yonleri-goster"> Yön düğmelerini her zaman göster</label><button id="tam-ekran" type="button">Tam ekran / yatay</button></div>
+        <p class="satir kunye">gol sesi: <a href="https://commons.wikimedia.org/wiki/File:Slow_starting_applause.ogg" target="_blank" rel="noopener">Stephan, kalabalık alkışı</a>, kamu malı (kısaltıldı)</p>
+        <p class="satir not-alt"><span class="yeni-not" id="yeni-not" hidden>(değişiklik yeni sayfada)</span><button class="tamam" id="tamam" type="button">tamam ✓</button></p>
+      </dialog>
+
+  <!-- Yerel, sabit sürüm; file:// altında da çalışır (klasik betik). -->
+  <script src="assets/vendor/rough-4.6.6.js?v=6853af861953"></script>
+  <script src="kit/kalem.js?v=50e6a9360c95"></script>
+  <script src="kit/ses.js?v=5c37db7cfc13"></script>
+  <script src="sesler.js?v=a71d366a1415"></script>
+  <script src="config.js?v=69e4d6731eae"></script>
+  <script src="assets/varliklar.js?v=6dc5a4d0640c"></script>
+  <script src="board.js?v=425177189931"></script>
+  <script src="ai.js?v=c09c83cbba6d"></script>
+  <script src="kaptan.js?v=861e5e26b72a"></script>
+  <script src="draw.js?v=98ab88b22cf7"></script>
+  <script src="layout.js?v=a4714852e5e0"></script>
+  <script src="gorunum.js?v=c74aed260e2e"></script>
+  <script src="ui.js?v=8a16ac471ff5"></script>
+</body>
+</html>

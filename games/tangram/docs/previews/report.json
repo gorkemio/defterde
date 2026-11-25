@@ -1,0 +1,67 @@
+{
+  "valid": true,
+  "errors": [],
+  "duplicates": [],
+  "similar": [
+    {
+      "ids": [
+        "araba",
+        "yamuk"
+      ],
+      "similarity": 0.8823529411764705
+    },
+    {
+      "ids": [
+        "kemerli-kapi",
+        "dikdortgen"
+      ],
+      "similarity": 0.9007131106577176
+    },
+    {
+      "ids": [
+        "saksi",
+        "topac"
+      ],
+      "similarity": 0.8628152064247583
+    },
+    {
+      "ids": [
+        "topac",
+        "kare"
+      ],
+      "similarity": 0.8813636932682745
+    },
+    {
+      "ids": [
+        "dikdortgen",
+        "altigen"
+      ],
+      "similarity": 0.8823529411764706
+    },
+    {
+      "ids": [
+        "ok",
+        "kalp"
+      ],
+      "similarity": 0.8823529411764702
+    }
+  ],
+  "categories": {
+    "kara-hayvanlari": 12,
+    "kuslar": 12,
+    "deniz-canlilari": 8,
+    "insanlar": 12,
+    "tasitlar": 12,
+    "yapilar": 14,
+    "ev-esyalari": 14,
+    "nesneler": 12,
+    "doga": 12,
+    "geometri": 12
+  },
+  "total": 120,
+  "validRecords": 120,
+  "distinct": 120,
+  "accepted": 0,
+  "sha256": "5729f51410bf1e63a4ae6136540d4f837964281ffec13d5d6ba450b40f4e37d6",
+  "review": "Geometri geçerli; tanınabilirlik için isimsiz kullanıcı incelemesi gerekli."
+}

@@ -1,0 +1,43 @@
+---
+import { decorate, type CatalogItem } from '../lib/catalog';
+import { discoveryMeta, matchesGame, type Filters } from '../lib/discovery';
+// Ana sayfa ve yönetim önizlemesi aynı listeyi kullanır; böylece taslak,
+// ziyaretçinin göreceği düzenle birebir aynı görünür.
+interface Props {
+  items: CatalogItem[];
+  filters?: Filters;
+  label?: string;
+}
+const { items, filters, label = 'Oyunlar' } = Astro.props;
+const games = decorate(items)
+  .filter((g) => g.visible)
+  .map((g) => ({
+    ...g,
+    ...(discoveryMeta[g.slug] ?? { categories: [], players: [] }),
+  }));
+---
+
+<ol class="discovery-games" aria-label={label}>
+  {games.map((game) => (
+    <li
+      data-slug={game.slug}
+      data-categories={game.categories.join(' ')}
+      data-players={game.players.join(' ')}
+      hidden={filters ? !matchesGame(game, filters) : false}
+    >
+      <a class="discovery-game" href={`/oyunlar/${game.slug}/`}>
+        <img
+          src={`/assets/drawings/${game.slug}.svg`}
+          width="80"
+          height="60"
+          alt=""
+        />
+        <div>
+          <h3>{game.title}</h3>
+          <p class="discovery-description">{game.description}</p>
+          <span class="discovery-mode">{game.mode}</span>
+        </div>
+      </a>
+    </li>
+  ))}
+</ol>

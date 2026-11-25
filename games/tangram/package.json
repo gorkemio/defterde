@@ -1,0 +1,13 @@
+{
+  "name": "tangram-defterde",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Defterde Tangram — 120 şekil, çevrimdışı oyun ve kişisel tasarım",
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "catalog:check": "node tools/catalog.cjs check",
+    "catalog:previews": "node tools/catalog.cjs previews",
+    "preview": "python3 -m http.server 4173 --bind 127.0.0.1",
+    "catalog:build": "node tools/content/build-catalog.cjs"
+  }
+}

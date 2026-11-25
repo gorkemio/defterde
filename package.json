@@ -1,0 +1,60 @@
+{
+  "name": "defterde",
+  "version": "1.0.0",
+  "description": "Reklamsız, üyeliksiz Türkçe defter oyunları: 20 tarayıcı oyunu ve Astro/Fastify platformu.",
+  "private": true,
+  "license": "MIT",
+  "homepage": "https://defterde.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gorkemio/defterde.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gorkemio/defterde/issues"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=24.0.0 <25"
+  },
+  "scripts": {
+    "dev": "npm run build && node --env-file-if-exists=.env build/server/index.js",
+    "start": "node --env-file-if-exists=.env build/server/index.js",
+    "build": "node scripts/package-games.mjs && node scripts/assets.mjs && ASTRO_TELEMETRY_DISABLED=1 astro build && tsc -p tsconfig.server.json",
+    "check": "ASTRO_TELEMETRY_DISABLED=1 astro check && tsc --noEmit -p tsconfig.server.json",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "node --import tsx --test tests/*.test.ts",
+    "test:games": "node scripts/test-games.mjs",
+    "test:browser": "playwright test",
+    "games:import": "node scripts/import-games.mjs",
+    "games:verify": "node scripts/verify-games.mjs",
+    "games:record": "node scripts/update-game.mjs record",
+    "db:migrate": "node --env-file-if-exists=.env build/server/migrate.js"
+  },
+  "dependencies": {
+    "@astrojs/node": "11.1.8",
+    "@fastify/compress": "9.2.2",
+    "@fastify/cookie": "11.1.3",
+    "@fastify/rate-limit": "11.2.1",
+    "@fastify/static": "10.1.6",
+    "astro": "7.4.0",
+    "compression": "1.8.2",
+    "drizzle-orm": "0.45.4",
+    "fastify": "5.12.7",
+    "postgres": "3.4.9",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@astrojs/check": "0.9.10",
+    "@playwright/test": "1.64.1",
+    "@types/compression": "1.8.1",
+    "@types/node": "26.6.5",
+    "lighthouse": "13.5.0",
+    "prettier": "3.9.10",
+    "prettier-plugin-astro": "1.1.1",
+    "roughjs": "4.6.6",
+    "sharp": "0.35.5",
+    "tsx": "4.23.15",
+    "typescript": "6.0.3"
+  }
+}

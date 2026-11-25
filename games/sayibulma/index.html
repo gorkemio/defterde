@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="tr" data-malzeme="kirmizimavi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#b6a58a">
+  <title>Sayı Bulma</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%23fbf8f0'/%3E%3Cpath d='M0 11H32M0 21H32' stroke='%234678be' stroke-opacity='.35'/%3E%3Cpath d='M4 19 L9 13 L9 26' fill='none' stroke='%232b4a9f' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M16 20H24M20 16V24' stroke='%23c0392b' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="kit/kagit.css?v=556272b28114">
+  <link rel="stylesheet" href="kit/cizgili.css?v=cc67fbcc7158">
+  <link rel="stylesheet" href="kit/kirmizimavi.css?v=71bdbad38f30">
+  <link rel="stylesheet" href="style.css?v=93e3020be004">
+</head>
+<body>
+  <noscript><p class="uyari">Bu defteri açmak için JavaScript gerekiyor.</p></noscript>
+  <p class="gizli" id="duyuru" role="status" aria-live="polite"></p>
+
+  <main class="defter" id="defter">
+    <a class="defterde-donus" href="/">← İçindekiler</a>
+    <section class="sayfa cizgili" id="sayfa" aria-label="Sayı Bulma sayfası">
+      <svg class="katman" id="yazi" aria-hidden="true"></svg>
+      <ol class="gizli" id="satir-metni" aria-label="Tahminler"></ol>
+      <div class="cizelge" id="cizelge" role="group" aria-label="Rakam çizelgesi"></div>
+      <button class="giris-alan" id="giris-alan" type="button" aria-label="İpucunu kabul et" hidden></button>
+      <button class="dugme sozcuk tahmin-dugme" id="tahmin" type="button"><span class="yazi">tahmin</span></button>
+      <button class="dugme sozcuk ipucu-not" id="ipucu-not" type="button" hidden><span class="yazi">ipucu ister misin?</span></button>
+
+      <!-- O bulsun: başlangıç notu, cevap sayaçları, düzeltme -->
+      <div class="basla-not" id="basla-not" hidden>
+        <p id="basla-metin"></p>
+        <p class="not-komut">
+          <button class="dugme sozcuk" id="tuttum" type="button"><span class="yazi">tuttum</span></button>
+          <button class="dugme sozcuk" id="yazayim" type="button"><span class="yazi">sayımı yazayım, izleyeyim</span></button></p>
+      </div>
+      <button class="sayac" id="sayac-arti" type="button" hidden></button>
+      <button class="sayac" id="sayac-eksi" type="button" hidden></button>
+      <button class="dugme sozcuk cevapla" id="cevapla" type="button" hidden><span class="yazi">cevapla</span></button>
+      <div class="cevaplar" id="cevaplar" role="group" aria-label="Cevapları düzelt"></div>
+
+      <!-- İki kişi: telefonu arkadaşına ver (sayfanın üstüne kapatılan boş yaprak) -->
+      <div class="devir" id="devir" role="dialog" aria-labelledby="devir-metin" hidden>
+        <p id="devir-metin"></p>
+        <p><button class="dugme sozcuk" id="hazirim" type="button"><span class="yazi">hazırım</span></button></p>
+      </div>
+
+      <!-- Sayfanın boş satırlarına kalemle yazılmış notlar: ayarlar ve nasıl oynanır -->
+      <section class="not" id="ayarlar" aria-labelledby="ayarlar-baslik" hidden>
+        <h2 class="gizli" id="ayarlar-baslik">Ayarlar</h2>
+        <p class="ayar-grup"><span class="ayar-ad">oyun:</span>
+          <button class="ayar" type="button" data-ayar="mod" data-deger="senbul"><span class="yazi">sen bul</span></button><span class="ara">·</span>
+          <button class="ayar" type="button" data-ayar="mod" data-deger="obulsun"><span class="yazi">o bulsun</span></button><span class="ara">·</span>
+          <button class="ayar" type="button" data-ayar="mod" data-deger="yaris"><span class="yazi">yarış</span></button><span class="ara">·</span>
+          <button class="ayar" type="button" data-ayar="mod" data-deger="ikikisi"><span class="yazi">iki kişi</span></button><span class="ara">·</span>
+          <button class="ayar" type="button" data-ayar="mod" data-deger="gunun"><span class="yazi">günün sayısı</span></button></p>
+        <p class="ayar-grup" id="biz-ayar"><span class="ayar-ad">cevaplar:</span>
+          <button class="ayar" type="button" data-ayar="biz" data-deger="cihaz"><span class="yazi">cihaz versin</span></button><span class="ara">·</span>
+          <button class="ayar" type="button" data-ayar="biz" data-deger="biz"><span class="yazi">biz veririz</span></button></p>
+        <p class="ayar-grup"><span class="ayar-ad">zorluk:</span>
+          <button class="ayar" type="button" data-ayar="zorluk" data-deger="kolay"><span class="yazi">kolay</span></button><span class="ara">·</span>
+          <button class="ayar" type="button" data-ayar="zorluk" data-deger="orta"><span class="yazi">orta</span></button><span class="ara">·</span>
+          <button class="ayar" type="button" data-ayar="zorluk" data-deger="zor"><span class="yazi">zor</span></button></p>
+        <p class="ayar-grup"><span class="ayar-ad">hane:</span>
+          <button class="ayar" type="button" data-ayar="hane" data-deger="3"><span class="yazi">3</span></button><span class="ara">·</span>
+          <button class="ayar" type="button" data-ayar="hane" data-deger="4"><span class="yazi">4</span></button><span class="ara">·</span>
+          <button class="ayar" type="button" data-ayar="hane" data-deger="5"><span class="yazi">5</span></button></p>
+        <p class="ayar-grup"><span class="ayar-ad">ilk hane 0:</span>
+          <button class="ayar" type="button" data-ayar="sifir" data-deger="hayir"><span class="yazi">olmaz</span></button><span class="ara">·</span>
+          <button class="ayar" type="button" data-ayar="sifir" data-deger="evet"><span class="yazi">olabilir</span></button></p>
+        <p class="ayar-grup"><span class="ayar-ad">rakamlar:</span>
+          <button class="ayar" type="button" data-ayar="tekrar" data-deger="hayir"><span class="yazi">farklı</span></button><span class="ara">·</span>
+          <button class="ayar" type="button" data-ayar="tekrar" data-deger="evet"><span class="yazi">tekrar edebilir</span></button></p>
+        <p class="ayar-grup" id="cizelge-ayar"><span class="ayar-ad">çizelge:</span>
+          <button class="ayar" type="button" data-ayar="cizelge" data-deger="elle"><span class="yazi">elle</span></button><span class="ara">·</span>
+          <button class="ayar" type="button" data-ayar="cizelge" data-deger="otomatik"><span class="yazi">otomatik</span></button></p>
+        <p class="ayar-aciklama" id="ayar-aciklama"></p>
+        <p class="not-komut"><button class="dugme sozcuk" id="ayarlar-kapat" type="button"><span class="yazi">kapat</span></button></p>
+      </section>
+
+      <section class="not" id="nasil-not" aria-labelledby="nasil-baslik" hidden>
+        <h2 class="gizli" id="nasil-baslik">Nasıl oynanır?</h2>
+        <p id="nasil-1"></p>
+        <p>Her tahmine kırmızı kalemle cevap gelir: <b>+</b> doğru rakam doğru yerde, <b>−</b> doğru rakam yanlış yerde.</p>
+        <p class="ornek-satir"><svg class="ornek" id="ornek-1" aria-hidden="true"></svg><span class="gizli" id="ornek-1-okunan"></span><span class="aciklama" id="ornek-1-aciklama"></span></p>
+        <p class="ornek-satir"><svg class="ornek" id="ornek-2" aria-hidden="true"></svg><span class="gizli" id="ornek-2-okunan"></span><span class="aciklama" id="ornek-2-aciklama"></span></p>
+        <p>Rakam çizelgesine dokunup not al (var, yok, belki); hepsi + olunca buldun.</p>
+        <p class="not-komut">
+          <button class="dugme sozcuk" id="izle" type="button"><span class="yazi">izle</span></button>
+          <button class="dugme sozcuk" id="nasil-kapat" type="button"><span class="yazi">kapat</span></button></p>
+      </section>
+      <nav class="komutlar" id="komutlar" aria-label="Komutlar">
+        <button class="dugme sozcuk" id="yeni" type="button"><span class="yazi">Yeni sayfa</span></button>
+        <button class="dugme sozcuk" id="paylas" type="button" hidden><span class="yazi">Paylaş</span></button>
+        <button class="dugme sozcuk" id="ipucu" type="button"><span class="yazi">İpucu</span></button>
+        <button class="dugme sozcuk" id="cizelge-ac" type="button" aria-pressed="true"><span class="yazi">Çizelge</span></button>
+        <button class="dugme sozcuk" id="kalan-ac" type="button" aria-pressed="true"><span class="yazi">Kalan aday</span></button>
+        <button class="dugme sozcuk" id="nasil" type="button" aria-expanded="false" aria-controls="nasil-not"><span class="yazi">Nasıl oynanır?</span></button>
+        <button class="dugme sozcuk" id="ses" type="button" aria-pressed="true"><span class="yazi">Ses</span></button>
+        <button class="dugme sozcuk" id="ayarlar-ac" type="button" aria-expanded="false" aria-controls="ayarlar"><span class="yazi">Ayarlar</span></button>
+      </nav>
+    </section>
+  </main>
+
+  <!-- Telefonda tuş takımı: kâğıt şerit, rakamlar kalemle -->
+  <div class="tuslar" id="tuslar" role="group" aria-label="Tuş takımı"></div>
+
+  <!-- Yerel sabit sürüm; klasik betikler file:// altında da çalışır. karakter.js, kursunkalem.* ve kecelikalem.* bu oyunda yüklenmez. -->
+  <script src="assets/vendor/rough-4.6.6.js?v=6853af861953"></script>
+  <script src="kit/kalem.js?v=a8f2cf013cf4"></script>
+  <script src="kit/ses.js?v=c92bc678c362"></script>
+  <script src="kit/malzeme.js?v=7f1b2fbadc51"></script>
+  <script src="kit/kirmizimavi.js?v=442cfdc19814"></script>
+  <script src="kit/cizgili.js?v=ed5c3cc809b6"></script>
+  <script src="kit/rakam.js?v=4d5e09e253e3"></script>
+  <script src="config.js?v=b9597a202020"></script>
+  <script src="rules.js?v=7d433fd1ccc8"></script>
+  <script src="solver.js?v=9b42ce703f26"></script>
+  <script src="draw.js?v=f23bd70ee066"></script>
+  <script src="ui.js?v=5a15efce964a"></script>
+</body>
+</html>

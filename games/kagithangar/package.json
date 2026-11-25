@@ -1,0 +1,11 @@
+{
+  "name": "kagithangar",
+  "private": true,
+  "description": "Kağıt Hangar: kağıttan uçak katla, adını koy, boya, fırlat, hangarına as.",
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "start": "npx serve -l 8140 .",
+    "denetle": "npx --yes eslint@8.57.0 --no-eslintrc --env browser,es2022 --parser-options=ecmaVersion:2022,sourceType:module --rule '{\"no-undef\":\"error\"}' --global rough,LZString app.js depo.js rota.js isimler.js ui engine"
+  }
+}

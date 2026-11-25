@@ -1,0 +1,9 @@
+# scripts/yasakli-tahmin.txt — tahmin listesinde de olmaması gerekenler (brief: yalnız hakaret ve cinsellik). TDK'nın
+# "kaba konuşmada" ve "hakaret yollu" etiketli maddeleri ve onlardan üretilen çekimler zaten çıkar; burası etiketsiz olanlar.
+# Kök de denetlenir: buradaki köklerden üretilen çekimli biçimler de girmez. Değişince: node scripts/kelimeler.mjs
+zenci*
+porno*
+sperm*
+penis*
+seksi
+fuhuş*

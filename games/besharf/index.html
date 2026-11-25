@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="tr" data-malzeme="kopyakalemi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#b6a58a">
+  <meta name="description" content="Her gün herkese aynı beş harfli Türkçe kelime, altı tahmin. Harfleri daktilo basar, işaretleri kopya kalemi çizer.">
+  <title>Beş Harf — Defterde</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%23a9a9a5'/%3E%3Ccircle cx='16' cy='16' r='11.6' fill='%23efe5cc'/%3E%3Ctext x='16' y='21.5' font-family='Courier New,monospace' font-weight='700' font-size='16' text-anchor='middle' fill='%23262321'%3EB%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="kit/kagit.css?v=74683cd6">
+  <link rel="stylesheet" href="kit/kopyakalemi.css?v=508c90c3">
+  <link rel="stylesheet" href="kit/daktilo.css?v=f5a2b96d">
+  <link rel="stylesheet" href="kit/daktilokagidi.css?v=c05a70f5">
+  <link rel="stylesheet" href="kit/daktilotusu.css?v=c42f6060">
+  <link rel="stylesheet" href="style.css?v=a9d4c4b0">
+</head>
+<body>
+  <noscript><p class="uyari">Bu defteri açmak için JavaScript gerekiyor.</p></noscript>
+  <p class="gizli" id="duyuru" role="status" aria-live="polite"></p>
+
+  <main class="defter" id="defter">
+    <a class="defterde-donus" href="/">← İçindekiler</a>
+    <article class="sayfa" id="sayfa" aria-labelledby="oyun-adi">
+      <h1 class="gizli" id="oyun-adi">Beş Harf</h1>
+
+      <nav class="komutlar ust-komut" aria-label="Genel komutlar">
+        <button class="dugme sozcuk" id="k-gunun" type="button" hidden><span class="yazi">‹ Günlük</span></button>
+        <button class="dugme sozcuk" id="k-nasil" type="button"><span class="yazi">Nasıl oynanır?</span></button>
+        <button class="dugme sozcuk" id="k-ayarlar" type="button"><span class="yazi">Ayarlar</span></button>
+        <button class="dugme sozcuk" id="k-ses" type="button" aria-pressed="true"><span class="yazi">Ses</span></button>
+      </nav>
+
+      <!-- Deftere iki zımbayla tutturulmuş daktilo kâğıdı: başlık, No., 6×5 ızgara (ui/kagit.js) -->
+      <section class="daktilo-kagit" id="kagit" aria-label="Daktilo kâğıdı: altı tahmin, beş harf"></section>
+
+      <!-- Not sayfası: İstatistik, Analiz, Ayarlar, Nasıl oynanır, Serbest, Düello, devir. Açılınca kâğıdın ve tuşların
+           yerini aynı boyda başka bir daktilo kâğıdı alır (üstte yüzen pencere yok) — ui/not.js -->
+      <section class="not daktilo-kagit" id="not" hidden></section>
+
+      <!-- Kâğıdın altında daktilo tuşları (ui/klavye.js) -->
+      <section class="klavye" id="klavye" aria-label="Daktilo tuşları"></section>
+
+      <nav class="komutlar alt-komut" aria-label="Oyun komutları">
+        <button class="dugme sozcuk" id="k-istatistik" type="button"><span class="yazi">İstatistik</span></button>
+        <button class="dugme sozcuk" id="k-analiz" type="button"><span class="yazi">Analiz</span></button>
+        <button class="dugme sozcuk" id="k-paylas" type="button"><span class="yazi">Paylaş</span></button>
+        <button class="dugme sozcuk" id="k-serbest" type="button"><span class="yazi">Serbest</span></button>
+        <button class="dugme sozcuk" id="k-duello" type="button"><span class="yazi">Düello</span></button>
+      </nav>
+    </article>
+  </main>
+
+  <!-- Yerel sabit sürüm; klasik betik file:// altında da çalışır. -->
+  <script src="assets/vendor/rough-4.6.6.js?v=6853af86"></script>
+  <script src="kit/kalem.js?v=ecbde10a"></script>
+  <script src="kit/ses.js?v=c92bc678"></script>
+  <script src="kit/malzeme.js?v=7f1b2fba"></script>
+  <script src="kit/kopyakalemi.js?v=28cc7a85"></script>
+  <script src="kit/tr.js?v=a9e96884"></script>
+  <script src="kit/daktilo.js?v=61493909"></script>
+  <script src="kit/daktilokagidi.js?v=cd05097c"></script>
+  <script src="kit/daktilotusu.js?v=cd394a30"></script>
+  <script src="config.js?v=9fe91b57"></script>
+  <script src="data/cevaplar.js?v=d28d5525"></script>
+  <script src="data/tahminler.js?v=6c775694"></script>
+  <script src="data/anlamlar.js?v=c2a029bb"></script>
+  <script src="data/oneriler.js?v=acdb15e2"></script>
+  <script src="engine/game.js?v=95d9f144"></script>
+  <script src="engine/solver.js?v=ee20a6e9"></script>
+  <script src="engine/daily.js?v=430574c5"></script>
+  <script src="ui/depo.js?v=6a1ddd62"></script>
+  <script src="audio/sesler.js?v=5b1a2d27"></script>
+  <script src="ui/sahne.js?v=58b340cb"></script>
+  <script src="ui/not.js?v=2e50b144"></script>
+  <script src="ui/klavye.js?v=01ffa328"></script>
+  <script src="ui/kagit.js?v=383c52ca"></script>
+  <script src="ui/akis.js?v=3511babc"></script>
+  <script src="ui/sonuc.js?v=a21449d0"></script>
+  <script src="ui/modlar.js?v=4d513eaf"></script>
+  <script src="ui/analiz.js?v=3a25e497"></script>
+  <script src="ui/duello.js?v=cee01d60"></script>
+  <script src="ui/ayarlar.js?v=e5f6e492"></script>
+  <script src="ui/vitrin.js?v=ea76408d"></script>
+  <script src="ui/ana.js?v=449b5619"></script>
+</body>
+</html>

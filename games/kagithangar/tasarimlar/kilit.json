@@ -1,0 +1,24 @@
+{
+  "id": "kilit",
+  "ad": "Kilit",
+  "orijinalAd": "Nakamura Lock",
+  "zorluk": 2,
+  "tur": "mesafe",
+  "surum": 2,
+  "kaynak": "Nakamura Lock (Exploratorium yönergesi)",
+  "karakter": {"hiz":6,"suzulme":6,"denge":7,"akrobasi":2},
+  "aciklama": "Burnundaki kilit kanatları bir arada tutar. Dengeli ve uzun uçar.",
+  "beklenen": {"poligon":28,"kutu":[0.5,0.6,0.8372,1.5291],"enKalin":26},
+  "ucusGorunumu": null,
+  "adimlar": [
+    {"tip":"vadi","cizgi":[[0.5,0],[0.5,1.414]],"katman":"hepsi","tut":[1,0.707],"ac":true,"metin":"Kağıdı uzunlamasına ikiye katla, sonra aç."},
+    {"tip":"vadi","cizgi":{"nokta":[0,0],"hedef":[0.5,0.5]},"katman":"hepsi","ayna":true,"metin":"Üst köşeleri orta çizgiye getir."},
+    {"tip":"vadi","cizgi":[[0,0.6],[1,0.6]],"katman":"hepsi","tut":[0.5,0],"metin":"Sivri ucu aşağı katla."},
+    {"tip":"vadi","cizgi":{"nokta":[0,0.6],"hedef":[0.5,1.1]},"katman":"hepsi","ayna":true,"metin":"Yeni köşeleri ortada buluştur; ucun küçük bir parçası açıkta kalsın."},
+    {"tip":"vadi","cizgi":[[0,1.1],[1,1.1]],"katman":"ust","tut":[0.5,1.2],"metin":"Açıkta kalan ucu yukarı katla: kilit bu."},
+    {"tip":"dag","cizgi":[[0.5,0],[0.5,1.414]],"katman":"hepsi","tut":[1,1.414],"metin":"Kilit dışarıda kalacak şekilde ortadan arkaya katla."},
+    {"tip":"vadi","cizgi":[[0.5,0.6],[-0.112293491784,2.078207252018]],"katman":"ust","tut":[0,1.1],"kanat":"sol","poz":90,"metin":"Kanadı burundan başlayarak aşağı katla; üst kenarı gövdenin alt kenarına otursun."},
+    {"tip":"cevir","metin":"Uçağı ters çevir."},
+    {"tip":"vadi","cizgi":[[0.5,0.6],[1.112293491784,2.078207252018]],"katman":"ust","tut":[1,1.1],"kanat":"sag","poz":90,"metin":"Öbür kanadı da aynı şekilde katla."}
+  ]
+}

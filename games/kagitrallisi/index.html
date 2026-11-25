@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="tr" data-malzeme="kecelikalem">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#b6a58a">
+  <title>Kağıt Rallisi</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%23fbf9f2'/%3E%3Cpath d='M6 22 C 6 9, 26 9, 26 16 S 12 26, 9 22' fill='none' stroke='%231c1c1c' stroke-width='2.4' stroke-linecap='round'/%3E%3Cpath d='M9 22 L14 19 L20 18 L25 15' fill='none' stroke='%231d5bd6' stroke-width='1.8' stroke-linecap='round'/%3E%3Ccircle cx='9' cy='22' r='1.6' fill='%231d5bd6'/%3E%3Ccircle cx='14' cy='19' r='1.6' fill='%231d5bd6'/%3E%3Ccircle cx='20' cy='18' r='1.6' fill='%231d5bd6'/%3E%3Ccircle cx='25' cy='15' r='1.6' fill='%231d5bd6'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="kit/kagit.css?v=556272b28114">
+  <link rel="stylesheet" href="kit/kecelikalem.css?v=7866d6702baf">
+  <link rel="stylesheet" href="style.css?v=ffd5845a6ccb">
+</head>
+<body>
+  <noscript><p class="uyari">Bu defteri açmak için JavaScript gerekiyor.</p></noscript>
+  <p class="gizli" id="duyuru" role="status" aria-live="polite"></p>
+
+  <main class="defter" id="defter">
+    <a class="defterde-donus" href="/" aria-label="Defterde oyunlarının içindekiler sayfasına dön">← İçindekiler</a>
+    <section class="sayfa" id="sayfa" aria-label="Kağıt Rallisi sayfası">
+      <header class="ust" id="ust">
+        <div class="baslik-kap">
+          <h1 class="baslik" id="baslik">Kağıt Rallisi</h1>
+          <svg class="baslik-alt" id="baslik-alt" aria-hidden="true"></svg>
+          <svg class="logo" id="logo" aria-hidden="true"></svg>
+        </div>
+        <p class="pist-adi" id="pist-adi"></p>
+        <p class="tarih" id="tarih"></p>
+      </header>
+
+      <div class="pist-kap" id="pist-kap">
+        <div class="pist-alan" id="pist-alan">
+          <svg class="cizim" id="cizim" aria-hidden="true"></svg>
+          <div class="hedefler" id="hedefler" role="group" aria-label="Aday noktalar"></div>
+        </div>
+      </div>
+
+      <aside class="marj-sag" id="marj" aria-label="Yarış bilgisi">
+        <p class="sira" id="sira"></p>
+        <div class="hiz">
+          <svg class="hiz-oku" id="hiz-oku" aria-hidden="true"></svg>
+          <div class="hiz-metin"><span class="hiz-etiket">hız</span><p class="hiz-yazi" id="hiz-yazi"></p></div>
+        </div>
+        <p class="hamle-yazi" id="hamle-yazi"></p>
+        <p class="tur-yazi" id="tur-yazi"></p>
+        <ol class="oyuncular" id="oyuncular"></ol>
+        <p class="not baslik" id="not"></p>
+      </aside>
+
+      <nav class="komutlar" id="komutlar" aria-label="Komutlar">
+        <button class="dugme sozcuk" id="yeni" type="button"><span class="yazi">Yeni yarış</span></button>
+        <button class="dugme sozcuk" id="devam" type="button" hidden><span class="yazi">Sıradaki pist</span></button>
+        <button class="dugme sozcuk" id="paylas" type="button" hidden><span class="yazi">Paylaş</span></button>
+        <button class="dugme sozcuk" id="geri" type="button"><span class="yazi">Geri al</span></button>
+        <button class="dugme sozcuk" id="fren" type="button" aria-pressed="false"><span class="yazi">Fren izi</span></button>
+        <button class="dugme sozcuk" id="nasil-ac" type="button"><span class="yazi">Nasıl oynanır?</span></button>
+        <button class="dugme sozcuk" id="ses" type="button" aria-pressed="true"><span class="yazi">Ses</span></button>
+        <button class="dugme sozcuk" id="ayar-ac" type="button"><span class="yazi">Ayarlar</span></button>
+      </nav>
+      <svg class="kalem-nesne" id="kalem-nesne" aria-hidden="true"></svg>
+      <p class="kaydir-not" id="kaydir-not" hidden>pisti kaydırarak gez</p>
+
+      <div class="panel" id="kurulum" role="dialog" aria-label="Yeni yarış" hidden>
+        <h2 class="baslik">Yeni yarış</h2>
+        <p class="ayar-grup"><span class="ayar-ad">mod:</span>
+          <button class="ayar" type="button" data-ayar="mod" data-deger="bilgisayar">bilgisayara karşı</button><span class="ara">·</span>
+          <button class="ayar" type="button" data-ayar="mod" data-deger="aynicihaz">aynı cihaz</button><span class="ara">·</span>
+          <button class="ayar" type="button" data-ayar="mod" data-deger="solo">tek başına</button><span class="ara">·</span>
+          <button class="ayar" type="button" data-ayar="mod" data-deger="gunun">günün pisti</button></p>
+        <p class="ayar-grup" data-gizle="gunun" id="pist-secim"><span class="ayar-ad">pist:</span></p>
+        <p class="ayar-grup" data-mod="bilgisayar"><span class="ayar-ad">zorluk:</span>
+          <button class="ayar" type="button" data-ayar="zorluk" data-deger="kolay">kolay</button><span class="ara">·</span>
+          <button class="ayar" type="button" data-ayar="zorluk" data-deger="orta">orta</button><span class="ara">·</span>
+          <button class="ayar" type="button" data-ayar="zorluk" data-deger="zor">zor</button></p>
+        <p class="ayar-grup" data-mod="bilgisayar"><span class="ayar-ad">rakip:</span>
+          <button class="ayar" type="button" data-ayar="rakip" data-deger="1">1</button><span class="ara">·</span>
+          <button class="ayar" type="button" data-ayar="rakip" data-deger="2">2</button><span class="ara">·</span>
+          <button class="ayar" type="button" data-ayar="rakip" data-deger="3">3</button></p>
+        <p class="ayar-grup" data-mod="bilgisayar aynicihaz"><span class="ayar-ad">yarış:</span>
+          <button class="ayar" type="button" data-ayar="seri" data-deger="hayir">tek</button><span class="ara">·</span>
+          <button class="ayar" type="button" data-ayar="seri" data-deger="evet">3 pistlik seri</button></p>
+        <p class="ayar-grup" data-mod="aynicihaz"><span class="ayar-ad">oyuncu:</span>
+          <button class="ayar" type="button" data-ayar="oyuncuSayisi" data-deger="2">2</button><span class="ara">·</span>
+          <button class="ayar" type="button" data-ayar="oyuncuSayisi" data-deger="3">3</button><span class="ara">·</span>
+          <button class="ayar" type="button" data-ayar="oyuncuSayisi" data-deger="4">4</button></p>
+        <div class="oyuncu-adlari" data-mod="aynicihaz" id="oyuncu-adlari"></div>
+        <p class="panel-komut">
+          <button class="dugme sozcuk" id="basla" type="button"><span class="yazi">Başla</span></button>
+          <button class="dugme sozcuk" id="kurulum-kapat" type="button"><span class="yazi">Vazgeç</span></button></p>
+      </div>
+
+      <div class="panel" id="ayarlar" role="dialog" aria-label="Ayarlar" hidden>
+        <h2 class="baslik">Ayarlar</h2>
+        <p class="ayar-grup"><span class="ayar-ad">tur:</span>
+          <button class="ayar" type="button" data-ayar="tur" data-deger="1">1</button><span class="ara">·</span>
+          <button class="ayar" type="button" data-ayar="tur" data-deger="2">2</button><span class="ara">·</span>
+          <button class="ayar" type="button" data-ayar="tur" data-deger="3">3</button></p>
+        <p class="ayar-grup"><span class="ayar-ad">çarpma:</span>
+          <button class="ayar" type="button" data-ayar="carpma" data-deger="okul">okul kuralı (bir tur bekle)</button><span class="ara">·</span>
+          <button class="ayar" type="button" data-ayar="carpma" data-deger="sert">sert (elenir)</button></p>
+        <p class="ayar-grup"><span class="ayar-ad">yollar kesişebilir:</span>
+          <button class="ayar" type="button" data-ayar="kesisme" data-deger="evet">evet</button><span class="ara">·</span>
+          <button class="ayar" type="button" data-ayar="kesisme" data-deger="hayir">hayır</button></p>
+        <p class="ayar-grup"><span class="ayar-ad">yerinde durma:</span>
+          <button class="ayar" type="button" data-ayar="yerindeDurma" data-deger="zorunlu">yalnız zorunluyken</button><span class="ara">·</span>
+          <button class="ayar" type="button" data-ayar="yerindeDurma" data-deger="serbest">serbest</button></p>
+        <p class="ayar-grup"><span class="ayar-ad">yarış modu (geri alma yok):</span>
+          <button class="ayar" type="button" data-ayar="yarisModu" data-deger="hayir">kapalı</button><span class="ara">·</span>
+          <button class="ayar" type="button" data-ayar="yarisModu" data-deger="evet">açık</button></p>
+        <p class="ayar-grup"><span class="ayar-ad">kontrol noktaları:</span>
+          <button class="ayar" type="button" data-ayar="kontrolGoster" data-deger="hayir">gizli</button><span class="ara">·</span>
+          <button class="ayar" type="button" data-ayar="kontrolGoster" data-deger="evet">göster</button></p>
+        <p class="ayar-not" id="ayar-not"></p>
+        <p class="panel-komut"><button class="dugme sozcuk" id="ayar-kapat" type="button"><span class="yazi">Kapat</span></button></p>
+      </div>
+
+      <div class="panel" id="nasil" role="dialog" aria-label="Nasıl oynanır" hidden>
+        <h2 class="baslik">Nasıl oynanır?</h2>
+        <p class="nasil-metin baslik">Araban noktadan noktaya gider; hızı bir önceki hamleden taşınır.</p>
+        <p class="nasil-metin baslik">Her hamlede hızını iki yönde de en çok bir kare değiştirebilirsin: önündeki dokuz noktadan birini seç.</p>
+        <p class="nasil-metin baslik">Pistten çıkarsan çarparsın: bir tur beklersin. Kontrol noktalarından geçip bitiş çizgisine ilk sen var.</p>
+        <p class="panel-komut">
+          <button class="dugme sozcuk" id="izle" type="button"><span class="yazi">izle</span></button>
+          <button class="dugme sozcuk" id="nasil-kapat" type="button"><span class="yazi">Kapat</span></button></p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Yerel sabit sürüm; klasik betikler file:// altında da çalışır. kit/karakter.js ve kursunkalem.* bu oyunda yüklenmez. -->
+  <script src="assets/vendor/rough-4.6.6.js?v=6853af861953"></script>
+  <script src="kit/kalem.js?v=950049415f4d"></script>
+  <script src="kit/ses.js?v=c92bc678c362"></script>
+  <script src="kit/malzeme.js?v=7f1b2fbadc51"></script>
+  <script src="kit/kecelikalem.js?v=91027b14ca9d"></script>
+  <script src="config.js?v=f3792cbf7ca8"></script>
+  <script src="track.js?v=2c1418bc8a0a"></script>
+  <script src="pistler/ilk-viraj.js?v=108453d9472d"></script>
+  <script src="pistler/sac-tokasi.js?v=3ad6797d6edb"></script>
+  <script src="pistler/sikan.js?v=5c4c600268af"></script>
+  <script src="pistler/sekiz.js?v=263424d21a95"></script>
+  <script src="pistler/dag-yolu.js?v=fb8619324527"></script>
+  <script src="pistler/stadyum.js?v=9736781edd4a"></script>
+  <script src="rules.js?v=436bd13fabd1"></script>
+  <script src="ai.js?v=7e4a31f98d08"></script>
+  <script src="gen.js?v=77a5b49ba871"></script>
+  <script src="draw.js?v=14265413a01d"></script>
+  <script src="ui.js?v=8cd5c943d27f"></script>
+</body>
+</html>
